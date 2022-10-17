@@ -1,0 +1,28 @@
+site_name: mappView custom widgets
+use_directory_urls: false
+
+extra_css: [extra.css]
+    
+nav:
+  - Start: index.md
+  - Installation: installation.md
+  - Numeric Input Ext: widgets_numeric_input_ext.md
+  - Revision: revision.md
+
+theme:
+    name: material
+    logo: images/bur.png
+
+    palette:
+      scheme: default
+      primary: orange
+      accent: orange
+
+    features: toc.integrate
+
+plugins:
+  - search
+      
+repo_url: https://github.com/br-automation-com/mappView-CustomWidgets
+repo_name: GitHub Repo
+
