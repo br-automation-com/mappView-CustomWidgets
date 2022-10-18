@@ -20,6 +20,12 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="widgets.custom.NumericInputExt.Action.OpenNumPad">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.custom.NumericInputExt.Action.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="widgets.custom.NumericInputExt.Action.SetBackColor">
 		<xs:complexContent>
 			<xs:extension base="s1:widgets.custom.NumericInputExt.Action.widgetMethod">

@@ -65,7 +65,7 @@ define(['widgets/brease/NumericInput/NumericInput',
      * Sets the back color of the widget.
      * @param {String} value The back color to be set
      */
-      p.setBackColor = function (value) {
+    p.setBackColor = function (value) {
         var s = new Option().style;
         s.color = value;
 
@@ -82,6 +82,15 @@ define(['widgets/brease/NumericInput/NumericInput',
             eventId = 0;
             document.body.dispatchEvent(new CustomEvent(BreaseEvent.LOG_MESSAGE, { detail: { verbose: verboseLevel, severity: severity, code: code, text: text, args: args }, bubbles: true }));
         }
+    };
+
+    /**
+     * @method openNumPad
+     * @iatStudioExposed
+     * Opens the numeric keypad.
+     */
+    p.openNumPad = function () {
+        this._showNumPad(this);
     };
 
     p._createUnitEl = function () {
