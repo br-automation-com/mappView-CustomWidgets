@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WidgetLibrary xmlns="http://www.br-automation.com/iat2014/widget">
+	<Widget name="widgets.custom.NumericInputExt">
+		<ASEngineeringInfo>
+			<IsProjectable>true</IsProjectable>
+			<LicenseInfo>unlicensed</LicenseInfo>
+		</ASEngineeringInfo>
+		<Dependencies>
+			<Files>
+				<File>widgets/brease/NumericInput/NumericInput.js</File>
+				<File>brease/decorators/LanguageDependency.js</File>
+				<File>brease/decorators/MeasurementSystemDependency.js</File>
+				<File>widgets/custom/NumericInputExt/libs/config.js</File>
+			</Files>
+			<Widgets>
+				<Widget>widgets/custom/NumericInputExt/NumericInputExt.js</Widget>
+				<Widget>widgets/brease/NumericInput/NumericInput.js</Widget>
+			</Widgets>
+		</Dependencies>
+		<Categories>
+			<Category name="Category">Numeric</Category>
+		</Categories>
+		<Descriptions>
+			<Description name="short">Eingabe eines Wertes</Description>
+			<Description name="de">Ermöglicht dem Benutzer einen numerischen Wert einzugeben</Description>
+			<Description name="en">Enables the user to enter a numeric value</Description>
+		</Descriptions>
+		<Inheritance>
+			<Class level="0">widgets.custom.NumericInputExt</Class>
+			<Class level="1">widgets.brease.NumericInput</Class>
+			<Class level="2">brease.core.BaseWidget</Class>
+		</Inheritance>
+		<Parents>
+			<Parent>*</Parent>
+		</Parents>
+		<Children>
+		</Children>
+		<Methods>
+			<Method name="Focus" read="false">
+				<Description>Sets focus on the widget element, if it can be focused and keyboardOperation=true</Description>
+			</Method>
+			<Method name="SetBackColor" read="false">
+				<Description>Sets the back color of the widget.</Description>
+				<Arguments>
+					<Argument name="value" type="String" index="0" required="true">
+						<Description>The back color to be set</Description>
+					</Argument>
+				</Arguments>
+			</Method>
+			<Method name="SetEnable" read="false">
+				<Description>Sets the state of property «enable»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetStyle" read="false">
+				<Arguments>
+					<Argument name="value" type="StyleReference" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetValue" read="false">
+				<Description>Sets value which is displayed in the widget.</Description>
+				<Arguments>
+					<Argument name="value" type="Number" index="0" required="true">
+						<Description>The value to be set</Description>
+					</Argument>
+				</Arguments>
+			</Method>
+			<Method name="SetVisible" read="false">
+				<Description>Sets the state of property «visible»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="ShowTooltip" read="false"/>
+			<Method name="SubmitChange" read="false">
+				<Description>Send value to the server, if binding for this widget exists.
+Usage of this method will only make sense, if submitOnChange=false, as otherwise changes are submitted automatically.				</Description>
+			</Method>
+		</Methods>
+		<Events>
+			<Event name="Click">
+				<Description>Fired when element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="1" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="2" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="DisabledClick">
+				<Description>Fired when disabled element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="hasPermission" type="Boolean" index="1" required="true">
+						<Description>defines if the state is caused due to missing roles of the current user</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="2" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="3" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="EnableChanged">
+				<Description>Fired when operability of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>operability</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="FocusIn">
+				<Description>Fired when the widgets gets focus</Description>
+			</Event>
+			<Event name="FocusOut">
+				<Description>Fired when the widgets lost focus</Description>
+			</Event>
+			<Event name="OnDragEnd">
+				<Description>Fired when element has OnDragEnd.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget where the drag operation has ended</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget where the drag operation has ended</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDragEnter">
+				<Description>Fired when element has onDragEnter.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been entering the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been entering the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDragLeave">
+				<Description>Fired when element has OnDragLeave.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been leaving the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been leaving the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDragStart">
+				<Description>Fired when element has OnDragStart.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget where the drag operation has been started</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget where the drag operation has been started</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDrop">
+				<Description>Fired when element has OnDrop.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been dropped on the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been dropped on the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="ValueChanged">
+				<Description>Fired when index changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Number" index="0" required="true"/>
+				</Arguments>
+			</Event>
+			<Event name="VisibleChanged">
+				<Description>Fired when the visibility of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>visibility</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+		</Events>
+		<Properties>
+			<Property name="draggable" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>Make widget draggable.</Description>
+			</Property>
+			<Property name="ellipsis" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>If true, overflow of text is symbolized with an ellipsis.</Description>
+			</Property>
+			<Property name="enable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Initial option to enable widget.</Description>
+			</Property>
+			<Property name="format" type="brease.config.MeasurementSystemFormat" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="{&apos;metric&apos;:{ &apos;decimalPlaces&apos; : 1, &apos;minimumIntegerDigits&apos; : 1 }, &apos;imperial&apos; :{ &apos;decimalPlaces&apos; : 1, &apos;minimumIntegerDigits&apos; : 1 }, &apos;imperial-us&apos; :{ &apos;decimalPlaces&apos; : 1, &apos;minimumIntegerDigits&apos; : 1 }}">
+				<Description>NumberFormat for every measurement system.</Description>
+			</Property>
+			<Property name="keyboard" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Determines if internal soft keyboard (=NumPad) should open</Description>
+			</Property>
+			<Property name="limitViolationPolicy" type="brease.enum.LimitViolationPolicy" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="noSubmit">
+				<Description>Controls behavior in case of a limit violation.</Description>
+			</Property>
+			<Property name="maxValue" type="Number" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="100">
+				<Description>Sets the maximum value for the input. If value node binding is used for the value, then this property is overriden by OPC UA max value.</Description>
+			</Property>
+			<Property name="minValue" type="Number" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="0">
+				<Description>Sets the minimum value for the input. If value node binding is used for the value, then this property is overriden by OPC UA min value.</Description>
+			</Property>
+			<Property name="node" type="brease.datatype.Node" initOnly="false" localizable="false" editableBinding="true" readOnly="false" required="false" projectable="true" category="Data" defaultValue="">
+				<Description>Value with unit for node binding.</Description>
+			</Property>
+			<Property name="numPadStyle" type="StyleReference" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" typeRefId="~system.widgets.NumPad" defaultValue="default">
+				<Description>Style for the NumPad which is configured in current visualization. References all styles of the brease NumPad and of all custom NumPads.</Description>
+			</Property>
+			<Property name="numpadPosition" type="brease.enum.Position" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="right">
+				<Description>Determines the position of the NumPad relative to the input field.</Description>
+			</Property>
+			<Property name="permissionOperate" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts operability to users, which have given roles</Description>
+			</Property>
+			<Property name="permissionView" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts visibility to users, which have given roles</Description>
+			</Property>
+			<Property name="showUnit" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Determines if the unit should be displayed</Description>
+			</Property>
+			<Property name="style" type="StyleReference" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="default">
+				<Description>reference to a style for this widget type</Description>
+			</Property>
+			<Property name="submitOnChange" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Determines if changes, triggered by user input, should be sent immediately to the server.</Description>
+			</Property>
+			<Property name="tabIndex" type="Integer" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="0">
+				<Description>sets if a widget should have autofocus enabled (0), the order of the focus (&gt;0),
+or if autofocus should be disabled (-1)				</Description>
+			</Property>
+			<Property name="tooltip" type="String" initOnly="true" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>reference to a tooltip for a widget</Description>
+			</Property>
+			<Property name="unit" type="brease.config.MeasurementSystemUnit" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>unit code for every measurement system</Description>
+			</Property>
+			<Property name="unitAlign" type="brease.enum.ImageAlign" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="left">
+				<Description>alignment of unit label; supported values [&quot;left&quot;/&quot;right&quot;]</Description>
+			</Property>
+			<Property name="unitTextAlign" type="brease.enum.TextAlign" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="center">
+				<Description>Defines the position of the unitText.</Description>
+			</Property>
+			<Property name="unitWidth" type="Size" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="0">
+				<Description>Width of unit area.</Description>
+			</Property>
+			<Property name="useDigitGrouping" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Determines if digit grouping should be used</Description>
+			</Property>
+			<Property name="value" type="Number" initOnly="false" localizable="false" editableBinding="true" readOnly="false" required="false" projectable="true" nodeRefId="node" category="Data" defaultValue="0">
+				<Description>Initial visible value of input field as a number</Description>
+			</Property>
+			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>change visibility</Description>
+			</Property>
+		</Properties>
+		<StyleProperties>
+			<StyleProperty name="width" type="AutoSize" not_styleable="true" owner="widgets.custom.NumericInputExt" category="Layout" groupRefId="Size" groupOrder="1" default="100">
+				<StyleElement attribute="@include elemAutoWidth($value)"/>
+				<Description>outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="height" type="AutoSize" not_styleable="true" owner="widgets.custom.NumericInputExt" category="Layout" groupRefId="Size" groupOrder="2" default="30">
+				<StyleElement attribute="@include elemAutoHeight($value)"/>
+				<Description>outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
+				<StyleElement attribute="@include elemTop($value)"/>
+				<Description>absolute position measured from top boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
+				<StyleElement attribute="@include elemLeft($value)"/>
+				<Description>absolute position measured from left boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
+				<StyleElement attribute="z-index"/>
+				<Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;
+        The zIndex must be unique within a content.&lt;br/&gt;				</Description>
+			</StyleProperty>
+			<StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3" owner="widgets.custom.NumericInputExt">
+				<StyleElement attribute="@include elemMinWidth($value)"/>
+				<Description>minimum outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4" owner="widgets.custom.NumericInputExt">
+				<StyleElement attribute="@include elemMaxWidth($value)"/>
+				<Description>maximum outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5" owner="widgets.custom.NumericInputExt">
+				<StyleElement attribute="@include elemMinHeight($value)"/>
+				<Description>minimum outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6" owner="widgets.custom.NumericInputExt">
+				<StyleElement attribute="@include elemMaxHeight($value)"/>
+				<Description>maximum outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="borderWidth" category="Appearance" type="PixelValCollection" default="2px 6px 2px 2px" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="&amp;:not(.active):not(.disabled)" attribute="border-width"/>
+				<Description>Sets the border width of the widget. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="activeBorderWidth" category="Appearance" type="PixelValCollection" default="2px 6px 2px 2px" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="&amp;.active:not(.disabled)" attribute="border-width"/>
+				<Description>Sets the border width of the widget while writing in. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBorderWidth" category="Appearance" type="PixelValCollection" default="2px 6px 2px 2px" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="&amp;.disabled" attribute="border-width"/>
+				<Description>Sets the border width of the widget when disbaled. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="0px" owner="widgets.custom.NumericInputExt">
+				<StyleElement attribute="@include border-radius($value)"/>
+				<Description>Sets the radius of the widget rounded corners. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="backColor" category="Appearance" type="Color" default="#FFFFFF" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="&amp;:not(.disabled):not(.active)" attribute="background-color"/>
+				<Description>Sets the background color of the widget</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBackColor" category="Appearance" type="Color" default="#F1F1F1" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="&amp;.disabled" attribute="background-color"/>
+				<Description>Sets the background color of the widget when disabled</Description>
+			</StyleProperty>
+			<StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="&amp;:not(.disabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBackGroundGradient" category="Appearance" type="Gradient" default="" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="&amp;.disabled" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient</Description>
+			</StyleProperty>
+			<StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#555555" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="&amp;:not(.disabled):not(.active)" attribute="border-color"/>
+				<Description>Sets the border color of the widget. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBorderColor" category="Appearance" type="ColorCollection" default="#C8C8C8" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="&amp;.disabled" attribute="border-color"/>
+				<Description>Sets the border color of the widget when disabled. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="activeBorderColor" category="Appearance" type="ColorCollection" default="#FF8800" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="&amp;.active:not(.disabled)" attribute="border-color"/>
+				<Description>Sets the border color of the widget while writing in. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="activeBackColor" category="Appearance" type="Color" default="#F1F1F1" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="&amp;.active:not(.disabled)" attribute="background-color"/>
+				<Description>Sets the background color of the widget while writing in</Description>
+			</StyleProperty>
+			<StyleProperty name="activeTextColor" category="Appearance" type="Color" default="#000000" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="&amp;.active:not(.disabled) input" attribute="color"/>
+				<StyleElement selector="&amp;.active:not(.disabled) span.breaseNumericInputExt_unit" attribute="color"/>
+				<Description>Sets the color of the displayed text while writing</Description>
+			</StyleProperty>
+			<StyleProperty name="borderStyle" category="Appearance" type="BorderStyle" default="solid" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="" attribute="border-style"/>
+				<StyleElement selector="&amp;.disabled" attribute="border-style"/>
+				<Description>Sets the border style of the widget. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="textColor" category="Appearance" type="Color" default="#000000" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="&amp;:not(.disabled):not(.active) input" attribute="color"/>
+				<StyleElement selector="&amp;:not(.disabled):not(.active) span.breaseNumericInputExt_unit" attribute="color"/>
+				<Description>Sets the color of the displayed text</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledTextColor" category="Appearance" type="Color" default="#C8C8C8" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="&amp;.disabled input" attribute="color"/>
+				<StyleElement selector="&amp;.disabled span.breaseNumericInputExt_unit" attribute="color"/>
+				<Description>Sets the color of the displayed text when the widget is disabled</Description>
+			</StyleProperty>
+			<StyleProperty name="textAlign" category="Appearance" type="brease.enum.TextAlign" default="right" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="input" attribute="@include text-alignment($value)"/>
+				<Description>Sets the alignment of the displayed text. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="opacity" category="Appearance" type="Opacity" default="1" owner="widgets.custom.NumericInputExt">
+				<StyleElement attribute="opacity"/>
+				<Description>Sets the opacity of the widget</Description>
+			</StyleProperty>
+			<StyleProperty name="fontName" category="Font" type="FontName" default="Arial" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="input" attribute="font-family"/>
+				<Description>Sets the font name of the displayed text</Description>
+			</StyleProperty>
+			<StyleProperty name="fontSize" category="Font" type="PixelVal" default="20px" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="input" attribute="font-size"/>
+				<Description>Sets the font size of the displayed text</Description>
+			</StyleProperty>
+			<StyleProperty name="unitFontSize" category="Font" type="PixelVal" default="14px" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector=".breaseNumericInputExt_unit" attribute="font-size"/>
+				<Description>Sets the font size of the possible unit displayed</Description>
+			</StyleProperty>
+			<StyleProperty name="rotation" category="Appearance" type="Rotation" default="0deg" owner="widgets.custom.NumericInputExt">
+				<StyleElement attribute="@include rotate($value)"/>
+				<Description>Sets the rotation of the widget with respect to its center. Positive values for clockwise direction</Description>
+			</StyleProperty>
+			<StyleProperty name="bold" category="Font" type="Boolean" default="true" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="input" attribute="@include font-weight-bold($value)"/>
+				<Description>Sets the bold property of the displayed text</Description>
+			</StyleProperty>
+			<StyleProperty name="italic" category="Font" type="Boolean" default="false" owner="widgets.custom.NumericInputExt">
+				<StyleElement selector="input" attribute="@include font-style-italic($value)"/>
+				<Description>Sets the italic property of the displayed text</Description>
+			</StyleProperty>
+			<StyleProperty name="shadow" category="Appearance" type="Shadow" default="none" owner="widgets.custom.NumericInputExt">
+				<StyleElement attribute="@include box-shadow($value)"/>
+				<Description>Sets the shadow effect of the widget. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="padding" category="Layout" type="Padding" default="0 15px 0 15px" owner="widgets.custom.NumericInputExt">
+				<StyleElement attribute="padding"/>
+				<Description>Sets a space around the displayed text. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="margin" category="Layout" type="Margin" default="0px" owner="widgets.custom.NumericInputExt">
+				<StyleElement attribute="margin"/>
+				<Description>Sets a space around the widget. For further information, please see its type</Description>
+			</StyleProperty>
+		</StyleProperties>
+		<PropertyGroups>
+			<PropertyGroup name="Size" type="String" category="Layout">
+				<Description>outer height and width of widget</Description>
+			</PropertyGroup>
+			<PropertyGroup name="Position" type="String" category="Layout">
+				<Description>top and left of widget</Description>
+			</PropertyGroup>
+		</PropertyGroups>
+	<BindingTemplates>
+  
+</BindingTemplates>
+</Widget>
+</WidgetLibrary>

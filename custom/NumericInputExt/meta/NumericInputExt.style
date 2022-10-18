@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.custom.NumericInputExt" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+	<StyleProperties>
+
+    <StyleProperty name="width" type="AutoSize" not_styleable="true" default="100">
+      <StyleElement attribute="@include elemAutoWidth($value)"></StyleElement>
+      <Description>outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="height" type="AutoSize" not_styleable="true" default="30">
+      <StyleElement attribute="@include elemAutoHeight($value)"></StyleElement>
+      <Description>outer height of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3">
+      <StyleElement attribute="@include elemMinWidth($value)"></StyleElement>
+      <Description>minimum outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4">
+      <StyleElement attribute="@include elemMaxWidth($value)"></StyleElement>
+      <Description>maximum outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5">
+      <StyleElement attribute="@include elemMinHeight($value)"></StyleElement>
+      <Description>minimum outer height of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6">
+      <StyleElement attribute="@include elemMaxHeight($value)"></StyleElement>
+      <Description>maximum outer height of widget</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="borderWidth" category="Appearance" type="PixelValCollection" default="2px 6px 2px 2px">
+		<StyleElement selector="&amp;:not(.active):not(.disabled)" attribute="border-width"></StyleElement>
+		<Description>
+        Sets the border width of the widget. For further information, please see its type
+      </Description>
+	</StyleProperty>
+
+    <StyleProperty name="activeBorderWidth" category="Appearance" type="PixelValCollection" default="2px 6px 2px 2px">
+      <StyleElement selector="&amp;.active:not(.disabled)" attribute="border-width"></StyleElement>
+      <Description>
+        Sets the border width of the widget while writing in. For further information, please see its type
+      </Description>
+    </StyleProperty>
+
+	<StyleProperty name="disabledBorderWidth" category="Appearance" type="PixelValCollection" default="2px 6px 2px 2px">
+      <StyleElement selector="&amp;.disabled" attribute="border-width"></StyleElement>
+      <Description>
+        Sets the border width of the widget when disbaled. For further information, please see its type
+      </Description>
+    </StyleProperty>
+		
+		<StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+			<StyleElement attribute="@include border-radius($value)" ></StyleElement>
+			<Description>
+        Sets the radius of the widget rounded corners. For further information, please see its type
+			</Description>
+		</StyleProperty>
+		
+		<StyleProperty name="backColor" category="Appearance" type="Color" default="#FFFFFF" >
+			<StyleElement selector="&amp;:not(.disabled):not(.active)" attribute="background-color"></StyleElement>
+			<Description>
+        Sets the background color of the widget
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="disabledBackColor" category="Appearance" type="Color" default="#F1F1F1" >
+			<StyleElement selector="&amp;.disabled" attribute="background-color"></StyleElement>
+			<Description>
+        Sets the background color of the widget when disabled
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+			<StyleElement selector="&amp;:not(.disabled)" attribute="@include backGroundGradient('$value')"></StyleElement>
+			<Description>
+				Background as a gradient
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="disabledBackGroundGradient" category="Appearance" type="Gradient" default="">
+			<StyleElement selector="&amp;.disabled" attribute="@include backGroundGradient('$value')"></StyleElement>
+			<Description>
+				Background as a gradient
+			</Description>
+		</StyleProperty>
+		
+		<StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#555555" >
+			<StyleElement selector="&amp;:not(.disabled):not(.active)" attribute="border-color"></StyleElement>
+			<Description>
+        Sets the border color of the widget. For further information, please see its type
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="disabledBorderColor" category="Appearance" type="ColorCollection" default="#C8C8C8" >
+			<StyleElement selector="&amp;.disabled" attribute="border-color"></StyleElement>
+			<Description>
+        Sets the border color of the widget when disabled. For further information, please see its type
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="activeBorderColor" category="Appearance" type="ColorCollection" default="#FF8800" >
+			<StyleElement selector="&amp;.active:not(.disabled)" attribute="border-color"></StyleElement>
+			<Description>
+        Sets the border color of the widget while writing in. For further information, please see its type
+      </Description>
+		</StyleProperty>
+
+		<StyleProperty name="activeBackColor" category="Appearance" type="Color" default="#F1F1F1" >
+			<StyleElement selector="&amp;.active:not(.disabled)" attribute="background-color"></StyleElement>
+			<Description>
+        Sets the background color of the widget while writing in
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="activeTextColor" category="Appearance" type="Color" default="#000000">
+			<StyleElement selector="&amp;.active:not(.disabled) input" attribute="color"></StyleElement>
+			<StyleElement selector="&amp;.active:not(.disabled) span.breaseNumericInputExt_unit" attribute="color"></StyleElement>
+			<Description>
+        Sets the color of the displayed text while writing
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="borderStyle" category="Appearance" type="BorderStyle" default="solid" >
+			<StyleElement selector="" attribute="border-style"></StyleElement>
+      		<StyleElement selector="&amp;.disabled" attribute="border-style"></StyleElement>
+			<Description>
+			Sets the border style of the widget. For further information, please see its type
+			</Description>
+		</StyleProperty>
+		
+		<StyleProperty name="textColor" category="Appearance" type="Color" default="#000000" >
+			<StyleElement selector="&amp;:not(.disabled):not(.active) input" attribute="color"></StyleElement>
+			<StyleElement selector="&amp;:not(.disabled):not(.active) span.breaseNumericInputExt_unit" attribute="color"></StyleElement>
+			<Description>
+        Sets the color of the displayed text
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="disabledTextColor" category="Appearance" type="Color" default="#C8C8C8" >
+			<StyleElement selector="&amp;.disabled input" attribute="color"></StyleElement>
+			<StyleElement selector="&amp;.disabled span.breaseNumericInputExt_unit" attribute="color"></StyleElement>
+			<Description>
+        Sets the color of the displayed text when the widget is disabled
+			</Description>
+		</StyleProperty>
+		
+		<StyleProperty name="textAlign" category="Appearance" type="brease.enum.TextAlign" default="right">
+			<StyleElement selector="input" attribute="@include text-alignment($value)"></StyleElement>
+			<Description>
+				Sets the alignment of the displayed text. For further information, please see its type
+			</Description>
+		</StyleProperty>
+		
+		<StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+			<StyleElement attribute="opacity"></StyleElement>
+			<Description>
+				Sets the opacity of the widget
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="fontName" category="Font" type="FontName" default="Arial">
+			<StyleElement selector="input" attribute="font-family"></StyleElement>
+			<Description>
+				Sets the font name of the displayed text
+			</Description>
+		</StyleProperty>
+		
+		<StyleProperty name="fontSize" category="Font" type="PixelVal" default="20px" >
+			<StyleElement selector="input" attribute="font-size"></StyleElement>
+			<Description>
+				Sets the font size of the displayed text
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="unitFontSize" category="Font" type="PixelVal" default="14px" >
+			<StyleElement selector=".breaseNumericInputExt_unit" attribute="font-size"></StyleElement>
+			<Description>
+				Sets the font size of the possible unit displayed
+			</Description>
+		</StyleProperty>
+		
+		<StyleProperty name="rotation" category="Appearance" type="Rotation" default="0deg">
+			<StyleElement attribute="@include rotate($value)"></StyleElement>
+			<Description>
+				Sets the rotation of the widget with respect to its center. Positive values for clockwise direction
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="bold" category="Font" type="Boolean" default="true">
+			<StyleElement selector="input" attribute="@include font-weight-bold($value)"></StyleElement>
+			<Description>
+				Sets the bold property of the displayed text
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="italic" category="Font" type="Boolean" default="false">
+			<StyleElement selector="input" attribute="@include font-style-italic($value)"></StyleElement>
+			<Description>
+				Sets the italic property of the displayed text
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="shadow" category="Appearance" type="Shadow" default="none">
+			<StyleElement attribute="@include box-shadow($value)"></StyleElement>
+			<Description>
+				Sets the shadow effect of the widget. For further information, please see its type
+			</Description>
+		</StyleProperty>
+
+		<StyleProperty name="padding" category="Layout" type="Padding" default="0 15px 0 15px">
+			<StyleElement attribute="padding"></StyleElement>
+			<Description>
+				Sets a space around the displayed text. For further information, please see its type
+			</Description>
+		</StyleProperty>
+		
+		<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+			<StyleElement attribute="margin"></StyleElement>
+			<Description>
+				Sets a space around the widget. For further information, please see its type
+			</Description>
+		</StyleProperty>
+		
+		
+		
+		
+	</StyleProperties>
+</StyleInformation>
+	
+	

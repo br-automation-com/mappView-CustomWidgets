@@ -1,0 +1,93 @@
+@import "mixins.scss";
+@mixin widgets_custom_NumericInputExt_base {
+	@include elemAutoWidth(100);
+	@include elemAutoHeight(30);
+	@include elemMinWidth(0);
+	@include elemMaxWidth(0);
+	@include elemMinHeight(0);
+	@include elemMaxHeight(0);
+&:not(.active):not(.disabled) {
+	border-width: 2px 6px 2px 2px;
+}
+&.active:not(.disabled) {
+	border-width: 2px 6px 2px 2px;
+}
+&.disabled {
+	border-width: 2px 6px 2px 2px;
+}
+	@include border-radius(0px);
+&:not(.disabled):not(.active) {
+	background-color: #FFFFFF;
+}
+&.disabled {
+	background-color: #F1F1F1;
+}
+&:not(.disabled) {
+	@include backGroundGradient('');
+}
+&.disabled {
+	@include backGroundGradient('');
+}
+&:not(.disabled):not(.active) {
+	border-color: #555555;
+}
+&.disabled {
+	border-color: #C8C8C8;
+}
+&.active:not(.disabled) {
+	border-color: #FF8800;
+}
+&.active:not(.disabled) {
+	background-color: #F1F1F1;
+}
+&.active:not(.disabled) input {
+	color: #000000;
+}
+&.active:not(.disabled) span.breaseNumericInputExt_unit {
+	color: #000000;
+}
+	border-style: solid;
+&.disabled {
+	border-style: solid;
+}
+&:not(.disabled):not(.active) input {
+	color: #000000;
+}
+&:not(.disabled):not(.active) span.breaseNumericInputExt_unit {
+	color: #000000;
+}
+&.disabled input {
+	color: #C8C8C8;
+}
+&.disabled span.breaseNumericInputExt_unit {
+	color: #C8C8C8;
+}
+input {
+	@include text-alignment(right);
+}
+	opacity: 1;
+input {
+	font-family: Arial;
+}
+input {
+	font-size: 20px;
+}
+.breaseNumericInputExt_unit {
+	font-size: 14px;
+}
+	@include rotate(0deg);
+input {
+	@include font-weight-bold(true);
+}
+input {
+	@include font-style-italic(false);
+}
+	@include box-shadow(none);
+	padding: 0 15px 0 15px;
+	margin: 0px;
+
+}
+
+.widgets_custom_NumericInputExt_style_default {
+@include widgets_custom_NumericInputExt_base 
+}
