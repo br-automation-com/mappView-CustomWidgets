@@ -1,0 +1,62 @@
+@import '../../../../../../css/libs/mixins.scss';
+
+.DropDownBoxView {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.listBoxContainer {
+
+    overflow: hidden;
+    display: flex;
+    z-index: 800;
+
+    &.bottom {
+        flex-direction: column;
+    }
+    &.top {
+        flex-direction: column-reverse;
+    }
+    &.left {
+        flex-direction: row-reverse;
+    }
+    &.right {
+        flex-direction: row;
+    }
+
+    .arrow {
+        content: ' ';
+        width: 0;
+		height: 0;
+        &.bottom {
+		    border-right: 8px solid transparent;
+		    border-bottom: 8px solid #333;
+		    border-left: 8px solid transparent;
+		    z-index: 1001;
+        }
+        &.top {
+		    border-right: 8px solid transparent;
+		    border-top: 8px solid #333;
+		    border-left: 8px solid transparent;
+		    z-index: 1001;
+        }
+        &.right {
+			border-top: 8px solid transparent;
+			border-right: 8px solid #333;
+			border-bottom: 8px solid transparent;
+			z-index: 1001;
+        }
+        &.left {
+			border-top: 8px solid transparent;
+			border-left: 8px solid #333;
+			border-bottom: 8px solid transparent;
+			z-index: 1001;
+        }
+        &.center {
+			display: none;
+        }
+        &.middle {
+			display: none;
+        }
+    }
+}

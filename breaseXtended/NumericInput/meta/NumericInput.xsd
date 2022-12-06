@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:iat="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" elementFormDefault="qualified">
+<xs:complexType name="widgets.breaseXtended.NumericInputRestrict" abstract="true">
+	<xs:complexContent>
+		<xs:restriction base="iat:brease.core.BaseContentWidget">
+			<xs:attribute name="tabIndex" use="optional" type="types:Integer" default="0" />
+			<xs:attribute name="height" use="optional" type="types:AutoSize" default="30" />
+			<xs:attribute name="width" use="optional" type="types:AutoSize" default="100" />
+		</xs:restriction>
+	</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="widgets.breaseXtended.NumericInput">
+	<xs:complexContent>
+		<xs:extension base="iat:widgets.breaseXtended.NumericInputRestrict">
+			<xs:attribute name="draggable" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="ellipsis" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="format" use="optional" type="types:brease.config.MeasurementSystemFormat" default="{&apos;metric&apos;:{ &apos;decimalPlaces&apos; : 1, &apos;minimumIntegerDigits&apos; : 1 }, &apos;imperial&apos; :{ &apos;decimalPlaces&apos; : 1, &apos;minimumIntegerDigits&apos; : 1 }, &apos;imperial-us&apos; :{ &apos;decimalPlaces&apos; : 1, &apos;minimumIntegerDigits&apos; : 1 }}" />
+			<xs:attribute name="keyboard" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="limitViolationPolicy" use="optional" type="types:brease.enum.LimitViolationPolicy" default="noSubmit" />
+			<xs:attribute name="maxValue" use="optional" type="types:Number" default="100" />
+			<xs:attribute name="minValue" use="optional" type="types:Number" default="0" />
+			<xs:attribute name="node" use="optional" type="types:brease.datatype.Node" default="" />
+			<xs:attribute name="numPadStyle" use="optional" type="types:StyleReference" default="default" />
+			<xs:attribute name="numpadPosition" use="optional" type="types:brease.enum.Position" default="right" />
+			<xs:attribute name="showUnit" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="submitOnChange" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="unit" use="optional" type="types:brease.config.MeasurementSystemUnit" default="" />
+			<xs:attribute name="unitAlign" use="optional" type="types:brease.enum.ImageAlign" default="left" />
+			<xs:attribute name="unitTextAlign" use="optional" type="types:brease.enum.TextAlign" default="center" />
+			<xs:attribute name="unitWidth" use="optional" type="types:Size" default="0" />
+			<xs:attribute name="useDigitGrouping" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="value" use="optional" type="types:Number" default="0" />
+			<xs:attribute name="maxHeight" use="optional" type="types:Size" default="0" />
+			<xs:attribute name="minHeight" use="optional" type="types:Size" default="0" />
+			<xs:attribute name="maxWidth" use="optional" type="types:Size" default="0" />
+			<xs:attribute name="minWidth" use="optional" type="types:Size" default="0" />
+			<xs:attribute name="borderWidth" use="optional" type="types:PixelValCollection" default="2px 6px 2px 2px" />
+			<xs:attribute name="activeBorderWidth" use="optional" type="types:PixelValCollection" default="2px 6px 2px 2px" />
+			<xs:attribute name="disabledBorderWidth" use="optional" type="types:PixelValCollection" default="2px 6px 2px 2px" />
+			<xs:attribute name="cornerRadius" use="optional" type="types:PixelValCollection" default="0px" />
+			<xs:attribute name="backColor" use="optional" type="types:Color" default="#FFFFFF" />
+			<xs:attribute name="disabledBackColor" use="optional" type="types:Color" default="#F1F1F1" />
+			<xs:attribute name="backGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="disabledBackGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="borderColor" use="optional" type="types:ColorCollection" default="#555555" />
+			<xs:attribute name="disabledBorderColor" use="optional" type="types:ColorCollection" default="#C8C8C8" />
+			<xs:attribute name="activeBorderColor" use="optional" type="types:ColorCollection" default="#FF8800" />
+			<xs:attribute name="activeBackColor" use="optional" type="types:Color" default="#F1F1F1" />
+			<xs:attribute name="activeTextColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="borderStyle" use="optional" type="types:BorderStyle" default="solid" />
+			<xs:attribute name="textColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="disabledTextColor" use="optional" type="types:Color" default="#C8C8C8" />
+			<xs:attribute name="textAlign" use="optional" type="types:brease.enum.TextAlign" default="right" />
+			<xs:attribute name="opacity" use="optional" type="types:Opacity" default="1" />
+			<xs:attribute name="fontName" use="optional" type="types:FontName" default="Arial" />
+			<xs:attribute name="fontSize" use="optional" type="types:PixelVal" default="20px" />
+			<xs:attribute name="unitFontSize" use="optional" type="types:PixelVal" default="14px" />
+			<xs:attribute name="rotation" use="optional" type="types:Rotation" default="0deg" />
+			<xs:attribute name="bold" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="italic" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="shadow" use="optional" type="types:Shadow" default="none" />
+			<xs:attribute name="padding" use="optional" type="types:Padding" default="0 15px 0 15px" />
+			<xs:attribute name="margin" use="optional" type="types:Margin" default="0px" />
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+</xs:schema>

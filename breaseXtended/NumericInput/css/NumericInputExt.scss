@@ -1,0 +1,129 @@
+@import '../../../../css/libs/variables.scss';
+@import '../../../../css/libs/mixins.scss';
+
+$default-border-color: #555555;
+$active-border-color: $active-color;
+$disabled-border-color: #C8C8C8;
+$default-bg-color: #F7F7FF;
+$active-bg-color: #F7F7FF;
+$disabled-bg-color: #F1F1F1;
+
+$text-color: #000000;
+$disabled-text-color: #C8C8C8;
+$unit-color: #000000;
+
+.breaseNumericInput {
+    background: $default-bg-color;
+    border-top: 2px solid $default-border-color;
+    border-right: 6px solid $default-border-color;
+    border-bottom: 2px solid $default-border-color;
+    border-left: 2px solid $default-border-color;
+    width: 100px;
+    height: 30px;
+    min-width: 20px;
+    padding: 0 15px 0 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    @include box-sizing(border-box);
+
+    @import "../../../brease/common/css/boxLayout.scss";
+    
+   input {
+        font-size: 21px;
+        color: $text-color;
+        text-align: right;
+        border: none;
+        background: transparent;
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+        min-width: 1px;
+        display:block;
+        width:100%;
+        pointer-events: none;
+        @include user-select(none);
+
+        &::-ms-clear {
+            display: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &.keyboard {
+            pointer-events: all;
+            @include user-select(text);
+        }
+    }
+
+    &.editMode {
+        input.keyboard {
+            pointer-events: none;
+            @include user-select(none);
+        }
+    }
+
+    &.ellipsis input {
+        @include text-overflow(ellipsis);
+    }
+
+    .breaseNumericInputExt_unit {
+        font-size: 14px;
+        color: $unit-color;
+        border: none;
+        overflow: visible;
+        white-space: nowrap;
+        padding: 0px;
+        margin: 0px;
+        display: block;
+        pointer-events: none;
+        @include user-select(none);
+    }
+
+	.orientation-top, .orientation-bottom {
+		.box-unit {
+			width: 100%;
+		}
+	}
+
+    .box-unit {
+        width: auto;
+    }
+
+    &.unitAlign-left {
+        .box-unit {
+            margin-right: 10px;
+        }
+    }
+
+
+    &.unitAlign-right{
+        .box-unit {
+            margin-left: 10px;
+        }
+    }
+
+    &.active {
+        outline: none;
+        background: $active-bg-color;
+        border-color: $active-border-color;
+        border-width: 2px 6px 2px 2px;
+    }
+
+    &.disabled, &[disabled] {
+        background: $disabled-bg-color;
+        border-color: $disabled-border-color;
+        border-width: 2px 6px 2px 2px;
+
+        input {
+            color: $disabled-text-color;
+        }
+
+        span {
+            color: $disabled-text-color;
+        }
+    }
+}

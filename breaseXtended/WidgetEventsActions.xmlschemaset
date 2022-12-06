@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SchemaCatalog xmlns="http://schemas.microsoft.com/xsd/catalog">
+	<Schema href="DropDownBox/meta/DropDownBox_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
+	<Schema href="NumericInput/meta/NumericInput_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
+</SchemaCatalog>

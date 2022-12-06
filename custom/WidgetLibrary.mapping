@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Mappings>
-  <Mapping parameter="widgets.custom.NumericInputExt.Action.SetBackColor.value" type="ANY_STRING"/>
-  <Mapping parameter="widgets.custom.NumericInputExt.Action.SetEnable.value" type="BOOL"/>
-  <Mapping parameter="widgets.custom.NumericInputExt.Action.SetStyle.value" type="ANY_STRING"/>
-  <Mapping parameter="widgets.custom.NumericInputExt.Action.SetValue.value" type="ANY_REAL"/>
-  <Mapping parameter="widgets.custom.NumericInputExt.Action.SetVisible.value" type="BOOL"/>
-</Mappings>

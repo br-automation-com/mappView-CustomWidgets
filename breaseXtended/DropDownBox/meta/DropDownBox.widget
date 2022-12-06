@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WidgetLibrary xmlns="http://www.br-automation.com/iat2014/widget">
+	<Widget name="widgets.breaseXtended.DropDownBox">
+		<ASEngineeringInfo>
+			<IsProjectable>true</IsProjectable>
+			<LicenseInfo>unlicensed</LicenseInfo>
+		</ASEngineeringInfo>
+		<Dependencies>
+			<Files>
+				<File>brease/core/BaseWidget.js</File>
+				<File>widgets/breaseXtended/DropDownBox/libs/FocusHandler.js</File>
+				<File>widgets/breaseXtended/DropDownBox/libs/config/Config.js</File>
+				<File>widgets/breaseXtended/DropDownBox/libs/config/InitState.js</File>
+				<File>widgets/breaseXtended/DropDownBox/libs/SubmitQueue.js</File>
+				<File>brease/decorators/LanguageDependency.js</File>
+				<File>brease/decorators/VisibilityDependency.js</File>
+				<File>widgets/breaseXtended/DropDownBox/libs/view/DropDownBoxView/DropDownBoxView.js</File>
+				<File>widgets/breaseXtended/DropDownBox/libs/reducer/DropDownBoxActions.js</File>
+				<File>widgets/breaseXtended/DropDownBox/libs/reducer/DropDownBoxReducer.js</File>
+				<File>widgets/brease/common/libs/external/redux.js</File>
+				<File>widgets/brease/common/libs/redux/utils/UtilsList.js</File>
+				<File>widgets/brease/common/libs/redux/utils/UtilsImage.js</File>
+				<File>widgets/brease/common/libs/redux/utils/UtilsText.js</File>
+				<File>widgets/brease/common/libs/BindingSync.js</File>
+				<File>widgets/brease/common/libs/wfUtils/UtilsEditableBinding.js</File>
+				<File>brease/decorators/DragAndDropCapability.js</File>
+				<File>widgets/brease/common/DragDropProperties/libs/DroppablePropertiesEvents.js</File>
+			</Files>
+			<Widgets>
+				<Widget>widgets/breaseXtended/DropDownBox/DropDownBox.js</Widget>
+			</Widgets>
+		</Dependencies>
+		<Categories>
+			<Category name="Category">Selector</Category>
+		</Categories>
+		<Descriptions>
+			<Description name="short">DropDownliste von Texten</Description>
+			<Description name="de">Zeigt eine DropDownliste, aus welcher der Benutzer Elemente auswählen kann</Description>
+			<Description name="en">Displays a drop-down list where the user can select items</Description>
+		</Descriptions>
+		<Inheritance>
+			<Class level="0">widgets.breaseXtended.DropDownBox</Class>
+			<Class level="1">brease.core.BaseWidget</Class>
+		</Inheritance>
+		<Parents>
+			<Parent>*</Parent>
+		</Parents>
+		<Children>
+		</Children>
+		<Methods>
+			<Method name="Close" read="false">
+				<Description>Closes the list</Description>
+			</Method>
+			<Method name="Focus" read="false">
+				<Description>Sets focus on the widget element, if it can be focused and keyboardOperation=true</Description>
+			</Method>
+			<Method name="GetSelectedIndex" read="true">
+				<Description>Returns selectedIndex.</Description>
+				<Result type="Integer"/>
+			</Method>
+			<Method name="GetSelectedValue" read="true">
+				<Description>Returns selectedValue.</Description>
+				<Result type="String"/>
+			</Method>
+			<Method name="Open" read="false">
+				<Description>Opens the list</Description>
+			</Method>
+			<Method name="SetDataProvider" read="false">
+				<Description>method to set the dataProvider</Description>
+				<Arguments>
+					<Argument name="value" type="ItemCollection" index="0" required="true">
+						<Description>ItemCollection (=Array) of objects of type brease.objects.ListEntry</Description>
+					</Argument>
+					<Argument name="omitPrompt" type="Boolean" index="1" required="false" deprecated="true" defaultValue="false">
+						<Description>(deprecated)</Description>
+					</Argument>
+				</Arguments>
+			</Method>
+			<Method name="SetEnable" read="false">
+				<Description>Sets the state of property «enable»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetSelectedIndex" read="false">
+				<Description>Sets the selected entry based on an index</Description>
+				<Arguments>
+					<Argument name="index" type="Integer" index="0" required="true"/>
+					<Argument name="omitPrompt" type="Boolean" index="1" required="false" deprecated="true" defaultValue="false">
+						<Description>(deprecated)</Description>
+					</Argument>
+				</Arguments>
+			</Method>
+			<Method name="SetSelectedValue" read="false">
+				<Description>sets the selected entry based on a value</Description>
+				<Arguments>
+					<Argument name="value" type="String" index="0" required="true"/>
+					<Argument name="omitPrompt" type="Boolean" index="1" required="false" deprecated="true" defaultValue="false">
+						<Description>(deprecated)</Description>
+					</Argument>
+				</Arguments>
+			</Method>
+			<Method name="SetStyle" read="false">
+				<Arguments>
+					<Argument name="value" type="StyleReference" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetVisible" read="false">
+				<Description>Sets the state of property «visible»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="ShowTooltip" read="false"/>
+			<Method name="Toggle" read="false">
+				<Description>Opens or closes the list depending on the actual status</Description>
+			</Method>
+		</Methods>
+		<Events>
+			<Event name="Click">
+				<Description>Fired when element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="1" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="2" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="DisabledClick">
+				<Description>Fired when disabled element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="hasPermission" type="Boolean" index="1" required="true">
+						<Description>defines if the state is caused due to missing roles of the current user</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="2" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="3" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="EnableChanged">
+				<Description>Fired when operability of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>operability</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="FocusIn">
+				<Description>Fired when the widgets gets focus</Description>
+			</Event>
+			<Event name="FocusOut">
+				<Description>Fired when the widgets lost focus</Description>
+			</Event>
+			<Event name="OnDragEnter">
+				<Description>Fired when element has onDragEnter.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been entering the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been entering the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDragLeave">
+				<Description>Fired when element has OnDragLeave.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been leaving the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been leaving the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDrop">
+				<Description>Fired when element has OnDrop.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been dropped on the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been dropped on the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="SelectedIndexChanged">
+				<Description>Fired when selectedIndex or selectedValue changes.</Description>
+				<Arguments>
+					<Argument name="selectedIndex" type="Integer" index="0" required="true"/>
+					<Argument name="selectedValue" type="String" index="1" required="true"/>
+				</Arguments>
+			</Event>
+			<Event name="ToggleStateChanged">
+				<Description>Triggered when the list is opened or closed.</Description>
+				<Arguments>
+					<Argument name="newValue" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Event>
+			<Event name="VisibleChanged">
+				<Description>Fired when the visibility of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>visibility</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+		</Events>
+		<Properties>
+			<Property name="cropToParent" type="brease.enum.CropToParent" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="none">
+				<Description>Crop list to parent element</Description>
+			</Property>
+			<Property name="dataProvider" type="ItemCollection" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Data" defaultValue="[]">
+				<Description>ItemCollection see Datatype</Description>
+			</Property>
+			<Property name="displaySettings" type="brease.enum.DropDownDisplaySettings" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="default">
+				<Description>Defines which elements are displayed on the widget</Description>
+			</Property>
+			<Property name="ellipsis" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>If true, overflow of text is symbolized with an ellipsis. This option has no effect, if wordWrap = true.</Description>
+			</Property>
+			<Property name="enable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Initial option to enable widget.</Description>
+			</Property>
+			<Property name="fitHeight2Items" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>If true, the height will fit to the necessary height if the height  oft the list is bigger
+If false, the list uses the configured height				</Description>
+			</Property>
+			<Property name="imageAlign" type="brease.enum.ImagePosition" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="left">
+				<Description>Position of images relative to text</Description>
+			</Property>
+			<Property name="imagePath" type="DirectoryPath" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Path to the images location (e.g. &apos;Media/images/&apos;).
+Names of the images must be given like the index in the dataProvider (e.g. 0.png, 1.png, 2.png)				</Description>
+			</Property>
+			<Property name="itemHeight" type="Integer" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="40">
+				<Description>Height of every item in the List</Description>
+			</Property>
+			<Property name="listPosition" type="brease.enum.Position" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="right">
+				<Description>Position of opened list relative to ToggleButton.</Description>
+			</Property>
+			<Property name="listPositionExt" type="Integer" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Extended" defaultValue="0">
+				<Description>If 0, list position extension is off.
+If 1, the list box will reverse the pop-up direction. For ex. listPosition=&apos;right&apos; from bottom upwards.
+If 2, the list box will always try to center the list box to the screen.				</Description>
+			</Property>
+			<Property name="listWidth" type="Integer" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="150">
+				<Description>Width of list and its items when the widget is pressed.</Description>
+			</Property>
+			<Property name="maxVisibleEntries" type="UInteger" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="4">
+				<Description>An integer to determine max-height of the list</Description>
+			</Property>
+			<Property name="multiLine" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>If true, more than one line is possible. Text will wrap when necessary (wordWrap=true) or at line breaks (\n).
+If false, text will never wrap to the next line. The text continues on the same line.				</Description>
+			</Property>
+			<Property name="permissionOperate" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts operability to users, which have given roles</Description>
+			</Property>
+			<Property name="permissionView" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts visibility to users, which have given roles</Description>
+			</Property>
+			<Property name="selectedIndex" type="Integer" initOnly="false" localizable="false" editableBinding="true" readOnly="false" required="false" projectable="true" category="Data" defaultValue="0">
+				<Description>Index of the selected item. The first item has index=0</Description>
+			</Property>
+			<Property name="selectedValue" type="String" initOnly="false" localizable="false" editableBinding="true" readOnly="false" required="false" projectable="true" category="Data" defaultValue="">
+				<Description>Value of the selected item</Description>
+			</Property>
+			<Property name="style" type="StyleReference" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="default">
+				<Description>reference to a style for this widget type</Description>
+			</Property>
+			<Property name="tabIndex" type="Integer" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="0">
+				<Description>sets if a widget should have autofocus enabled (0), the order of the focus (&gt;0),
+or if autofocus should be disabled (-1)				</Description>
+			</Property>
+			<Property name="tooltip" type="String" initOnly="true" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>reference to a tooltip for a widget</Description>
+			</Property>
+			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>change visibility</Description>
+			</Property>
+			<Property name="wordWrap" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>If true, text will wrap when necessary.</Description>
+			</Property>
+		</Properties>
+		<StyleProperties>
+			<StyleProperty name="width" type="Size" not_styleable="true" owner="widgets.breaseXtended.DropDownBox" category="Layout" groupRefId="Size" groupOrder="1" default="100">
+				<StyleElement selector="&amp;.DropDownBoxView" attribute="@include elemWidth($value)"/>
+				<Description>outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="height" type="Size" not_styleable="true" owner="widgets.breaseXtended.DropDownBox" category="Layout" groupRefId="Size" groupOrder="2" default="30">
+				<StyleElement selector="&amp;.DropDownBoxView" attribute="@include elemHeight($value)"/>
+				<Description>outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
+				<StyleElement attribute="@include elemTop($value)"/>
+				<Description>absolute position measured from top boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
+				<StyleElement attribute="@include elemLeft($value)"/>
+				<Description>absolute position measured from left boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
+				<StyleElement attribute="z-index"/>
+				<Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;
+        The zIndex must be unique within a content.&lt;br/&gt;				</Description>
+			</StyleProperty>
+			<StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3">
+				<StyleElement selector="&amp;.DropDownBoxView" attribute="@include elemMinWidth($value)"/>
+				<Description>minimum outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4">
+				<StyleElement selector="&amp;.DropDownBoxView" attribute="@include elemMaxWidth($value)"/>
+				<Description>maximum outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5">
+				<StyleElement selector="&amp;.DropDownBoxView" attribute="@include elemMinHeight($value)"/>
+				<Description>minimum outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6">
+				<StyleElement selector="&amp;.DropDownBoxView" attribute="@include elemMaxHeight($value)"/>
+				<Description>maximum outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+				<StyleElement selector="&amp;.DropDownBoxView" attribute="@include border-radius($value)"/>
+				<StyleElement selector="&amp; &gt; .ItemView" attribute="@include border-radius($value)"/>
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; &gt; .ListView.Container" attribute="@include border-radius($value)"/>
+				<Description>Sets the radius of both widget and the drop-down list rounded corners. For further information, please check its type</Description>
+			</StyleProperty>
+			<StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+				<StyleElement attribute="opacity"/>
+				<StyleElement idsuffix="_listBoxWrapper" attribute="opacity"/>
+				<Description>Opacity of the widget</Description>
+			</StyleProperty>
+			<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+				<StyleElement selector="&amp;.DropDownBoxView" attribute="margin"/>
+				<Description>Margin of the Widget</Description>
+			</StyleProperty>
+			<StyleProperty name="shadow" category="Appearance" type="Shadow" default="none">
+				<StyleElement selector="&amp;.DropDownBoxView" attribute="@include box-shadow($value)"/>
+				<Description>Shadow of the Widget</Description>
+			</StyleProperty>
+			<StyleProperty name="backColor" category="Appearance" type="Color" default="#DBDBDB">
+				<StyleElement selector="&amp; &gt; .ItemView:not(.itemSelected):not(.itemDisabled)" attribute="background-color"/>
+				<Description>Sets the background color of the widget</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownBackColor" category="Appearance" type="Color" default="#DBDBDB">
+				<StyleElement selector="&amp; &gt; .ItemView.itemSelected:not(.itemDisabled)" attribute="background-color"/>
+				<Description>Sets the background color of the widget when it is clicked and the drop-down list is displayed</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBackColor" category="Appearance" type="Color" default="#F1F1F1">
+				<StyleElement selector="&amp; &gt; .ItemView.itemDisabled" attribute="background-color"/>
+				<Description>Sets the background color when the widget is disabled</Description>
+			</StyleProperty>
+			<StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement selector="&amp; &gt; .ItemView:not(.itemSelected):not(.itemDisabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Sets the background color of the items not selected as a gradient</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownBackGroundGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement selector="&amp; &gt; .ItemView.itemSelected:not(.itemDisabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>ets the text color of the widget when it is clicked and the drop-down list is displayed</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBackGroundGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement selector="&amp; &gt; .ItemView.itemDisabled" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient</Description>
+			</StyleProperty>
+			<StyleProperty name="borderStyle" category="Appearance" type="BorderStyle" default="solid">
+				<StyleElement selector="&amp; &gt; .ItemView" attribute="border-style"/>
+				<Description>Sets the border style of the widget. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="borderWidth" category="Appearance" type="PixelValCollection" default="2px">
+				<StyleElement selector="&amp; &gt; .ItemView:not(.itemSelected)" attribute="border-width"/>
+				<Description>Sets the width of the border. For further information, please see its type</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownBorderWidth" category="Appearance" type="PixelValCollection" default="2px">
+				<StyleElement selector="&amp; &gt; .ItemView.itemSelected" attribute="border-width"/>
+				<Description>Sets the border with of the widget when it is clicked and the drop-down list is displayed</Description>
+			</StyleProperty>
+			<StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#5B7C70">
+				<StyleElement selector="&amp; &gt; .ItemView:not(.itemSelected):not(.itemDisabled)" attribute="border-color"/>
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; &gt; .ListView.Container" attribute="border-color"/>
+				<Description>Sets the border color of both the widget and the drop-down list</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01">
+				<StyleElement selector="&amp; &gt; .ItemView.itemSelected:not(.itemDisabled)" attribute="border-color"/>
+				<Description>Sets the border color of the widget when it is clicked and the drop-down list is displayed</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBorderColor" category="Appearance" type="ColorCollection" default="#FFFFFF #C8C8C8 #C8C8C8 #FFFFFF">
+				<StyleElement selector="&amp; &gt; .ItemView.itemDisabled" attribute="border-color"/>
+				<Description>Sets the border color when the widget is disabled</Description>
+			</StyleProperty>
+			<StyleProperty name="textColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement selector="&amp; &gt; .ItemView:not(.itemSelected):not(.itemDisabled) &gt; .TextView:not(.textSelected)" attribute="color"/>
+				<Description>Sets the color of the text displayed by the widget</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownTextColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement selector="&amp; &gt; .ItemView.itemSelected:not(.itemDisabled) &gt; .TextView.textSelected" attribute="color"/>
+				<Description>Sets the text color of the widget when it is clicked and the drop-down list is displayed</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledTextColor" category="Appearance" type="Color" default="#989898">
+				<StyleElement selector="&amp; &gt; .ItemView.itemDisabled &gt; .TextView" attribute="color"/>
+				<Description>Sets the color of the text when the widget is disabled</Description>
+			</StyleProperty>
+			<StyleProperty name="padding" category="Layout" type="Padding" default="0 10px">
+				<StyleElement selector="&amp; &gt; .ItemView" attribute="padding"/>
+				<Description>Padding of the Widget</Description>
+			</StyleProperty>
+			<StyleProperty name="showOpenIndicator" type="Boolean" default="false" category="Appearance">
+				<StyleElement selector="&amp; &gt; .ItemView &gt; .ImageView.ImageIndicator" attribute="@include display($value, &apos;flex&apos;)"/>
+				<Description>If **true** the indicator image is displayed</Description>
+			</StyleProperty>
+			<StyleProperty name="openIndicatorColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement selector="&amp; &gt; .ItemView:not(.itemSelected):not(.itemDisabled) &gt; .ImageView.ImageIndicator svg" attribute="fill"/>
+				<Description>Color of the image to open the list</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownOpenIndicatorColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement selector="&amp; &gt; .ItemView.itemSelected:not(.itemDisabled) &gt; .ImageView.ImageIndicator svg" attribute="fill"/>
+				<Description>Color of the image to open the list during mouseDown</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledOpenIndicatorColor" category="Appearance" type="Color" default="#989898">
+				<StyleElement selector="&amp; &gt; .ItemView.itemDisabled &gt; .ImageView.ImageIndicator svg" attribute="fill"/>
+				<Description>Color of the image to open the list when the widget is disabled</Description>
+			</StyleProperty>
+			<StyleProperty name="listPadding" category="Layout" type="Padding" default="0 15px">
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; &gt; .ListView.Container &gt; .ListView.List &gt; .ItemView" attribute="padding"/>
+				<Description>Padding of the list</Description>
+			</StyleProperty>
+			<StyleProperty name="listBackColor" category="Appearance" type="Color" default="#FFFFFF">
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; &gt; .ListView.Container &gt; .ListView.List &gt; .ItemView:not(.itemSelected)" attribute="background-color"/>
+				<Description>Sets the background color of the drop-down list</Description>
+			</StyleProperty>
+			<StyleProperty name="listBackGroundGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; &gt; .ListView.Container &gt; .ListView.List &gt; .ItemView:not(.itemSelected)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient</Description>
+			</StyleProperty>
+			<StyleProperty name="activeBackColor" category="Appearance" type="Color" default="#ff8800">
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; &gt; .ListView.Container &gt; .ListView.List &gt; .ItemView.itemSelected" attribute="background-color"/>
+				<Description>Sets the background color of the selected item</Description>
+			</StyleProperty>
+			<StyleProperty name="activeBackGroundGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; &gt; .ListView.Container &gt; .ListView.List &gt; .ItemView.itemSelected" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Sets the background color of the selected item as a gradient</Description>
+			</StyleProperty>
+			<StyleProperty name="listSeparatorColor" category="Appearance" type="Color" default="#000">
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; &gt; .ListView.Container &gt; .ListView.List &gt; .ItemView" attribute="border-bottom-color"/>
+				<Description>Sets the color of the list separator</Description>
+			</StyleProperty>
+			<StyleProperty name="listBorderWidth" category="Appearance" type="PixelValCollection" default="2px">
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; &gt; .ListView.Container" attribute="border-width"/>
+				<Description>Sets the width of the border around the drop-down list. For further information, please check its type</Description>
+			</StyleProperty>
+			<StyleProperty name="listTextColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; &gt; .ListView.Container &gt; .ListView.List &gt; .ItemView &gt; .TextView:not(.textSelected)" attribute="color"/>
+				<Description>Sets the color of the text of the drop-down list</Description>
+			</StyleProperty>
+			<StyleProperty name="activeTextColor" category="Appearance" type="Color" default="#ffffff">
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; &gt; .ListView.Container &gt; .ListView.List &gt; .ItemView &gt; .TextView.textSelected" attribute="color"/>
+				<Description>Sets the text color of the selected item</Description>
+			</StyleProperty>
+			<StyleProperty name="textAlign" category="Appearance" type="brease.enum.TextAlign" default="center">
+				<StyleElement selector="&amp; .TextView" attribute="@include text-alignment($value)"/>
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; .TextView" attribute="@include text-alignment($value)"/>
+				<Description>Alignment of the text</Description>
+			</StyleProperty>
+			<StyleProperty name="fontSize" category="Font" type="PixelVal" default="12px">
+				<StyleElement selector="&amp; .TextView" attribute="font-size"/>
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; .TextView" attribute="font-size"/>
+				<Description>Fontsize of the text in pixel</Description>
+			</StyleProperty>
+			<StyleProperty name="fontName" category="Font" type="FontName" default="Arial">
+				<StyleElement selector="&amp; .TextView" attribute="font-family"/>
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; .TextView" attribute="font-family"/>
+				<Description>Fontname of the text</Description>
+			</StyleProperty>
+			<StyleProperty name="bold" category="Font" type="Boolean" default="true">
+				<StyleElement selector="&amp; .TextView" attribute="@include font-weight-bold($value)"/>
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; .TextView" attribute="@include font-weight-bold($value)"/>
+				<Description>If **true** font style is bold</Description>
+			</StyleProperty>
+			<StyleProperty name="italic" category="Font" type="Boolean" default="false">
+				<StyleElement selector="&amp; .TextView" attribute="@include font-style-italic($value)"/>
+				<StyleElement idsuffix="_listBoxWrapper" selector="&amp; .TextView" attribute="@include font-style-italic($value)"/>
+				<Description>If **true** font style is italic</Description>
+			</StyleProperty>
+		</StyleProperties>
+		<PropertyGroups>
+			<PropertyGroup name="Size" type="String" category="Layout">
+				<Description>outer height and width of widget</Description>
+			</PropertyGroup>
+			<PropertyGroup name="Position" type="String" category="Layout">
+				<Description>top and left of widget</Description>
+			</PropertyGroup>
+		</PropertyGroups>
+	<BindingTemplates>
+  
+</BindingTemplates>
+</Widget>
+</WidgetLibrary>
