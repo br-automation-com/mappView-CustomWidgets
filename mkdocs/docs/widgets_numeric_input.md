@@ -18,7 +18,7 @@ Color as RGB value ex. rgba(192, 0, 0, 1) or hex value ex. #008000
 
 **OpenNumPad**
 
-Opens the numeric key pad. This action has to additional parameters.
+Opens the numeric key pad. This action has no additional parameters.
 
 ## Requirements
 
