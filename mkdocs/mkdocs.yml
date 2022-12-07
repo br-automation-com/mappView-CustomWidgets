@@ -6,7 +6,8 @@ extra_css: [extra.css]
 nav:
   - Start: index.md
   - Installation: installation.md
-  - Numeric Input Ext: widgets_numeric_input_ext.md
+  - DropDownBox: widgets_drop_down_box.md
+  - NumericInput: widgets_numeric_input.md
   - Revision: revision.md
 
 theme:
