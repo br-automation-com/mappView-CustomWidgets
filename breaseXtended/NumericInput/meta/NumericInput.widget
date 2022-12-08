@@ -39,10 +39,10 @@
 			<Method name="Focus" read="false">
 				<Description>Sets focus on the widget element, if it can be focused and keyboardOperation=true</Description>
 			</Method>
-			<Method name="OpenNumPad" read="false">
+			<Method name="OpenNumPadExt" read="false">
 				<Description>Opens the numeric keypad.</Description>
 			</Method>
-			<Method name="SetBackColor" read="false">
+			<Method name="SetBackColorExt" read="false">
 				<Description>Sets the back color of the widget.</Description>
 				<Arguments>
 					<Argument name="value" type="String" index="0" required="true">

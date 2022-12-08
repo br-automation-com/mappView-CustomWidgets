@@ -20,13 +20,13 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="widgets.breaseXtended.NumericInput.Action.OpenNumPad">
+	<xs:complexType name="widgets.breaseXtended.NumericInput.Action.OpenNumPadExt">
 		<xs:complexContent>
 			<xs:extension base="s1:widgets.breaseXtended.NumericInput.Action.widgetMethod">
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="widgets.breaseXtended.NumericInput.Action.SetBackColor">
+	<xs:complexType name="widgets.breaseXtended.NumericInput.Action.SetBackColorExt">
 		<xs:complexContent>
 			<xs:extension base="s1:widgets.breaseXtended.NumericInput.Action.widgetMethod">
 				<xs:attribute name="value" type="var:String" use="required"></xs:attribute>
