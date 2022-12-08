@@ -9,11 +9,16 @@ This widgets extends the standard drop down box. The following additional functi
 
 **listPositionExt**
 
-This property extends the existing property listPosition. 
+This property extends the existing property listPosition.
 
 * 0, List position is identical to default widget.
 * 1, The list box will open from the button bottom upwards (DropUpBox).
+
+![](./images/dropdownbox1.png)
+
 * 2, the list box will always try to center the list box to the screen.
+
+![](./images/dropdownbox2.png)
 
 ## Requirements
 

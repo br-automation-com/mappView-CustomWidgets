@@ -1,14 +1,14 @@
 ## Description
 This widgets extends the standard numeric input. The following additional functions are available
 
-* Additional action SetBackColor
-* Additional action OpenNumPad
+* Additional action SetBackColorExt
+* Additional action OpenNumPadExt
 
 ## Usage
 
 #### Actions
 
-**SetBackColor**
+**SetBackColorExt**
 
 Changes the back color of the numeric widget.
 
@@ -16,7 +16,7 @@ Changes the back color of the numeric widget.
 
 Color as RGB value ex. rgba(192, 0, 0, 1) or hex value ex. #008000
 
-**OpenNumPad**
+**OpenNumPadExt**
 
 Opens the numeric key pad. This action has no additional parameters.
 
