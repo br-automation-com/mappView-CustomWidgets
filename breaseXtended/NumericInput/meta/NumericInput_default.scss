@@ -43,7 +43,7 @@
 &.active:not(.disabled) input {
 	color: #000000;
 }
-&.active:not(.disabled) span.breaseNumericInputExt_unit {
+&.active:not(.disabled) span.breaseNumericInput_unit {
 	color: #000000;
 }
 	border-style: solid;
@@ -53,13 +53,13 @@
 &:not(.disabled):not(.active) input {
 	color: #000000;
 }
-&:not(.disabled):not(.active) span.breaseNumericInputExt_unit {
+&:not(.disabled):not(.active) span.breaseNumericInput_unit {
 	color: #000000;
 }
 &.disabled input {
 	color: #C8C8C8;
 }
-&.disabled span.breaseNumericInputExt_unit {
+&.disabled span.breaseNumericInput_unit {
 	color: #C8C8C8;
 }
 input {
@@ -72,7 +72,7 @@ input {
 input {
 	font-size: 20px;
 }
-.breaseNumericInputExt_unit {
+.breaseNumericInput_unit {
 	font-size: 14px;
 }
 	@include rotate(0deg);
