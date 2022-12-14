@@ -17,8 +17,8 @@ $pathAS=$args[2]
 if (Test-Path ($PSScriptRoot  + "\log.txt")) {
     Remove-Item ($PSScriptRoot  + "\log.txt")
 }
-Write-Output ("start:" + $(Get-Date)) ("path: " + $PSScriptRoot) "----------------------------------" >> ($PSScriptRoot + "\log.txt")
-Write-Output $args "----------------------------------" >> ($PSScriptRoot + "\log.txt")
+Write-Output ("Start script: " + $(Get-Date)) ("Script path: " + $PSScriptRoot) "----------------------------------" >> ($PSScriptRoot + "\log.txt")
+Write-Output "Parameters received" $args "----------------------------------" >> ($PSScriptRoot + "\log.txt")
 
 # --------------------------------------------------------------------
 # Get project file
@@ -29,7 +29,7 @@ Get-ChildItem -Path $pathProject -Filter *.apj -File -Name| ForEach-Object {
 
 # Make sure apj was found
 if ($apjPath -ne $pathProject) {
-        Write-Output ("apjPath: " + $apjPath) >> ($PSScriptRoot + "\log.txt")
+        Write-Output ("Project path: " + $apjPath) >> ($PSScriptRoot + "\log.txt")
 
         # --------------------------------------------------------------------
         # Read mapp version
@@ -37,14 +37,16 @@ if ($apjPath -ne $pathProject) {
 
         $pathMapp = $pathAS + "\"
         foreach($empDetail in $empDetails.Project.TechnologyPackages.mappView){
+            Write-Output ("mapp Version: " +$empDetail.Version) >> ($PSScriptRoot + "\log.txt")
             $pathMapp += "AS\TechnologyPackages\mappView\" + $empDetail.Version + "\Widgets\" + $nameLibrary + "\"
-            Write-Output ("pathMapp: " + $pathMapp) >> ($PSScriptRoot + "\log.txt")
+            Write-Output ("AS mapp path: " + $pathMapp) >> ($PSScriptRoot + "\log.txt")
         }
 
         # --------------------------------------------------------------------
         # Copy library to AS folder
         if (Test-Path ($pathMapp)) {
-        Remove-Item ($pathMapp) -Recurse -Force
+            Write-Output ("Removed old library") >> ($PSScriptRoot + "\log.txt")
+            Remove-Item ($pathMapp) -Recurse -Force
         }
         Copy-Item -Path  $PSScriptRoot -Destination $pathMapp -Recurse -force
     }
