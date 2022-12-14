@@ -1,7 +1,7 @@
 define([
     'widgets/brease/common/libs/redux/view/ListView/ListView',
     'widgets/brease/common/libs/redux/view/ItemView/ItemView',
-    'widgets/breaseXtended/DropDownBox/libs/reducer/DropDownBoxActions',
+    'widgets/brease/DropDownBox/libs/reducer/DropDownBoxActions',
     'brease/enum/Enum',
     'brease/core/Utils',
     'brease/events/BreaseEvent',

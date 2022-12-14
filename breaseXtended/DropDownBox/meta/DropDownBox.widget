@@ -8,15 +8,15 @@
 		<Dependencies>
 			<Files>
 				<File>brease/core/BaseWidget.js</File>
-				<File>widgets/breaseXtended/DropDownBox/libs/FocusHandler.js</File>
+				<File>widgets/brease/DropDownBox/libs/FocusHandler.js</File>
 				<File>widgets/breaseXtended/DropDownBox/libs/config/Config.js</File>
 				<File>widgets/breaseXtended/DropDownBox/libs/config/InitState.js</File>
-				<File>widgets/breaseXtended/DropDownBox/libs/SubmitQueue.js</File>
+				<File>widgets/brease/DropDownBox/libs/SubmitQueue.js</File>
 				<File>brease/decorators/LanguageDependency.js</File>
 				<File>brease/decorators/VisibilityDependency.js</File>
 				<File>widgets/breaseXtended/DropDownBox/libs/view/DropDownBoxView/DropDownBoxView.js</File>
-				<File>widgets/breaseXtended/DropDownBox/libs/reducer/DropDownBoxActions.js</File>
-				<File>widgets/breaseXtended/DropDownBox/libs/reducer/DropDownBoxReducer.js</File>
+				<File>widgets/brease/DropDownBox/libs/reducer/DropDownBoxActions.js</File>
+				<File>widgets/brease/DropDownBox/libs/reducer/DropDownBoxReducer.js</File>
 				<File>widgets/brease/common/libs/external/redux.js</File>
 				<File>widgets/brease/common/libs/redux/utils/UtilsList.js</File>
 				<File>widgets/brease/common/libs/redux/utils/UtilsImage.js</File>
@@ -25,9 +25,11 @@
 				<File>widgets/brease/common/libs/wfUtils/UtilsEditableBinding.js</File>
 				<File>brease/decorators/DragAndDropCapability.js</File>
 				<File>widgets/brease/common/DragDropProperties/libs/DroppablePropertiesEvents.js</File>
+				<File>widgets/brease/DropDownBox/DropDownBox.js</File>
 			</Files>
 			<Widgets>
 				<Widget>widgets/breaseXtended/DropDownBox/DropDownBox.js</Widget>
+				<Widget>widgets/brease/DropDownBox/DropDownBox.js</Widget>
 			</Widgets>
 		</Dependencies>
 		<Categories>

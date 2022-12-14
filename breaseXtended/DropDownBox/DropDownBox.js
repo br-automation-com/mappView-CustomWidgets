@@ -1,14 +1,14 @@
 define([
     'brease/core/BaseWidget',
-    'widgets/breaseXtended/DropDownBox/libs/FocusHandler',
+    'widgets/brease/DropDownBox/libs/FocusHandler',
     'widgets/breaseXtended/DropDownBox/libs/config/Config',
     'widgets/breaseXtended/DropDownBox/libs/config/InitState',
-    'widgets/breaseXtended/DropDownBox/libs/SubmitQueue',
+    'widgets/brease/DropDownBox/libs/SubmitQueue',
     'brease/decorators/LanguageDependency',
     'brease/decorators/VisibilityDependency',
     'widgets/breaseXtended/DropDownBox/libs/view/DropDownBoxView/DropDownBoxView',
-    'widgets/breaseXtended/DropDownBox/libs/reducer/DropDownBoxActions',
-    'widgets/breaseXtended/DropDownBox/libs/reducer/DropDownBoxReducer',
+    'widgets/brease/DropDownBox/libs/reducer/DropDownBoxActions',
+    'widgets/brease/DropDownBox/libs/reducer/DropDownBoxReducer',
     'widgets/brease/common/libs/external/redux',
     'widgets/brease/common/libs/redux/utils/UtilsList',
     'widgets/brease/common/libs/redux/utils/UtilsImage',
@@ -29,7 +29,7 @@ define([
      * #Description
      * DropDownBox
      * @extends brease.core.BaseWidget
-     *
+     * @requires widgets.brease.DropDownBox
      * @iatMeta studio:visible
      * true
      * @iatMeta category:Category
