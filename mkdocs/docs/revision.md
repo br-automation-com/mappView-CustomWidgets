@@ -1,3 +1,6 @@
+#### 19.12.2022
+- DropDownBox: Switched from copy original DropDownBox widget to inherited version
+
 #### 14.12.2022
 - Added DropDownBox
 - Added revision files
