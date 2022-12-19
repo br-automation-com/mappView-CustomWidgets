@@ -7,10 +7,10 @@
 		</ASEngineeringInfo>
 		<Dependencies>
 			<Files>
-				<File>brease/core/BaseWidget.js</File>
+				<File>widgets/brease/DropDownBox/DropDownBox.js</File>
 				<File>widgets/brease/DropDownBox/libs/FocusHandler.js</File>
 				<File>widgets/breaseXtended/DropDownBox/libs/config/Config.js</File>
-				<File>widgets/breaseXtended/DropDownBox/libs/config/InitState.js</File>
+				<File>widgets/brease/DropDownBox/libs/config/InitState.js</File>
 				<File>widgets/brease/DropDownBox/libs/SubmitQueue.js</File>
 				<File>brease/decorators/LanguageDependency.js</File>
 				<File>brease/decorators/VisibilityDependency.js</File>
@@ -25,7 +25,6 @@
 				<File>widgets/brease/common/libs/wfUtils/UtilsEditableBinding.js</File>
 				<File>brease/decorators/DragAndDropCapability.js</File>
 				<File>widgets/brease/common/DragDropProperties/libs/DroppablePropertiesEvents.js</File>
-				<File>widgets/brease/DropDownBox/DropDownBox.js</File>
 			</Files>
 			<Widgets>
 				<Widget>widgets/breaseXtended/DropDownBox/DropDownBox.js</Widget>
@@ -42,7 +41,8 @@
 		</Descriptions>
 		<Inheritance>
 			<Class level="0">widgets.breaseXtended.DropDownBox</Class>
-			<Class level="1">brease.core.BaseWidget</Class>
+			<Class level="1">widgets.brease.DropDownBox</Class>
+			<Class level="2">brease.core.BaseWidget</Class>
 		</Inheritance>
 		<Parents>
 			<Parent>*</Parent>
@@ -297,11 +297,11 @@ or if autofocus should be disabled (-1)				</Description>
 			</Property>
 		</Properties>
 		<StyleProperties>
-			<StyleProperty name="width" type="Size" not_styleable="true" owner="widgets.breaseXtended.DropDownBox" category="Layout" groupRefId="Size" groupOrder="1" default="100">
+			<StyleProperty name="width" type="Size" not_styleable="true" owner="widgets.brease.DropDownBox" category="Layout" groupRefId="Size" groupOrder="1" default="100">
 				<StyleElement selector="&amp;.DropDownBoxView" attribute="@include elemWidth($value)"/>
 				<Description>outer width of widget</Description>
 			</StyleProperty>
-			<StyleProperty name="height" type="Size" not_styleable="true" owner="widgets.breaseXtended.DropDownBox" category="Layout" groupRefId="Size" groupOrder="2" default="30">
+			<StyleProperty name="height" type="Size" not_styleable="true" owner="widgets.brease.DropDownBox" category="Layout" groupRefId="Size" groupOrder="2" default="30">
 				<StyleElement selector="&amp;.DropDownBoxView" attribute="@include elemHeight($value)"/>
 				<Description>outer height of widget</Description>
 			</StyleProperty>
