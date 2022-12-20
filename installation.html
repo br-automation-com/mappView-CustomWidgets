@@ -300,21 +300,13 @@
   <h1>Installation</h1>
 
 <p>Please check each widget for requirements and minimum versions for Automation Studio and mappView.</p>
-<p>To use the custom widget library follow these steps.</p>
+<p>To use the widget collection </p>
 <ol>
-<li>Download the folder 'breaseXtended' and copy it in your Automation Studio project into the folder '\Logical\mappView\'.</li>
-<li>
-<p>Open the project properties and add the following line in the tab "Build Events"</p>
-<p><code>powershell.exe $(AS_PROJECT_PATH)\Logical\mappView\breaseXtended\install.ps1 $(AS_PROJECT_PATH) breaseXtended $(WIN32_AS_PATH)</code></p>
-<p><img alt="" src="images/installation0.png" /></p>
-<p>The script will copy the library folder from the project to the correct mappView path in the Automation Studio installation every time you build the project.</p>
-</li>
-<li>
-<p>Compile the project to put the widget library into the correct path.</p>
-</li>
-<li>Close Automation Studio and then open it again to update mappView libraries</li>
+<li>Close Automation Studio</li>
+<li>Download the folder 'brXtended' and copy it in your Automation Studio project into the folder '\Logical\mappView\Widgets'.</li>
+<li>Start Automation Studio</li>
 </ol>
-<p>The new widget group 'breaseXtended' is now available in the toolbox.</p>
+<p>The new widget group 'brXtended' is now available in the toolbox.</p>
 <p><img alt="" src="images/installation1.png" /></p>
 <p>The widgets can also be found by selecting the category or using the search field. If the widget is an extension of an existing widget it may have the same name. Make sure to pick the correct one.</p>
 <p><img alt="" src="images/installation2.png" /></p>
