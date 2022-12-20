@@ -1,3 +1,6 @@
+#### 20.12.2022
+- Renamed library to brXtended
+
 #### 19.12.2022
 - DropDownBox: Switched from copy original DropDownBox widget to inherited version
 
