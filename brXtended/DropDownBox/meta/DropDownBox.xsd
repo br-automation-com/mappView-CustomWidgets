@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:iat="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" elementFormDefault="qualified">
+<xs:complexType name="widgets.brXtended.DropDownBoxRestrict" abstract="true">
+	<xs:complexContent>
+		<xs:restriction base="iat:brease.core.BaseContentWidget">
+			<xs:attribute name="tabIndex" use="optional" type="types:Integer" default="0" />
+			<xs:attribute name="height" use="optional" type="types:Size" default="30" />
+			<xs:attribute name="width" use="optional" type="types:Size" default="100" />
+		</xs:restriction>
+	</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="widgets.brXtended.DropDownBox">
+	<xs:complexContent>
+		<xs:extension base="iat:widgets.brXtended.DropDownBoxRestrict">
+			<xs:attribute name="cropToParent" use="optional" type="types:brease.enum.CropToParent" default="none" />
+			<xs:attribute name="dataProvider" use="optional" type="types:ItemCollection" default="[]" />
+			<xs:attribute name="displaySettings" use="optional" type="types:brease.enum.DropDownDisplaySettings" default="default" />
+			<xs:attribute name="ellipsis" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="fitHeight2Items" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="imageAlign" use="optional" type="types:brease.enum.ImagePosition" default="left" />
+			<xs:attribute name="imagePath" use="optional" type="types:DirectoryPath" default="" />
+			<xs:attribute name="itemHeight" use="optional" type="types:Integer" default="40" />
+			<xs:attribute name="listPosition" use="optional" type="types:brease.enum.Position" default="right" />
+			<xs:attribute name="listPositionExt" use="optional" type="types:Integer" default="0" />
+			<xs:attribute name="listWidth" use="optional" type="types:Integer" default="150" />
+			<xs:attribute name="maxVisibleEntries" use="optional" type="types:UInteger" default="4" />
+			<xs:attribute name="multiLine" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="selectedIndex" use="optional" type="types:Integer" default="0" />
+			<xs:attribute name="selectedValue" use="optional" type="types:String" default="" />
+			<xs:attribute name="wordWrap" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="maxHeight" use="optional" type="types:Size" default="0" />
+			<xs:attribute name="minHeight" use="optional" type="types:Size" default="0" />
+			<xs:attribute name="maxWidth" use="optional" type="types:Size" default="0" />
+			<xs:attribute name="minWidth" use="optional" type="types:Size" default="0" />
+			<xs:attribute name="cornerRadius" use="optional" type="types:PixelValCollection" default="0px" />
+			<xs:attribute name="opacity" use="optional" type="types:Opacity" default="1" />
+			<xs:attribute name="margin" use="optional" type="types:Margin" default="0px" />
+			<xs:attribute name="shadow" use="optional" type="types:Shadow" default="none" />
+			<xs:attribute name="backColor" use="optional" type="types:Color" default="#DBDBDB" />
+			<xs:attribute name="mouseDownBackColor" use="optional" type="types:Color" default="#DBDBDB" />
+			<xs:attribute name="disabledBackColor" use="optional" type="types:Color" default="#F1F1F1" />
+			<xs:attribute name="backGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="mouseDownBackGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="disabledBackGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="borderStyle" use="optional" type="types:BorderStyle" default="solid" />
+			<xs:attribute name="borderWidth" use="optional" type="types:PixelValCollection" default="2px" />
+			<xs:attribute name="mouseDownBorderWidth" use="optional" type="types:PixelValCollection" default="2px" />
+			<xs:attribute name="borderColor" use="optional" type="types:ColorCollection" default="#5B7C70" />
+			<xs:attribute name="mouseDownBorderColor" use="optional" type="types:ColorCollection" default="#FD7B01" />
+			<xs:attribute name="disabledBorderColor" use="optional" type="types:ColorCollection" default="#FFFFFF #C8C8C8 #C8C8C8 #FFFFFF" />
+			<xs:attribute name="textColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="mouseDownTextColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="disabledTextColor" use="optional" type="types:Color" default="#989898" />
+			<xs:attribute name="padding" use="optional" type="types:Padding" default="0 10px" />
+			<xs:attribute name="showOpenIndicator" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="openIndicatorColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="mouseDownOpenIndicatorColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="disabledOpenIndicatorColor" use="optional" type="types:Color" default="#989898" />
+			<xs:attribute name="listPadding" use="optional" type="types:Padding" default="0 15px" />
+			<xs:attribute name="listBackColor" use="optional" type="types:Color" default="#FFFFFF" />
+			<xs:attribute name="listBackGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="activeBackColor" use="optional" type="types:Color" default="#ff8800" />
+			<xs:attribute name="activeBackGroundGradient" use="optional" type="types:Gradient" default="" />
+			<xs:attribute name="listSeparatorColor" use="optional" type="types:Color" default="#000" />
+			<xs:attribute name="listBorderWidth" use="optional" type="types:PixelValCollection" default="2px" />
+			<xs:attribute name="listTextColor" use="optional" type="types:Color" default="#000000" />
+			<xs:attribute name="activeTextColor" use="optional" type="types:Color" default="#ffffff" />
+			<xs:attribute name="textAlign" use="optional" type="types:brease.enum.TextAlign" default="center" />
+			<xs:attribute name="fontSize" use="optional" type="types:PixelVal" default="12px" />
+			<xs:attribute name="fontName" use="optional" type="types:FontName" default="Arial" />
+			<xs:attribute name="bold" use="optional" type="types:Boolean" default="true" />
+			<xs:attribute name="italic" use="optional" type="types:Boolean" default="false" />
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+</xs:schema>
