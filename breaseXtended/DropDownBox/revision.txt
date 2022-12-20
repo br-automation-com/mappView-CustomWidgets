@@ -1,5 +1,0 @@
-Version 2
-- Switched from copy original DropDownBox widget to inherited version
-
-Version 1
-- First release
