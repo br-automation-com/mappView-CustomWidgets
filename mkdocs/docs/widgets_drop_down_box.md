@@ -22,10 +22,9 @@ This property extends the existing property listPosition.
 
 ## Requirements
 
-Tested with
-
 * Automation Studio 4.11
-* mappView 5.19
+* Minimum version required 5.16
+* Expected to work with later version
 
 May also work with lower version: **YES**
 

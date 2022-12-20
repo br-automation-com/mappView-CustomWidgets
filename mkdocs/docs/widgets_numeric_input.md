@@ -25,7 +25,8 @@ Opens the numeric key pad. This action has no additional parameters.
 Tested with
 
 * Automation Studio 4.11
-* mappView 5.19
+* Minimum tested version 5.15
+* Expected to work with later version
 
 May also work with lower version: **YES**
 
