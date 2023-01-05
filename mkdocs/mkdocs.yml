@@ -8,6 +8,7 @@ nav:
   - Installation: installation.md
   - DropDownBox: widgets_drop_down_box.md
   - NumericInput: widgets_numeric_input.md
+  - Screenshot: widgets_screenshot.md
   - Revision: revision.md
 
 theme:

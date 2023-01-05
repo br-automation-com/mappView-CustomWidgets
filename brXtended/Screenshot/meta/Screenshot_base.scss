@@ -1,0 +1,162 @@
+@import "mixins.scss";
+@mixin widgets_brXtended_Screenshot_base {
+	@include elemAutoWidth(100);
+	@include elemAutoHeight(30);
+	@include elemMinWidth(0);
+	@include elemMaxWidth(0);
+	@include elemMinHeight(0);
+	@include elemMaxHeight(0);
+img {
+	@include imageWidth(0);
+}
+svg {
+	@include imageWidth(0);
+}
+img {
+	@include imageHeight(0);
+}
+svg {
+	@include imageHeight(0);
+}
+&:not(.active):not(.disabled):not(.checked) svg {
+	fill: #000000;
+}
+&.active svg {
+	fill: #000000;
+}
+&.disabled svg {
+	fill: #000000;
+}
+	border-style: solid;
+&.active {
+	border-style: solid;
+}
+&.checked {
+	border-style: solid;
+}
+&.disabled {
+	border-style: solid;
+}
+&:not(.active):not(.checked) {
+	border-width: 2px;
+}
+&.disabled {
+	border-width: 2px;
+}
+	@include border-radius(0px);
+&:not(.disabled):not(.active):not(.checked) {
+	background-color: #DBDBDB;
+}
+&.disabled {
+	background-color: #F1F1F1;
+}
+&.disabled.active {
+	background-color: #F1F1F1;
+}
+&.disabled.checked {
+	background-color: #F1F1F1;
+}
+&:not(.disabled):not(.active):not(.checked) {
+	@include backGroundGradient('');
+}
+&.disabled {
+	@include backGroundGradient('');
+}
+&.disabled.active {
+	@include backGroundGradient('');
+}
+&.disabled.checked {
+	@include backGroundGradient('');
+}
+&.active:not(.disabled) {
+	@include backGroundGradient('');
+}
+&.checked:not(.disabled) {
+	@include backGroundGradient('');
+}
+&:not(.disabled) {
+	@include pureBackgroundImage('../');
+}
+&:not(.disabled):not(.active):not(.checked) {
+	border-color: #5B7C70;
+}
+&.disabled {
+	border-color: #FFFFFF #C8C8C8 #C8C8C8 #FFFFFF;
+}
+&.disabled.active {
+	border-color: #FFFFFF #C8C8C8 #C8C8C8 #FFFFFF;
+}
+&.disabled.checked {
+	border-color: #FFFFFF #C8C8C8 #C8C8C8 #FFFFFF;
+}
+&:not(.disabled):not(.active):not(.checked) span {
+	color: #000000;
+}
+&.disabled span {
+	color: #989898;
+}
+&.disabled.active span {
+	color: #989898;
+}
+&.disabled:checked span {
+	color: #989898;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-color: #FD7B01;
+}
+&.checked:not(.disabled) {
+	border-color: #FD7B01;
+}
+&.active:not(.disabled):not(.editMode) {
+	border-width: 2px;
+}
+&.checked:not(.disabled) {
+	border-width: 2px;
+}
+&.active:not(.disabled):not(.editMode) {
+	background-color: #DBDBDB;
+}
+&.checked:not(.disabled) {
+	background-color: #DBDBDB;
+}
+&.active:not(.disabled):not(.editMode) span {
+	color: #000000;
+}
+&.active.checked:not(.disabled) span {
+	color: #000000;
+}
+	@include text-alignment(center);
+	opacity: 1;
+	@include rotate(0deg);
+span {
+	font-size: 12px;
+}
+span {
+	font-family: Arial;
+}
+span {
+	@include font-weight-bold(false);
+}
+span {
+	@include font-style-italic(false);
+}
+	padding: 0px 10px;
+	margin: 0px;
+&:not(.active):not(.checked) {
+	@include box-shadow(none);
+}
+&.disabled.active {
+	@include box-shadow(none);
+}
+&.disabled.checked {
+	@include box-shadow(none);
+}
+&.active:not(.disabled):not(.editMode) {
+	@include box-shadow(none);
+}
+&.checked:not(.disabled) {
+	@include box-shadow(none);
+}
+
+}
+

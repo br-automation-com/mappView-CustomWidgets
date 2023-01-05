@@ -2,4 +2,5 @@
 <SchemaCatalog xmlns="http://schemas.microsoft.com/xsd/catalog">
 	<Schema href="DropDownBox/meta/DropDownBox.xsd" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" />
 	<Schema href="NumericInput/meta/NumericInput.xsd" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" />
+	<Schema href="Screenshot/meta/Screenshot.xsd" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" />
 </SchemaCatalog>

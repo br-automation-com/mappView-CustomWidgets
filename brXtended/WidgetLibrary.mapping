@@ -14,4 +14,15 @@
   <Mapping parameter="widgets.brXtended.NumericInput.Action.SetStyle.value" type="ANY_STRING"/>
   <Mapping parameter="widgets.brXtended.NumericInput.Action.SetValue.value" type="ANY_REAL"/>
   <Mapping parameter="widgets.brXtended.NumericInput.Action.SetVisible.value" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.Screenshot.Action.Screenshot2Plc.DeviceName" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.Screenshot.Action.Screenshot2Plc.FileName" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.Screenshot.Action.SetEnable.value" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.Screenshot.Action.SetImage.image" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.Screenshot.Action.SetMouseDownImage.mouseDownImage" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.Screenshot.Action.SetMouseDownText.text" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.Screenshot.Action.SetMouseDownText.keepKey" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.Screenshot.Action.SetStyle.value" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.Screenshot.Action.SetText.text" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.Screenshot.Action.SetText.keepKey" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.Screenshot.Action.SetVisible.value" type="BOOL"/>
 </Mappings>
