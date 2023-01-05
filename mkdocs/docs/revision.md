@@ -1,3 +1,6 @@
+#### 05.01.2022
+- Added screenshot widget
+
 #### 20.12.2022
 - Renamed library to brXtended
 
