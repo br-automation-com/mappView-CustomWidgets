@@ -383,27 +383,52 @@
   <h1>Screenshot</h1>
 
 <h2 id="description">Description</h2>
-<p>This widgets creates a screenshot of the client visualization and stores it on the PLC or the client device. The widget is dervived from the button widget and therefore shares all its settings, actions and events. When the screenshot is called it will open a window that will ask the user what to share. </p>
+<p>This widgets creates a screenshot of the client visualization and stores it on the PLC or the client device. The widget is dervived from the button widget and therefore shares all its settings, actions and events. </p>
+<p>Due to browser security restrictions the screen access is blocked for standard HTTP connections which is the default for mappView. mappView must be changed to HTTPS access or the HTTP URL must be added to the browser as an exception. Use the following flag in the browser URL to access the flag</p>
+<p><code>chrome://flags/#unsafely-treat-insecure-origin-as-secure</code></p>
+<p><img alt="" src="images/screenshot2.png" /></p>
+<p>Add the mappView URL and enable the flag.</p>
+<p>When the screenshot is called it will open a window that will ask the user what to share. </p>
 <p><img alt="" src="images/screenshot1.png" /></p>
 <p>Select the tab or region for the screenshot and hit the Share button.</p>
 <h2 id="usage">Usage</h2>
-<p>This widget requires mapp File (see AS help GUID f5ac430b-e0ca-4320-bcd0-b7e28a087f77). Make sure that there is a valid mpfilemanager configuration. Only the configuration is required, no additional task or function block must be added to the project. The libraries <strong>MpFile</strong> and <strong>MpServer</strong> are also required.</p>
+<p>This widget requires mapp File (see Automation Studio help GUID f5ac430b-e0ca-4320-bcd0-b7e28a087f77). Make sure that there is a valid mpfilemanager configuration. Only the configuration is required, no additional task or function block must be added to the project. The libraries <strong>MpFile</strong> and <strong>MpServer</strong> are also required.</p>
 <h4 id="additional-actions">Additional Actions</h4>
 <p>The widget derives all actions from the button widget.</p>
-<p><strong>Screenshot2Client</strong></p>
-<p>This action creates a screenshot and saves it to the client device.</p>
-<p><strong>Screenshot2Plc</strong></p>
-<p>This action creates a screenshot and saves it to the PLC. This action needs two parameters</p>
+<p><strong>Screenshot2Client</strong>
+This action creates a screenshot and saves it to the client device.</p>
+<p><strong>Screenshot2Plc</strong>
+This action creates a screenshot and saves it to the PLC. This action needs two parameters</p>
 <ul>
 <li>DeviceName - Name of the file device as specified in the mpfilemanager configuration and system configuration.</li>
 <li>FileName - Name of the screenshot file.</li>
 </ul>
 <h4 id="additional-events">Additional Events</h4>
 <p>The widget derives all events from the button widget.</p>
-<p><strong>FileSaved</strong></p>
-<p>This event is called when the Screenshot2Plc has saved the screenshot successful. Returns the full path of the file.</p>
-<p><strong>OnError</strong></p>
-<p>This event is called when a screenshot was not successful. Returns the error number.</p>
+<p><strong>FileSaved</strong>
+This event is called when the Screenshot2Plc has saved the screenshot successful. Returns the full path of the file.</p>
+<p><strong>FileDownloaded</strong>
+This event is called when the file was downloaded with Screenshot2Client successful. </p>
+<p><strong>OnError</strong>
+This event is called when a screenshot was not successful. Returns the error number. Most error numbers are generated from underlying components and can be found in the Automation Studio help. The widget can also generate the following custom error numbers.</p>
+<table>
+<thead>
+<tr>
+<th>Error No</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10000</td>
+<td>Unknown error. Can occur when the user aborts the screenshot</td>
+</tr>
+<tr>
+<td>10001</td>
+<td>HTTP permission. This error occurs when the widget can not access the screen. Use HTTPS access or use flag as described above.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="requirements">Requirements</h2>
 <p>Tested with</p>
 <ul>
