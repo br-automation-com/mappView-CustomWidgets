@@ -27,6 +27,10 @@ define([
      * This widget creates a screenshot
      */
 
+    // Widget error numbers
+    const err_unkown = 10000;
+    const err_http_access = 10001;
+
     var defaultSettings = {
             FileDevice: '',
             FileName: ''
@@ -68,40 +72,68 @@ define([
        p.Screenshot2Client = function Screenshot2Client() {
         var widget = this;
 
-        navigator.mediaDevices.getDisplayMedia({ preferCurrentTab: true }).then(
-            function(stream){
-                const canvas = document.createElement("canvas");
-                const video = document.createElement("video");
-                
-                video.srcObject = stream;                                
-                video.play().then(
-                    function(result){
-                        // Get image from video
-                        canvas.width = video.videoWidth;
-                        canvas.height = video.videoHeight;
-                        canvas.getContext("2d").drawImage(video, 0, 0);
+        // Make sure we have access to the media device
+        if (navigator.mediaDevices === undefined){
+            widget._errorHandling(err_http_access); 
+        }
+        else
+        {
+            navigator.mediaDevices.getDisplayMedia({ preferCurrentTab: true }).then(
+                function(stream){
+                    const canvas = document.createElement("canvas");
+                    const video = document.createElement("video");
+                    
+                    video.srcObject = stream;                                
+                    video.play().then(
+                        function(result){
+                            // Get image from video
+                            canvas.width = video.videoWidth;
+                            canvas.height = video.videoHeight;
+                            canvas.getContext("2d").drawImage(video, 0, 0);
 
-                        // Create screenshot download
-                        canvas.toBlob(
-                            function(blob) {
-                            // Create the blob URL and attach it to object
-                            const blobURL = URL.createObjectURL(blob);
-                            widget.a.href = blobURL;
-                            widget.a.download = 'screenshot.png';
+                            // Create screenshot download
+                            canvas.toBlob(
+                                function(blob) {
+                                // Create the blob URL and attach it to object
+                                const blobURL = URL.createObjectURL(blob);
+                                widget.a.href = blobURL;
+                                widget.a.download = 'screenshot.png';
 
-                            // Stop video recording
-                            var tracks = video.srcObject.getTracks();
-                            tracks.forEach(function(track) { track.stop()});
+                                // Stop video recording
+                                var tracks = video.srcObject.getTracks();
+                                tracks.forEach(function(track) { track.stop()});
 
-                            // Programmatically click the element.
-                            widget.a.click();
-                            });
-                    }).catch(function (telegram) {
-                        widget._errorHandling(telegram);                            
-                    });
-            }).catch(function (telegram) {
-                widget._errorHandling(telegram);                     
-            });
+                                // Programmatically click the element.
+                                widget.a.click();
+
+                                /**
+                                * @event FileDownloaded
+                                * Fired when a file was downloaded.
+                                * @iatStudioExposed
+                                */
+                                var ev = widget.createEvent('FileDownloaded', { });
+                                if (ev !== undefined) {
+                                    ev.dispatch();
+                                }
+                                });
+                        }).catch(function (telegram) {
+                            if(telegram.error === undefined || telegram.error.code === undefined){
+                                widget._errorHandling(err_unkown);
+                            }
+                            else{
+                                widget._errorHandling(telegram.error.code);
+                            }                 
+        
+                        });
+                }).catch(function (telegram) {
+                    if(telegram.error === undefined || telegram.error.code === undefined){
+                        widget._errorHandling(err_unkown);
+                    }
+                    else{
+                        widget._errorHandling(telegram.error.code);
+                    }                 
+                });
+        }
     };
 
     /**
@@ -116,32 +148,50 @@ define([
 
         //console.log("DeviceName:" + DeviceName);
         //console.log("FileName:" + FileName);
-        navigator.mediaDevices.getDisplayMedia({ preferCurrentTab: true }).then(
-            function(stream){
-                const canvas = document.createElement("canvas");
-                const video = document.createElement("video");
-                
-                video.srcObject = stream;                                
-                video.play().then(
-                    function(result){
-                        // Get image from video
-                        canvas.width = video.videoWidth;
-                        canvas.height = video.videoHeight;
-                        canvas.getContext("2d").drawImage(video, 0, 0);
 
-                        // Stop video recording
-                        var tracks = video.srcObject.getTracks();
-                        tracks.forEach(function(track) { track.stop()});
-                        
-                        // Convert image to PNG format
-                        const image_base64 = canvas.toDataURL('image/png').replace(/^data:image\/png;base64,/, "");
-                        widget._saveFile(DeviceName + FileName, 'OVERWRITE', "BINARY", image_base64);       
-                    }).catch(function (telegram) {
-                        widget._errorHandling(telegram);
-                    });
-            }).catch(function (telegram) {
-                widget._errorHandling(telegram);                    
-            });
+        // Make sure we have access to the media device
+        if (navigator.mediaDevices === undefined){
+            widget._errorHandling(err_http_access); 
+        }
+        else
+        {
+            navigator.mediaDevices.getDisplayMedia({ preferCurrentTab: true }).then(
+                function(stream){
+                    const canvas = document.createElement("canvas");
+                    const video = document.createElement("video");
+                    
+                    video.srcObject = stream;                                
+                    video.play().then(
+                        function(result){
+                            // Get image from video
+                            canvas.width = video.videoWidth;
+                            canvas.height = video.videoHeight;
+                            canvas.getContext("2d").drawImage(video, 0, 0);
+
+                            // Stop video recording
+                            var tracks = video.srcObject.getTracks();
+                            tracks.forEach(function(track) { track.stop()});
+                            
+                            // Convert image to PNG format
+                            const image_base64 = canvas.toDataURL('image/png').replace(/^data:image\/png;base64,/, "");
+                            widget._saveFile(DeviceName + FileName, 'OVERWRITE', "BINARY", image_base64);       
+                        }).catch(function (telegram) {
+                            if(telegram.error === undefined || telegram.error.code === undefined){
+                                widget._errorHandling(err_unkown);
+                            }
+                            else{
+                                widget._errorHandling(telegram.error.code);
+                            }                        
+                        });
+                }).catch(function (telegram) {
+                    if(telegram.error === undefined || telegram.error.code === undefined){
+                        widget._errorHandling(err_unkown);
+                    }
+                    else{
+                        widget._errorHandling(telegram.error.code);
+                    }                               
+                });
+        }
     };
 
     // /**
@@ -182,12 +232,12 @@ define([
                 ev.dispatch();
             }
         }).catch(function (telegram) {
-            widget._errorHandling(telegram);
+            widget._errorHandling(telegram.error.code);
         });
     };
 
-    p._errorHandling = function _errorHandling(telegram) {
-        console.log("Screenshot Error:" + telegram);
+    p._errorHandling = function _errorHandling(code) {
+        console.log("Screenshot Error:" + code);
 
         var widget = this;
         /**
@@ -196,12 +246,7 @@ define([
         * @iatStudioExposed
         * @param {Integer} result Number of error transmitted by the mapp component.
         */
-        if (telegram.error !== undefined && telegram.error.code !== undefined){
-            var ev = widget.createEvent('OnError', { result: telegram.error.code });
-        }
-        else{
-            var ev = widget.createEvent('OnError', { result: -1 });
-        }
+        var ev = widget.createEvent('OnError', { result: code });
         if (ev !== undefined) {
             ev.dispatch();
         }

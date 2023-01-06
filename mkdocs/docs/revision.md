@@ -1,3 +1,6 @@
+#### 06.01.2022
+- Optimized screenshot widget
+
 #### 05.01.2022
 - Added screenshot widget
 

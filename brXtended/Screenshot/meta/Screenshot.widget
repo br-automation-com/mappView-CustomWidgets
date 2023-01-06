@@ -163,6 +163,9 @@
 					</Argument>
 				</Arguments>
 			</Event>
+			<Event name="FileDownloaded">
+				<Description>Fired when a file was downloaded.</Description>
+			</Event>
 			<Event name="FileSaved">
 				<Description>Fired when a file is saved.</Description>
 				<Arguments>

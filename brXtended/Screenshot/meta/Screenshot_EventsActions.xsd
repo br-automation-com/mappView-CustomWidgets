@@ -122,6 +122,7 @@
 			<xs:enumeration value="DisabledClick"></xs:enumeration>
 			<xs:enumeration value="DoubleClick"></xs:enumeration>
 			<xs:enumeration value="EnableChanged"></xs:enumeration>
+			<xs:enumeration value="FileDownloaded"></xs:enumeration>
 			<xs:enumeration value="FileSaved"></xs:enumeration>
 			<xs:enumeration value="FocusIn"></xs:enumeration>
 			<xs:enumeration value="FocusOut"></xs:enumeration>
