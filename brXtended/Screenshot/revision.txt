@@ -1,0 +1,8 @@
+Version 3
+- Widget is now compatible to B&R T-Panels
+
+Version 2
+- Optimizations and better error messages
+
+Version 1
+- First release

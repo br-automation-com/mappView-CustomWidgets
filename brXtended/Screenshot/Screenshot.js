@@ -72,13 +72,20 @@ define([
        p.Screenshot2Client = function Screenshot2Client() {
         var widget = this;
 
+        var displayMediaOptions = {
+            video: {
+                cursor: "always"
+            },
+            audio: false
+        };
+
         // Make sure we have access to the media device
         if (navigator.mediaDevices === undefined){
             widget._errorHandling(err_http_access); 
         }
         else
         {
-            navigator.mediaDevices.getDisplayMedia({ preferCurrentTab: true }).then(
+            navigator.mediaDevices.getDisplayMedia(displayMediaOptions).then(
                 function(stream){
                     const canvas = document.createElement("canvas");
                     const video = document.createElement("video");
@@ -124,7 +131,7 @@ define([
                                 widget._errorHandling(telegram.error.code);
                             }                 
         
-                        });
+                       });
                 }).catch(function (telegram) {
                     if(telegram.error === undefined || telegram.error.code === undefined){
                         widget._errorHandling(err_unkown);
@@ -146,6 +153,13 @@ define([
        p.Screenshot2Plc = function Screenshot2Plc(DeviceName, FileName) {
         var widget = this;
 
+        var displayMediaOptions = {
+            video: {
+                cursor: "always"
+            },
+            audio: false
+        };
+
         //console.log("DeviceName:" + DeviceName);
         //console.log("FileName:" + FileName);
 
@@ -155,7 +169,7 @@ define([
         }
         else
         {
-            navigator.mediaDevices.getDisplayMedia({ preferCurrentTab: true }).then(
+            navigator.mediaDevices.getDisplayMedia(displayMediaOptions).then(
                 function(stream){
                     const canvas = document.createElement("canvas");
                     const video = document.createElement("video");
