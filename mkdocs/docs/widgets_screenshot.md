@@ -1,6 +1,7 @@
 ## Description
 This widgets creates a screenshot of the client visualization and stores it on the PLC or the client device. The widget is dervived from the button widget and therefore shares all its settings, actions and events. 
 
+## Windows / Linux
 Due to browser security restrictions the screen access is blocked for standard HTTP connections which is the default for mappView. mappView must be changed to HTTPS access or the HTTP URL must be added to the browser as an exception. Use the following line in the browser URL to access the flag
 
 ```chrome://flags/#unsafely-treat-insecure-origin-as-secure```
@@ -14,6 +15,12 @@ When the screenshot is called it will open a window that will ask the user what 
 ![](./images/screenshot1.png)
 
 Select the tab or region for the screenshot and hit the Share button.
+
+## B&R Panels
+Due to browser security restrictions the screen access is blocked for standard HTTP connections which is the default for mappView. mappView must be changed to HTTPS access or the HTTP URL must be added to the browser as an exception. On B&R panels the screen capture must be enabled in the panel settings. This option is available starting with firmware 1.6.x. In the web settings enable screen capture and optional supress the security warning for the screen capture and server certificate.
+
+![](./images/screenshot3.png)
+
 
 ## Usage
 This widget requires mapp File (see Automation Studio help GUID f5ac430b-e0ca-4320-bcd0-b7e28a087f77). Make sure that there is a valid mpfilemanager configuration. Only the configuration is required, no additional task or function block must be added to the project. The libraries **MpFile** and **MpServer** are also required.
@@ -55,12 +62,16 @@ This event is called when a screenshot was not successful. Returns the error num
 Tested with
 
 * Automation Studio 4.11
+* B&R T-Panels firmware 1.6.x 
 * Minimum tested version 5.15
 * Expected to work with later version
 
 May also work with lower version: **YES**
 
 ## Revision History
+
+##### Version 3
+- Widget is now compatible to B&R T-Panels
 
 ##### Version 2
 - Optimized screenshot widget
