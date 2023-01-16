@@ -30,5 +30,15 @@ This property extends the existing property listPosition.
 
 May also work with lower version: **YES**
 
+## Revision History
+
+##### Version 3
+- Sometimes list box is not aligned with bottom widget
+
+##### Version 2
+- Switched from copy original DropDownBox widget to inherited version
+
+##### Version 1
+- First release
 
 

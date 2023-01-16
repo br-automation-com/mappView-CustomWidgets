@@ -60,5 +60,11 @@ Tested with
 
 May also work with lower version: **YES**
 
+## Revision History
 
+##### Version 2
+- Optimized screenshot widget
+
+##### Version 1
+- First release
 

@@ -1,3 +1,6 @@
+#### 16.01.2022
+- DropDownBox: Sometimes list box is not aligned with bottom widget
+
 #### 06.01.2022
 - Optimized screenshot widget
 
