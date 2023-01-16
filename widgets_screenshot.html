@@ -306,6 +306,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#windows-linux" class="md-nav__link">
+    Windows / Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#br-panels" class="md-nav__link">
+    B&amp;R Panels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
@@ -336,6 +350,40 @@
   <a href="#requirements" class="md-nav__link">
     Requirements
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revision-history" class="md-nav__link">
+    Revision History
+  </a>
+  
+    <nav class="md-nav" aria-label="Revision History">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-3" class="md-nav__link">
+    Version 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-2" class="md-nav__link">
+    Version 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-1" class="md-nav__link">
+    Version 1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -384,6 +432,7 @@
 
 <h2 id="description">Description</h2>
 <p>This widgets creates a screenshot of the client visualization and stores it on the PLC or the client device. The widget is dervived from the button widget and therefore shares all its settings, actions and events. </p>
+<h2 id="windows-linux">Windows / Linux</h2>
 <p>Due to browser security restrictions the screen access is blocked for standard HTTP connections which is the default for mappView. mappView must be changed to HTTPS access or the HTTP URL must be added to the browser as an exception. Use the following line in the browser URL to access the flag</p>
 <p><code>chrome://flags/#unsafely-treat-insecure-origin-as-secure</code></p>
 <p><img alt="" src="images/screenshot2.png" /></p>
@@ -391,6 +440,9 @@
 <p>When the screenshot is called it will open a window that will ask the user what to share. </p>
 <p><img alt="" src="images/screenshot1.png" /></p>
 <p>Select the tab or region for the screenshot and hit the Share button.</p>
+<h2 id="br-panels">B&amp;R Panels</h2>
+<p>Due to browser security restrictions the screen access is blocked for standard HTTP connections which is the default for mappView. mappView must be changed to HTTPS access or the HTTP URL must be added to the browser as an exception. On B&amp;R panels the screen capture must be enabled in the panel settings. This option is available starting with firmware 1.6.x. In the web settings enable screen capture and optional supress the security warning for the screen capture and server certificate.</p>
+<p><img alt="" src="images/screenshot3.png" /></p>
 <h2 id="usage">Usage</h2>
 <p>This widget requires mapp File (see Automation Studio help GUID f5ac430b-e0ca-4320-bcd0-b7e28a087f77). Make sure that there is a valid mpfilemanager configuration. Only the configuration is required, no additional task or function block must be added to the project. The libraries <strong>MpFile</strong> and <strong>MpServer</strong> are also required.</p>
 <h4 id="additional-actions">Additional Actions</h4>
@@ -433,10 +485,24 @@ This action creates a screenshot and saves it to the PLC. This action needs two 
 <p>Tested with</p>
 <ul>
 <li>Automation Studio 4.11</li>
+<li>B&amp;R T-Panels firmware 1.6.x </li>
 <li>Minimum tested version 5.15</li>
 <li>Expected to work with later version</li>
 </ul>
 <p>May also work with lower version: <strong>YES</strong></p>
+<h2 id="revision-history">Revision History</h2>
+<h5 id="version-3">Version 3</h5>
+<ul>
+<li>Widget is now compatible to B&amp;R T-Panels</li>
+</ul>
+<h5 id="version-2">Version 2</h5>
+<ul>
+<li>Optimized screenshot widget</li>
+</ul>
+<h5 id="version-1">Version 1</h5>
+<ul>
+<li>First release</li>
+</ul>
 
               
             </article>
