@@ -310,7 +310,7 @@ define([
                 location.top = targetRect.top;
             }
             // If bottom of list box is higher than button bottom move it down
-            if (location.top + listRect.height * scaleFactor < targetRect.top){
+            if (location.top + listRect.height * scaleFactor < targetRect.bottom){
                 location.top = targetRect.bottom - listRect.height * scaleFactor;
             }
         }

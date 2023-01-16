@@ -1,5 +1,7 @@
 ## Description
-This widgets extends the standard drop down box. The following additional functions are available
+This widgets extends the standard drop down box. The standard drop down box always opens the list box downwards. This can be an issue when the drop down box is already at the bottom of the screen. This drop down box also allows the list box to open to the top or centered.
+
+The following additional functions are available
 
 * Additional property listPositionExt
 

@@ -1,7 +1,7 @@
 ## Description
 This widgets creates a screenshot of the client visualization and stores it on the PLC or the client device. The widget is dervived from the button widget and therefore shares all its settings, actions and events. 
 
-Due to browser security restrictions the screen access is blocked for standard HTTP connections which is the default for mappView. mappView must be changed to HTTPS access or the HTTP URL must be added to the browser as an exception. Use the following flag in the browser URL to access the flag
+Due to browser security restrictions the screen access is blocked for standard HTTP connections which is the default for mappView. mappView must be changed to HTTPS access or the HTTP URL must be added to the browser as an exception. Use the following line in the browser URL to access the flag
 
 ```chrome://flags/#unsafely-treat-insecure-origin-as-secure```
 
@@ -34,12 +34,15 @@ This action creates a screenshot and saves it to the PLC. This action needs two 
 The widget derives all events from the button widget.
 
 **FileSaved**
+
 This event is called when the Screenshot2Plc has saved the screenshot successful. Returns the full path of the file.
 
 **FileDownloaded**
+
 This event is called when the file was downloaded with Screenshot2Client successful. 
 
 **OnError**
+
 This event is called when a screenshot was not successful. Returns the error number. Most error numbers are generated from underlying components and can be found in the Automation Studio help. The widget can also generate the following custom error numbers.
 
 | Error No  | Description  |
