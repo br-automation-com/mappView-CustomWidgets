@@ -25,4 +25,16 @@
   <Mapping parameter="widgets.brXtended.Screenshot.Action.SetText.text" type="ANY_STRING"/>
   <Mapping parameter="widgets.brXtended.Screenshot.Action.SetText.keepKey" type="BOOL"/>
   <Mapping parameter="widgets.brXtended.Screenshot.Action.SetVisible.value" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetEnable.value" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetImage.image" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetMouseDownImage.mouseDownImage" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetMouseDownText.text" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetMouseDownText.keepKey" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetStyle.value" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetText.text" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetText.keepKey" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetValue.value" type="ANY_INT"/>
+  <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetValueBool.value" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetValueInteger.value" type="ANY_INT"/>
+  <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetVisible.value" type="BOOL"/>
 </Mappings>

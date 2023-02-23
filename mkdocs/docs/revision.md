@@ -1,3 +1,6 @@
+#### 23.02.2023
+- ToggleSwitch: Added new property disabledCheckedTextColor
+
 #### 16.01.2022
 - DropDownBox: Sometimes list box is not aligned with bottom widget
 - Screenshot: Widget is now compatible to B&R T-Panels
