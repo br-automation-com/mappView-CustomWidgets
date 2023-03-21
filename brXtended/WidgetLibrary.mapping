@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Mappings>
+  <Mapping parameter="widgets.brXtended.ButtonTransfer.Action.Download.filePath" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.ButtonTransfer.Action.Upload.filePath" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.ButtonTransfer.Action.SetEnable.value" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.ButtonTransfer.Action.SetImage.image" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.ButtonTransfer.Action.SetMaxFileSize.maxFileSize" type="ANY_INT"/>
+  <Mapping parameter="widgets.brXtended.ButtonTransfer.Action.SetMouseDownImage.mouseDownImage" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.ButtonTransfer.Action.SetMouseDownText.text" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.ButtonTransfer.Action.SetMouseDownText.keepKey" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.ButtonTransfer.Action.SetStyle.value" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.ButtonTransfer.Action.SetText.text" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.ButtonTransfer.Action.SetText.keepKey" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.ButtonTransfer.Action.SetVisible.value" type="BOOL"/>
   <Mapping parameter="widgets.brXtended.DropDownBox.Action.SetDataProvider.value" type="ANY_STRING"/>
   <Mapping parameter="widgets.brXtended.DropDownBox.Action.SetDataProvider.omitPrompt" type="BOOL"/>
   <Mapping parameter="widgets.brXtended.DropDownBox.Action.SetEnable.value" type="BOOL"/>
@@ -14,8 +26,7 @@
   <Mapping parameter="widgets.brXtended.NumericInput.Action.SetStyle.value" type="ANY_STRING"/>
   <Mapping parameter="widgets.brXtended.NumericInput.Action.SetValue.value" type="ANY_REAL"/>
   <Mapping parameter="widgets.brXtended.NumericInput.Action.SetVisible.value" type="BOOL"/>
-  <Mapping parameter="widgets.brXtended.Screenshot.Action.Screenshot2Plc.DeviceName" type="ANY_STRING"/>
-  <Mapping parameter="widgets.brXtended.Screenshot.Action.Screenshot2Plc.FileName" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.Screenshot.Action.Screenshot2Plc.filePath" type="ANY_STRING"/>
   <Mapping parameter="widgets.brXtended.Screenshot.Action.SetEnable.value" type="BOOL"/>
   <Mapping parameter="widgets.brXtended.Screenshot.Action.SetImage.image" type="ANY_STRING"/>
   <Mapping parameter="widgets.brXtended.Screenshot.Action.SetMouseDownImage.mouseDownImage" type="ANY_STRING"/>
