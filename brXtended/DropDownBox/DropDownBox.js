@@ -54,19 +54,6 @@ define([
         // Initialize superclass
         SuperClass.prototype.init.apply(this, arguments);
 
-        // //Define order for binding properties
-        // BindingSync.setupPropertyOrder(this, [
-        //     {
-        //         name: 'selectedValue',
-        //         waitFor: ['dataProvider']
-        //     }, {
-        //         name: 'selectedIndex',
-        //         waitFor: ['dataProvider']
-        //     }]);
-
-        // // Queue for submitChange requests
-        // this.submitQueue = new SubmitQueue(this);
-
         // Calculate init state
         var initState = InitState.calculateInitState(this.settings, this.isEnabled(), this.isVisible());
         // Add additonal propery to init state
@@ -85,9 +72,6 @@ define([
 
         // Subscribe master view to the store
         this.store.subscribe(this.dropDownBoxView.render.bind(this.dropDownBoxView));
-
-        // this.offlineAttributes = new Set();
-        // this.focusHandler = new FocusHandler(this);
 
         if (brease.config.isKeyboardOperationEnabled()) {
             // Update focus after a render of the view
