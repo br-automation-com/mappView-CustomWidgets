@@ -541,7 +541,7 @@ This property has no effect, if multiLine=false				</Description>
 			<StyleProperty name="checkedImageColor" category="Appearance" type="Color" default="#000000" hide="true" owner="widgets.brease.ToggleSwitch">
 				<Description>Color of the image when the the widget is checked - only apply if a SVG image is used</Description>
 			</StyleProperty>
-			<StyleProperty name="disabledCheckedTextColor" category="Appearance" type="Color" default="#000000" not_styleable="false" hide="false" owner="widgets.brXtended.ToggleSwitch">
+			<StyleProperty name="disabledCheckedTextColor" category="Extended" type="Color" default="#000000" not_styleable="false" hide="false" owner="widgets.brXtended.ToggleSwitch">
 				<StyleElement selector="&amp;.disabled.checked:not(.active) span" attribute="color"/>
 				<Description>text color when the widget is checked and disabled</Description>
 			</StyleProperty>
