@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WidgetLibrary xmlns="http://www.br-automation.com/iat2014/widget">
+	<Widget name="widgets.brXtended.ButtonTransfer">
+		<ASEngineeringInfo>
+			<IsProjectable>true</IsProjectable>
+			<LicenseInfo>unlicensed</LicenseInfo>
+		</ASEngineeringInfo>
+		<Dependencies>
+			<Files>
+				<File>widgets/brease/Button/Button.js</File>
+				<File>widgets/brease/FileExplorerSystem/FileExplorerSystem.js</File>
+				<File>widgets/brease/FileManager/FileManager.js</File>
+				<File>brease/enum/Enum.js</File>
+				<File>brease/core/Utils.js</File>
+			</Files>
+			<Widgets>
+				<Widget>widgets/brXtended/ButtonTransfer/ButtonTransfer.js</Widget>
+				<Widget>widgets/brease/Button/Button.js</Widget>
+				<Widget>widgets/brease/FileExplorerSystem/FileExplorerSystem.js</Widget>
+				<Widget>widgets/brease/FileManager/FileManager.js</Widget>
+			</Widgets>
+		</Dependencies>
+		<Categories>
+			<Category name="Category">Media</Category>
+		</Categories>
+		<Descriptions>
+			<Description name="short">Screenshot widget</Description>
+			<Description name="de">Dieses Widget dient zur Dateiübetragung</Description>
+			<Description name="en">This widget transfers a file</Description>
+		</Descriptions>
+		<Inheritance>
+			<Class level="0">widgets.brXtended.ButtonTransfer</Class>
+			<Class level="1">widgets.brease.Button</Class>
+			<Class level="2">brease.core.BaseWidget</Class>
+		</Inheritance>
+		<Parents>
+			<Parent>*</Parent>
+		</Parents>
+		<Children>
+		</Children>
+		<Methods>
+			<Method name="Download" read="false">
+				<Description>Download a file from the PLC and save it on the client device.</Description>
+				<Arguments>
+					<Argument name="filePath" type="FilePath" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="Upload" read="false">
+				<Description>Upload a file from the PLC and save it on the client device.</Description>
+				<Arguments>
+					<Argument name="filePath" type="FilePath" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="Focus" read="false">
+				<Description>Sets focus on the widget element, if it can be focused and keyboardOperation=true</Description>
+			</Method>
+			<Method name="GetMaxFileSize" read="true">
+				<Description>Returns maxFileSize.</Description>
+				<Result type="Integer"/>
+			</Method>
+			<Method name="RemoveImage" read="false">
+				<Description>Remove an image.</Description>
+			</Method>
+			<Method name="RemoveMouseDownText" read="false">
+				<Description>Remove mouseDownText.</Description>
+			</Method>
+			<Method name="RemoveText" read="false">
+				<Description>Remove text.</Description>
+			</Method>
+			<Method name="SetEnable" read="false">
+				<Description>Sets the state of property «enable»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetImage" read="false">
+				<Description>Sets an image.</Description>
+				<Arguments>
+					<Argument name="image" type="ImagePath" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetMaxFileSize" read="false">
+				<Description>Sets maxFileSize</Description>
+				<Arguments>
+					<Argument name="maxFileSize" type="Integer" index="0" required="true">
+						<Description>The maximum length of the value</Description>
+					</Argument>
+				</Arguments>
+			</Method>
+			<Method name="SetMouseDownImage" read="false">
+				<Description>Sets the image when mouse down</Description>
+				<Arguments>
+					<Argument name="mouseDownImage" type="ImagePath" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetMouseDownText" read="false">
+				<Description>Sets the visible text for pressed state. This method can remove an optional textkey.</Description>
+				<Arguments>
+					<Argument name="text" type="String" index="0" required="true" localizable="true"/>
+					<Argument name="keepKey" type="Boolean" index="1" required="false" defaultValue="false">
+						<Description>Set true, if textkey should not be removed</Description>
+					</Argument>
+				</Arguments>
+			</Method>
+			<Method name="SetStyle" read="false">
+				<Arguments>
+					<Argument name="value" type="StyleReference" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetText" read="false">
+				<Description>Sets the visible text. This method can remove an optional textkey.</Description>
+				<Arguments>
+					<Argument name="text" type="String" index="0" required="true" localizable="true"/>
+					<Argument name="keepKey" type="Boolean" index="1" required="false" defaultValue="false">
+						<Description>Set true, if textkey should not be removed</Description>
+					</Argument>
+				</Arguments>
+			</Method>
+			<Method name="SetVisible" read="false">
+				<Description>Sets the state of property «visible»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="ShowTooltip" read="false"/>
+		</Methods>
+		<Events>
+			<Event name="Click">
+				<Description>Fired when element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="1" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="2" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="DisabledClick">
+				<Description>Fired when disabled element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="hasPermission" type="Boolean" index="1" required="true">
+						<Description>defines if the state is caused due to missing roles of the current user</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="2" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="3" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="DoubleClick">
+				<Description>Fired when element has double click.</Description>
+				<Arguments>
+					<Argument name="horizontalPos" type="String" index="0" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="1" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="EnableChanged">
+				<Description>Fired when operability of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>operability</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="FileDownloaded">
+				<Description>Fired when a file was downloaded.</Description>
+			</Event>
+			<Event name="FileSaved">
+				<Description>Fired when a file was saved.</Description>
+				<Arguments>
+					<Argument name="filePath" type="FilePath" index="0" required="true">
+						<Description>Path to the file that has been saved.</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="FocusIn">
+				<Description>Fired when the widgets gets focus</Description>
+			</Event>
+			<Event name="FocusOut">
+				<Description>Fired when the widgets lost focus</Description>
+			</Event>
+			<Event name="MouseDown">
+				<Description>Fired when widget enters mouseDown state</Description>
+				<Arguments>
+					<Argument name="horizontalPos" type="String" index="0" required="true">
+						<Description>horizontal position of mouse in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="1" required="true">
+						<Description>vertical position of mouse in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="MouseUp">
+				<Description>Fired when widget enters mouseUp state</Description>
+				<Arguments>
+					<Argument name="horizontalPos" type="String" index="0" required="true">
+						<Description>horizontal position of mouse in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="1" required="true">
+						<Description>vertical position of mouse in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDragEnd">
+				<Description>Fired when element has OnDragEnd.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget where the drag operation has ended</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget where the drag operation has ended</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDragEnter">
+				<Description>Fired when element has onDragEnter.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been entering the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been entering the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDragLeave">
+				<Description>Fired when element has OnDragLeave.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been leaving the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been leaving the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDragStart">
+				<Description>Fired when element has OnDragStart.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget where the drag operation has been started</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget where the drag operation has been started</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnDrop">
+				<Description>Fired when element has OnDrop.</Description>
+				<Arguments>
+					<Argument name="contentId" type="String" index="0" required="true">
+						<Description>content id of the widget that has been dropped on the droppable widget</Description>
+					</Argument>
+					<Argument name="widgetId" type="String" index="1" required="true">
+						<Description>id of the widget that has been dropped on the droppable widget</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="OnError">
+				<Description>Fired when there is an error on the operation.</Description>
+				<Arguments>
+					<Argument name="result" type="Integer" index="0" required="true">
+						<Description>Number of error transmitted by the mapp component.</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="VisibleChanged">
+				<Description>Fired when the visibility of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>visibility</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+		</Events>
+		<Properties>
+			<Property name="breakWord" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>Allows lines to be broken within words if an otherwise unbreakable string is too long to fit.</Description>
+			</Property>
+			<Property name="draggable" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>Make widget draggable.</Description>
+			</Property>
+			<Property name="ellipsis" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>If true, overflow of text is symbolized with an ellipsis. This option has no effect, if wordWrap = true.</Description>
+			</Property>
+			<Property name="enable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Initial option to enable widget.</Description>
+			</Property>
+			<Property name="image" type="ImagePath" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Path to an optional image.</Description>
+			</Property>
+			<Property name="imageAlign" type="brease.enum.ImageAlign" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="left">
+				<Description>Position of image relative to text.</Description>
+			</Property>
+			<Property name="maxFileSize" type="Integer" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Extended" defaultValue="10000000">
+				<Description>Maximum size of the transfered file</Description>
+			</Property>
+			<Property name="mouseDownImage" type="ImagePath" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Path to an optional image for mouseDown.</Description>
+			</Property>
+			<Property name="mouseDownText" type="String" initOnly="false" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text which is displayed in the widget when pressed</Description>
+			</Property>
+			<Property name="multiLine" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>If true, more than one line is possible.
+Text will wrap when necessary (if property wordWrap is set to true) or at explicit line breaks (\n).
+If false, text will never wrap to the next line. The text continues on the same line.				</Description>
+			</Property>
+			<Property name="permissionOperate" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts operability to users, which have given roles</Description>
+			</Property>
+			<Property name="permissionView" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts visibility to users, which have given roles</Description>
+			</Property>
+			<Property name="style" type="StyleReference" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="default">
+				<Description>reference to a style for this widget type</Description>
+			</Property>
+			<Property name="tabIndex" type="Integer" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="0">
+				<Description>sets if a widget should have autofocus enabled (0), the order of the focus (&gt;0),
+or if autofocus should be disabled (-1)				</Description>
+			</Property>
+			<Property name="text" type="String" initOnly="false" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>Text which is displayed in the widget</Description>
+			</Property>
+			<Property name="tooltip" type="String" initOnly="true" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>reference to a tooltip for a widget</Description>
+			</Property>
+			<Property name="useSVGStyling" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="true">
+				<Description>Define if the image stylings (i.e imageColor) are applied - only valid when SVG Images are used.</Description>
+			</Property>
+			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>change visibility</Description>
+			</Property>
+			<Property name="wordWrap" type="Boolean" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="false">
+				<Description>If true, text will wrap when necessary.
+This property has no effect, if multiLine=false				</Description>
+			</Property>
+		</Properties>
+		<StyleProperties>
+			<StyleProperty name="width" type="AutoSize" not_styleable="true" owner="widgets.brease.Button" category="Layout" groupRefId="Size" groupOrder="1" default="100">
+				<StyleElement attribute="@include elemAutoWidth($value)"/>
+				<Description>outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="height" type="AutoSize" not_styleable="true" owner="widgets.brease.Button" category="Layout" groupRefId="Size" groupOrder="2" default="30">
+				<StyleElement attribute="@include elemAutoHeight($value)"/>
+				<Description>outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
+				<StyleElement attribute="@include elemTop($value)"/>
+				<Description>absolute position measured from top boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
+				<StyleElement attribute="@include elemLeft($value)"/>
+				<Description>absolute position measured from left boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
+				<StyleElement attribute="z-index"/>
+				<Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;
+        The zIndex must be unique within a content.&lt;br/&gt;				</Description>
+			</StyleProperty>
+			<StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3">
+				<StyleElement attribute="@include elemMinWidth($value)"/>
+				<Description>minimum outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4">
+				<StyleElement attribute="@include elemMaxWidth($value)"/>
+				<Description>maximum outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5">
+				<StyleElement attribute="@include elemMinHeight($value)"/>
+				<Description>minimum outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6">
+				<StyleElement attribute="@include elemMaxHeight($value)"/>
+				<Description>maximum outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="imageWidth" type="ImageSize" not_styleable="true" category="Appearance" default="0">
+				<StyleElement selector="img" attribute="@include imageWidth($value)"/>
+				<StyleElement selector="svg" attribute="@include imageWidth($value)"/>
+				<Description>width of the image</Description>
+			</StyleProperty>
+			<StyleProperty name="imageHeight" type="ImageSize" not_styleable="true" category="Appearance" default="0">
+				<StyleElement selector="img" attribute="@include imageHeight($value)"/>
+				<StyleElement selector="svg" attribute="@include imageHeight($value)"/>
+				<Description>height of the image</Description>
+			</StyleProperty>
+			<StyleProperty name="imageColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement selector="&amp;:not(.active):not(.disabled):not(.checked) svg" attribute="fill"/>
+				<Description>Color of the image - only apply if a SVG image is used</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownImageColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement selector="&amp;.active svg" attribute="fill"/>
+				<Description>Color of the image - only apply if a SVG image is used</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledImageColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement selector="&amp;.disabled svg" attribute="fill"/>
+				<Description>Color of the image - only apply if a SVG image is used</Description>
+			</StyleProperty>
+			<StyleProperty name="borderStyle" type="BorderStyle" category="Appearance" default="solid">
+				<StyleElement attribute="border-style"/>
+				<StyleElement selector="&amp;.active" attribute="border-style"/>
+				<StyleElement selector="&amp;.checked" attribute="border-style"/>
+				<StyleElement selector="&amp;.disabled" attribute="border-style"/>
+				<Description>Style of the Border of the widget</Description>
+			</StyleProperty>
+			<StyleProperty name="borderWidth" type="PixelValCollection" category="Appearance" default="2px">
+				<StyleElement selector="&amp;:not(.active):not(.checked)" attribute="border-width"/>
+				<StyleElement selector="&amp;.disabled" attribute="border-width"/>
+				<Description>Sets the width of the border. For further information, please check its type</Description>
+			</StyleProperty>
+			<StyleProperty name="cornerRadius" type="PixelValCollection" category="Appearance" default="0px">
+				<StyleElement attribute="@include border-radius($value)"/>
+				<Description>Sets the radius of the widget rounded corners. For further information, please check its type</Description>
+			</StyleProperty>
+			<StyleProperty name="backColor" category="Appearance" type="Color" default="#DBDBDB">
+				<StyleElement selector="&amp;:not(.disabled):not(.active):not(.checked)" attribute="background-color"/>
+				<Description>Sets the background color</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBackColor" category="Appearance" type="Color" default="#F1F1F1">
+				<StyleElement selector="&amp;.disabled" attribute="background-color"/>
+				<StyleElement selector="&amp;.disabled.active" attribute="background-color"/>
+				<StyleElement selector="&amp;.disabled.checked" attribute="background-color"/>
+				<Description>Sets the background color when disabled</Description>
+			</StyleProperty>
+			<StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement selector="&amp;:not(.disabled):not(.active):not(.checked)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBackGroundGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement selector="&amp;.disabled" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;.disabled.active" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;.disabled.checked" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownBackGroundGradient" category="Appearance" type="Gradient" default="">
+				<StyleElement selector="&amp;.active:not(.disabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;.checked:not(.disabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient when widget is clicked</Description>
+			</StyleProperty>
+			<StyleProperty name="backGround" category="Appearance" type="ImagePath" default="">
+				<StyleElement selector="&amp;:not(.disabled)" attribute="@include pureBackgroundImage(&apos;../$value&apos;)"/>
+				<Description>Sets the path for an image as background</Description>
+			</StyleProperty>
+			<StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#5B7C70">
+				<StyleElement selector="&amp;:not(.disabled):not(.active):not(.checked)" attribute="border-color"/>
+				<Description>Sets the border color</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledBorderColor" category="Appearance" type="ColorCollection" default="#FFFFFF #C8C8C8 #C8C8C8 #FFFFFF">
+				<StyleElement selector="&amp;.disabled" attribute="border-color"/>
+				<StyleElement selector="&amp;.disabled.active" attribute="border-color"/>
+				<StyleElement selector="&amp;.disabled.checked" attribute="border-color"/>
+				<Description>Sets the color of the border when disabled</Description>
+			</StyleProperty>
+			<StyleProperty name="textColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement selector="&amp;:not(.disabled):not(.active):not(.checked) span" attribute="color"/>
+				<Description>Sets the color of the text when enabled</Description>
+			</StyleProperty>
+			<StyleProperty name="disabledTextColor" category="Appearance" type="Color" default="#989898">
+				<StyleElement selector="&amp;.disabled span" attribute="color"/>
+				<StyleElement selector="&amp;.disabled.active span" attribute="color"/>
+				<StyleElement selector="&amp;.disabled:checked span" attribute="color"/>
+				<Description>Sets the color of the text when disabled</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01">
+				<StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="border-color"/>
+				<StyleElement selector="&amp;.checked:not(.disabled)" attribute="border-color"/>
+				<Description>border color when widget is clicked</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownBorderWidth" category="Appearance" type="PixelValCollection" default="2px">
+				<StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="border-width"/>
+				<StyleElement selector="&amp;.checked:not(.disabled)" attribute="border-width"/>
+				<Description>border width when widget is clicked</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownBackColor" category="Appearance" type="Color" default="#DBDBDB">
+				<StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="background-color"/>
+				<StyleElement selector="&amp;.checked:not(.disabled)" attribute="background-color"/>
+				<Description>back color when widget is clicked</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownTextColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement selector="&amp;.active:not(.disabled):not(.editMode) span" attribute="color"/>
+				<StyleElement selector="&amp;.active.checked:not(.disabled) span" attribute="color"/>
+				<Description>text color when widget is clicked</Description>
+			</StyleProperty>
+			<StyleProperty name="textAlign" category="Appearance" type="brease.enum.TextAlign" default="center">
+				<StyleElement attribute="@include text-alignment($value)"/>
+				<Description>Alignment of the text</Description>
+			</StyleProperty>
+			<StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
+				<StyleElement attribute="opacity"/>
+				<Description>Opacity of the widget</Description>
+			</StyleProperty>
+			<StyleProperty name="rotation" category="Appearance" type="Rotation" default="0deg">
+				<StyleElement attribute="@include rotate($value)"/>
+				<Description>Rotation of widget.</Description>
+			</StyleProperty>
+			<StyleProperty name="fontSize" category="Font" type="PixelVal" default="12px">
+				<StyleElement selector="span" attribute="font-size"/>
+				<Description>Fontsize of the text in pixel</Description>
+			</StyleProperty>
+			<StyleProperty name="fontName" category="Font" type="FontName" default="Arial">
+				<StyleElement selector="span" attribute="font-family"/>
+				<Description>Fontname of the text</Description>
+			</StyleProperty>
+			<StyleProperty name="bold" category="Font" type="Boolean" default="false">
+				<StyleElement selector="span" attribute="@include font-weight-bold($value)"/>
+				<Description>If *true* font style is bold</Description>
+			</StyleProperty>
+			<StyleProperty name="italic" category="Font" type="Boolean" default="false">
+				<StyleElement selector="span" attribute="@include font-style-italic($value)"/>
+				<Description>If *true* font style is italic</Description>
+			</StyleProperty>
+			<StyleProperty name="padding" category="Layout" type="Padding" default="0px 10px">
+				<StyleElement attribute="padding"/>
+				<Description>Padding of the Widget</Description>
+			</StyleProperty>
+			<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+				<StyleElement attribute="margin"/>
+				<Description>Margin of the Widget</Description>
+			</StyleProperty>
+			<StyleProperty name="shadow" type="Shadow" category="Appearance" default="none">
+				<StyleElement selector="&amp;:not(.active):not(.checked)" attribute="@include box-shadow($value)"/>
+				<StyleElement selector="&amp;.disabled.active" attribute="@include box-shadow($value)"/>
+				<StyleElement selector="&amp;.disabled.checked" attribute="@include box-shadow($value)"/>
+				<Description>Shadow of the Widget</Description>
+			</StyleProperty>
+			<StyleProperty name="mouseDownShadow" type="Shadow" category="Appearance" default="none">
+				<StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="@include box-shadow($value)"/>
+				<StyleElement selector="&amp;.checked:not(.disabled)" attribute="@include box-shadow($value)"/>
+				<Description>Shadow of the Widget when widget clicked</Description>
+			</StyleProperty>
+		</StyleProperties>
+		<PropertyGroups>
+			<PropertyGroup name="Size" type="String" category="Layout">
+				<Description>outer height and width of widget</Description>
+			</PropertyGroup>
+			<PropertyGroup name="Position" type="String" category="Layout">
+				<Description>top and left of widget</Description>
+			</PropertyGroup>
+		</PropertyGroups>
+	<BindingTemplates>
+  
+</BindingTemplates>
+</Widget>
+</WidgetLibrary>
