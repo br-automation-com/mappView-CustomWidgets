@@ -1,3 +1,8 @@
+Version 4
+- Changed device name and file name to filePath to be compatible with other widgets
+- Removed obsolete code
+- Add error messages to PLC logger
+
 Version 3
 - Widget is now compatible to B&R T-Panels
 

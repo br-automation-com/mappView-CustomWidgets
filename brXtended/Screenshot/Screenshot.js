@@ -1,9 +1,11 @@
 define([
     'widgets/brease/Button/Button',
     'widgets/brease/FileExplorerSystem/FileExplorerSystem',
-    'widgets/brease/FileManager/FileManager'
+    'widgets/brease/FileManager/FileManager',
+    'brease/enum/Enum',
+    'brease/core/Utils'
 ], function (
-    SuperClass, FileExplorerSystem, FileManager
+    SuperClass, FileExplorerSystem, FileManager, Enum, Utils
 ) {
 
     'use strict';
@@ -32,8 +34,6 @@ define([
     const err_http_access = 10001;
 
     var defaultSettings = {
-            FileDevice: '',
-            FileName: ''
         },
 
         WidgetClass = SuperClass.extend(function Screenshot() {
@@ -147,10 +147,9 @@ define([
      * @method Screenshot2Plc
      * @iatStudioExposed
      * Creates a screenshot and save it on the client device.
-     * @param {String} DeviceName The name of the file device
-     * @param {String} FileName The name of the screenshot file
+     * @param {FilePath} filePath
      */
-       p.Screenshot2Plc = function Screenshot2Plc(DeviceName, FileName) {
+    p.Screenshot2Plc = function Screenshot2Plc(filePath) {
         var widget = this;
 
         var displayMediaOptions = {
@@ -160,8 +159,7 @@ define([
             audio: false
         };
 
-        //console.log("DeviceName:" + DeviceName);
-        //console.log("FileName:" + FileName);
+        //console.log("FilePath:" + filePath);
 
         // Make sure we have access to the media device
         if (navigator.mediaDevices === undefined){
@@ -188,7 +186,7 @@ define([
                             
                             // Convert image to PNG format
                             const image_base64 = canvas.toDataURL('image/png').replace(/^data:image\/png;base64,/, "");
-                            widget._saveFile(DeviceName + FileName, 'OVERWRITE', "BINARY", image_base64);       
+                            widget._saveFile(filePath, 'OVERWRITE', "BINARY", image_base64);       
                         }).catch(function (telegram) {
                             if(telegram.error === undefined || telegram.error.code === undefined){
                                 widget._errorHandling(err_unkown);
@@ -208,27 +206,7 @@ define([
         }
     };
 
-    // /**
-    // * @method saveAs
-    // * @iatStudioExposed
-    // * Open the FileExplorer popup to allow you save the file as a 
-    // * new file into a specific path.
-    // */
-    // p.saveAs = function () {
-    //     this._saveASHelper();
-    // };
-
-    // p._saveASHelper = function _saveASHelper() {
-    //     if (brease.config.preLoadingState) return;
-
-    //     var widget = this;
-    //     widget.fileExplorer.saveas(widget.getFileManagerProfile(), '', 'NewFile', widget.elem).then(function (fileDetail) {
-    //         widget._saveFile(fileDetail.path, 'OVERWRITE', widget.getEncoding(), widget.editor.getValue());
-    //     }).catch(function () {
-    //         //console.log(err);
-    //     });
-    // };
-
+    // Save image to PLC
     p._saveFile = function _saveFile(path, flags, encoding, data) {
         if (brease.config.preLoadingState) return;
 
@@ -263,6 +241,12 @@ define([
         var ev = widget.createEvent('OnError', { result: code });
         if (ev !== undefined) {
             ev.dispatch();
+        }
+
+        // Send error to PLC logger
+        if (!brease.config.editMode) {
+            var m = 'Error ' + code + ' in brXtended on page ' + widget.settings.parentContentId +  ' at widget ' + this.elem.id;
+            brease.loggerService.log(Enum.EventLoggerId.CLIENT_SCRIPT_FAIL, Enum.EventLoggerCustomer.BUR, Enum.EventLoggerVerboseLevel.OFF, Enum.EventLoggerSeverity.ERROR, [], m);
         }
     };
     

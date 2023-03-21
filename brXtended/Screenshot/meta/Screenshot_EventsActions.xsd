@@ -23,8 +23,7 @@
 	<xs:complexType name="widgets.brXtended.Screenshot.Action.Screenshot2Plc">
 		<xs:complexContent>
 			<xs:extension base="s1:widgets.brXtended.Screenshot.Action.widgetMethod">
-				<xs:attribute name="DeviceName" type="var:String" use="required"></xs:attribute>
-				<xs:attribute name="FileName" type="var:String" use="required"></xs:attribute>
+				<xs:attribute name="filePath" type="var:FilePath" use="required"></xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

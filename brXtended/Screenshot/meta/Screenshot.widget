@@ -10,6 +10,8 @@
 				<File>widgets/brease/Button/Button.js</File>
 				<File>widgets/brease/FileExplorerSystem/FileExplorerSystem.js</File>
 				<File>widgets/brease/FileManager/FileManager.js</File>
+				<File>brease/enum/Enum.js</File>
+				<File>brease/core/Utils.js</File>
 			</Files>
 			<Widgets>
 				<Widget>widgets/brXtended/Screenshot/Screenshot.js</Widget>
@@ -43,12 +45,7 @@
 			<Method name="Screenshot2Plc" read="false">
 				<Description>Creates a screenshot and save it on the client device.</Description>
 				<Arguments>
-					<Argument name="DeviceName" type="String" index="0" required="true">
-						<Description>The name of the file device</Description>
-					</Argument>
-					<Argument name="FileName" type="String" index="1" required="true">
-						<Description>The name of the screenshot file</Description>
-					</Argument>
+					<Argument name="filePath" type="FilePath" index="0" required="true"/>
 				</Arguments>
 			</Method>
 			<Method name="Focus" read="false">
