@@ -1,3 +1,9 @@
+#### 27.03.2023
+- Added transfer widget
+- Screenshot: Changed device name and file name to filePath to be compatible with other widgets 
+- Screenshot: Removed obsolete code 
+- Screenshot: Add error messages to PLC logger 
+
 #### 23.02.2023
 - ToggleSwitch: Added new property disabledCheckedTextColor
 

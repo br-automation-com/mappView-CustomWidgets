@@ -1,6 +1,8 @@
 ## Introduction
 This is a collection of customized widgets for mappView. The widgets are not officially developement by B&R and have limited supported from the Github community. This site does also not provide any support or documentation how to develope your own widgets. Please contact your local B&R support to learn more about developing widgets.
 
+Due to limitations of the mapp developement kit all widgets are restricted to mapp 5.20 or lower!
+
 ## Development guidelines
 
 ### Properties

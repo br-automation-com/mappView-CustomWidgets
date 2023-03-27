@@ -34,15 +34,22 @@ This action creates a screenshot and saves it to the client device.
 **Screenshot2Plc**
 This action creates a screenshot and saves it to the PLC. This action needs two parameters
 
-* DeviceName - Name of the file device as specified in the mpfilemanager configuration and system configuration.
-* FileName - Name of the screenshot file.
+* filePath - Full path to the screenshot image including the filename and extension. 
+
+Example
+
+USER/screenshot.png
+USER is the storage medium specified in the target system configuration.
+
+
+
 
 #### Additional Events
 The widget derives all events from the button widget.
 
 **FileSaved**
 
-This event is called when the Screenshot2Plc has saved the screenshot successful. Returns the full path of the file.
+This event is called when the Screenshot2Plc has saved the screenshot successful. Returns the full path of the file (filePath).
 
 **FileDownloaded**
 
@@ -50,7 +57,7 @@ This event is called when the file was downloaded with Screenshot2Client success
 
 **OnError**
 
-This event is called when a screenshot was not successful. Returns the error number. Most error numbers are generated from underlying components and can be found in the Automation Studio help. The widget can also generate the following custom error numbers.
+This event is called when a screenshot was not successful. Returns the error number (result). Most error numbers are generated from underlying components and can be found in the Automation Studio help. The widget can also generate the following custom error numbers.
 
 | Error No  | Description  |
 |---|---|
@@ -69,6 +76,11 @@ Tested with
 May also work with lower version: **YES**
 
 ## Revision History
+
+##### Version 4
+- Changed device name and file name to filePath to be compatible with other widgets 
+- Removed obsolete code 
+- Add error messages to PLC logger 
 
 ##### Version 3
 - Widget is now compatible to B&R T-Panels
