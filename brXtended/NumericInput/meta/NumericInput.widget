@@ -11,6 +11,8 @@
 				<File>brease/decorators/LanguageDependency.js</File>
 				<File>brease/decorators/MeasurementSystemDependency.js</File>
 				<File>widgets/brXtended/NumericInput/libs/config.js</File>
+				<File>brease/enum/Enum.js</File>
+				<File>brease/core/Utils.js</File>
 			</Files>
 			<Widgets>
 				<Widget>widgets/brXtended/NumericInput/NumericInput.js</Widget>

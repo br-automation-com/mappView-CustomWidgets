@@ -1,8 +1,10 @@
 define(['widgets/brease/NumericInput/NumericInput',
     'brease/decorators/LanguageDependency',
     'brease/decorators/MeasurementSystemDependency',
-    'widgets/brXtended/NumericInput/libs/config'
-], function (SuperClass, languageDependency, measurementSystemDependency, Config) {
+    'widgets/brXtended/NumericInput/libs/config',
+    'brease/enum/Enum',
+    'brease/core/Utils'
+], function (SuperClass, languageDependency, measurementSystemDependency, Config, Enum, Utils) {
 
     'use strict';
 
