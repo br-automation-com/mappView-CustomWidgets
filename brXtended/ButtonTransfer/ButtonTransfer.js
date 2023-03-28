@@ -100,6 +100,8 @@ define([
      * @param {Integer} maxFileSize The maximum length of the value
      */
     p.setMaxFileSize = function (newFileSize) {
+        const widget = this;
+        
         if (newFileSize <= _maxFileSize && newFileSize >= _minFileSize){
             this.settings.maxFileSize = newFileSize;                
         }
@@ -135,7 +137,7 @@ define([
      * @param {FilePath} filePath
      */
     p.Upload = function Upload(filePath) {
-        var widget = this;
+        const widget = this;
         widget.filePath = filePath;
         
         // Click the file select form
@@ -170,7 +172,7 @@ define([
             else{
                 widget._errorHandling(err_file_size);
             }
-        }
+        };
     };
 
     p._saveFile = function _saveFile(path, flags, encoding, data) {
@@ -213,7 +215,7 @@ define([
                 if (fileData.length <= widget.settings.maxFileSize){
                     // Decode data and create download stream
                     var data = atob(fileData);
-                    var decode = _decodebase64(data)
+                    var decode = _decodebase64(data);
 
                     var blob = new Blob([decode], {type: 'octet/stream'});
                     const objectURL = window.URL.createObjectURL(blob);
@@ -284,8 +286,8 @@ define([
         }
     
         var buffer = new Uint8Array(n);
-        for (var i = 0; i < n; i++)
-          buffer[i] = output[i];
+        for (var k = 0; k < n; k++)
+          buffer[k] = output[k];
         return buffer;
     }   
 
@@ -315,7 +317,7 @@ define([
         var s= this.replace(/\\/g, '/');
         s= s.substring(s.lastIndexOf('/')+ 1);
         return extension? s.replace(/[?#].+$/, ''): s.split('.')[0];
-    }
+    };
 
     p.dispose = function () {
         var that = this;
