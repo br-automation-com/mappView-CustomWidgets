@@ -108,7 +108,7 @@ define([
 
                                 // Stop video recording
                                 var tracks = video.srcObject.getTracks();
-                                tracks.forEach(function(track) { track.stop()});
+                                tracks.forEach(function(track) {track.stop();});
 
                                 // Programmatically click the element.
                                 widget.a.click();
@@ -182,7 +182,7 @@ define([
 
                             // Stop video recording
                             var tracks = video.srcObject.getTracks();
-                            tracks.forEach(function(track) { track.stop()});
+                            tracks.forEach(function(track) {track.stop();});
                             
                             // Convert image to PNG format
                             const image_base64 = canvas.toDataURL('image/png').replace(/^data:image\/png;base64,/, "");
