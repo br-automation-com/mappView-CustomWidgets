@@ -6,194 +6,194 @@
 	@include elemMaxWidth(0);
 	@include elemMinHeight(0);
 	@include elemMaxHeight(0);
-img {
-	@include imageWidth(0);
-}
-svg {
-	@include imageWidth(0);
-}
-img {
-	@include imageHeight(0);
-}
-svg {
-	@include imageHeight(0);
-}
-&:not(.checked):not(.disabled) svg {
-	fill: #000000;
-}
-&.checked:not(.disabled) svg {
-	fill: #000000;
-}
-&.disabled svg {
-	fill: #000000;
-}
+	img {
+		@include imageWidth(0);
+	}
+	svg {
+		@include imageWidth(0);
+	}
+	img {
+		@include imageHeight(0);
+	}
+	svg {
+		@include imageHeight(0);
+	}
+	&:not(.checked):not(.disabled) svg {
+		fill: #000000;
+	}
+	&.checked:not(.disabled) svg {
+		fill: #000000;
+	}
+	&.disabled svg {
+		fill: #000000;
+	}
 	border-style: solid;
-&.active {
-	border-style: solid;
-}
-&.checked {
-	border-style: solid;
-}
-&.disabled {
-	border-style: solid;
-}
-&:not(.active):not(.checked) {
-	border-width: 2px;
-}
-&.disabled {
-	border-width: 2px;
-}
+	&.active {
+		border-style: solid;
+	}
+	&.checked {
+		border-style: solid;
+	}
+	&.disabled {
+		border-style: solid;
+	}
+	&:not(.active):not(.checked) {
+		border-width: 2px;
+	}
+	&.disabled {
+		border-width: 2px;
+	}
 	@include border-radius(0px);
-.breaseToggleSwitch_toggle {
-	@include border-radius(0px - 2px);
-}
-&:not(.checked):not(.disabled) {
-	background-color: #555555;
-}
-&.active:not(.disabled) {
-	background-color: #555555;
-}
-&.disabled:not(.checked) {
-	background-color: #F1F1F1;
-}
-&:not(.disabled):not(.active):not(.checked) {
-	@include backGroundGradient('');
-}
-&.disabled {
-	@include backGroundGradient('');
-}
-&.disabled.active {
-	@include backGroundGradient('');
-}
-&.disabled.checked {
-	@include backGroundGradient('');
-}
-&.active:not(.disabled) {
-	@include backGroundGradient('');
-}
-&.checked:not(.disabled) {
-	@include backGroundGradient('');
-}
-&:not(.disabled) {
-	@include pureBackgroundImage('../');
-}
-&:not(.disabled):not(.checked) {
-	border-color: #555555;
-}
-&.disabled {
-	border-color: #FFFFFF #C8C8C8 #C8C8C8 #FFFFFF;
-}
-&:not(.disabled):not(.checked) .wrapper .before {
-	color: #FFFFFF;
-}
-&:not(.disabled):not(.checked) .wrapper .after {
-	color: #FFFFFF;
-}
-&.disabled:not(.checked) span {
-	color: #989898;
-}
-&.disabled:not(.checked).active span {
-	color: #989898;
-}
-&.checked:not(.disabled) {
-	border-color: #555555;
-}
-&.active:not(.disabled):not(.editMode) {
-	border-width: 2px;
-}
-&.checked:not(.disabled) {
-	border-width: 2px;
-}
-&.checked:not(.disabled) {
-	background-color: #555555;
-}
-&.checked:not(.disabled) .breaseToggleSwitch_toggle {
-	color: #FFFFFF;
-}
-&.checked:not(.disabled) .wrapper .before {
-	color: #FFFFFF;
-}
-&.checked:not(.disabled) .wrapper .after {
-	color: #FFFFFF;
-}
-.wrapper {
-	@include text-alignment(center);
-}
+	.breaseToggleSwitch_toggle {
+		@include border-radius(0px - 2px);
+	}
+	&:not(.checked):not(.disabled) {
+		background-color: #555555;
+	}
+	&.active:not(.disabled) {
+		background-color: #555555;
+	}
+	&.disabled:not(.checked) {
+		background-color: #F1F1F1;
+	}
+	&:not(.disabled):not(.active):not(.checked) {
+		@include backGroundGradient('');
+	}
+	&.disabled {
+		@include backGroundGradient('');
+	}
+	&.disabled.active {
+		@include backGroundGradient('');
+	}
+	&.disabled.checked {
+		@include backGroundGradient('');
+	}
+	&.active:not(.disabled) {
+		@include backGroundGradient('');
+	}
+	&.checked:not(.disabled) {
+		@include backGroundGradient('');
+	}
+	&:not(.disabled) {
+		@include pureBackgroundImage('../');
+	}
+	&:not(.disabled):not(.checked) {
+		border-color: #555555;
+	}
+	&.disabled {
+		border-color: #FFFFFF #C8C8C8 #C8C8C8 #FFFFFF;
+	}
+	&:not(.disabled):not(.checked) .wrapper .before {
+		color: #FFFFFF;
+	}
+	&:not(.disabled):not(.checked) .wrapper .after {
+		color: #FFFFFF;
+	}
+	&.disabled:not(.checked) span {
+		color: #989898;
+	}
+	&.disabled:not(.checked).active span {
+		color: #989898;
+	}
+	&.checked:not(.disabled) {
+		border-color: #555555;
+	}
+	&.active:not(.disabled):not(.editMode) {
+		border-width: 2px;
+	}
+	&.checked:not(.disabled) {
+		border-width: 2px;
+	}
+	&.checked:not(.disabled) {
+		background-color: #555555;
+	}
+	&.checked:not(.disabled) .breaseToggleSwitch_toggle {
+		color: #FFFFFF;
+	}
+	&.checked:not(.disabled) .wrapper .before {
+		color: #FFFFFF;
+	}
+	&.checked:not(.disabled) .wrapper .after {
+		color: #FFFFFF;
+	}
+	.wrapper {
+		@include text-alignment(center);
+	}
 	opacity: 1;
 	@include rotate(0deg);
-.wrapper .before {
-	font-size: 12px;
-}
-.wrapper .after {
-	font-size: 12px;
-}
-.wrapper .before {
-	font-family: Arial;
-}
-.wrapper .after {
-	font-family: Arial;
-}
-.wrapper .before {
-	@include font-weight-bold(true);
-}
-.wrapper .after {
-	@include font-weight-bold(true);
-}
-.wrapper .before {
-	@include font-style-italic(false);
-}
-.wrapper .after {
-	@include font-style-italic(false);
-}
-.contentWrapper {
-	padding: 2px;
-}
+	.wrapper .before {
+		font-size: 12px;
+	}
+	.wrapper .after {
+		font-size: 12px;
+	}
+	.wrapper .before {
+		font-family: Arial;
+	}
+	.wrapper .after {
+		font-family: Arial;
+	}
+	.wrapper .before {
+		@include font-weight-bold(true);
+	}
+	.wrapper .after {
+		@include font-weight-bold(true);
+	}
+	.wrapper .before {
+		@include font-style-italic(false);
+	}
+	.wrapper .after {
+		@include font-style-italic(false);
+	}
+	.contentWrapper {
+		padding: 2px;
+	}
 	margin: 0px;
-&:not(.active):not(.checked) {
-	@include box-shadow(none);
-}
-&.disabled.active {
-	@include box-shadow(none);
-}
-&.disabled.checked {
-	@include box-shadow(none);
-}
-&.active:not(.disabled):not(.editMode) {
-	@include box-shadow(none);
-}
-&.checked {
-	@include box-shadow(none);
-}
-&.disabled.checked {
-	@include box-shadow(none);
-}
-&.disabled.checked:not(.active) span {
-	color: #000000;
-}
-&.disabled.checked {
-	background-color: #CCCCCC;
-}
-&.disabled.checked {
-	@include backGroundGradient('');
-}
-.breaseToggleSwitch_toggle {
-	@include elemWidth(30);
-}
-.breaseToggleSwitch_toggle {
-	@include elemHeight(100%);
-}
-.breaseToggleSwitch_toggle {
-	@include pureBackgroundImage('../');
-}
-&:not(.disabled) .breaseToggleSwitch_toggle {
-	background-color: #FFFFFF;
-}
-&.disabled .breaseToggleSwitch_toggle {
-	background-color: #FFFFFF;
-}
-&:not(.disabled) .breaseToggleSwitch_toggle {
-	@include backGroundGradient('');
-}
+	&:not(.active):not(.checked) {
+		@include box-shadow(none);
+	}
+	&.disabled.active {
+		@include box-shadow(none);
+	}
+	&.disabled.checked {
+		@include box-shadow(none);
+	}
+	&.active:not(.disabled):not(.editMode) {
+		@include box-shadow(none);
+	}
+	&.checked {
+		@include box-shadow(none);
+	}
+	&.disabled.checked {
+		@include box-shadow(none);
+	}
+	&.disabled.checked:not(.active) span {
+		color: #000000;
+	}
+	&.disabled.checked {
+		background-color: #CCCCCC;
+	}
+	&.disabled.checked {
+		@include backGroundGradient('');
+	}
+	.breaseToggleSwitch_toggle {
+		@include elemWidth(30);
+	}
+	.breaseToggleSwitch_toggle {
+		@include elemHeight(100%);
+	}
+	.breaseToggleSwitch_toggle {
+		@include pureBackgroundImage('../');
+	}
+	&:not(.disabled) .breaseToggleSwitch_toggle {
+		background-color: #FFFFFF;
+	}
+	&.disabled .breaseToggleSwitch_toggle {
+		background-color: #FFFFFF;
+	}
+	&:not(.disabled) .breaseToggleSwitch_toggle {
+		@include backGroundGradient('');
+	}
 
 }
 
