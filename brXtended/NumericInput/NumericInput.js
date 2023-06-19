@@ -43,6 +43,10 @@ define(['widgets/brease/NumericInput/NumericInput',
      * @hide
      */
 
+    // Widget error numbers
+    const err_unkown = 10000;
+    const err_invalid_color = 10001;
+
     var defaultSettings = Config;
 
     var WidgetClass = SuperClass.extend(function NumericInput() {
@@ -68,6 +72,7 @@ define(['widgets/brease/NumericInput/NumericInput',
      * @param {String} value The back color to be set
      */
     p.setBackColorExt = function (value) {
+        var widget = this;
         var s = new Option().style;
         s.color = value;
 
@@ -75,14 +80,29 @@ define(['widgets/brease/NumericInput/NumericInput',
             this.el.css('background-color', value);
         }
         else{
-            console.iatWarn("Value is not a color");
-            var code = Enum.EventLoggerId.CLIENT_INVALID_PROPERTY_VALUE, 
-            verboseLevel = Enum.EventLoggerVerboseLevel.LOW, 
-            severity = Enum.EventLoggerSeverity.WARNING,
-            text = 'Value is not a color',
-            args = [],
-            eventId = 0;
-            document.body.dispatchEvent(new CustomEvent(BreaseEvent.LOG_MESSAGE, { detail: { verbose: verboseLevel, severity: severity, code: code, text: text, args: args }, bubbles: true }));
+            widget._errorHandling(err_invalid_color);
+        }
+    };
+
+    p._errorHandling = function _errorHandling(code) {
+        console.log("NumericInput Error:" + code);
+
+        var widget = this;
+        /**
+        * @event OnError
+        * Fired when there is an error on the operation.
+        * @iatStudioExposed
+        * @param {Integer} result Number of error transmitted by the mapp component.
+        */
+        var ev = widget.createEvent('OnError', { result: code });
+        if (ev !== undefined) {
+            ev.dispatch();
+        }
+
+        // Send error to PLC logger
+        if (!brease.config.editMode) {
+            var m = 'Error ' + code + ' in brXtended on page ' + widget.settings.parentContentId +  ' at widget ' + this.elem.id;
+            brease.loggerService.log(Enum.EventLoggerId.CLIENT_SCRIPT_FAIL, Enum.EventLoggerCustomer.BUR, Enum.EventLoggerVerboseLevel.OFF, Enum.EventLoggerSeverity.ERROR, [], m);
         }
     };
 

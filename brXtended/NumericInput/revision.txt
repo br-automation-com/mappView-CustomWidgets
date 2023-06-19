@@ -1,2 +1,5 @@
+Version 2
+- Update error handling
+
 Version 1
 - First release
