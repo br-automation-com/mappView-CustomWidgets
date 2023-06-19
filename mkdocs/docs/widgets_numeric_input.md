@@ -32,6 +32,9 @@ May also work with lower version: **YES**
 
 ## Revision History
 
+##### Version 2
+- New error handling
+
 ##### Version 1
 - First release
 
