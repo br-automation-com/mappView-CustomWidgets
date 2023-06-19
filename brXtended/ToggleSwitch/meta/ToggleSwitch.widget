@@ -7,10 +7,49 @@
 		</ASEngineeringInfo>
 		<Dependencies>
 			<Files>
-				<File>widgets/brease/ToggleSwitch/ToggleSwitch.js</File>
+				<File>DOMPurify.js</File>
+				<File>brease/config.js</File>
+				<File>brease/controller/FileManager.js</File>
+				<File>brease/controller/PopUpManager.js</File>
+				<File>brease/controller/ZoomManager.js</File>
+				<File>brease/controller/libs/KeyActions.js</File>
+				<File>brease/controller/libs/LogCode.js</File>
+				<File>brease/controller/libs/Utils.js</File>
+				<File>brease/controller/objects/PageType.js</File>
+				<File>brease/core/BaseWidget.js</File>
+				<File>brease/core/Class.js</File>
+				<File>brease/core/Decorator.js</File>
+				<File>brease/core/Types.js</File>
+				<File>brease/core/Utils.js</File>
+				<File>brease/core/libs/AsyncProcess.js</File>
+				<File>brease/core/libs/Deferred.js</File>
+				<File>brease/decorators/DragAndDropCapability.js</File>
+				<File>brease/decorators/LanguageDependency.js</File>
+				<File>brease/decorators/Permissions.js</File>
+				<File>brease/decorators/TooltipDependency.js</File>
+				<File>brease/decorators/libs/DragAndDropManager.js</File>
+				<File>brease/decorators/libs/Draggable.js</File>
+				<File>brease/enum/Enum.js</File>
+				<File>brease/enum/EnumObject.js</File>
+				<File>brease/events/BreaseEvent.js</File>
+				<File>brease/events/ClientSystemEvent.js</File>
+				<File>brease/events/DummyEvent.js</File>
+				<File>brease/events/EventHandler.js</File>
+				<File>brease/events/Gestures.js</File>
+				<File>brease/events/VirtualEvents.js</File>
+				<File>hammer.js</File>
+				<File>jquery.js</File>
+				<File>libs/d3/d3.js</File>
+				<File>widgets/brease/common/DragDropProperties/libs/DraggablePropertiesEvents.js</File>
+				<File>widgets/brease/common/DragDropProperties/libs/DroppablePropertiesEvents.js</File>
+				<File>widgets/brease/common/libs/wfUtils/SVGCache.js</File>
+				<File>widgets/brease/common/libs/wfUtils/UtilsEditableBinding.js</File>
+				<File>widgets/brease/common/libs/wfUtils/UtilsImage.js</File>
 			</Files>
 			<Widgets>
 				<Widget>widgets/brXtended/ToggleSwitch/ToggleSwitch.js</Widget>
+				<Widget>widgets/brease/Button/Button.js</Widget>
+				<Widget>widgets/brease/ToggleButton/ToggleButton.js</Widget>
 				<Widget>widgets/brease/ToggleSwitch/ToggleSwitch.js</Widget>
 			</Widgets>
 		</Dependencies>
@@ -337,272 +376,272 @@ or if autofocus should be disabled (-1)				</Description>
 This property has no effect, if multiLine=false				</Description>
 			</Property>
 		</Properties>
-		<StyleProperties>
-			<StyleProperty name="width" type="AutoSize" not_styleable="true" owner="widgets.brease.Button" category="Layout" groupRefId="Size" groupOrder="1" default="100">
-				<StyleElement attribute="@include elemAutoWidth($value)"/>
-				<Description>outer width of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="height" type="AutoSize" not_styleable="true" owner="widgets.brease.Button" category="Layout" groupRefId="Size" groupOrder="2" default="30">
-				<StyleElement attribute="@include elemAutoHeight($value)"/>
-				<Description>outer height of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
-				<StyleElement attribute="@include elemTop($value)"/>
-				<Description>absolute position measured from top boundary of parent container</Description>
-			</StyleProperty>
-			<StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
-				<StyleElement attribute="@include elemLeft($value)"/>
-				<Description>absolute position measured from left boundary of parent container</Description>
-			</StyleProperty>
-			<StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
-				<StyleElement attribute="z-index"/>
-				<Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;
-        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;
-        The zIndex must be unique within a content.&lt;br/&gt;				</Description>
-			</StyleProperty>
-			<StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3">
-				<StyleElement attribute="@include elemMinWidth($value)"/>
-				<Description>minimum outer width of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4">
-				<StyleElement attribute="@include elemMaxWidth($value)"/>
-				<Description>maximum outer width of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5">
-				<StyleElement attribute="@include elemMinHeight($value)"/>
-				<Description>minimum outer height of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6">
-				<StyleElement attribute="@include elemMaxHeight($value)"/>
-				<Description>maximum outer height of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="imageWidth" type="ImageSize" not_styleable="true" category="Appearance" default="0">
-				<StyleElement selector="img" attribute="@include imageWidth($value)"/>
-				<StyleElement selector="svg" attribute="@include imageWidth($value)"/>
-				<Description>width of the image</Description>
-			</StyleProperty>
-			<StyleProperty name="imageHeight" type="ImageSize" not_styleable="true" category="Appearance" default="0">
-				<StyleElement selector="img" attribute="@include imageHeight($value)"/>
-				<StyleElement selector="svg" attribute="@include imageHeight($value)"/>
-				<Description>height of the image</Description>
-			</StyleProperty>
-			<StyleProperty name="imageColor" category="Appearance" type="Color" default="#000000" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector="&amp;:not(.checked):not(.disabled) svg" attribute="fill"/>
-				<Description>Color of the image - only apply if a SVG image is used</Description>
-			</StyleProperty>
-			<StyleProperty name="mouseDownImageColor" category="Appearance" type="Color" default="#000000" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector="&amp;.checked:not(.disabled) svg" attribute="fill"/>
-				<Description>Color of the image - only apply if a SVG image is used</Description>
-			</StyleProperty>
-			<StyleProperty name="disabledImageColor" category="Appearance" type="Color" default="#000000" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector="&amp;.disabled svg" attribute="fill"/>
-				<Description>Color of the image - only apply if a SVG image is used</Description>
-			</StyleProperty>
-			<StyleProperty name="borderStyle" type="BorderStyle" category="Appearance" default="solid">
-				<StyleElement attribute="border-style"/>
-				<StyleElement selector="&amp;.active" attribute="border-style"/>
-				<StyleElement selector="&amp;.checked" attribute="border-style"/>
-				<StyleElement selector="&amp;.disabled" attribute="border-style"/>
-				<Description>Style of the Border of the widget</Description>
-			</StyleProperty>
-			<StyleProperty name="borderWidth" type="PixelValCollection" category="Appearance" default="2px">
-				<StyleElement selector="&amp;:not(.active):not(.checked)" attribute="border-width"/>
-				<StyleElement selector="&amp;.disabled" attribute="border-width"/>
-				<Description>Sets the width of the border. For further information, please check its type</Description>
-			</StyleProperty>
-			<StyleProperty name="cornerRadius" type="PixelValCollection" category="Appearance" default="0px" owner="widgets.brease.ToggleSwitch">
-				<StyleElement attribute="@include border-radius($value)"/>
-				<StyleElement selector=".breaseToggleSwitch_toggle" attribute="@include border-radius($value - 2px)"/>
-				<Description>Sets the radius of the widget rounded corners. For further information, please check its type</Description>
-			</StyleProperty>
-			<StyleProperty name="backColor" category="Appearance" type="Color" default="#555555" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector="&amp;:not(.checked):not(.disabled)" attribute="background-color: $value"/>
-				<StyleElement selector="&amp;.active:not(.disabled)" attribute="background-color: $value"/>
-				<Description>Sets the background color of the widget</Description>
-			</StyleProperty>
-			<StyleProperty name="disabledBackColor" category="Appearance" type="Color" default="#F1F1F1" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector="&amp;.disabled:not(.checked)" attribute="background-color"/>
-				<Description>Sets the background color when disabled</Description>
-			</StyleProperty>
-			<StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
-				<StyleElement selector="&amp;:not(.disabled):not(.active):not(.checked)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
-				<Description>Background as a gradient</Description>
-			</StyleProperty>
-			<StyleProperty name="disabledBackGroundGradient" category="Appearance" type="Gradient" default="">
-				<StyleElement selector="&amp;.disabled" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
-				<StyleElement selector="&amp;.disabled.active" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
-				<StyleElement selector="&amp;.disabled.checked" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
-				<Description>Background as a gradient</Description>
-			</StyleProperty>
-			<StyleProperty name="mouseDownBackGroundGradient" category="Appearance" type="Gradient" default="">
-				<StyleElement selector="&amp;.active:not(.disabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
-				<StyleElement selector="&amp;.checked:not(.disabled)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
-				<Description>Background as a gradient when widget is clicked</Description>
-			</StyleProperty>
-			<StyleProperty name="backGround" category="Appearance" type="ImagePath" default="">
-				<StyleElement selector="&amp;:not(.disabled)" attribute="@include pureBackgroundImage(&apos;../$value&apos;)"/>
-				<Description>Sets the path for an image as background</Description>
-			</StyleProperty>
-			<StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#555555" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="border-color"/>
-				<Description>Sets the border color of the widget. For further information, please see its type</Description>
-			</StyleProperty>
-			<StyleProperty name="disabledBorderColor" category="Appearance" type="ColorCollection" default="#FFFFFF #C8C8C8 #C8C8C8 #FFFFFF" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector="&amp;.disabled" attribute="border-color"/>
-				<Description>Sets the color of the border when disabled</Description>
-			</StyleProperty>
-			<StyleProperty name="textColor" category="Appearance" type="Color" default="#FFFFFF" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector="&amp;:not(.disabled):not(.checked) .wrapper .before" attribute="color"/>
-				<StyleElement selector="&amp;:not(.disabled):not(.checked) .wrapper .after" attribute="color"/>
-				<Description>Sets the color of the text when enabled</Description>
-			</StyleProperty>
-			<StyleProperty name="disabledTextColor" category="Appearance" type="Color" default="#989898" owner="widgets.brease.ToggleButton">
-				<StyleElement selector="&amp;.disabled:not(.checked) span" attribute="color"/>
-				<StyleElement selector="&amp;.disabled:not(.checked).active span" attribute="color"/>
-				<Description>Sets the color of the text when disabled</Description>
-			</StyleProperty>
-			<StyleProperty name="mouseDownBorderColor" category="Appearance" type="ColorCollection" default="#555555" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector="&amp;.checked:not(.disabled)" attribute="border-color"/>
-				<Description>border color when the widget is pressed</Description>
-			</StyleProperty>
-			<StyleProperty name="mouseDownBorderWidth" category="Appearance" type="PixelValCollection" default="2px">
-				<StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="border-width"/>
-				<StyleElement selector="&amp;.checked:not(.disabled)" attribute="border-width"/>
-				<Description>border width when widget is clicked</Description>
-			</StyleProperty>
-			<StyleProperty name="mouseDownBackColor" category="Appearance" type="Color" default="#555555" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector="&amp;.checked:not(.disabled)" attribute="background-color: $value"/>
-				<Description>back color when the widget is pressed</Description>
-			</StyleProperty>
-			<StyleProperty name="mouseDownTextColor" category="Appearance" type="Color" default="#FFFFFF" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector="&amp;.checked:not(.disabled) .breaseToggleSwitch_toggle" attribute="color"/>
-				<StyleElement selector="&amp;.checked:not(.disabled) .wrapper .before" attribute="color"/>
-				<StyleElement selector="&amp;.checked:not(.disabled) .wrapper .after" attribute="color"/>
-				<Description>text color when widget is clicked</Description>
-			</StyleProperty>
-			<StyleProperty name="textAlign" category="Appearance" type="brease.enum.TextAlign" default="center" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector=".wrapper" attribute="@include text-alignment($value)"/>
-				<Description>Alignment of the text</Description>
-			</StyleProperty>
-			<StyleProperty name="opacity" category="Appearance" type="Opacity" default="1" owner="widgets.brease.ToggleSwitch">
-				<StyleElement attribute="opacity"/>
-				<Description>Opacity of the widget</Description>
-			</StyleProperty>
-			<StyleProperty name="rotation" category="Appearance" type="Rotation" default="0deg" owner="widgets.brease.ToggleSwitch">
-				<StyleElement attribute="@include rotate($value)"/>
-				<Description>Rotation of widget.</Description>
-			</StyleProperty>
-			<StyleProperty name="fontSize" category="Font" type="PixelVal" default="12px" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector=".wrapper .before" attribute="font-size"/>
-				<StyleElement selector=".wrapper .after" attribute="font-size"/>
-				<Description>Fontsize of the text in pixel</Description>
-			</StyleProperty>
-			<StyleProperty name="fontName" category="Font" type="FontName" default="Arial" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector=".wrapper .before" attribute="font-family"/>
-				<StyleElement selector=".wrapper .after" attribute="font-family"/>
-				<Description>Fontname of the text</Description>
-			</StyleProperty>
-			<StyleProperty name="bold" category="Font" type="Boolean" default="true" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector=".wrapper .before" attribute="@include font-weight-bold($value)"/>
-				<StyleElement selector=".wrapper .after" attribute="@include font-weight-bold($value)"/>
-				<Description>If *true* font style is bold</Description>
-			</StyleProperty>
-			<StyleProperty name="italic" category="Font" type="Boolean" default="false" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector=".wrapper .before" attribute="@include font-style-italic($value)"/>
-				<StyleElement selector=".wrapper .after" attribute="@include font-style-italic($value)"/>
-				<Description>If *true* font style is italic</Description>
-			</StyleProperty>
-			<StyleProperty name="padding" category="Layout" type="Padding" default="2px" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector=".contentWrapper" attribute="padding"/>
-				<Description>Padding of the Widget</Description>
-			</StyleProperty>
-			<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
-				<StyleElement attribute="margin"/>
-				<Description>Margin of the Widget</Description>
-			</StyleProperty>
-			<StyleProperty name="shadow" type="Shadow" category="Appearance" default="none">
-				<StyleElement selector="&amp;:not(.active):not(.checked)" attribute="@include box-shadow($value)"/>
-				<StyleElement selector="&amp;.disabled.active" attribute="@include box-shadow($value)"/>
-				<StyleElement selector="&amp;.disabled.checked" attribute="@include box-shadow($value)"/>
-				<Description>Shadow of the Widget</Description>
-			</StyleProperty>
-			<StyleProperty name="mouseDownShadow" type="Shadow" category="Appearance" default="none" owner="widgets.brease.ToggleButton">
-				<StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="@include box-shadow($value)"/>
-				<StyleElement selector="&amp;.checked" attribute="@include box-shadow($value)"/>
-				<StyleElement selector="&amp;.disabled.checked" attribute="@include box-shadow($value)"/>
-				<Description>Shadow of the Widget when the widget clicked</Description>
-			</StyleProperty>
-			<StyleProperty name="checkedBackColor" category="Appearance" type="Color" default="#DBDBDB" not_styleable="true" hide="true" owner="widgets.brease.ToggleSwitch">
-				<Description>back color when the widget is checked</Description>
-			</StyleProperty>
-			<StyleProperty name="checkedTextColor" category="Appearance" type="Color" default="#000000" not_styleable="true" hide="true" owner="widgets.brease.ToggleSwitch">
-				<Description>text color when the widget is checked</Description>
-			</StyleProperty>
-			<StyleProperty name="checkedImageColor" category="Appearance" type="Color" default="#000000" hide="true" owner="widgets.brease.ToggleSwitch">
-				<Description>Color of the image when the the widget is checked - only apply if a SVG image is used</Description>
-			</StyleProperty>
-			<StyleProperty name="disabledCheckedTextColor" category="Extended" type="Color" default="#000000" not_styleable="false" hide="false" owner="widgets.brXtended.ToggleSwitch">
-				<StyleElement selector="&amp;.disabled.checked:not(.active) span" attribute="color"/>
-				<Description>text color when the widget is checked and disabled</Description>
-			</StyleProperty>
-			<StyleProperty name="disabledCheckedImageColor" category="Appearance" type="Color" default="#000000" hide="true" owner="widgets.brease.ToggleSwitch">
-				<Description>Color of the image when the the widget is checked - only apply if a SVG image is used</Description>
-			</StyleProperty>
-			<StyleProperty name="checkedBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01" not_styleable="true" hide="true" owner="widgets.brease.ToggleSwitch">
-				<Description>border color when the widget is checked</Description>
-			</StyleProperty>
-			<StyleProperty name="disabledCheckedBackColor" category="Appearance" type="Color" default="#CCCCCC" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector="&amp;.disabled.checked" attribute="background-color"/>
-				<Description>Sets the background color when disabled and checked</Description>
-			</StyleProperty>
-			<StyleProperty name="disabledCheckedBorderColor" category="Appearance" type="Color" default="#FFFFFF #C8C8C8 #C8C8C8 #FFFFFF" not_styleable="true" hide="true" owner="widgets.brease.ToggleSwitch">
-				<Description>border color when the widget is checked and disabled</Description>
-			</StyleProperty>
-			<StyleProperty name="checkedBackGroundGradient" category="Appearance" type="Color" default="" not_styleable="true" hide="true" owner="widgets.brease.ToggleSwitch">
-				<Description>Background as a gradient</Description>
-			</StyleProperty>
-			<StyleProperty name="disabledCheckedBackGroundGradient" category="Appearance" type="Gradient" default="" owner="widgets.brease.ToggleSwitch">
-				<StyleElement selector="&amp;.disabled.checked" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
-				<Description>Background as a gradient</Description>
-			</StyleProperty>
-			<StyleProperty name="sliderWidth" type="Size" not_styleable="true" default="30" groupRefId="SliderSize" groupOrder="3">
-				<StyleElement selector=".breaseToggleSwitch_toggle" attribute="@include elemWidth($value)"/>
-				<Description>outer width of slider</Description>
-			</StyleProperty>
-			<StyleProperty name="sliderHeight" type="Size" not_styleable="true" default="100%" groupRefId="SliderSize" groupOrder="2">
-				<StyleElement selector=".breaseToggleSwitch_toggle" attribute="@include elemHeight($value)"/>
-				<Description>outer height of slider</Description>
-			</StyleProperty>
-			<StyleProperty name="sliderImage" category="Appearance" type="ImagePath" default="">
-				<StyleElement selector=".breaseToggleSwitch_toggle" attribute="@include pureBackgroundImage(&apos;../$value&apos;)"/>
-				<Description>Sets the path for an image for the slider</Description>
-			</StyleProperty>
-			<StyleProperty name="foreColor" category="Appearance" type="Color" default="#FFFFFF">
-				<StyleElement selector="&amp;:not(.disabled) .breaseToggleSwitch_toggle" attribute="background-color: $value"/>
-				<Description>Sets the color of the switch</Description>
-			</StyleProperty>
-			<StyleProperty name="disabledForeColor" category="Appearance" type="Color" default="#FFFFFF">
-				<StyleElement selector="&amp;.disabled .breaseToggleSwitch_toggle" attribute="background-color: $value"/>
-				<Description>Sets the color of the switch</Description>
-			</StyleProperty>
-			<StyleProperty name="foreGroundGradient" category="Appearance" type="Gradient" default="">
-				<StyleElement selector="&amp;:not(.disabled) .breaseToggleSwitch_toggle" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
-				<Description>Sets the color of the switch as gradient</Description>
-			</StyleProperty>
-		</StyleProperties>
-		<PropertyGroups>
-			<PropertyGroup name="Size" type="String" category="Layout">
-				<Description>outer height and width of widget</Description>
-			</PropertyGroup>
-			<PropertyGroup name="Position" type="String" category="Layout">
-				<Description>top and left of widget</Description>
-			</PropertyGroup>
-			<PropertyGroup name="SliderSize" type="String" category="Appearance">
-				<Description>outer height and width of Slider</Description>
-			</PropertyGroup>
-		</PropertyGroups>
 	<BindingTemplates>
   
 </BindingTemplates>
+<PropertyGroups>
+  <PropertyGroup name="Size" type="String" category="Layout">
+    <Description>outer height and width of widget</Description>
+  </PropertyGroup>
+  <PropertyGroup name="Position" type="String" category="Layout">
+    <Description>top and left of widget</Description>
+  </PropertyGroup>
+  <PropertyGroup name="SliderSize" type="String" category="Appearance">
+    <Description>outer height and width of Slider</Description>
+  </PropertyGroup>
+</PropertyGroups>
+<StyleProperties defaultStyle="default">
+  <StyleProperty name="width" type="AutoSize" not_styleable="true" owner="widgets.brease.Button" category="Layout" groupRefId="Size" groupOrder="1" default="100">
+    <StyleElement attribute="@include elemAutoWidth($value)"/>
+    <Description>outer width of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="height" type="AutoSize" not_styleable="true" owner="widgets.brease.Button" category="Layout" groupRefId="Size" groupOrder="2" default="30">
+    <StyleElement attribute="@include elemAutoHeight($value)"/>
+    <Description>outer height of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
+    <StyleElement attribute="@include elemTop($value)"/>
+    <Description>absolute position measured from top boundary of parent container</Description>
+  </StyleProperty>
+  <StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
+    <StyleElement attribute="@include elemLeft($value)"/>
+    <Description>absolute position measured from left boundary of parent container</Description>
+  </StyleProperty>
+  <StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
+    <StyleElement attribute="z-index"/>
+    <Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;&#xD;
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;&#xD;
+        The zIndex must be unique within a content.&lt;br/&gt;</Description>
+  </StyleProperty>
+  <StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3">
+    <StyleElement attribute="@include elemMinWidth($value)"/>
+    <Description>minimum outer width of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4">
+    <StyleElement attribute="@include elemMaxWidth($value)"/>
+    <Description>maximum outer width of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5">
+    <StyleElement attribute="@include elemMinHeight($value)"/>
+    <Description>minimum outer height of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6">
+    <StyleElement attribute="@include elemMaxHeight($value)"/>
+    <Description>maximum outer height of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="imageWidth" type="ImageSize" not_styleable="true" category="Appearance" default="0">
+    <StyleElement selector="img" attribute="@include imageWidth($value)"/>
+    <StyleElement selector="svg" attribute="@include imageWidth($value)"/>
+    <Description>width of the image</Description>
+  </StyleProperty>
+  <StyleProperty name="imageHeight" type="ImageSize" not_styleable="true" category="Appearance" default="0">
+    <StyleElement selector="img" attribute="@include imageHeight($value)"/>
+    <StyleElement selector="svg" attribute="@include imageHeight($value)"/>
+    <Description>height of the image</Description>
+  </StyleProperty>
+  <StyleProperty name="imageColor" category="Appearance" type="Color" default="#000000" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector="&amp;:not(.checked):not(.disabled) svg" attribute="fill"/>
+    <Description>Color of the image - only apply if a SVG image is used</Description>
+  </StyleProperty>
+  <StyleProperty name="mouseDownImageColor" category="Appearance" type="Color" default="#000000" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector="&amp;.checked:not(.disabled) svg" attribute="fill"/>
+    <Description>Color of the image - only apply if a SVG image is used</Description>
+  </StyleProperty>
+  <StyleProperty name="disabledImageColor" category="Appearance" type="Color" default="#000000" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector="&amp;.disabled svg" attribute="fill"/>
+    <Description>Color of the image - only apply if a SVG image is used</Description>
+  </StyleProperty>
+  <StyleProperty name="borderStyle" type="BorderStyle" category="Appearance" default="solid">
+    <StyleElement attribute="border-style"/>
+    <StyleElement selector="&amp;.active" attribute="border-style"/>
+    <StyleElement selector="&amp;.checked" attribute="border-style"/>
+    <StyleElement selector="&amp;.disabled" attribute="border-style"/>
+    <Description>Style of the Border of the widget</Description>
+  </StyleProperty>
+  <StyleProperty name="borderWidth" type="PixelValCollection" category="Appearance" default="2px">
+    <StyleElement selector="&amp;:not(.active):not(.checked)" attribute="border-width"/>
+    <StyleElement selector="&amp;.disabled" attribute="border-width"/>
+    <Description>Sets the width of the border. For further information, please check its type</Description>
+  </StyleProperty>
+  <StyleProperty name="cornerRadius" type="PixelValCollection" category="Appearance" default="0px" owner="widgets.brease.ToggleSwitch">
+    <StyleElement attribute="@include border-radius($value)"/>
+    <StyleElement selector=".breaseToggleSwitch_toggle" attribute="@include border-radius($value - 2px)"/>
+    <Description>Sets the radius of the widget rounded corners. For further information, please check its type</Description>
+  </StyleProperty>
+  <StyleProperty name="backColor" category="Appearance" type="Color" default="#555555" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector="&amp;:not(.checked):not(.disabled)" attribute="background-color: $value"/>
+    <StyleElement selector="&amp;.active:not(.disabled)" attribute="background-color: $value"/>
+    <Description>Sets the background color of the widget</Description>
+  </StyleProperty>
+  <StyleProperty name="disabledBackColor" category="Appearance" type="Color" default="#F1F1F1" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector="&amp;.disabled:not(.checked)" attribute="background-color"/>
+    <Description>Sets the background color when disabled</Description>
+  </StyleProperty>
+  <StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+    <StyleElement selector="&amp;:not(.disabled):not(.active):not(.checked)" attribute="@include backGroundGradient('$value')"/>
+    <Description>Background as a gradient</Description>
+  </StyleProperty>
+  <StyleProperty name="disabledBackGroundGradient" category="Appearance" type="Gradient" default="">
+    <StyleElement selector="&amp;.disabled" attribute="@include backGroundGradient('$value')"/>
+    <StyleElement selector="&amp;.disabled.active" attribute="@include backGroundGradient('$value')"/>
+    <StyleElement selector="&amp;.disabled.checked" attribute="@include backGroundGradient('$value')"/>
+    <Description>Background as a gradient</Description>
+  </StyleProperty>
+  <StyleProperty name="mouseDownBackGroundGradient" category="Appearance" type="Gradient" default="">
+    <StyleElement selector="&amp;.active:not(.disabled)" attribute="@include backGroundGradient('$value')"/>
+    <StyleElement selector="&amp;.checked:not(.disabled)" attribute="@include backGroundGradient('$value')"/>
+    <Description>Background as a gradient when widget is clicked</Description>
+  </StyleProperty>
+  <StyleProperty name="backGround" category="Appearance" type="ImagePath" default="">
+    <StyleElement selector="&amp;:not(.disabled)" attribute="@include pureBackgroundImage('../$value')"/>
+    <Description>Sets the path for an image as background</Description>
+  </StyleProperty>
+  <StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#555555" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="border-color"/>
+    <Description>Sets the border color of the widget. For further information, please see its type</Description>
+  </StyleProperty>
+  <StyleProperty name="disabledBorderColor" category="Appearance" type="ColorCollection" default="#FFFFFF #C8C8C8 #C8C8C8 #FFFFFF" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector="&amp;.disabled" attribute="border-color"/>
+    <Description>Sets the color of the border when disabled</Description>
+  </StyleProperty>
+  <StyleProperty name="textColor" category="Appearance" type="Color" default="#FFFFFF" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector="&amp;:not(.disabled):not(.checked) .wrapper .before" attribute="color"/>
+    <StyleElement selector="&amp;:not(.disabled):not(.checked) .wrapper .after" attribute="color"/>
+    <Description>Sets the color of the text when enabled</Description>
+  </StyleProperty>
+  <StyleProperty name="disabledTextColor" category="Appearance" type="Color" default="#989898" owner="widgets.brease.ToggleButton">
+    <StyleElement selector="&amp;.disabled:not(.checked) span" attribute="color"/>
+    <StyleElement selector="&amp;.disabled:not(.checked).active span" attribute="color"/>
+    <Description>Sets the color of the text when disabled</Description>
+  </StyleProperty>
+  <StyleProperty name="mouseDownBorderColor" category="Appearance" type="ColorCollection" default="#555555" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector="&amp;.checked:not(.disabled)" attribute="border-color"/>
+    <Description>border color when the widget is pressed</Description>
+  </StyleProperty>
+  <StyleProperty name="mouseDownBorderWidth" category="Appearance" type="PixelValCollection" default="2px">
+    <StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="border-width"/>
+    <StyleElement selector="&amp;.checked:not(.disabled)" attribute="border-width"/>
+    <Description>border width when widget is clicked</Description>
+  </StyleProperty>
+  <StyleProperty name="mouseDownBackColor" category="Appearance" type="Color" default="#555555" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector="&amp;.checked:not(.disabled)" attribute="background-color: $value"/>
+    <Description>back color when the widget is pressed</Description>
+  </StyleProperty>
+  <StyleProperty name="mouseDownTextColor" category="Appearance" type="Color" default="#FFFFFF" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector="&amp;.checked:not(.disabled) .breaseToggleSwitch_toggle" attribute="color"/>
+    <StyleElement selector="&amp;.checked:not(.disabled) .wrapper .before" attribute="color"/>
+    <StyleElement selector="&amp;.checked:not(.disabled) .wrapper .after" attribute="color"/>
+    <Description>text color when widget is clicked</Description>
+  </StyleProperty>
+  <StyleProperty name="textAlign" category="Appearance" type="brease.enum.TextAlign" default="center" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector=".wrapper" attribute="@include text-alignment($value)"/>
+    <Description>Alignment of the text</Description>
+  </StyleProperty>
+  <StyleProperty name="opacity" category="Appearance" type="Opacity" default="1" owner="widgets.brease.ToggleSwitch">
+    <StyleElement attribute="opacity"/>
+    <Description>Opacity of the widget</Description>
+  </StyleProperty>
+  <StyleProperty name="rotation" category="Appearance" type="Rotation" default="0deg" owner="widgets.brease.ToggleSwitch">
+    <StyleElement attribute="@include rotate($value)"/>
+    <Description>Rotation of widget.</Description>
+  </StyleProperty>
+  <StyleProperty name="fontSize" category="Font" type="PixelVal" default="12px" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector=".wrapper .before" attribute="font-size"/>
+    <StyleElement selector=".wrapper .after" attribute="font-size"/>
+    <Description>Fontsize of the text in pixel</Description>
+  </StyleProperty>
+  <StyleProperty name="fontName" category="Font" type="FontName" default="Arial" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector=".wrapper .before" attribute="font-family"/>
+    <StyleElement selector=".wrapper .after" attribute="font-family"/>
+    <Description>Fontname of the text</Description>
+  </StyleProperty>
+  <StyleProperty name="bold" category="Font" type="Boolean" default="true" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector=".wrapper .before" attribute="@include font-weight-bold($value)"/>
+    <StyleElement selector=".wrapper .after" attribute="@include font-weight-bold($value)"/>
+    <Description>If *true* font style is bold</Description>
+  </StyleProperty>
+  <StyleProperty name="italic" category="Font" type="Boolean" default="false" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector=".wrapper .before" attribute="@include font-style-italic($value)"/>
+    <StyleElement selector=".wrapper .after" attribute="@include font-style-italic($value)"/>
+    <Description>If *true* font style is italic</Description>
+  </StyleProperty>
+  <StyleProperty name="padding" category="Layout" type="Padding" default="2px" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector=".contentWrapper" attribute="padding"/>
+    <Description>Padding of the Widget</Description>
+  </StyleProperty>
+  <StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+    <StyleElement attribute="margin"/>
+    <Description>Margin of the Widget</Description>
+  </StyleProperty>
+  <StyleProperty name="shadow" type="Shadow" category="Appearance" default="none">
+    <StyleElement selector="&amp;:not(.active):not(.checked)" attribute="@include box-shadow($value)"/>
+    <StyleElement selector="&amp;.disabled.active" attribute="@include box-shadow($value)"/>
+    <StyleElement selector="&amp;.disabled.checked" attribute="@include box-shadow($value)"/>
+    <Description>Shadow of the Widget</Description>
+  </StyleProperty>
+  <StyleProperty name="mouseDownShadow" type="Shadow" category="Appearance" default="none" owner="widgets.brease.ToggleButton">
+    <StyleElement selector="&amp;.active:not(.disabled):not(.editMode)" attribute="@include box-shadow($value)"/>
+    <StyleElement selector="&amp;.checked" attribute="@include box-shadow($value)"/>
+    <StyleElement selector="&amp;.disabled.checked" attribute="@include box-shadow($value)"/>
+    <Description>Shadow of the Widget when the widget clicked</Description>
+  </StyleProperty>
+  <StyleProperty name="checkedBackColor" category="Appearance" type="Color" default="#DBDBDB" not_styleable="true" hide="true" owner="widgets.brease.ToggleSwitch">
+    <Description>back color when the widget is checked</Description>
+  </StyleProperty>
+  <StyleProperty name="checkedTextColor" category="Appearance" type="Color" default="#000000" not_styleable="true" hide="true" owner="widgets.brease.ToggleSwitch">
+    <Description>text color when the widget is checked</Description>
+  </StyleProperty>
+  <StyleProperty name="checkedImageColor" category="Appearance" type="Color" default="#000000" hide="true" owner="widgets.brease.ToggleSwitch">
+    <Description>Color of the image when the the widget is checked - only apply if a SVG image is used</Description>
+  </StyleProperty>
+  <StyleProperty name="disabledCheckedTextColor" category="Extended" type="Color" default="#000000" not_styleable="false" hide="false" owner="widgets.brXtended.ToggleSwitch">
+    <StyleElement selector="&amp;.disabled.checked:not(.active) span" attribute="color"/>
+    <Description>text color when the widget is checked and disabled</Description>
+  </StyleProperty>
+  <StyleProperty name="disabledCheckedImageColor" category="Appearance" type="Color" default="#000000" hide="true" owner="widgets.brease.ToggleSwitch">
+    <Description>Color of the image when the the widget is checked - only apply if a SVG image is used</Description>
+  </StyleProperty>
+  <StyleProperty name="checkedBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01" not_styleable="true" hide="true" owner="widgets.brease.ToggleSwitch">
+    <Description>border color when the widget is checked</Description>
+  </StyleProperty>
+  <StyleProperty name="disabledCheckedBackColor" category="Appearance" type="Color" default="#CCCCCC" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector="&amp;.disabled.checked" attribute="background-color"/>
+    <Description>Sets the background color when disabled and checked</Description>
+  </StyleProperty>
+  <StyleProperty name="disabledCheckedBorderColor" category="Appearance" type="Color" default="#FFFFFF #C8C8C8 #C8C8C8 #FFFFFF" not_styleable="true" hide="true" owner="widgets.brease.ToggleSwitch">
+    <Description>border color when the widget is checked and disabled</Description>
+  </StyleProperty>
+  <StyleProperty name="checkedBackGroundGradient" category="Appearance" type="Color" default="" not_styleable="true" hide="true" owner="widgets.brease.ToggleSwitch">
+    <Description>Background as a gradient</Description>
+  </StyleProperty>
+  <StyleProperty name="disabledCheckedBackGroundGradient" category="Appearance" type="Gradient" default="" owner="widgets.brease.ToggleSwitch">
+    <StyleElement selector="&amp;.disabled.checked" attribute="@include backGroundGradient('$value')"/>
+    <Description>Background as a gradient</Description>
+  </StyleProperty>
+  <StyleProperty name="sliderWidth" type="Size" not_styleable="true" default="30" groupRefId="SliderSize" groupOrder="3">
+    <StyleElement selector=".breaseToggleSwitch_toggle" attribute="@include elemWidth($value)"/>
+    <Description>outer width of slider</Description>
+  </StyleProperty>
+  <StyleProperty name="sliderHeight" type="Size" not_styleable="true" default="100%" groupRefId="SliderSize" groupOrder="2">
+    <StyleElement selector=".breaseToggleSwitch_toggle" attribute="@include elemHeight($value)"/>
+    <Description>outer height of slider</Description>
+  </StyleProperty>
+  <StyleProperty name="sliderImage" category="Appearance" type="ImagePath" default="">
+    <StyleElement selector=".breaseToggleSwitch_toggle" attribute="@include pureBackgroundImage('../$value')"/>
+    <Description>Sets the path for an image for the slider</Description>
+  </StyleProperty>
+  <StyleProperty name="foreColor" category="Appearance" type="Color" default="#FFFFFF">
+    <StyleElement selector="&amp;:not(.disabled) .breaseToggleSwitch_toggle" attribute="background-color: $value"/>
+    <Description>Sets the color of the switch</Description>
+  </StyleProperty>
+  <StyleProperty name="disabledForeColor" category="Appearance" type="Color" default="#FFFFFF">
+    <StyleElement selector="&amp;.disabled .breaseToggleSwitch_toggle" attribute="background-color: $value"/>
+    <Description>Sets the color of the switch</Description>
+  </StyleProperty>
+  <StyleProperty name="foreGroundGradient" category="Appearance" type="Gradient" default="">
+    <StyleElement selector="&amp;:not(.disabled) .breaseToggleSwitch_toggle" attribute="@include backGroundGradient('$value')"/>
+    <Description>Sets the color of the switch as gradient</Description>
+  </StyleProperty>
+</StyleProperties>
 </Widget>
 </WidgetLibrary>

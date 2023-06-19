@@ -92,6 +92,7 @@
 			<xs:enumeration value="OnDragLeave"></xs:enumeration>
 			<xs:enumeration value="OnDragStart"></xs:enumeration>
 			<xs:enumeration value="OnDrop"></xs:enumeration>
+			<xs:enumeration value="OnError"></xs:enumeration>
 			<xs:enumeration value="ValueChanged"></xs:enumeration>
 			<xs:enumeration value="VisibleChanged"></xs:enumeration>
 		</xs:restriction>

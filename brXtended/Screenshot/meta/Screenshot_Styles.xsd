@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema targetNamespace="http://www.br-automation.com/iat2015/styles/engineering/v1"
-        xmlns:xs="http://www.w3.org/2001/XMLSchema"
-        xmlns:sd="http://www.br-automation.com/iat2015/styles/engineering/v1"
-        xmlns:kt="http://www.br-automation.com/iat2015/keywordTypes/v1"
-        elementFormDefault="qualified">
+<xs:schema targetNamespace="http://www.br-automation.com/iat2015/styles/engineering/v1" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:sd="http://www.br-automation.com/iat2015/styles/engineering/v1" 
+	xmlns:kt="http://www.br-automation.com/iat2015/keywordTypes/v1" 
+	elementFormDefault="qualified">
 	<xs:complexType name="widgets.brXtended.Screenshot">
 		<xs:complexContent>
 			<xs:extension base="sd:stylesBase">
