@@ -1,9 +1,11 @@
+#### 07.07.2023
+- ScreenshotWidget: Fixed save to PLC did not work on pre-cached pages
+
 #### 19.06.2023
 - NumericWidget: New error handling
-- Update to mapp 5.22
 
-#### 29.03.2023
-- The widgets are now compiled against mapp 5.21. You can not use the widgets with any version below 5.21! Use branch  [**5_20_and_lower**](https://github.com/br-automation-com/mappView-CustomWidgets/tree/5_20_and_lower) in this case.
+#### 19.06.2023
+- NumericWidget: New error handling
 
 #### 27.03.2023
 - Added transfer widget

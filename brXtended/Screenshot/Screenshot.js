@@ -53,12 +53,6 @@ define([
             this.a.style.display = 'none';
             document.body.append(this.a);
 
-            if (!brease.config.preLoadingState) {
-                // FileExplorer handling
-                this.fileExplorer = new FileExplorerSystem();
-                // Init com to FileHandlerComm 
-                this.fileManager = FileManager.createWidget(this.elem.id);
-            }
         }
 
         SuperClass.prototype.init.call(this);
@@ -108,7 +102,7 @@ define([
 
                                 // Stop video recording
                                 var tracks = video.srcObject.getTracks();
-                                tracks.forEach(function(track) {track.stop();});
+                                tracks.forEach(function(track) { track.stop();});
 
                                 // Programmatically click the element.
                                 widget.a.click();
@@ -182,7 +176,7 @@ define([
 
                             // Stop video recording
                             var tracks = video.srcObject.getTracks();
-                            tracks.forEach(function(track) {track.stop();});
+                            tracks.forEach(function(track) { track.stop();});
                             
                             // Convert image to PNG format
                             const image_base64 = canvas.toDataURL('image/png').replace(/^data:image\/png;base64,/, "");
@@ -209,8 +203,17 @@ define([
     // Save image to PLC
     p._saveFile = function _saveFile(path, flags, encoding, data) {
         if (brease.config.preLoadingState) return;
-
         var widget = this;
+
+        // FileExplorer handling
+        if (widget.fileExplorer === undefined){
+            widget.fileExplorer = new FileExplorerSystem();
+        }
+        // Init com to FileHandlerComm 
+        if (widget.fileManager === undefined){
+            widget.fileManager = FileManager.createWidget(widget.elem.id);
+        }
+
         //console.log("Path:" + path);
         widget.fileManager.save(widget.elem.id, path, flags, encoding, data).then(function () {
             /**
