@@ -77,6 +77,9 @@ May also work with lower version: **YES**
 
 ## Revision History
 
+##### Version 5
+- Fixed save to PLC did not work on pre-cached pages
+
 ##### Version 4
 - Changed device name and file name to filePath to be compatible with other widgets 
 - Removed obsolete code 
