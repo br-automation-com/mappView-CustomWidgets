@@ -2,7 +2,11 @@
 This widgets allows the user to transfer files between the PLC and the client system through the HMI. 
 
 ## Usage
-This widget requires mapp File (see Automation Studio help GUID f5ac430b-e0ca-4320-bcd0-b7e28a087f77). Make sure that there is a valid mpfilemanager configuration. Only the configuration is required, no additional task or function block must be added to the project. The libraries **MpFile**,**MpBase** and **MpServer** are also required.
+This widget requires mapp File (see Automation Studio help GUID f5ac430b-e0ca-4320-bcd0-b7e28a087f77). The libraries **MpFile**, **MpBase** and **MpServer** are required and must be added to project. Make sure that there is a valid mpfilemanager configuration. The image shows a valid sample configuration.
+
+![](./images/transfer1.png)
+
+The file device USER can be used without any additional configuration. All other file devices require a file device configuration. The file device configuration can be found in the target system configuration.
 
 #### Properties
 
@@ -16,21 +20,22 @@ The widget derives all actions from the button widget.
 **Download**
 This action downloads a file from the PLC to the client.
 
-* filePath - Full path to the file including the filename and extension.
+* filePath - Full path to the file including the device name, filename and extension. Do **NOT** add 'FileDevice:' before the device name!
 
 Example
 
-USER/screenshot.png
-USER is the storage medium specified in the target system configuration.
+mappDir/screenshot.png
+
+mappDir is the device name specified in the target system configuration.
 
 **Upload**
 This action uploads a file and saves it on the PLC.
 
-* filePath - Directory where the file should be saved. 
+* filePath - Directory where the file should be saved. Do **NOT** add 'FileDevice:' before the device name!
 
 Example
 
-USER/
+mappUser/
 
 #### Additional Events
 The widget derives all events from the button widget.
