@@ -75,7 +75,7 @@ define([
 
         // Make sure we have access to the media device
         if (navigator.mediaDevices === undefined){
-            widget._errorHandling(err_http_access); 
+            widget._errorHandling(err_http_access, 'Use HTTPS access or use flag #unsafely-treat-insecure-origin-as-secure'); 
         }
         else
         {
@@ -119,19 +119,19 @@ define([
                                 });
                         }).catch(function (telegram) {
                             if(telegram.error === undefined || telegram.error.code === undefined){
-                                widget._errorHandling(err_unkown);
+                                widget._errorHandling(err_unkown, telegram.message);
                             }
                             else{
-                                widget._errorHandling(telegram.error.code);
+                                widget._errorHandling(telegram.error.code, telegram.error.message);
                             }                 
         
                        });
                 }).catch(function (telegram) {
                     if(telegram.error === undefined || telegram.error.code === undefined){
-                        widget._errorHandling(err_unkown);
+                        widget._errorHandling(err_unkown, telegram.message);
                     }
                     else{
-                        widget._errorHandling(telegram.error.code);
+                        widget._errorHandling(telegram.error.code, telegram.error.message);
                     }                 
                 });
         }
@@ -157,7 +157,7 @@ define([
 
         // Make sure we have access to the media device
         if (navigator.mediaDevices === undefined){
-            widget._errorHandling(err_http_access); 
+            widget._errorHandling(err_http_access, 'Use HTTPS access or use flag #unsafely-treat-insecure-origin-as-secure'); 
         }
         else
         {
@@ -183,18 +183,18 @@ define([
                             widget._saveFile(filePath, 'OVERWRITE', "BINARY", image_base64);       
                         }).catch(function (telegram) {
                             if(telegram.error === undefined || telegram.error.code === undefined){
-                                widget._errorHandling(err_unkown);
+                                widget._errorHandling(err_unkown, telegram.message);
                             }
                             else{
-                                widget._errorHandling(telegram.error.code);
+                                widget._errorHandling(telegram.error.code, telegram.error.message);
                             }                        
                         });
                 }).catch(function (telegram) {
                     if(telegram.error === undefined || telegram.error.code === undefined){
-                        widget._errorHandling(err_unkown);
+                        widget._errorHandling(err_unkown, telegram.message);
                     }
                     else{
-                        widget._errorHandling(telegram.error.code);
+                        widget._errorHandling(telegram.error.code, telegram.error.message);
                     }                               
                 });
         }
@@ -227,11 +227,11 @@ define([
                 ev.dispatch();
             }
         }).catch(function (telegram) {
-            widget._errorHandling(telegram.error.code);
+            widget._errorHandling(telegram.error.code, telegram.error.message + ' for path ' + path);
         });
     };
 
-    p._errorHandling = function _errorHandling(code) {
+    p._errorHandling = function _errorHandling(code, message) {
         console.log("Screenshot Error:" + code);
 
         var widget = this;
@@ -249,6 +249,9 @@ define([
         // Send error to PLC logger
         if (!brease.config.editMode) {
             var m = 'Error ' + code + ' in brXtended on page ' + widget.settings.parentContentId +  ' at widget ' + this.elem.id;
+            if (message !== ''){
+                m = m + ' - ' + message;
+            }
             brease.loggerService.log(Enum.EventLoggerId.CLIENT_SCRIPT_FAIL, Enum.EventLoggerCustomer.BUR, Enum.EventLoggerVerboseLevel.OFF, Enum.EventLoggerSeverity.ERROR, [], m);
         }
     };

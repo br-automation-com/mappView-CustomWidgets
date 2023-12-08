@@ -16,8 +16,15 @@ When the screenshot is called it will open a window that will ask the user what 
 
 Select the tab or region for the screenshot and hit the Share button.
 
+## Suppress pop-up
+To avoid the additional pop you can use the browser switch "--auto-select-desktop-capture-source". In my test this only worked for Window Tab. The switch needs the window name as parameter. For the screenshot below the complete switch would be "--auto-select-desktop-capture-source="Visualization visu"
+
+Note that you might see the pop flash for a second before the screenshot is taken.
+
+![](./images/screenshot4.png)
+
 ## B&R Panels
-Due to browser security restrictions the screen access is blocked for standard HTTP connections which is the default for mappView. mappView must be changed to HTTPS access or the HTTP URL must be added to the browser as an exception. On B&R panels the screen capture must be enabled in the panel settings. This option is available starting with firmware 1.6.x. In the web settings enable screen capture and optional supress the security warning for the screen capture and server certificate.
+Due to browser security restrictions the screen access is blocked for standard HTTP connections which is the default for mappView. mappView must be changed to HTTPS access or the HTTP URL must be added to the browser as an exception. On B&R panels the screen capture must be enabled in the panel settings. This option is available starting with firmware 1.6.x. In the web settings enable screen capture and optional suppress the security warning for the screen capture and server certificate.
 
 ![](./images/screenshot3.png)
 
@@ -63,6 +70,18 @@ This event is called when a screenshot was not successful. Returns the error num
 |---|---|
 | 10000  | Unknown error. Can occur when the user aborts the screenshot |
 | 10001  | HTTP permission. This error occurs when the widget can not access the screen. Use HTTPS access or use flag as described above. |
+| All other  | All other error numbers come from the runtime and can be found in the Automation Studio help file |
+
+
+**Typical issues**
+
+- Error -1064165351: Cannot create file
+
+    Typical reasons for this error are
+    - The file device does not exist in the PLC configuration
+    - The path is not correct, folders do not exist
+    - The device is not configured in the mpfilemanager
+    - The permissions in the mpfilemanager configuration are not sufficient
 
 ## Requirements
 
@@ -76,6 +95,9 @@ Tested with
 May also work with lower version: **YES**
 
 ## Revision History
+
+#### Version 6
+- Error 10000 now generates some additional details in the logger message
 
 ##### Version 5
 - Fixed save to PLC did not work on pre-cached pages

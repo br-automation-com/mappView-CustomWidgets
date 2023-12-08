@@ -1,3 +1,6 @@
+#### 08.12.2023
+- ScreenshotWidget: Error 10000 now generates some additional details in the logger message
+
 #### 07.07.2023
 - ScreenshotWidget: Fixed save to PLC did not work on pre-cached pages
 
