@@ -1,3 +1,6 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Made For B&R](https://github.com/hilch/BandR-badges/blob/main/Made-For-BrAutomation.svg)](https://www.br-automation.com)
+
 ## Introduction
 This is a collection of customized widgets for mappView. The widgets are not officially developement by B&R and have limited supported from the Github community. This site does also not provide any support or documentation how to develope your own widgets. Please contact your local B&R support to learn more about developing widgets.
 
