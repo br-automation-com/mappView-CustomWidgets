@@ -1,3 +1,6 @@
+#### 26.04.2024
+- Transfer: Fixed upload same file twice does not work
+
 #### 08.12.2023
 - ScreenshotWidget: Error 10000 now generates some additional details in the logger message
 

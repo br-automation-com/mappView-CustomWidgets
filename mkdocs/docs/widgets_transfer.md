@@ -70,6 +70,9 @@ May also work with lower version: **YES**
 
 ## Revision History
 
+##### Version 2
+- Fixed upload same file twice does not work
+
 ##### Version 1
 - First release
 

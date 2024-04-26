@@ -152,7 +152,8 @@ define([
         const widget = this;
 
         // getting a hold of the file reference
-        const file = event.target.files[0]; 
+        const file = event.target.files[0];
+        widget.form.value = null;
 
         // setting up the reader
         var reader = new FileReader();
