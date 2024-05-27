@@ -48,4 +48,11 @@
   <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetValueBool.value" type="BOOL"/>
   <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetValueInteger.value" type="ANY_INT"/>
   <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetVisible.value" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.ListBox.Action.SetDataProvider.provider" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.ListBox.Action.SetEnable.value" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.ListBox.Action.SetSelectedIndex.index" type="ANY_INT"/>
+  <Mapping parameter="widgets.brXtended.ListBox.Action.SetSelectedValue.value" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.ListBox.Action.SetStyle.value" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.ListBox.Action.SetVisible.value" type="BOOL"/>
+
 </Mappings>
