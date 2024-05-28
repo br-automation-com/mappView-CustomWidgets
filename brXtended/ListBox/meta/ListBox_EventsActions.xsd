@@ -104,7 +104,7 @@
 	<xs:simpleType name="widgets.brXtended.ListBox.Events">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Click"></xs:enumeration>
-			<xs:enumeration value="ItemClick"></xs:enumeration>
+			<xs:enumeration value="ItemClickExt"></xs:enumeration>
 			<xs:enumeration value="DisabledClick"></xs:enumeration>
 			<xs:enumeration value="EnableChanged"></xs:enumeration>
 			<xs:enumeration value="FocusIn"></xs:enumeration>

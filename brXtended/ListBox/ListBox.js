@@ -54,15 +54,15 @@ define([
         var clickedText = state.text.textElements[itemSelected].displayText;
         var clickedIndex = widget.getSelectedIndex();
         /**
-        * @event ItemClick
+        * @event ItemClickExt
         * Fired when a item in the list is clicked on.
         * @iatStudioExposed
         * @param {String} clickedValue Value of the item clicked
         * @param {String} clickedText Text of the item clicked
-        * @param {String} clickedIndex Index of the item clicked
+        * @param {Integer} clickedIndex Index of the item clicked
         * @eventComment
         */
-        var ev = widget.createEvent('ItemClick', {
+        var ev = widget.createEvent('ItemClickExt', {
             clickedValue: clickedValue,
             clickedText: clickedText,
             clickedIndex: clickedIndex

@@ -383,7 +383,7 @@
             ]
         },
         {
-            "name": "ItemClick",
+            "name": "ItemClickExt",
             "description": "Fired when a item in the list is clicked on.\n",
             "parameter": [
                 {
@@ -1310,8 +1310,8 @@
             },
             {
                 "$": {
-                    "name": "itemMargin",
-                    "category": "Layout",
+                    "name": "itemMarginExt",
+                    "category": "Extended",
                     "type": "Margin",
                     "default": "0px"
                 },

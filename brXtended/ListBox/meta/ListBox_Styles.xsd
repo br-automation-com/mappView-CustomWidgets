@@ -13,7 +13,7 @@
 				<xs:attribute name="borderColor" use="optional" type="kt:ColorCollection"></xs:attribute>
 				<xs:attribute name="opacity" use="optional" type="kt:Opacity"></xs:attribute>
 				<xs:attribute name="margin" use="optional" type="kt:Margin"></xs:attribute>
-				<xs:attribute name="itemMargin" use="optional" type="kt:Margin"></xs:attribute>
+				<xs:attribute name="itemMarginExt" use="optional" type="kt:Margin"></xs:attribute>
 				<xs:attribute name="padding" use="optional" type="kt:Padding"></xs:attribute>
 				<xs:attribute name="backColor" use="optional" type="kt:Color"></xs:attribute>
 				<xs:attribute name="backGroundGradient" use="optional" type="kt:Gradient"></xs:attribute>

@@ -96,7 +96,7 @@
 					</Argument>
 				</Arguments>
 			</Event>
-			<Event name="ItemClick">
+			<Event name="ItemClickExt">
 				<Description>Fired when a item in the list is clicked on.</Description>
 				<Arguments>
 					<Argument name="clickedValue" type="String" index="0" required="true">
@@ -337,7 +337,7 @@ or if autofocus should be disabled (-1)				</Description>
 				<StyleElement selector=".ItemView:not(.lastItem)" attribute="border-bottom-color"/>
 				<Description>Sets the color of the list separator</Description>
 			</StyleProperty>
-			<StyleProperty name="itemMargin" category="Layout" type="Margin" default="0px">
+			<StyleProperty name="itemMarginExt" category="Extended" type="Margin" default="0px">
 				<StyleElement selector="&amp;.ListBoxView .ItemView" attribute="margin"/>
 				<Description>Margin of each item in the list</Description>
 			</StyleProperty>

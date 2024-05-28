@@ -117,7 +117,7 @@
       </Description>
     </StyleProperty>
 
-    <StyleProperty name="itemMargin" category="Layout" type="Margin" default="0px">
+    <StyleProperty name="itemMarginExt" category="Extended" type="Margin" default="0px">
       <StyleElement selector="&amp;.ListBoxView .ItemView" attribute="margin"></StyleElement>
       <Description>
         Margin of each item in the list
