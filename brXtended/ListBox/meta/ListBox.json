@@ -1,0 +1,1604 @@
+{
+    "name": "widgets.brXtended.ListBox",
+    "type": "widget",
+    "meta": {
+        "superClass": "widgets.brease.ListBox",
+        "requires": [],
+        "mixins": [
+            "widgets.brease.common.DragDropProperties.libs.DroppablePropertiesEvents"
+        ],
+        "parents": [
+            "*"
+        ],
+        "children": [],
+        "inheritance": [
+            "widgets.brXtended.ListBox",
+            "widgets.brease.ListBox",
+            "brease.core.BaseWidget"
+        ],
+        "visible": "true",
+        "filePath": "widgets/brXtended/ListBox/ListBox.js"
+    },
+    "methods": [
+        {
+            "name": "Focus",
+            "originalName": "focus",
+            "read": false,
+            "description": "Sets focus on the widget element, if it can be focused and keyboardOperation=true\n",
+            "iatStudioExposed": true
+        },
+        {
+            "name": "GetSelectedIndex",
+            "originalName": "getSelectedIndex",
+            "read": true,
+            "description": "Returns selectedIndex.\n",
+            "iatStudioExposed": true,
+            "result": {
+                "name": "return",
+                "type": "Integer",
+                "description": "\n"
+            }
+        },
+        {
+            "name": "GetSelectedValue",
+            "originalName": "getSelectedValue",
+            "read": true,
+            "description": "Returns selectedValue.\n",
+            "iatStudioExposed": true,
+            "result": {
+                "name": "return",
+                "type": "String",
+                "description": "\n"
+            }
+        },
+        {
+            "name": "setAdditionalStyle",
+            "originalName": "setAdditionalStyle",
+            "read": false,
+            "description": "Add an additional style to the widget element. The initial style will not be removed.\nThe additional style will not be removed, when the style of the widget is changed.\nYou can remove the additional style via removeAdditionalStyle.\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "styleName",
+                    "type": "StyleReference",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "SetDataProvider",
+            "originalName": "setDataProvider",
+            "read": false,
+            "description": "Sets dataProvider\n",
+            "iatStudioExposed": true,
+            "parameter": [
+                {
+                    "name": "provider",
+                    "type": "ItemCollection",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setDisplaySettings",
+            "originalName": "setDisplaySettings",
+            "read": false,
+            "description": "Sets displaySettings\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "displaySettings",
+                    "type": "brease.enum.DropDownDisplaySettings",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setEditable",
+            "originalName": "setEditable",
+            "read": false,
+            "description": "Sets the state of property «editable»\nUsed for «editable» binding; method is called exclusevely by the framework\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "editable",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                },
+                {
+                    "name": "metaData",
+                    "type": "Object",
+                    "index": 1,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setEllipsis",
+            "originalName": "setEllipsis",
+            "read": false,
+            "description": "Sets ellipsis\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "ellipsis",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "SetEnable",
+            "originalName": "setEnable",
+            "read": false,
+            "description": "Sets the state of property «enable»\n",
+            "iatStudioExposed": true,
+            "parameter": [
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setFitHeight2Items",
+            "originalName": "setFitHeight2Items",
+            "read": false,
+            "description": "Sets fitHeight2Items\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "fitHeight2Items",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setImageAlign",
+            "originalName": "setImageAlign",
+            "read": false,
+            "description": "Sets imageAlign\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "imageAlign",
+                    "type": "brease.enum.ImageAlign",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setImagePath",
+            "originalName": "setImagePath",
+            "read": false,
+            "description": "Sets imagePath\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "imagePath",
+                    "type": "DirectoryPath",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setItemHeight",
+            "originalName": "setItemHeight",
+            "read": false,
+            "description": "Sets itemHeight\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "itemHeight",
+                    "type": "Integer",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setMultiLine",
+            "originalName": "setMultiLine",
+            "read": false,
+            "description": "Sets multiLine\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "multiLine",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setParentCoWiId",
+            "originalName": "setParentCoWiId",
+            "read": false,
+            "description": "Used to inherit parentCoWiId inside of compound widgets to inner widgets which are not projected, e.g. inner widgets of Login widget\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "value",
+                    "type": "String",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "SetSelectedIndex",
+            "originalName": "setSelectedIndex",
+            "read": false,
+            "description": "Sets selectedIndex\n",
+            "iatStudioExposed": true,
+            "parameter": [
+                {
+                    "name": "index",
+                    "type": "Integer",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "SetSelectedValue",
+            "originalName": "setSelectedValue",
+            "read": false,
+            "description": "Sets selectedValue\n",
+            "iatStudioExposed": true,
+            "parameter": [
+                {
+                    "name": "value",
+                    "type": "String",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "SetStyle",
+            "originalName": "setStyle",
+            "read": false,
+            "description": "\n",
+            "iatStudioExposed": true,
+            "parameter": [
+                {
+                    "name": "value",
+                    "type": "StyleReference",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setTabIndex",
+            "originalName": "setTabIndex",
+            "read": false,
+            "description": "Sets the state of property «tabIndex»\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "value",
+                    "type": "Number",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "SetVisible",
+            "originalName": "setVisible",
+            "read": false,
+            "description": "Sets the state of property «visible»\n",
+            "iatStudioExposed": true,
+            "parameter": [
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setWordWrap",
+            "originalName": "setWordWrap",
+            "read": false,
+            "description": "Sets wordWrap\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "wordWrap",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "ShowTooltip",
+            "originalName": "showTooltip",
+            "read": false,
+            "description": "\n",
+            "iatStudioExposed": true
+        }
+    ],
+    "events": [
+        {
+            "name": "Click",
+            "description": "Fired when element is clicked on.\n",
+            "parameter": [
+                {
+                    "name": "origin",
+                    "type": "String",
+                    "index": 0,
+                    "description": "id of widget that triggered this event\n\n\n\n",
+                    "optional": false
+                },
+                {
+                    "name": "horizontalPos",
+                    "type": "String",
+                    "index": 1,
+                    "description": "horizontal position of click in pixel i.e '10px'\n\n\n\n",
+                    "optional": false
+                },
+                {
+                    "name": "verticalPos",
+                    "type": "String",
+                    "index": 2,
+                    "description": "vertical position of click in pixel i.e '10px'\n\n\n\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "ItemClickExt",
+            "description": "Fired when a item in the list is clicked on.\n",
+            "parameter": [
+                {
+                    "name": "clickedValue",
+                    "type": "String",
+                    "index": 0,
+                    "description": "Value of the item clicked\n\n\n\n",
+                    "optional": false
+                },
+                {
+                    "name": "clickedText",
+                    "type": "String",
+                    "index": 1,
+                    "description": "Text of the item clicked\n\n\n\n",
+                    "optional": false
+                }
+                ,
+                {
+                    "name": "clickedIndex",
+                    "type": "UInteger",
+                    "index": 2,
+                    "description": "Index of the item clicked\n\n\n\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "DisabledClick",
+            "description": "Fired when disabled element is clicked on.\n",
+            "parameter": [
+                {
+                    "name": "origin",
+                    "type": "String",
+                    "index": 0,
+                    "description": "id of widget that triggered this event\n\n",
+                    "optional": false
+                },
+                {
+                    "name": "hasPermission",
+                    "type": "Boolean",
+                    "index": 1,
+                    "description": "defines if the state is caused due to missing roles of the current user\n\n",
+                    "optional": false
+                },
+                {
+                    "name": "horizontalPos",
+                    "type": "String",
+                    "index": 2,
+                    "description": "horizontal position of click in pixel i.e '10px'\n\n",
+                    "optional": false
+                },
+                {
+                    "name": "verticalPos",
+                    "type": "String",
+                    "index": 3,
+                    "description": "vertical position of click in pixel i.e '10px'\n\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "EnableChanged",
+            "description": "Fired when operability of the widget changes.\n",
+            "parameter": [
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "operability\n\n\n\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "FocusIn",
+            "description": "Fired when the widgets gets focus\n"
+        },
+        {
+            "name": "FocusOut",
+            "description": "Fired when the widgets lost focus\n"
+        },
+        {
+            "name": "OnDragEnter",
+            "description": "Fired when element has onDragEnter.\n",
+            "parameter": [
+                {
+                    "name": "contentId",
+                    "type": "String",
+                    "index": 0,
+                    "description": "content id of the widget that has been entering the droppable widget\n",
+                    "optional": false
+                },
+                {
+                    "name": "widgetId",
+                    "type": "String",
+                    "index": 1,
+                    "description": "id of the widget that has been entering the droppable widget\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "OnDragLeave",
+            "description": "Fired when element has OnDragLeave.\n",
+            "parameter": [
+                {
+                    "name": "contentId",
+                    "type": "String",
+                    "index": 0,
+                    "description": "content id of the widget that has been leaving the droppable widget\n",
+                    "optional": false
+                },
+                {
+                    "name": "widgetId",
+                    "type": "String",
+                    "index": 1,
+                    "description": "id of the widget that has been leaving the droppable widget\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "OnDrop",
+            "description": "Fired when element has OnDrop.\n",
+            "parameter": [
+                {
+                    "name": "contentId",
+                    "type": "String",
+                    "index": 0,
+                    "description": "content id of the widget that has been dropped on the droppable widget\n",
+                    "optional": false
+                },
+                {
+                    "name": "widgetId",
+                    "type": "String",
+                    "index": 1,
+                    "description": "id of the widget that has been dropped on the droppable widget\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "SelectedIndexChanged",
+            "description": "Fired when index changes.\n",
+            "parameter": [
+                {
+                    "name": "selectedIndex",
+                    "type": "Integer",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                },
+                {
+                    "name": "selectedValue",
+                    "type": "String",
+                    "index": 1,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "VisibleChanged",
+            "description": "Fired when the visibility of the widget changes.\n",
+            "parameter": [
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "visibility\n\n\n\n",
+                    "optional": false
+                }
+            ]
+        }
+    ],
+    "properties": [
+        {
+            "name": "dataProvider",
+            "type": "ItemCollection",
+            "initOnly": false,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.ListBox",
+            "projectable": true,
+            "description": "ItemCollection see Datatype",
+            "category": "Data",
+            "defaultValue": "[]"
+        },
+        {
+            "name": "displaySettings",
+            "type": "brease.enum.DropDownDisplaySettings",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.ListBox",
+            "projectable": true,
+            "description": "Defines which elements are displayed on the widget",
+            "category": "Appearance",
+            "defaultValue": "default"
+        },
+        {
+            "name": "ellipsis",
+            "type": "Boolean",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.ListBox",
+            "projectable": true,
+            "description": "If true, overflow of text is symbolized with an ellipsis. This option has no effect, if wordWrap = true.",
+            "category": "Behavior",
+            "defaultValue": "false"
+        },
+        {
+            "name": "enable",
+            "type": "Boolean",
+            "initOnly": false,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "brease.core.BaseWidget",
+            "projectable": true,
+            "description": "Initial option to enable widget.\n",
+            "category": "Behavior",
+            "defaultValue": "true"
+        },
+        {
+            "name": "fitHeight2Items",
+            "type": "Boolean",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.ListBox",
+            "projectable": true,
+            "description": "If true, the height will fit to the necessary height if the height  oft the list is bigger\nIf false, the list uses the configured height",
+            "category": "Behavior",
+            "defaultValue": "false"
+        },
+        {
+            "name": "imageAlign",
+            "type": "brease.enum.ImagePosition",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.ListBox",
+            "projectable": true,
+            "description": "Position of images relative to text",
+            "category": "Appearance",
+            "defaultValue": "left"
+        },
+        {
+            "name": "imagePath",
+            "type": "DirectoryPath",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.ListBox",
+            "projectable": true,
+            "description": "Path to the images location (e.g. 'Media/images/').\nNames of the images must be given like the index in the dataProvider (e.g. 0.png, 1.png, 2.png)",
+            "category": "Appearance",
+            "defaultValue": ""
+        },
+        {
+            "name": "itemHeight",
+            "type": "Integer",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.ListBox",
+            "projectable": true,
+            "description": "Height of every item in the List",
+            "category": "Appearance",
+            "defaultValue": "40"
+        },
+        {
+            "name": "multiLine",
+            "type": "Boolean",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.ListBox",
+            "projectable": true,
+            "description": "If true, more than one line is possible. Text will wrap when necessary (wordWrap=true) or at line breaks (\\n).\nIf false, text will never wrap to the next line. The text continues on the same line.",
+            "category": "Behavior",
+            "defaultValue": "false"
+        },
+        {
+            "name": "permissionOperate",
+            "type": "RoleCollection",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "brease.core.BaseWidget",
+            "projectable": true,
+            "description": "restricts operability to users, which have given roles\n",
+            "category": "Accessibility"
+        },
+        {
+            "name": "permissionView",
+            "type": "RoleCollection",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "brease.core.BaseWidget",
+            "projectable": true,
+            "description": "restricts visibility to users, which have given roles\n",
+            "category": "Accessibility"
+        },
+        {
+            "name": "selectedIndex",
+            "type": "UInteger",
+            "initOnly": false,
+            "localizable": false,
+            "editableBinding": true,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.ListBox",
+            "projectable": true,
+            "description": "Index of the selected item. The first item has index=0",
+            "category": "Data",
+            "defaultValue": "0"
+        },
+        {
+            "name": "selectedValue",
+            "type": "String",
+            "initOnly": false,
+            "localizable": false,
+            "editableBinding": true,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.ListBox",
+            "projectable": true,
+            "description": "Value of the selected item",
+            "category": "Data",
+            "defaultValue": ""
+        },
+        {
+            "name": "style",
+            "type": "StyleReference",
+            "initOnly": false,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "brease.core.BaseWidget",
+            "projectable": true,
+            "description": "reference to a style for this widget type\n",
+            "category": "Appearance",
+            "defaultValue": "default"
+        },
+        {
+            "name": "tabIndex",
+            "type": "Integer",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.ListBox",
+            "projectable": true,
+            "description": "sets if a widget should have autofocus enabled (0), the order of the focus (>0),\nor if autofocus should be disabled (-1)",
+            "category": "Behavior",
+            "defaultValue": "0"
+        },
+        {
+            "name": "tooltip",
+            "type": "String",
+            "initOnly": true,
+            "localizable": true,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "brease.core.BaseWidget",
+            "projectable": true,
+            "description": "reference to a tooltip for a widget\n",
+            "category": "Appearance",
+            "defaultValue": ""
+        },
+        {
+            "name": "visible",
+            "type": "Boolean",
+            "initOnly": false,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "brease.core.BaseWidget",
+            "projectable": true,
+            "description": "change visibility\n",
+            "category": "Behavior",
+            "defaultValue": "true"
+        },
+        {
+            "name": "wordWrap",
+            "type": "Boolean",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.ListBox",
+            "projectable": true,
+            "description": "If true, text will wrap when necessary.",
+            "category": "Behavior",
+            "defaultValue": "false"
+        },
+        {
+            "name": "maxHeight",
+            "type": "Size",
+            "defaultValue": "0",
+            "description": "maximum outer height of widget",
+            "initOnly": true,
+            "required": false,
+            "readOnly": false,
+            "projectable": true,
+            "hide": false,
+            "cssProp": true
+        },
+        {
+            "name": "minHeight",
+            "type": "Size",
+            "defaultValue": "0",
+            "description": "minimum outer height of widget",
+            "initOnly": true,
+            "required": false,
+            "readOnly": false,
+            "projectable": true,
+            "hide": false,
+            "cssProp": true
+        },
+        {
+            "name": "maxWidth",
+            "type": "Size",
+            "defaultValue": "0",
+            "description": "maximum outer width of widget",
+            "initOnly": true,
+            "required": false,
+            "readOnly": false,
+            "projectable": true,
+            "hide": false,
+            "cssProp": true
+        },
+        {
+            "name": "minWidth",
+            "type": "Size",
+            "defaultValue": "0",
+            "description": "minimum outer width of widget",
+            "initOnly": true,
+            "required": false,
+            "readOnly": false,
+            "projectable": true,
+            "hide": false,
+            "cssProp": true
+        },
+        {
+            "name": "zIndex",
+            "type": "UInteger",
+            "description": "The zIndex property specifies the z-order of a widget and its childs.<br/>\r\n        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.<br/>\r\n        The zIndex must be unique within a content.<br/>",
+            "initOnly": true,
+            "required": true,
+            "readOnly": false,
+            "projectable": true,
+            "owner": "brease.core.BaseWidget",
+            "hide": false,
+            "cssProp": true
+        },
+        {
+            "name": "left",
+            "type": "Integer",
+            "description": "absolute position measured from left boundary of parent container",
+            "initOnly": true,
+            "required": false,
+            "readOnly": false,
+            "projectable": true,
+            "owner": "brease.core.BaseWidget",
+            "hide": false,
+            "cssProp": true
+        },
+        {
+            "name": "top",
+            "type": "Integer",
+            "description": "absolute position measured from top boundary of parent container",
+            "initOnly": true,
+            "required": false,
+            "readOnly": false,
+            "projectable": true,
+            "owner": "brease.core.BaseWidget",
+            "hide": false,
+            "cssProp": true
+        },
+        {
+            "name": "height",
+            "type": "Size",
+            "defaultValue": "150",
+            "description": "outer height of widget",
+            "initOnly": true,
+            "required": false,
+            "readOnly": false,
+            "projectable": true,
+            "owner": "widgets.brXtended.ListBox",
+            "hide": false,
+            "cssProp": true
+        },
+        {
+            "name": "width",
+            "type": "Size",
+            "defaultValue": "150",
+            "description": "outer width of widget",
+            "initOnly": true,
+            "required": false,
+            "readOnly": false,
+            "projectable": true,
+            "owner": "widgets.brXtended.ListBox",
+            "hide": false,
+            "cssProp": true
+        }
+    ],
+    "dependencies": {
+        "files": [
+            "brease/core/BaseWidget.js",
+            "widgets/brease/ListBox/libs/FocusHandler.js",
+            "widgets/brease/ListBox/libs/config/Config.js",
+            "widgets/brease/ListBox/libs/config/InitState.js",
+            "brease/decorators/LanguageDependency.js",
+            "brease/decorators/VisibilityDependency.js",
+            "widgets/brease/ListBox/libs/view/ListBoxView/ListBoxView.js",
+            "widgets/brease/ListBox/libs/reducer/ListBoxActions.js",
+            "widgets/brease/ListBox/libs/reducer/ListBoxReducer.js",
+            "widgets/brease/common/libs/external/redux.js",
+            "widgets/brease/common/libs/redux/utils/UtilsList.js",
+            "widgets/brease/common/libs/redux/utils/UtilsImage.js",
+            "widgets/brease/common/libs/redux/utils/UtilsText.js",
+            "widgets/brease/common/libs/BindingSync.js",
+            "widgets/brease/common/libs/wfUtils/UtilsEditableBinding.js",
+            "brease/decorators/DragAndDropCapability.js",
+            "widgets/brease/common/DragDropProperties/libs/DroppablePropertiesEvents.js"
+        ],
+        "widgets": [
+            "widgets/brease/ListBox/ListBox.js"
+        ]
+    },
+    "categories": {
+        "Category": [
+            "Selector"
+        ]
+    },
+    "descriptions": {
+        "short": "Liste von Texten",
+        "de": "Zeigt eine Liste, aus welcher der Benutzer Elemente auswählen kann",
+        "en": "Displays a list from where the user can select items"
+    },
+    "superproperties": {
+        "id": {
+            "type": "WidgetId"
+        },
+        "enable": {
+            "type": "Boolean"
+        },
+        "permissionOperate": {
+            "type": "RoleCollection"
+        },
+        "permissionView": {
+            "type": "RoleCollection"
+        },
+        "style": {
+            "type": "StyleReference"
+        },
+        "tabIndex": {
+            "type": "Integer"
+        },
+        "tooltip": {
+            "type": "String"
+        },
+        "visible": {
+            "type": "Boolean"
+        },
+        "zIndex": {
+            "type": "UInteger"
+        },
+        "left": {
+            "type": "Integer"
+        },
+        "top": {
+            "type": "Integer"
+        },
+        "height": {
+            "type": "AutoSize"
+        },
+        "width": {
+            "type": "AutoSize"
+        }
+    },
+    "styleproperties": {
+        "StyleProperty": [
+            {
+                "$": {
+                    "name": "width",
+                    "type": "Size",
+                    "not_styleable": "true",
+                    "owner": "widgets.brXtended.ListBox",
+                    "category": "Layout",
+                    "groupRefId": "Size",
+                    "groupOrder": "1",
+                    "default": "150"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "&.ListBoxView",
+                            "attribute": "@include elemWidth($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "outer width of widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "height",
+                    "type": "Size",
+                    "not_styleable": "true",
+                    "owner": "widgets.brXtended.ListBox",
+                    "category": "Layout",
+                    "groupRefId": "Size",
+                    "groupOrder": "2",
+                    "default": "150"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "&.ListBoxView",
+                            "attribute": "@include elemHeight($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "outer height of widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "top",
+                    "type": "Integer",
+                    "not_styleable": "true",
+                    "owner": "brease.core.BaseWidget",
+                    "category": "Layout",
+                    "groupRefId": "Position",
+                    "groupOrder": "1"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "attribute": "@include elemTop($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "absolute position measured from top boundary of parent container"
+                ]
+            },
+            {
+                "$": {
+                    "name": "left",
+                    "type": "Integer",
+                    "not_styleable": "true",
+                    "owner": "brease.core.BaseWidget",
+                    "category": "Layout",
+                    "groupRefId": "Position",
+                    "groupOrder": "2"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "attribute": "@include elemLeft($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "absolute position measured from left boundary of parent container"
+                ]
+            },
+            {
+                "$": {
+                    "name": "zIndex",
+                    "type": "UInteger",
+                    "not_styleable": "true",
+                    "owner": "brease.core.BaseWidget",
+                    "category": "Layout",
+                    "required": "true"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "attribute": "z-index"
+                        }
+                    }
+                ],
+                "Description": [
+                    "The zIndex property specifies the z-order of a widget and its childs.<br/>\r\n        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.<br/>\r\n        The zIndex must be unique within a content.<br/>"
+                ]
+            },
+            {
+                "$": {
+                    "name": "minWidth",
+                    "type": "Size",
+                    "not_styleable": "true",
+                    "default": "0",
+                    "category": "Layout",
+                    "groupRefId": "Size",
+                    "groupOrder": "3"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "&.ListBoxView",
+                            "attribute": "@include elemMinWidth($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "minimum outer width of widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "maxWidth",
+                    "type": "Size",
+                    "not_styleable": "true",
+                    "default": "0",
+                    "category": "Layout",
+                    "groupRefId": "Size",
+                    "groupOrder": "4"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "&.ListBoxView",
+                            "attribute": "@include elemMaxWidth($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "maximum outer width of widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "minHeight",
+                    "type": "Size",
+                    "not_styleable": "true",
+                    "default": "0",
+                    "category": "Layout",
+                    "groupRefId": "Size",
+                    "groupOrder": "5"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "&.ListBoxView",
+                            "attribute": "@include elemMinHeight($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "minimum outer height of widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "maxHeight",
+                    "type": "Size",
+                    "not_styleable": "true",
+                    "default": "0",
+                    "category": "Layout",
+                    "groupRefId": "Size",
+                    "groupOrder": "6"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "&.ListBoxView",
+                            "attribute": "@include elemMaxHeight($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "maximum outer height of widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "borderWidth",
+                    "category": "Appearance",
+                    "type": "PixelValCollection",
+                    "default": "2px"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "&.ListBoxView",
+                            "attribute": "border-width"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the width of the border. For further information, please see its type"
+                ]
+            },
+            {
+                "$": {
+                    "name": "borderStyle",
+                    "category": "Appearance",
+                    "type": "BorderStyle",
+                    "default": "solid"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "&.ListBoxView",
+                            "attribute": "border-style"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the border style of the widget. For further information, please see its type"
+                ]
+            },
+            {
+                "$": {
+                    "name": "cornerRadius",
+                    "category": "Appearance",
+                    "type": "PixelValCollection",
+                    "default": "0px"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "&.ListBoxView",
+                            "attribute": "@include border-radius($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the radius of the widget rounded corners. For further information, please see its type"
+                ]
+            },
+            {
+                "$": {
+                    "name": "borderColor",
+                    "category": "Appearance",
+                    "type": "ColorCollection",
+                    "default": "#535353"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "&.ListBoxView",
+                            "attribute": "border-color"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the border color of the widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "opacity",
+                    "category": "Appearance",
+                    "type": "Opacity",
+                    "default": "1"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "&.ListBoxView",
+                            "attribute": "opacity"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Opacity of the widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "margin",
+                    "category": "Layout",
+                    "type": "Margin",
+                    "default": "0px"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "&.ListBoxView",
+                            "attribute": "margin"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Margin of the Widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "itemMarginExt",
+                    "category": "Extended",
+                    "type": "Margin",
+                    "default": "0px"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "&.ListBoxView .ItemView",
+                            "attribute": "margin"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Margin of each item in the list"
+                ]
+            },
+            {
+                "$": {
+                    "name": "padding",
+                    "category": "Layout",
+                    "type": "Padding",
+                    "default": "0px 15px"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": ".ItemView",
+                            "attribute": "padding"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Padding of the widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "backColor",
+                    "category": "Appearance",
+                    "type": "Color",
+                    "default": "#FFFFFF"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": ".ItemView:not(.itemSelected)",
+                            "attribute": "background-color"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the background color of the items not selected"
+                ]
+            },
+            {
+                "$": {
+                    "name": "backGroundGradient",
+                    "category": "Appearance",
+                    "type": "Gradient",
+                    "default": ""
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": ".ItemView:not(.itemSelected)",
+                            "attribute": "@include backGroundGradient('$value')"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the background color of the items not selected as a gradient"
+                ]
+            },
+            {
+                "$": {
+                    "name": "activeBackColor",
+                    "category": "Appearance",
+                    "type": "Color",
+                    "default": "#ff8800"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": ".ItemView.itemSelected",
+                            "attribute": "background-color"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the background color of the selected item"
+                ]
+            },
+            {
+                "$": {
+                    "name": "activeBackGroundGradient",
+                    "category": "Appearance",
+                    "type": "Gradient",
+                    "default": ""
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": ".ItemView.itemSelected",
+                            "attribute": "@include backGroundGradient('$value')"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the background color of the selected item as a gradient"
+                ]
+            },
+            {
+                "$": {
+                    "name": "listSeparatorColor",
+                    "category": "Appearance",
+                    "type": "Color",
+                    "default": "#000"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": ".ItemView:not(.lastItem)",
+                            "attribute": "border-bottom-color"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the color of the list separator"
+                ]
+            },
+            {
+                "$": {
+                    "name": "textColor",
+                    "category": "Appearance",
+                    "type": "Color",
+                    "default": "#535353"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": ".TextView:not(.textSelected)",
+                            "attribute": "color"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the text color of the items not selected"
+                ]
+            },
+            {
+                "$": {
+                    "name": "activeTextColor",
+                    "category": "Appearance",
+                    "type": "Color",
+                    "default": "#ffffff"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": ".TextView.textSelected",
+                            "attribute": "color"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the text color of the selected item"
+                ]
+            },
+            {
+                "$": {
+                    "name": "textAlign",
+                    "category": "Appearance",
+                    "type": "brease.enum.TextAlign",
+                    "default": "center"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": ".TextView",
+                            "attribute": "@include text-alignment($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Alignment of the text"
+                ]
+            },
+            {
+                "$": {
+                    "name": "fontSize",
+                    "category": "Font",
+                    "type": "PixelVal",
+                    "default": "12px"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": ".TextView",
+                            "attribute": "font-size"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Fontsize of the text in pixel"
+                ]
+            },
+            {
+                "$": {
+                    "name": "fontName",
+                    "category": "Font",
+                    "type": "FontName",
+                    "default": "Arial"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": ".TextView",
+                            "attribute": "font-family"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Fontname of the text"
+                ]
+            },
+            {
+                "$": {
+                    "name": "bold",
+                    "category": "Font",
+                    "type": "Boolean",
+                    "default": "true"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": ".TextView",
+                            "attribute": "@include font-weight-bold($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "If **true** font style is bold"
+                ]
+            },
+            {
+                "$": {
+                    "name": "italic",
+                    "category": "Font",
+                    "type": "Boolean",
+                    "default": "false"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": ".TextView",
+                            "attribute": "@include font-style-italic($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "If **true** font style is italic"
+                ]
+            }
+        ],
+        "$": {}
+    },
+    "propertygroups": {
+        "PropertyGroup": [
+            {
+                "$": {
+                    "name": "Size",
+                    "type": "String",
+                    "category": "Layout"
+                },
+                "Description": [
+                    "outer height and width of widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "Position",
+                    "type": "String",
+                    "category": "Layout"
+                },
+                "Description": [
+                    "top and left of widget"
+                ]
+            }
+        ]
+    }
+}

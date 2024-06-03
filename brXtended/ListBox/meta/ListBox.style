@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brXtended.ListBox" xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <StyleProperties>
+   
+  <!-- List style properties -->
+
+    <StyleProperty name="width" type="Size" not_styleable="true" default="150" category="Layout">
+      <StyleElement selector="&amp;.ListBoxView" attribute="@include elemWidth($value)"></StyleElement>
+      <Description>outer width of widget</Description>
+    </StyleProperty>
+    
+    <StyleProperty name="height" type="Size" not_styleable="true" default="150" category="Layout">
+      <StyleElement selector="&amp;.ListBoxView" attribute="@include elemHeight($value)"></StyleElement>
+      <Description>outer height of widget</Description>
+    </StyleProperty>
+
+    <StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3">
+      <StyleElement selector="&amp;.ListBoxView" attribute="@include elemMinWidth($value)"></StyleElement>
+      <Description>minimum outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4">
+      <StyleElement selector="&amp;.ListBoxView" attribute="@include elemMaxWidth($value)"></StyleElement>
+      <Description>maximum outer width of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5">
+      <StyleElement selector="&amp;.ListBoxView" attribute="@include elemMinHeight($value)"></StyleElement>
+      <Description>minimum outer height of widget</Description>
+    </StyleProperty>
+    <StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6">
+      <StyleElement selector="&amp;.ListBoxView" attribute="@include elemMaxHeight($value)"></StyleElement>
+      <Description>maximum outer height of widget</Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderWidth" category="Appearance" type="PixelValCollection" default="2px">
+      <StyleElement selector="&amp;.ListBoxView" attribute="border-width"></StyleElement>
+      <Description>
+        Sets the width of the border. For further information, please see its type
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderStyle" category="Appearance" type="BorderStyle" default="solid" >
+      <StyleElement selector="&amp;.ListBoxView" attribute="border-style"></StyleElement>
+      <Description>
+        Sets the border style of the widget. For further information, please see its type
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="0px">
+      <StyleElement selector="&amp;.ListBoxView" attribute="@include border-radius($value)"></StyleElement>
+      <Description>
+        Sets the radius of the widget rounded corners. For further information, please see its type
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#535353">
+      <StyleElement selector="&amp;.ListBoxView" attribute="border-color"></StyleElement>
+      <Description>
+        Sets the border color of the widget
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="opacity" category="Appearance" type="Opacity" default="1" >
+      <StyleElement selector="&amp;.ListBoxView" attribute="opacity"></StyleElement>
+      <Description>
+        Opacity of the widget
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+      <StyleElement selector="&amp;.ListBoxView" attribute="margin"></StyleElement>
+      <Description>
+        Margin of the Widget
+      </Description>
+    </StyleProperty>
+
+    <!-- Item style properties -->
+    <StyleProperty name="padding" category="Layout" type="Padding" default="0px 15px">
+      <StyleElement selector=".ItemView" attribute="padding"></StyleElement>
+      <Description>
+        Padding of the widget
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="backColor" category="Appearance" type="Color" default="#FFFFFF">
+      <StyleElement selector=".ItemView:not(.itemSelected)" attribute="background-color"></StyleElement>
+      <Description>
+        Sets the background color of the items not selected
+      </Description>
+    </StyleProperty>
+  
+    <StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector=".ItemView:not(.itemSelected)" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Sets the background color of the items not selected as a gradient
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="activeBackColor" category="Appearance" type="Color" default="#ff8800">
+      <StyleElement selector=".ItemView.itemSelected" attribute="background-color"></StyleElement>
+      <Description>
+        Sets the background color of the selected item
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="activeBackGroundGradient" category="Appearance" type="Gradient" default="">
+      <StyleElement selector=".ItemView.itemSelected" attribute="@include backGroundGradient('$value')"></StyleElement>
+      <Description>
+        Sets the background color of the selected item as a gradient
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="listSeparatorColor" category="Appearance" type="Color" default="#000">
+      <StyleElement selector=".ItemView:not(.lastItem)" attribute="border-bottom-color"></StyleElement>
+      <Description>
+        Sets the color of the list separator
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="itemMarginExt" category="Extended" type="Margin" default="0px">
+      <StyleElement selector="&amp;.ListBoxView .ItemView" attribute="margin"></StyleElement>
+      <Description>
+        Margin of each item in the list
+      </Description>
+    </StyleProperty>
+  
+    <!-- Text style properties -->
+    <StyleProperty name="textColor" category="Appearance" type="Color" default="#535353">
+      <StyleElement selector=".TextView:not(.textSelected)" attribute="color"></StyleElement>
+      <Description>
+        Sets the text color of the items not selected
+      </Description>
+    </StyleProperty>
+
+    <StyleProperty name="activeTextColor" category="Appearance" type="Color" default="#ffffff">
+      <StyleElement selector=".TextView.textSelected" attribute="color"></StyleElement>
+      <Description>
+        Sets the text color of the selected item
+      </Description>
+    </StyleProperty>
+  
+    <StyleProperty name="textAlign" category="Appearance"  type="brease.enum.TextAlign" default="center">
+      <StyleElement selector=".TextView" attribute="@include text-alignment($value)"></StyleElement>
+      <Description>
+        Alignment of the text
+      </Description>
+    </StyleProperty>
+  
+    <StyleProperty name="fontSize" category="Font" type="PixelVal" default="12px">
+      <StyleElement selector=".TextView" attribute="font-size"></StyleElement>
+      <Description>
+        Fontsize of the text in pixel
+      </Description>
+    </StyleProperty>
+  
+    <StyleProperty name="fontName" category="Font" type="FontName" default="Arial">
+      <StyleElement selector=".TextView" attribute="font-family"></StyleElement>
+      <Description>
+        Fontname of the text
+      </Description>
+    </StyleProperty>
+  
+    <StyleProperty name="bold" category="Font" type="Boolean" default="true">
+      <StyleElement selector=".TextView" attribute="@include font-weight-bold($value)"></StyleElement>
+      <Description>
+        If **true** font style is bold
+      </Description>
+    </StyleProperty>
+  
+    <StyleProperty name="italic" category="Font" type="Boolean" default="false">
+      <StyleElement selector=".TextView" attribute="@include font-style-italic($value)"></StyleElement>
+      <Description>
+        If **true** font style is italic
+      </Description>
+    </StyleProperty>
+    
+  </StyleProperties>
+  
+</StyleInformation>

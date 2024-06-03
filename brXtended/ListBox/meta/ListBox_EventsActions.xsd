@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:s1="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:var="http://www.br-automation.com/iat2015/varTypes/v2" elementFormDefault="qualified">
+	<xs:complexType name="widgets.brXtended.ListBox.Action">
+		<xs:complexContent>
+			<xs:extension base="s1:Target.BaseWidget">
+				<xs:sequence>
+					<xs:element name="Method" type="s1:widgets.brXtended.ListBox.Action.widgetMethod"></xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.ListBox.Action.widgetMethod" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="s1:widgetMethod"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.ListBox.ReadAction">
+		<xs:complexContent>
+			<xs:extension base="s1:ReadTarget.BaseWidget">
+				<xs:sequence>
+					<xs:element name="Method" type="s1:widgets.brXtended.ListBox.ReadAction.widgetMethod"></xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.ListBox.ReadAction.widgetMethod" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.ListBox.Action.widgetMethod"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.ListBox.Action.Focus">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.ListBox.Action.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.ListBox.Action.GetSelectedIndex">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.ListBox.ReadAction.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.ListBox.Action.GetSelectedValue">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.ListBox.ReadAction.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.ListBox.Action.SetDataProvider">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.ListBox.Action.widgetMethod">
+				<xs:attribute name="provider" type="var:ItemCollection" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.ListBox.Action.SetEnable">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.ListBox.Action.widgetMethod">
+				<xs:attribute name="value" type="var:Boolean" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.ListBox.Action.SetSelectedIndex">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.ListBox.Action.widgetMethod">
+				<xs:attribute name="index" type="var:Integer" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.ListBox.Action.SetSelectedValue">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.ListBox.Action.widgetMethod">
+				<xs:attribute name="value" type="var:String" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.ListBox.Action.SetStyle">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.ListBox.Action.widgetMethod">
+				<xs:attribute name="value" type="var:StyleReference" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.ListBox.Action.SetVisible">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.ListBox.Action.widgetMethod">
+				<xs:attribute name="value" type="var:Boolean" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.ListBox.Action.ShowTooltip">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.ListBox.Action.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.ListBox.Event">
+		<xs:complexContent>
+			<xs:extension base="s1:Source.BaseWidget">
+				<xs:attribute name="event" type="s1:widgets.brXtended.ListBox.Events" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="widgets.brXtended.ListBox.Events">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Click"></xs:enumeration>
+			<xs:enumeration value="ItemClickExt"></xs:enumeration>
+			<xs:enumeration value="DisabledClick"></xs:enumeration>
+			<xs:enumeration value="EnableChanged"></xs:enumeration>
+			<xs:enumeration value="FocusIn"></xs:enumeration>
+			<xs:enumeration value="FocusOut"></xs:enumeration>
+			<xs:enumeration value="OnDragEnter"></xs:enumeration>
+			<xs:enumeration value="OnDragLeave"></xs:enumeration>
+			<xs:enumeration value="OnDrop"></xs:enumeration>
+			<xs:enumeration value="SelectedIndexChanged"></xs:enumeration>
+			<xs:enumeration value="VisibleChanged"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

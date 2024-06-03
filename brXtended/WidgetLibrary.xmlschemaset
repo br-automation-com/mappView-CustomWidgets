@@ -5,4 +5,5 @@
 	<Schema href="NumericInput/meta/NumericInput.xsd" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" />
 	<Schema href="Screenshot/meta/Screenshot.xsd" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" />
 	<Schema href="ToggleSwitch/meta/ToggleSwitch.xsd" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" />
+	<Schema href="ListBox/meta/ListBox.xsd" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" />
 </SchemaCatalog>

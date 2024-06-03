@@ -11,6 +11,7 @@ nav:
   - Screenshot: widgets_screenshot.md
   - Transfer: widgets_transfer.md
   - ToggleSwitch: widgets_toggle_switch.md
+  - ListBox: widgets_list_box.md
   - Revision: revision.md
 
 theme:
@@ -27,6 +28,15 @@ theme:
 plugins:
   - search
       
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
 repo_url: https://github.com/br-automation-com/mappView-CustomWidgets
 repo_name: GitHub Repo
 
