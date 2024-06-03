@@ -33,7 +33,6 @@
 			<xs:attribute name="borderColor" use="optional" type="types:ColorCollection" default="#535353" />
 			<xs:attribute name="opacity" use="optional" type="types:Opacity" default="1" />
 			<xs:attribute name="margin" use="optional" type="types:Margin" default="0px" />
-			<xs:attribute name="itemMarginExt" use="optional" type="types:Margin" default="0px" />
 			<xs:attribute name="padding" use="optional" type="types:Padding" default="0px 15px" />
 			<xs:attribute name="backColor" use="optional" type="types:Color" default="#FFFFFF" />
 			<xs:attribute name="backGroundGradient" use="optional" type="types:Gradient" default="" />
@@ -47,6 +46,7 @@
 			<xs:attribute name="fontName" use="optional" type="types:FontName" default="Arial" />
 			<xs:attribute name="bold" use="optional" type="types:Boolean" default="true" />
 			<xs:attribute name="italic" use="optional" type="types:Boolean" default="false" />
+			<xs:attribute name="itemMarginExt" use="optional" type="types:Margin" default="0px" />
 		</xs:extension>
 	</xs:complexContent>
 </xs:complexType>

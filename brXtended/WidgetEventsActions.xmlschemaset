@@ -2,8 +2,8 @@
 <SchemaCatalog xmlns="http://schemas.microsoft.com/xsd/catalog">
 	<Schema href="ButtonTransfer/meta/ButtonTransfer_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
 	<Schema href="DropDownBox/meta/DropDownBox_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
+	<Schema href="ListBox/meta/ListBox_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
 	<Schema href="NumericInput/meta/NumericInput_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
 	<Schema href="Screenshot/meta/Screenshot_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
 	<Schema href="ToggleSwitch/meta/ToggleSwitch_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
-	<Schema href="ListBox/meta/ListBox_EventsActions.xsd" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" />
 </SchemaCatalog>

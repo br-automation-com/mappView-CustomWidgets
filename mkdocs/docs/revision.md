@@ -1,3 +1,7 @@
+#### 03.06.2024
+- Added ListBox widget. Thx to @fboissadier
+- Compiled widgets against mapp 5.24.2
+
 #### 26.04.2024
 - Transfer: Fixed upload same file twice does not work
 

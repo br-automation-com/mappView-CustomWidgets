@@ -7,7 +7,75 @@
 		</ASEngineeringInfo>
 		<Dependencies>
 			<Files>
-				<File>widgets/brease/ListBox/ListBox.js</File>
+				<File>DOMPurify.js</File>
+				<File>brease/config.js</File>
+				<File>brease/controller/FileManager.js</File>
+				<File>brease/controller/PopUpManager.js</File>
+				<File>brease/controller/ZoomManager.js</File>
+				<File>brease/controller/libs/KeyActions.js</File>
+				<File>brease/controller/libs/LogCode.js</File>
+				<File>brease/controller/libs/Utils.js</File>
+				<File>brease/controller/objects/PageType.js</File>
+				<File>brease/core/BaseWidget.js</File>
+				<File>brease/core/Class.js</File>
+				<File>brease/core/Decorator.js</File>
+				<File>brease/core/Types.js</File>
+				<File>brease/core/Utils.js</File>
+				<File>brease/core/libs/AsyncProcess.js</File>
+				<File>brease/core/libs/Deferred.js</File>
+				<File>brease/decorators/DragAndDropCapability.js</File>
+				<File>brease/decorators/LanguageDependency.js</File>
+				<File>brease/decorators/Permissions.js</File>
+				<File>brease/decorators/TooltipDependency.js</File>
+				<File>brease/decorators/VisibilityDependency.js</File>
+				<File>brease/decorators/libs/DragAndDropManager.js</File>
+				<File>brease/decorators/libs/Draggable.js</File>
+				<File>brease/enum/Enum.js</File>
+				<File>brease/enum/EnumObject.js</File>
+				<File>brease/events/BreaseEvent.js</File>
+				<File>brease/events/ClientSystemEvent.js</File>
+				<File>brease/events/DummyEvent.js</File>
+				<File>brease/events/EventDispatcher.js</File>
+				<File>brease/events/EventHandler.js</File>
+				<File>brease/events/Gestures.js</File>
+				<File>brease/events/VirtualEvents.js</File>
+				<File>brease/helper/ScrollUtils.js</File>
+				<File>brease/helper/Scroller.js</File>
+				<File>hammer.js</File>
+				<File>jquery.js</File>
+				<File>libs/d3/d3.js</File>
+				<File>libs/iscroll-probe.js</File>
+				<File>widgets/brease/ListBox/libs/FocusHandler.js</File>
+				<File>widgets/brease/ListBox/libs/config/Config.js</File>
+				<File>widgets/brease/ListBox/libs/config/InitState.js</File>
+				<File>widgets/brease/ListBox/libs/reducer/ListBoxActions.js</File>
+				<File>widgets/brease/ListBox/libs/reducer/ListBoxReducer.js</File>
+				<File>widgets/brease/ListBox/libs/view/ListBoxView/ListBoxView.js</File>
+				<File>widgets/brease/common/DragDropProperties/libs/DroppablePropertiesEvents.js</File>
+				<File>widgets/brease/common/libs/BindingSync.js</File>
+				<File>widgets/brease/common/libs/BoxLayout.js</File>
+				<File>widgets/brease/common/libs/external/redux.js</File>
+				<File>widgets/brease/common/libs/redux/reducers/Image/ImageActions.js</File>
+				<File>widgets/brease/common/libs/redux/reducers/Image/ImageReducer.js</File>
+				<File>widgets/brease/common/libs/redux/reducers/List/ListActions.js</File>
+				<File>widgets/brease/common/libs/redux/reducers/List/ListReducer.js</File>
+				<File>widgets/brease/common/libs/redux/reducers/Size/SizeActions.js</File>
+				<File>widgets/brease/common/libs/redux/reducers/Size/SizeReducer.js</File>
+				<File>widgets/brease/common/libs/redux/reducers/Status/StatusActions.js</File>
+				<File>widgets/brease/common/libs/redux/reducers/Status/StatusReducer.js</File>
+				<File>widgets/brease/common/libs/redux/reducers/Text/TextActions.js</File>
+				<File>widgets/brease/common/libs/redux/reducers/Text/TextReducer.js</File>
+				<File>widgets/brease/common/libs/redux/utils/UtilsImage.js</File>
+				<File>widgets/brease/common/libs/redux/utils/UtilsList.js</File>
+				<File>widgets/brease/common/libs/redux/utils/UtilsText.js</File>
+				<File>widgets/brease/common/libs/redux/view/ImageView/ImageView.js</File>
+				<File>widgets/brease/common/libs/redux/view/ItemView/ItemView.js</File>
+				<File>widgets/brease/common/libs/redux/view/ListView/ListView.js</File>
+				<File>widgets/brease/common/libs/redux/view/TextView/TextView.js</File>
+				<File>widgets/brease/common/libs/wfUtils/SVGCache.js</File>
+				<File>widgets/brease/common/libs/wfUtils/UtilsCommon.js</File>
+				<File>widgets/brease/common/libs/wfUtils/UtilsEditableBinding.js</File>
+				<File>widgets/brease/common/libs/wfUtils/UtilsImage.js</File>
 			</Files>
 			<Widgets>
 				<Widget>widgets/brXtended/ListBox/ListBox.js</Widget>
@@ -96,20 +164,6 @@
 					</Argument>
 				</Arguments>
 			</Event>
-			<Event name="ItemClickExt">
-				<Description>Fired when a item in the list is clicked on.</Description>
-				<Arguments>
-					<Argument name="clickedValue" type="String" index="0" required="true">
-						<Description>Value of the item clicked</Description>
-					</Argument>
-					<Argument name="clickedText" type="String" index="1" required="true">
-						<Description>Text of the item clicked</Description>
-					</Argument>
-					<Argument name="clickedIndex" type="UInteger" index="2" required="true">
-						<Description>Index of the item clicked</Description>
-					</Argument>
-				</Arguments>
-			</Event>
 			<Event name="DisabledClick">
 				<Description>Fired when disabled element is clicked on.</Description>
 				<Arguments>
@@ -140,6 +194,20 @@
 			</Event>
 			<Event name="FocusOut">
 				<Description>Fired when the widgets lost focus</Description>
+			</Event>
+			<Event name="ItemClickExt">
+				<Description>Fired when a item in the list is clicked on.</Description>
+				<Arguments>
+					<Argument name="clickedValue" type="String" index="0" required="true">
+						<Description>Value of the item clicked</Description>
+					</Argument>
+					<Argument name="clickedText" type="String" index="1" required="true">
+						<Description>Text of the item clicked</Description>
+					</Argument>
+					<Argument name="clickedIndex" type="Integer" index="2" required="true">
+						<Description>Index of the item clicked</Description>
+					</Argument>
+				</Arguments>
 			</Event>
 			<Event name="OnDragEnter">
 				<Description>Fired when element has onDragEnter.</Description>
@@ -250,136 +318,136 @@ or if autofocus should be disabled (-1)				</Description>
 				<Description>If true, text will wrap when necessary.</Description>
 			</Property>
 		</Properties>
-		<StyleProperties>
-			<StyleProperty name="width" type="Size" not_styleable="true" owner="widgets.brXtended.ListBox" category="Layout" groupRefId="Size" groupOrder="1" default="150">
-				<StyleElement selector="&amp;.ListBoxView" attribute="@include elemWidth($value)"/>
-				<Description>outer width of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="height" type="Size" not_styleable="true" owner="widgets.brXtended.ListBox" category="Layout" groupRefId="Size" groupOrder="2" default="150">
-				<StyleElement selector="&amp;.ListBoxView" attribute="@include elemHeight($value)"/>
-				<Description>outer height of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
-				<StyleElement attribute="@include elemTop($value)"/>
-				<Description>absolute position measured from top boundary of parent container</Description>
-			</StyleProperty>
-			<StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
-				<StyleElement attribute="@include elemLeft($value)"/>
-				<Description>absolute position measured from left boundary of parent container</Description>
-			</StyleProperty>
-			<StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
-				<StyleElement attribute="z-index"/>
-				<Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;
-        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;
-        The zIndex must be unique within a content.&lt;br/&gt;				</Description>
-			</StyleProperty>
-			<StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3">
-				<StyleElement selector="&amp;.ListBoxView" attribute="@include elemMinWidth($value)"/>
-				<Description>minimum outer width of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4">
-				<StyleElement selector="&amp;.ListBoxView" attribute="@include elemMaxWidth($value)"/>
-				<Description>maximum outer width of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5">
-				<StyleElement selector="&amp;.ListBoxView" attribute="@include elemMinHeight($value)"/>
-				<Description>minimum outer height of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6">
-				<StyleElement selector="&amp;.ListBoxView" attribute="@include elemMaxHeight($value)"/>
-				<Description>maximum outer height of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="borderWidth" category="Appearance" type="PixelValCollection" default="2px">
-				<StyleElement selector="&amp;.ListBoxView" attribute="border-width"/>
-				<Description>Sets the width of the border. For further information, please see its type</Description>
-			</StyleProperty>
-			<StyleProperty name="borderStyle" category="Appearance" type="BorderStyle" default="solid">
-				<StyleElement selector="&amp;.ListBoxView" attribute="border-style"/>
-				<Description>Sets the border style of the widget. For further information, please see its type</Description>
-			</StyleProperty>
-			<StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="0px">
-				<StyleElement selector="&amp;.ListBoxView" attribute="@include border-radius($value)"/>
-				<Description>Sets the radius of the widget rounded corners. For further information, please see its type</Description>
-			</StyleProperty>
-			<StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#535353">
-				<StyleElement selector="&amp;.ListBoxView" attribute="border-color"/>
-				<Description>Sets the border color of the widget</Description>
-			</StyleProperty>
-			<StyleProperty name="opacity" category="Appearance" type="Opacity" default="1">
-				<StyleElement selector="&amp;.ListBoxView" attribute="opacity"/>
-				<Description>Opacity of the widget</Description>
-			</StyleProperty>
-			<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
-				<StyleElement selector="&amp;.ListBoxView" attribute="margin"/>
-				<Description>Margin of the Widget</Description>
-			</StyleProperty>
-			<StyleProperty name="padding" category="Layout" type="Padding" default="0px 15px">
-				<StyleElement selector=".ItemView" attribute="padding"/>
-				<Description>Padding of the widget</Description>
-			</StyleProperty>
-			<StyleProperty name="backColor" category="Appearance" type="Color" default="#FFFFFF">
-				<StyleElement selector=".ItemView:not(.itemSelected)" attribute="background-color"/>
-				<Description>Sets the background color of the items not selected</Description>
-			</StyleProperty>
-			<StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="">
-				<StyleElement selector=".ItemView:not(.itemSelected)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
-				<Description>Sets the background color of the items not selected as a gradient</Description>
-			</StyleProperty>
-			<StyleProperty name="activeBackColor" category="Appearance" type="Color" default="#ff8800">
-				<StyleElement selector=".ItemView.itemSelected" attribute="background-color"/>
-				<Description>Sets the background color of the selected item</Description>
-			</StyleProperty>
-			<StyleProperty name="activeBackGroundGradient" category="Appearance" type="Gradient" default="">
-				<StyleElement selector=".ItemView.itemSelected" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
-				<Description>Sets the background color of the selected item as a gradient</Description>
-			</StyleProperty>
-			<StyleProperty name="listSeparatorColor" category="Appearance" type="Color" default="#000">
-				<StyleElement selector=".ItemView:not(.lastItem)" attribute="border-bottom-color"/>
-				<Description>Sets the color of the list separator</Description>
-			</StyleProperty>
-			<StyleProperty name="itemMarginExt" category="Extended" type="Margin" default="0px">
-				<StyleElement selector="&amp;.ListBoxView .ItemView" attribute="margin"/>
-				<Description>Margin of each item in the list</Description>
-			</StyleProperty>
-			<StyleProperty name="textColor" category="Appearance" type="Color" default="#535353">
-				<StyleElement selector=".TextView:not(.textSelected)" attribute="color"/>
-				<Description>Sets the text color of the items not selected</Description>
-			</StyleProperty>
-			<StyleProperty name="activeTextColor" category="Appearance" type="Color" default="#ffffff">
-				<StyleElement selector=".TextView.textSelected" attribute="color"/>
-				<Description>Sets the text color of the selected item</Description>
-			</StyleProperty>
-			<StyleProperty name="textAlign" category="Appearance" type="brease.enum.TextAlign" default="center">
-				<StyleElement selector=".TextView" attribute="@include text-alignment($value)"/>
-				<Description>Alignment of the text</Description>
-			</StyleProperty>
-			<StyleProperty name="fontSize" category="Font" type="PixelVal" default="12px">
-				<StyleElement selector=".TextView" attribute="font-size"/>
-				<Description>Fontsize of the text in pixel</Description>
-			</StyleProperty>
-			<StyleProperty name="fontName" category="Font" type="FontName" default="Arial">
-				<StyleElement selector=".TextView" attribute="font-family"/>
-				<Description>Fontname of the text</Description>
-			</StyleProperty>
-			<StyleProperty name="bold" category="Font" type="Boolean" default="true">
-				<StyleElement selector=".TextView" attribute="@include font-weight-bold($value)"/>
-				<Description>If **true** font style is bold</Description>
-			</StyleProperty>
-			<StyleProperty name="italic" category="Font" type="Boolean" default="false">
-				<StyleElement selector=".TextView" attribute="@include font-style-italic($value)"/>
-				<Description>If **true** font style is italic</Description>
-			</StyleProperty>
-		</StyleProperties>
-		<PropertyGroups>
-			<PropertyGroup name="Size" type="String" category="Layout">
-				<Description>outer height and width of widget</Description>
-			</PropertyGroup>
-			<PropertyGroup name="Position" type="String" category="Layout">
-				<Description>top and left of widget</Description>
-			</PropertyGroup>
-		</PropertyGroups>
-		<BindingTemplates>
-
-		</BindingTemplates>
-	</Widget>
+	<BindingTemplates>
+  
+</BindingTemplates>
+<PropertyGroups>
+  <PropertyGroup name="Size" type="String" category="Layout">
+    <Description>outer height and width of widget</Description>
+  </PropertyGroup>
+  <PropertyGroup name="Position" type="String" category="Layout">
+    <Description>top and left of widget</Description>
+  </PropertyGroup>
+</PropertyGroups>
+<StyleProperties defaultStyle="default">
+  <StyleProperty name="width" type="Size" not_styleable="true" owner="widgets.brXtended.ListBox" category="Layout" groupRefId="Size" groupOrder="1" default="150">
+    <StyleElement selector="&amp;.ListBoxView" attribute="@include elemWidth($value)"/>
+    <Description>outer width of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="height" type="Size" not_styleable="true" owner="widgets.brXtended.ListBox" category="Layout" groupRefId="Size" groupOrder="2" default="150">
+    <StyleElement selector="&amp;.ListBoxView" attribute="@include elemHeight($value)"/>
+    <Description>outer height of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
+    <StyleElement attribute="@include elemTop($value)"/>
+    <Description>absolute position measured from top boundary of parent container</Description>
+  </StyleProperty>
+  <StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
+    <StyleElement attribute="@include elemLeft($value)"/>
+    <Description>absolute position measured from left boundary of parent container</Description>
+  </StyleProperty>
+  <StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
+    <StyleElement attribute="z-index"/>
+    <Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;&#xD;
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;&#xD;
+        The zIndex must be unique within a content.&lt;br/&gt;</Description>
+  </StyleProperty>
+  <StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3" owner="widgets.brXtended.ListBox">
+    <StyleElement selector="&amp;.ListBoxView" attribute="@include elemMinWidth($value)"/>
+    <Description>minimum outer width of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4" owner="widgets.brXtended.ListBox">
+    <StyleElement selector="&amp;.ListBoxView" attribute="@include elemMaxWidth($value)"/>
+    <Description>maximum outer width of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5" owner="widgets.brXtended.ListBox">
+    <StyleElement selector="&amp;.ListBoxView" attribute="@include elemMinHeight($value)"/>
+    <Description>minimum outer height of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6" owner="widgets.brXtended.ListBox">
+    <StyleElement selector="&amp;.ListBoxView" attribute="@include elemMaxHeight($value)"/>
+    <Description>maximum outer height of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="borderWidth" category="Appearance" type="PixelValCollection" default="2px" owner="widgets.brXtended.ListBox">
+    <StyleElement selector="&amp;.ListBoxView" attribute="border-width"/>
+    <Description>Sets the width of the border. For further information, please see its type</Description>
+  </StyleProperty>
+  <StyleProperty name="borderStyle" category="Appearance" type="BorderStyle" default="solid" owner="widgets.brXtended.ListBox">
+    <StyleElement selector="&amp;.ListBoxView" attribute="border-style"/>
+    <Description>Sets the border style of the widget. For further information, please see its type</Description>
+  </StyleProperty>
+  <StyleProperty name="cornerRadius" category="Appearance" type="PixelValCollection" default="0px" owner="widgets.brXtended.ListBox">
+    <StyleElement selector="&amp;.ListBoxView" attribute="@include border-radius($value)"/>
+    <Description>Sets the radius of the widget rounded corners. For further information, please see its type</Description>
+  </StyleProperty>
+  <StyleProperty name="borderColor" category="Appearance" type="ColorCollection" default="#535353" owner="widgets.brXtended.ListBox">
+    <StyleElement selector="&amp;.ListBoxView" attribute="border-color"/>
+    <Description>Sets the border color of the widget</Description>
+  </StyleProperty>
+  <StyleProperty name="opacity" category="Appearance" type="Opacity" default="1" owner="widgets.brXtended.ListBox">
+    <StyleElement selector="&amp;.ListBoxView" attribute="opacity"/>
+    <Description>Opacity of the widget</Description>
+  </StyleProperty>
+  <StyleProperty name="margin" category="Layout" type="Margin" default="0px" owner="widgets.brXtended.ListBox">
+    <StyleElement selector="&amp;.ListBoxView" attribute="margin"/>
+    <Description>Margin of the Widget</Description>
+  </StyleProperty>
+  <StyleProperty name="padding" category="Layout" type="Padding" default="0px 15px" owner="widgets.brXtended.ListBox">
+    <StyleElement selector=".ItemView" attribute="padding"/>
+    <Description>Padding of the widget</Description>
+  </StyleProperty>
+  <StyleProperty name="backColor" category="Appearance" type="Color" default="#FFFFFF" owner="widgets.brXtended.ListBox">
+    <StyleElement selector=".ItemView:not(.itemSelected)" attribute="background-color"/>
+    <Description>Sets the background color of the items not selected</Description>
+  </StyleProperty>
+  <StyleProperty name="backGroundGradient" category="Appearance" type="Gradient" default="" owner="widgets.brXtended.ListBox">
+    <StyleElement selector=".ItemView:not(.itemSelected)" attribute="@include backGroundGradient('$value')"/>
+    <Description>Sets the background color of the items not selected as a gradient</Description>
+  </StyleProperty>
+  <StyleProperty name="activeBackColor" category="Appearance" type="Color" default="#ff8800" owner="widgets.brXtended.ListBox">
+    <StyleElement selector=".ItemView.itemSelected" attribute="background-color"/>
+    <Description>Sets the background color of the selected item</Description>
+  </StyleProperty>
+  <StyleProperty name="activeBackGroundGradient" category="Appearance" type="Gradient" default="" owner="widgets.brXtended.ListBox">
+    <StyleElement selector=".ItemView.itemSelected" attribute="@include backGroundGradient('$value')"/>
+    <Description>Sets the background color of the selected item as a gradient</Description>
+  </StyleProperty>
+  <StyleProperty name="listSeparatorColor" category="Appearance" type="Color" default="#000" owner="widgets.brXtended.ListBox">
+    <StyleElement selector=".ItemView:not(.lastItem)" attribute="border-bottom-color"/>
+    <Description>Sets the color of the list separator</Description>
+  </StyleProperty>
+  <StyleProperty name="textColor" category="Appearance" type="Color" default="#535353" owner="widgets.brXtended.ListBox">
+    <StyleElement selector=".TextView:not(.textSelected)" attribute="color"/>
+    <Description>Sets the text color of the items not selected</Description>
+  </StyleProperty>
+  <StyleProperty name="activeTextColor" category="Appearance" type="Color" default="#ffffff" owner="widgets.brXtended.ListBox">
+    <StyleElement selector=".TextView.textSelected" attribute="color"/>
+    <Description>Sets the text color of the selected item</Description>
+  </StyleProperty>
+  <StyleProperty name="textAlign" category="Appearance" type="brease.enum.TextAlign" default="center" owner="widgets.brXtended.ListBox">
+    <StyleElement selector=".TextView" attribute="@include text-alignment($value)"/>
+    <Description>Alignment of the text</Description>
+  </StyleProperty>
+  <StyleProperty name="fontSize" category="Font" type="PixelVal" default="12px" owner="widgets.brXtended.ListBox">
+    <StyleElement selector=".TextView" attribute="font-size"/>
+    <Description>Fontsize of the text in pixel</Description>
+  </StyleProperty>
+  <StyleProperty name="fontName" category="Font" type="FontName" default="Arial" owner="widgets.brXtended.ListBox">
+    <StyleElement selector=".TextView" attribute="font-family"/>
+    <Description>Fontname of the text</Description>
+  </StyleProperty>
+  <StyleProperty name="bold" category="Font" type="Boolean" default="true" owner="widgets.brXtended.ListBox">
+    <StyleElement selector=".TextView" attribute="@include font-weight-bold($value)"/>
+    <Description>If **true** font style is bold</Description>
+  </StyleProperty>
+  <StyleProperty name="italic" category="Font" type="Boolean" default="false" owner="widgets.brXtended.ListBox">
+    <StyleElement selector=".TextView" attribute="@include font-style-italic($value)"/>
+    <Description>If **true** font style is italic</Description>
+  </StyleProperty>
+  <StyleProperty name="itemMarginExt" category="Extended" type="Margin" default="0px">
+    <StyleElement selector="&amp;.ListBoxView .ItemView" attribute="margin"/>
+    <Description>Margin of each item in the list</Description>
+  </StyleProperty>
+</StyleProperties>
+</Widget>
 </WidgetLibrary>

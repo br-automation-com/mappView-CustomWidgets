@@ -1,83 +1,86 @@
 @import "mixins.scss";
 @mixin widgets_brXtended_ListBox_base {
-	&.ListBoxView {
-		@include elemWidth(150);
-	}
-	&.ListBoxView {
-		@include elemHeight(150);
-	}
-	&.ListBoxView {
-		@include elemMinWidth(0);
-	}
-	&.ListBoxView {
-		@include elemMaxWidth(0);
-	}
-	&.ListBoxView {
-		@include elemMinHeight(0);
-	}
-	&.ListBoxView {
-		@include elemMaxHeight(0);
-	}
-	&.ListBoxView {
-		border-width: 2px;
-	}
-	&.ListBoxView {
-		border-style: solid;
-	}
-	&.ListBoxView {
-		@include border-radius(0px);
-	}
-	&.ListBoxView {
-		border-color: #535353;
-	}
-	&.ListBoxView {
-		opacity: 1;
-	}
-	&.ListBoxView {
-		margin: 0px;
-	}
-	.ItemView {
-		padding: 0px 15px;
-	}
-	.ItemView:not(.itemSelected) {
-		background-color: #FFFFFF;
-	}
-	.ItemView:not(.itemSelected) {
-		@include backGroundGradient('');
-	}
-	.ItemView.itemSelected {
-		background-color: #ff8800;
-	}
-	.ItemView.itemSelected {
-		@include backGroundGradient('');
-	}
-	.ItemView:not(.lastItem) {
-		border-bottom-color: #000;
-	}
-	.TextView:not(.textSelected) {
-		color: #535353;
-	}
-	.TextView.textSelected {
-		color: #ffffff;
-	}
-	.TextView {
-		@include text-alignment(center);
-	}
-	.TextView {
-		font-size: 12px;
-	}
-	.TextView {
-		font-family: Arial;
-	}
-	.TextView {
-		@include font-weight-bold(true);
-	}
-	.TextView {
-		@include font-style-italic(false);
-	}
+&.ListBoxView {
+	@include elemWidth(150);
+}
+&.ListBoxView {
+	@include elemHeight(150);
+}
+&.ListBoxView {
+	@include elemMinWidth(0);
+}
+&.ListBoxView {
+	@include elemMaxWidth(0);
+}
+&.ListBoxView {
+	@include elemMinHeight(0);
+}
+&.ListBoxView {
+	@include elemMaxHeight(0);
+}
+&.ListBoxView {
+	border-width: 2px;
+}
+&.ListBoxView {
+	border-style: solid;
+}
+&.ListBoxView {
+	@include border-radius(0px);
+}
+&.ListBoxView {
+	border-color: #535353;
+}
+&.ListBoxView {
+	opacity: 1;
+}
+&.ListBoxView {
+	margin: 0px;
+}
+.ItemView {
+	padding: 0px 15px;
+}
+.ItemView:not(.itemSelected) {
+	background-color: #FFFFFF;
+}
+.ItemView:not(.itemSelected) {
+	@include backGroundGradient('');
+}
+.ItemView.itemSelected {
+	background-color: #ff8800;
+}
+.ItemView.itemSelected {
+	@include backGroundGradient('');
+}
+.ItemView:not(.lastItem) {
+	border-bottom-color: #000;
+}
+.TextView:not(.textSelected) {
+	color: #535353;
+}
+.TextView.textSelected {
+	color: #ffffff;
+}
+.TextView {
+	@include text-alignment(center);
+}
+.TextView {
+	font-size: 12px;
+}
+.TextView {
+	font-family: Arial;
+}
+.TextView {
+	@include font-weight-bold(true);
+}
+.TextView {
+	@include font-style-italic(false);
+}
+&.ListBoxView .ItemView {
+	margin: 0px;
+}
 
 }
 
 .widgets_brXtended_ListBox_style_default {
-@include widgets_brXtended_ListBox_base
+@include widgets_brXtended_ListBox_base 
 }
