@@ -1,0 +1,115 @@
+.brXtendedWeekPlanning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  overflow: hidden;
+
+  .container {
+    height: 100%;
+    width: 100%;
+  }
+
+  .Invisible {
+    display: none;
+  }
+
+  .planning-container {
+    overflow-x: auto;
+  }
+
+  #export-data {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+
+  #export-data:hover {
+    background-color: #555;
+  }
+  .buttons {
+    margin-bottom: 10px;
+  }
+
+  .buttons button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+
+  .buttons button:hover {
+    background-color: #555;
+  }
+
+  .buttons button.active {
+    background-color: #888; /* Button active color */
+  }
+
+  .planning-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .planning-table th,
+  .planning-table td {
+    border: 1px solid #444;
+    width: 4.16%;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 1.2vw; /* Taille du texte dynamique */
+  }
+  .planning-table th {
+    background-color: #333;
+    width: 4.16%;
+  }
+
+  .planning-table td {
+    background-color: #555;
+  }
+
+  .planning-table td.hovered,
+  .planning-table th.hovered {
+    background-color: #777;
+  }
+
+  .planning-table td.continuous {
+    background-color: #00f;
+  }
+
+  .planning-table td.motion-detection {
+    background-color: #0f0;
+  }
+
+  .planning-table td.custom1 {
+    background-color: #f90;
+  }
+
+  .planning-table td.custom2 {
+    background-color: #0ff;
+  }
+
+  .planning-table th.hour-header {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .planning-table th.hour-header::after {
+    content: attr(data-hour);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

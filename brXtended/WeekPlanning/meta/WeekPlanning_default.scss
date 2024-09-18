@@ -1,0 +1,61 @@
+@import "mixins.scss";
+@mixin widgets_brXtended_WeekPlanning_base {
+	@include elemAutoWidth(400);
+	@include elemAutoHeight(100);
+	@include elemMinWidth(0);
+	@include elemMaxWidth(0);
+	@include elemMinHeight(0);
+	@include elemMaxHeight(0);
+	border-width: 0px;
+	@include border-radius(0px);
+	background-color: #2c2c2c;
+	& .planning-container {
+		background-color: #2c2c2c;
+	}
+	@include backGroundGradient('');
+	border-color: #C8C8C8;
+	&:before {
+		border-color: #C8C8C8;
+	}
+	&:after {
+		border-color: #C8C8C8;
+	}
+	border-style: none;
+	&:before {
+		border-style: none;
+	}
+	&:after {
+		border-style: none;
+	}
+	.planning-table td {
+		color: #fff;
+	}
+	.planning-table th {
+		color: #fff;
+	}
+	opacity: 1;
+	span {
+		font-family: Arial;
+	}
+	font-size: 14px;
+	@include font-weight-bold(false);
+	@include font-style-italic(false);
+	span {
+		@include text-decoration-underline(false);
+	}
+	margin: 0px;
+	.planning-table td.hovered {
+		background-color: #777;
+	}
+	.planning-table th.hovered {
+		background-color: #777;
+	}
+	.planning-table th {
+		height: 30px;
+	}
+
+}
+
+.widgets_brXtended_WeekPlanning_style_default {
+@include widgets_brXtended_WeekPlanning_base
+}

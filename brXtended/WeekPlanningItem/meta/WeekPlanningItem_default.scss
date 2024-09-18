@@ -1,0 +1,49 @@
+@import "mixins.scss";
+@mixin widgets_brXtended_WeekPlanningItem_base {
+	@include elemAutoWidth(80);
+	@include elemAutoHeight(30);
+	@include elemMinWidth(0);
+	@include elemMaxWidth(0);
+	@include elemMinHeight(0);
+	@include elemMaxHeight(0);
+	border-width: 0px;
+	@include border-radius(0px);
+	background-color: #2c2c2c;
+	& button {
+		background-color: #2c2c2c;
+	}
+	@include backGroundGradient('');
+	border-color: #C8C8C8;
+	&:before {
+		border-color: #C8C8C8;
+	}
+	&:after {
+		border-color: #C8C8C8;
+	}
+	border-style: none;
+	&:before {
+		border-style: none;
+	}
+	&:after {
+		border-style: none;
+	}
+	& button {
+		color: #fff;
+	}
+	opacity: 1;
+	span {
+		font-family: Arial;
+	}
+	font-size: 14px;
+	@include font-weight-bold(false);
+	@include font-style-italic(false);
+	span {
+		@include text-decoration-underline(false);
+	}
+	margin: 0px;
+
+}
+
+.widgets_brXtended_WeekPlanningItem_style_default {
+@include widgets_brXtended_WeekPlanningItem_base
+}

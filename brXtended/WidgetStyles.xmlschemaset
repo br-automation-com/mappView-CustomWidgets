@@ -6,4 +6,6 @@
 	<Schema href="NumericInput/meta/NumericInput_Styles.xsd" targetNamespace="http://www.br-automation.com/iat2015/styles/engineering/v1" />
 	<Schema href="Screenshot/meta/Screenshot_Styles.xsd" targetNamespace="http://www.br-automation.com/iat2015/styles/engineering/v1" />
 	<Schema href="ToggleSwitch/meta/ToggleSwitch_Styles.xsd" targetNamespace="http://www.br-automation.com/iat2015/styles/engineering/v1" />
+	<Schema href="WeekPlanning/meta/WeekPlanning_Styles.xsd" targetNamespace="http://www.br-automation.com/iat2015/styles/engineering/v1" />
+	<Schema href="WeekPlanningItem/meta/WeekPlanningItem_Styles.xsd" targetNamespace="http://www.br-automation.com/iat2015/styles/engineering/v1" />
 </SchemaCatalog>

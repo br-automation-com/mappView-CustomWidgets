@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StyleInformation name="widgets.brXtended.WeekPlanning"
+	xmlns="http://www.br-automation.com/iat2014/widgetStyles"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<StyleProperties>
+		<StyleProperty name="width" type="AutoSize" not_styleable="true" default="400" category="Layout">
+			<StyleElement attribute="@include elemAutoWidth($value)"></StyleElement>
+			<Description>outer width of widget</Description>
+		</StyleProperty>
+		<StyleProperty name="height" type="AutoSize" not_styleable="true" default="100" category="Layout">
+			<StyleElement attribute="@include elemAutoHeight($value)"></StyleElement>
+			<Description>outer height of widget</Description>
+		</StyleProperty>
+		<StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3">
+			<StyleElement attribute="@include elemMinWidth($value)"></StyleElement>
+			<Description>minimum outer width of widget</Description>
+		</StyleProperty>
+		<StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4">
+			<StyleElement attribute="@include elemMaxWidth($value)"></StyleElement>
+			<Description>maximum outer width of widget</Description>
+		</StyleProperty>
+		<StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5">
+			<StyleElement attribute="@include elemMinHeight($value)"></StyleElement>
+			<Description>minimum outer height of widget</Description>
+		</StyleProperty>
+		<StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6">
+			<StyleElement attribute="@include elemMaxHeight($value)"></StyleElement>
+			<Description>maximum outer height of widget</Description>
+		</StyleProperty>
+		<StyleProperty name="borderWidth" type="PixelValCollection" category="Appearance" default="0px">
+			<StyleElement attribute="border-width"></StyleElement>
+			<Description>
+        Sets the border width of the widget. For further information, please check its type
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="cornerRadius" type="PixelValCollection" category="Appearance" default="0px">
+			<StyleElement attribute="@include border-radius($value)"></StyleElement>
+			<Description>
+        Sets the radius of the widget rounded corners. For further information, please check its type
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="backColor" type="Color" default="#2c2c2c" category="Appearance">
+			<StyleElement attribute="background-color"></StyleElement>
+			<StyleElement selector="&amp; .planning-container" attribute="background-color"></StyleElement>
+			<Description>
+        Sets the background color of the widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="backGroundGradient" type="Gradient" category="Appearance" default="">
+			<StyleElement attribute="@include backGroundGradient('$value')"></StyleElement>
+			<Description>
+				Background as a gradient
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="borderColor" type="ColorCollection" category="Appearance" default="#C8C8C8">
+			<StyleElement attribute="border-color"></StyleElement>
+			<StyleElement selector="&amp;:before" attribute="border-color"></StyleElement>
+			<StyleElement selector="&amp;:after" attribute="border-color"></StyleElement>
+			<Description>
+        Sets the border color
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="borderStyle" type="BorderStyle" category="Appearance" default="none">
+			<StyleElement attribute="border-style"></StyleElement>
+			<StyleElement selector="&amp;:before" attribute="border-style"></StyleElement>
+			<StyleElement selector="&amp;:after" attribute="border-style"></StyleElement>
+			<Description>
+				Style of the Border of the widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="textColor" type="Color" default="#fff" category="Appearance">
+			<StyleElement selector="&amp; span" attribute="color"></StyleElement>
+			<Description>
+        Sets the color of the text displayed by the widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="opacity" type="Opacity" category="Appearance" default="1">
+			<StyleElement attribute="opacity"></StyleElement>
+			<Description>
+				Opacity of the widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="fontName" type="FontName" default="Arial" category="Font">
+			<StyleElement selector="span" attribute="font-family"></StyleElement>
+			<Description>
+				Fontname of the text
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="fontSize" type="PixelVal" default="14px" category="Font">
+			<StyleElement attribute="font-size"></StyleElement>
+			<Description>
+				Fontsize of the text in pixel
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="bold" type="Boolean" default="false" category="Font">
+			<StyleElement attribute="@include font-weight-bold($value)"></StyleElement>
+			<Description>
+				If **true** font style is bold
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="italic" type="Boolean" default="false" category="Font">
+			<StyleElement attribute="@include font-style-italic($value)"></StyleElement>
+			<Description>
+				If **true** font style is italic
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="underline" type="Boolean" default="false" category="Font">
+			<StyleElement selector="span" attribute="@include text-decoration-underline($value)"></StyleElement>
+			<Description>
+				If **true** font style is underline
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+			<StyleElement attribute="margin"></StyleElement>
+			<Description>
+				Margin of the Widget
+			</Description>
+		</StyleProperty>
+
+
+		<StyleProperty name="hoverCellBackColor" type="Color" category="Appearance" default="#777">
+			<StyleElement selector=".planning-table td.hovered" attribute="background-color"></StyleElement>
+			<StyleElement selector=".planning-table th.hovered" attribute="background-color"></StyleElement>
+			<Description>
+			Defines hover color of cells
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="textColor" type="Color" category="Appearance" default="#fff">
+			<StyleElement selector=".planning-table td" attribute="color"/>
+			<StyleElement selector=".planning-table th" attribute="color"/>
+			<Description>Defines hover color of cells</Description>
+		</StyleProperty>
+		<StyleProperty name="headerHeight" type="PixelVal" category="Layout" default="30px">
+			<StyleElement selector=".planning-table th" attribute="height"/>
+			<Description>Defines hover color of cells</Description>
+		</StyleProperty>
+		<!--<StyleProperty name="textShadow" type="Shadow" category="Appearance" default="none">
+      <StyleElement selector="span" attribute="text-Shadow"></StyleElement>
+      <Description>
+        Defines the shadow of the text
+      </Description>
+    </StyleProperty>-->
+
+	</StyleProperties>
+</StyleInformation>
+	
+	
+

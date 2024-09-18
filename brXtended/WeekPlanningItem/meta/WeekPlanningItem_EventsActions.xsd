@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:s1="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:var="http://www.br-automation.com/iat2015/varTypes/v2" elementFormDefault="qualified">
+	<xs:complexType name="widgets.brXtended.WeekPlanningItem.Action">
+		<xs:complexContent>
+			<xs:extension base="s1:Target.BaseWidget">
+				<xs:sequence>
+					<xs:element name="Method" type="s1:widgets.brXtended.WeekPlanningItem.Action.widgetMethod"></xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.WeekPlanningItem.Action.widgetMethod" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="s1:widgetMethod"></xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.WeekPlanningItem.Action.Focus">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.WeekPlanningItem.Action.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.WeekPlanningItem.Action.SetEnable">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.WeekPlanningItem.Action.widgetMethod">
+				<xs:attribute name="value" type="var:Boolean" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.WeekPlanningItem.Action.SetStyle">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.WeekPlanningItem.Action.widgetMethod">
+				<xs:attribute name="value" type="var:StyleReference" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.WeekPlanningItem.Action.SetVisible">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.WeekPlanningItem.Action.widgetMethod">
+				<xs:attribute name="value" type="var:Boolean" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.WeekPlanningItem.Action.ShowTooltip">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.WeekPlanningItem.Action.widgetMethod">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.WeekPlanningItem.Event">
+		<xs:complexContent>
+			<xs:extension base="s1:Source.BaseWidget">
+				<xs:attribute name="event" type="s1:widgets.brXtended.WeekPlanningItem.Events" use="required"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="widgets.brXtended.WeekPlanningItem.Events">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Click"></xs:enumeration>
+			<xs:enumeration value="DisabledClick"></xs:enumeration>
+			<xs:enumeration value="EnableChanged"></xs:enumeration>
+			<xs:enumeration value="FocusIn"></xs:enumeration>
+			<xs:enumeration value="FocusOut"></xs:enumeration>
+			<xs:enumeration value="VisibleChanged"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

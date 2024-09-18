@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WidgetLibrary xmlns="http://www.br-automation.com/iat2014/widget">
+	<Widget name="widgets.brXtended.WeekPlanning">
+		<ASEngineeringInfo>
+			<IsProjectable>true</IsProjectable>
+			<LicenseInfo>unlicensed</LicenseInfo>
+		</ASEngineeringInfo>
+		<Dependencies>
+			<Files>
+				<File>brease/core/ContainerWidget.js</File>
+			</Files>
+			<Folders>
+			</Folders>
+			<Widgets>
+				<Widget>widgets/brXtended/WeekPlanning/WeekPlanning.js</Widget>
+			</Widgets>
+		</Dependencies>
+		<Categories>
+			<Category name="Category">Data</Category>
+		</Categories>
+		<Descriptions>
+			<Description name="short">Week planning widget</Description>
+			<Description name="de">German</Description>
+			<Description name="en">English</Description>
+		</Descriptions>
+		<Inheritance>
+			<Class level="0">widgets.brXtended.WeekPlanning</Class>
+			<Class level="1">brease.core.ContainerWidget</Class>
+			<Class level="2">brease.core.BaseWidget</Class>
+		</Inheritance>
+		<Parents>
+			<Parent>*</Parent>
+		</Parents>
+		<Children>
+			<Child>widgets.brXtended.WeekPlanningItem</Child>
+		</Children>
+		<Methods>
+			<Method name="Focus" read="false">
+				<Description>Sets focus on the widget element, if it can be focused and keyboardOperation=true</Description>
+			</Method>
+			<Method name="SetEnable" read="false">
+				<Description>Sets the state of property &quot;enable&quot;</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetStyle" read="false">
+				<Arguments>
+					<Argument name="value" type="StyleReference" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="SetVisible" read="false">
+				<Description>Sets the state of property &quot;visible&quot;</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="ShowTooltip" read="false"/>
+		</Methods>
+		<Events>
+			<Event name="Click">
+				<Description>Fired when element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="1" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="2" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="DisabledClick">
+				<Description>Fired when disabled element is clicked on.</Description>
+				<Arguments>
+					<Argument name="origin" type="String" index="0" required="true">
+						<Description>id of widget that triggered this event</Description>
+					</Argument>
+					<Argument name="hasPermission" type="Boolean" index="1" required="true">
+						<Description>defines if the state is caused due to missing roles of the current user</Description>
+					</Argument>
+					<Argument name="horizontalPos" type="String" index="2" required="true">
+						<Description>horizontal position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+					<Argument name="verticalPos" type="String" index="3" required="true">
+						<Description>vertical position of click in pixel i.e &apos;10px&apos;</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="EnableChanged">
+				<Description>Fired when operability of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>operability</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+			<Event name="FocusIn">
+				<Description>Fired when the widgets gets focus</Description>
+			</Event>
+			<Event name="FocusOut">
+				<Description>Fired when the widgets lost focus</Description>
+			</Event>
+			<Event name="VisibleChanged">
+				<Description>Fired when the visibility of the widget changes.</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true">
+						<Description>visibility</Description>
+					</Argument>
+				</Arguments>
+			</Event>
+		</Events>
+		<Properties>
+			<Property name="enable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>Initial option to enable widget.</Description>
+			</Property>
+			<Property name="permissionOperate" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts operability to users, which have given roles</Description>
+			</Property>
+			<Property name="permissionView" type="RoleCollection" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Accessibility">
+				<Description>restricts visibility to users, which have given roles</Description>
+			</Property>
+			<Property name="style" type="StyleReference" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="default">
+				<Description>reference to a style for this widget type</Description>
+			</Property>
+			<Property name="tabIndex" type="Integer" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="-1">
+				<Description>sets if a widget should have autofocus enabled (0), the order of the focus (&gt;0),
+or if autofocus should be disabled (-1)				</Description>
+			</Property>
+			<Property name="tableDatas" type="NumberArray1D" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="false" category="Data" defaultValue="[]">
+				<Description>One dimension array [0..334]</Description>
+			</Property>
+			<Property name="tooltip" type="String" initOnly="true" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
+				<Description>reference to a tooltip for a widget</Description>
+			</Property>
+			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
+				<Description>change visibility</Description>
+			</Property>
+		</Properties>
+		<StyleProperties>
+			<StyleProperty name="width" type="AutoSize" not_styleable="true" owner="widgets.brXtended.WeekPlanning" category="Layout" groupRefId="Size" groupOrder="1" default="400">
+				<StyleElement attribute="@include elemAutoWidth($value)"/>
+				<Description>outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="height" type="AutoSize" not_styleable="true" owner="widgets.brXtended.WeekPlanning" category="Layout" groupRefId="Size" groupOrder="2" default="100">
+				<StyleElement attribute="@include elemAutoHeight($value)"/>
+				<Description>outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
+				<StyleElement attribute="@include elemTop($value)"/>
+				<Description>absolute position measured from top boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
+				<StyleElement attribute="@include elemLeft($value)"/>
+				<Description>absolute position measured from left boundary of parent container</Description>
+			</StyleProperty>
+			<StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
+				<StyleElement attribute="z-index"/>
+				<Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;
+        The zIndex must be unique within a content.&lt;br/&gt;				</Description>
+			</StyleProperty>
+			<StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3">
+				<StyleElement attribute="@include elemMinWidth($value)"/>
+				<Description>minimum outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4">
+				<StyleElement attribute="@include elemMaxWidth($value)"/>
+				<Description>maximum outer width of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5">
+				<StyleElement attribute="@include elemMinHeight($value)"/>
+				<Description>minimum outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6">
+				<StyleElement attribute="@include elemMaxHeight($value)"/>
+				<Description>maximum outer height of widget</Description>
+			</StyleProperty>
+			<StyleProperty name="borderWidth" type="PixelValCollection" category="Appearance" default="0px">
+				<StyleElement attribute="border-width"/>
+				<Description>Sets the border width of the widget. For further information, please check its type</Description>
+			</StyleProperty>
+			<StyleProperty name="cornerRadius" type="PixelValCollection" category="Appearance" default="0px">
+				<StyleElement attribute="@include border-radius($value)"/>
+				<Description>Sets the radius of the widget rounded corners. For further information, please check its type</Description>
+			</StyleProperty>
+			<StyleProperty name="backColor" type="Color" default="#2c2c2c" category="Appearance">
+				<StyleElement attribute="background-color"/>
+				<StyleElement selector="&amp; .planning-container" attribute="background-color"/>
+				<Description>Sets the background color of the widget</Description>
+			</StyleProperty>
+			<StyleProperty name="backGroundGradient" type="Gradient" category="Appearance" default="">
+				<StyleElement attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<Description>Background as a gradient</Description>
+			</StyleProperty>
+			<StyleProperty name="borderColor" type="ColorCollection" category="Appearance" default="#C8C8C8">
+				<StyleElement attribute="border-color"/>
+				<StyleElement selector="&amp;:before" attribute="border-color"/>
+				<StyleElement selector="&amp;:after" attribute="border-color"/>
+				<Description>Sets the border color</Description>
+			</StyleProperty>
+			<StyleProperty name="borderStyle" type="BorderStyle" category="Appearance" default="none">
+				<StyleElement attribute="border-style"/>
+				<StyleElement selector="&amp;:before" attribute="border-style"/>
+				<StyleElement selector="&amp;:after" attribute="border-style"/>
+				<Description>Style of the Border of the widget</Description>
+			</StyleProperty>
+			<StyleProperty name="textColor" type="Color" default="#fff" category="Appearance" owner="widgets.brXtended.WeekPlanning">
+				<StyleElement selector=".planning-table td" attribute="color"/>
+				<StyleElement selector=".planning-table th" attribute="color"/>
+				<Description>Defines hover color of cells</Description>
+			</StyleProperty>
+			<StyleProperty name="opacity" type="Opacity" category="Appearance" default="1">
+				<StyleElement attribute="opacity"/>
+				<Description>Opacity of the widget</Description>
+			</StyleProperty>
+			<StyleProperty name="fontName" type="FontName" default="Arial" category="Font">
+				<StyleElement selector="span" attribute="font-family"/>
+				<Description>Fontname of the text</Description>
+			</StyleProperty>
+			<StyleProperty name="fontSize" type="PixelVal" default="14px" category="Font">
+				<StyleElement attribute="font-size"/>
+				<Description>Fontsize of the text in pixel</Description>
+			</StyleProperty>
+			<StyleProperty name="bold" type="Boolean" default="false" category="Font">
+				<StyleElement attribute="@include font-weight-bold($value)"/>
+				<Description>If **true** font style is bold</Description>
+			</StyleProperty>
+			<StyleProperty name="italic" type="Boolean" default="false" category="Font">
+				<StyleElement attribute="@include font-style-italic($value)"/>
+				<Description>If **true** font style is italic</Description>
+			</StyleProperty>
+			<StyleProperty name="underline" type="Boolean" default="false" category="Font">
+				<StyleElement selector="span" attribute="@include text-decoration-underline($value)"/>
+				<Description>If **true** font style is underline</Description>
+			</StyleProperty>
+			<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+				<StyleElement attribute="margin"/>
+				<Description>Margin of the Widget</Description>
+			</StyleProperty>
+			<StyleProperty name="hoverCellBackColor" type="Color" category="Appearance" default="#777">
+				<StyleElement selector=".planning-table td.hovered" attribute="background-color"/>
+				<StyleElement selector=".planning-table th.hovered" attribute="background-color"/>
+				<Description>Defines hover color of cells</Description>
+			</StyleProperty>
+			<StyleProperty name="headerHeight" type="PixelVal" category="Layout" default="30px">
+				<StyleElement selector=".planning-table th" attribute="height"/>
+				<Description>Defines hover color of cells</Description>
+			</StyleProperty>
+		</StyleProperties>
+		<PropertyGroups>
+			<PropertyGroup name="Size" type="String" category="Layout">
+				<Description>outer height and width of widget</Description>
+			</PropertyGroup>
+			<PropertyGroup name="Position" type="String" category="Layout">
+				<Description>top and left of widget</Description>
+			</PropertyGroup>
+		</PropertyGroups>
+	</Widget>
+</WidgetLibrary>
