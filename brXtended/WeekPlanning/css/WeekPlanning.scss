@@ -80,7 +80,8 @@
 
   .planning-table td.hovered,
   .planning-table th.hovered {
-    background-color: #777;
+    filter: brightness(0.5);
+    box-shadow: inset 0px 0px 0px 5px #f90;
   }
 
   .planning-table td.continuous {

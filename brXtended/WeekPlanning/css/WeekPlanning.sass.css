@@ -1,1 +1,98 @@
-.brXtendedWeekPlanning{display:flex;justify-content:center;align-items:center;margin:0;-webkit-user-select:none;-ms-user-select:none;user-select:none;overflow:hidden}.brXtendedWeekPlanning .container{height:100%;width:100%}.brXtendedWeekPlanning .Invisible{display:none}.brXtendedWeekPlanning .planning-container{overflow-x:auto}.brXtendedWeekPlanning #export-data{background-color:#444;color:#fff;border:none;padding:10px 20px;margin-right:5px;cursor:pointer}.brXtendedWeekPlanning #export-data:hover{background-color:#555}.brXtendedWeekPlanning .buttons{margin-bottom:10px}.brXtendedWeekPlanning .buttons button{background-color:#444;color:#fff;border:none;padding:10px 20px;margin-right:5px;cursor:pointer}.brXtendedWeekPlanning .buttons button:hover{background-color:#555}.brXtendedWeekPlanning .buttons button.active{background-color:#888}.brXtendedWeekPlanning .planning-table{width:100%;border-collapse:collapse;table-layout:fixed}.brXtendedWeekPlanning .planning-table th,.brXtendedWeekPlanning .planning-table td{border:1px solid #444;width:4.16%;color:#fff;text-align:center;position:relative;font-size:1.2vw}.brXtendedWeekPlanning .planning-table th{background-color:#333;width:4.16%}.brXtendedWeekPlanning .planning-table td{background-color:#555}.brXtendedWeekPlanning .planning-table td.hovered,.brXtendedWeekPlanning .planning-table th.hovered{background-color:#777}.brXtendedWeekPlanning .planning-table td.continuous{background-color:#00f}.brXtendedWeekPlanning .planning-table td.motion-detection{background-color:#0f0}.brXtendedWeekPlanning .planning-table td.custom1{background-color:#f90}.brXtendedWeekPlanning .planning-table td.custom2{background-color:#0ff}.brXtendedWeekPlanning .planning-table th.hour-header{text-align:center;vertical-align:middle}.brXtendedWeekPlanning .planning-table th.hour-header::after{content:attr(data-hour);position:absolute;left:50%;transform:translateX(-50%);top:50%;transform:translate(-50%, -50%)}
+.brXtendedWeekPlanning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+.brXtendedWeekPlanning .container {
+  height: 100%;
+  width: 100%;
+}
+.brXtendedWeekPlanning .Invisible {
+  display: none;
+}
+.brXtendedWeekPlanning .planning-container {
+  overflow-x: auto;
+}
+.brXtendedWeekPlanning #export-data {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.brXtendedWeekPlanning #export-data:hover {
+  background-color: #555;
+}
+.brXtendedWeekPlanning .buttons {
+  margin-bottom: 10px;
+}
+.brXtendedWeekPlanning .buttons button {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.brXtendedWeekPlanning .buttons button:hover {
+  background-color: #555;
+}
+.brXtendedWeekPlanning .buttons button.active {
+  background-color: #888;
+}
+.brXtendedWeekPlanning .planning-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.brXtendedWeekPlanning .planning-table th,
+.brXtendedWeekPlanning .planning-table td {
+  border: 1px solid #444;
+  width: 4.16%;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 1.2vw;
+}
+.brXtendedWeekPlanning .planning-table th {
+  background-color: #333;
+  width: 4.16%;
+}
+.brXtendedWeekPlanning .planning-table td {
+  background-color: #555;
+}
+.brXtendedWeekPlanning .planning-table td.hovered,
+.brXtendedWeekPlanning .planning-table th.hovered {
+    filter: brightness(0.5);
+    box-shadow: inset 0px 0px 0px 5px #f90;
+}
+.brXtendedWeekPlanning .planning-table td.continuous {
+  background-color: #00f;
+}
+.brXtendedWeekPlanning .planning-table td.motion-detection {
+  background-color: #0f0;
+}
+.brXtendedWeekPlanning .planning-table td.custom1 {
+  background-color: #f90;
+}
+.brXtendedWeekPlanning .planning-table td.custom2 {
+  background-color: #0ff;
+}
+.brXtendedWeekPlanning .planning-table th.hour-header {
+  text-align: center;
+  vertical-align: middle;
+}
+.brXtendedWeekPlanning .planning-table th.hour-header::after {
+  content: attr(data-hour);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

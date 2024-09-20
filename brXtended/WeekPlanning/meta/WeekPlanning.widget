@@ -8,6 +8,7 @@
 		<Dependencies>
 			<Files>
 				<File>brease/core/ContainerWidget.js</File>
+				<File>brease/events/BreaseEvent.js</File>
 			</Files>
 			<Folders>
 			</Folders>
