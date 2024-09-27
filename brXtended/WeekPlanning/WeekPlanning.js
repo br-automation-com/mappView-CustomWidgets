@@ -267,6 +267,8 @@ define([
     return button.css("background-color");
   };
 
+
+
   /**
    * @method setTableDatas
    * Sets the TableDatas Property
@@ -297,7 +299,6 @@ define([
       var actualNum = tableDatas[currentIndex];
 
       var button = widget.getActionOfButtonFromNum(actualNum);
-      var action = button.attr("data-action");
       var backgroundColor = widget.getBackgroundColorFromButton(button);
 
       // Affect color to cell

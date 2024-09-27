@@ -149,6 +149,22 @@ or if autofocus should be disabled (-1)				</Description>
 				<StyleElement attribute="@include elemAutoHeight($value)"/>
 				<Description>outer height of widget</Description>
 			</StyleProperty>
+			<StyleProperty name="cellWidth" type="Integer" not_styleable="true" owner="widgets.brXtended.WeekPlanning" category="Layout" groupRefId="CellSize" groupOrder="1" default="40">
+				<StyleElement selector=".planning-table td" attribute="width"/>
+				<Description>outer width of table cell</Description>
+			</StyleProperty>
+			<StyleProperty name="cellHeight" type="Integer" not_styleable="true" owner="widgets.brXtended.WeekPlanning" category="Layout" groupRefId="CellSize" groupOrder="2" default="10">
+				<StyleElement selector=".planning-table td" attribute="height"/>
+				<Description>outer height of table cell</Description>
+			</StyleProperty>
+			<StyleProperty name="headerCellWidth" type="Integer" not_styleable="true" owner="widgets.brXtended.WeekPlanning" category="Layout" groupRefId="HeaderCellSize" groupOrder="1" default="40">
+				<StyleElement selector=".planning-table th" attribute="width"/>
+				<Description>outer width of table header cell</Description>
+			</StyleProperty>
+			<StyleProperty name="headerCellHeight" type="Integer" not_styleable="true" owner="widgets.brXtended.WeekPlanning" category="Layout" groupRefId="HeaderCellSize" groupOrder="2" default="10">
+				<StyleElement selector=".planning-table th" attribute="height"/>
+				<Description>outer height of table header cell</Description>
+			</StyleProperty>
 			<StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
 				<StyleElement attribute="@include elemTop($value)"/>
 				<Description>absolute position measured from top boundary of parent container</Description>
@@ -246,10 +262,6 @@ or if autofocus should be disabled (-1)				</Description>
 				<StyleElement selector=".planning-table th.hovered" attribute="background-color"/>
 				<Description>Defines hover color of cells</Description>
 			</StyleProperty>
-			<StyleProperty name="headerHeight" type="PixelVal" category="Layout" default="30px">
-				<StyleElement selector=".planning-table th" attribute="height"/>
-				<Description>Defines hover color of cells</Description>
-			</StyleProperty>
 		</StyleProperties>
 		<PropertyGroups>
 			<PropertyGroup name="Size" type="String" category="Layout">
@@ -257,6 +269,12 @@ or if autofocus should be disabled (-1)				</Description>
 			</PropertyGroup>
 			<PropertyGroup name="Position" type="String" category="Layout">
 				<Description>top and left of widget</Description>
+			</PropertyGroup>
+			<PropertyGroup name="HeaderCellSize" type="String" category="Layout">
+				<Description>Header cell size: height and widget of cells in the table</Description>
+			</PropertyGroup>
+			<PropertyGroup name="CellSize" type="String" category="Layout">
+				<Description>cell size: height and widget of cells in the table</Description>
 			</PropertyGroup>
 		</PropertyGroups>
 	</Widget>
