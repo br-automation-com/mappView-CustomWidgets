@@ -3,7 +3,8 @@ define([
   "brease/core/ContainerWidget",
   "brease/events/BreaseEvent",
   "brease/enum/Enum",
-], function (SuperClass, BreaseEvent, Enum) {
+  "widgets/brXtended/WeekPlanning/libs/TableText"
+], function (SuperClass, BreaseEvent, Enum, Texts) {
   /**
    * @class widgets.brXtended.WeekPlanning
    * @extends brease.core.ContainerWidget
@@ -60,6 +61,8 @@ define([
     this.elem.classList.add("brXtendedWeekPlanning");
 
     this.el.on(BreaseEvent.WIDGET_READY, this._bind("_widgetReadyHandler"));
+    this.tableText = Texts;
+    this._initText();
 
     this.initEventsTable();
     _getChildrenInformation(this);
@@ -83,6 +86,21 @@ define([
       self.debouncedRefresh();
     });
   };
+
+  p._initText = function() {
+    var widget = this;
+    widget.actualLang = brease.language.getCurrentLanguage();
+    var dayCells = document.querySelectorAll(
+      "#" +
+      widget.elem.id +
+        " .planning-table th.Day"
+    );
+    Array.prototype.forEach.call(dayCells, function (cell) {
+      var day = cell.dataset.day;
+      cell.innerHTML = widget.tableText[widget.actualLang][day];
+    });
+
+  }
 
   p._widgetReadyHandler = function (e) {
     var index = this.settings.buttonIds.indexOf(e.target.id);
