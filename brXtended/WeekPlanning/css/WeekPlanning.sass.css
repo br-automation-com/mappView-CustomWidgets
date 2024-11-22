@@ -18,33 +18,17 @@
 .brXtendedWeekPlanning .planning-container {
   overflow-x: auto;
 }
-.brXtendedWeekPlanning #export-data {
-  background-color: #444;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin-right: 5px;
-  cursor: pointer;
-}
-.brXtendedWeekPlanning #export-data:hover {
-  background-color: #555;
-}
 .brXtendedWeekPlanning .buttons {
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 .brXtendedWeekPlanning .buttons button {
   background-color: #444;
   color: #fff;
   border: none;
   padding: 10px 20px;
-  margin-right: 5px;
   cursor: pointer;
-}
-.brXtendedWeekPlanning .buttons button:hover {
-  background-color: #555;
-}
-.brXtendedWeekPlanning .buttons button.active {
-  background-color: #888;
+  height: 30px;
 }
 .brXtendedWeekPlanning .planning-table {
   width: 100%;
@@ -54,7 +38,6 @@
 .brXtendedWeekPlanning .planning-table th,
 .brXtendedWeekPlanning .planning-table td {
   border: 1px solid #444;
-  width: 4.16%;
   color: #fff;
   text-align: center;
   position: relative;
@@ -62,28 +45,18 @@
 }
 .brXtendedWeekPlanning .planning-table th {
   background-color: #333;
-  width: 4.16%;
+}
+.planning-table thead th#select-all {
+  width: 70px;
 }
 .brXtendedWeekPlanning .planning-table td {
   background-color: #555;
 }
-.brXtendedWeekPlanning .planning-table td.hovered,
+/* .brXtendedWeekPlanning .planning-table td.hovered,
 .brXtendedWeekPlanning .planning-table th.hovered {
     filter: brightness(0.5);
     box-shadow: inset 0px 0px 0px 5px #f90;
-}
-.brXtendedWeekPlanning .planning-table td.continuous {
-  background-color: #00f;
-}
-.brXtendedWeekPlanning .planning-table td.motion-detection {
-  background-color: #0f0;
-}
-.brXtendedWeekPlanning .planning-table td.custom1 {
-  background-color: #f90;
-}
-.brXtendedWeekPlanning .planning-table td.custom2 {
-  background-color: #0ff;
-}
+} */
 .brXtendedWeekPlanning .planning-table th.hour-header {
   text-align: center;
   vertical-align: middle;

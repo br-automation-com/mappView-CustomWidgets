@@ -1,5 +1,8 @@
 "use strict";
-define(["brease/core/BaseWidget"], function (SuperClass) {
+define([
+    "brease/core/BaseWidget",
+    'brease/decorators/LanguageDependency'
+], function (SuperClass, languageDependency) {
     /**
      * @class widgets.brXtended.WeekPlanningItem
      * @extends brease.core.BaseWidget
@@ -43,11 +46,19 @@ define(["brease/core/BaseWidget"], function (SuperClass) {
         p = WidgetClass.prototype;
 
     p.init = function () {
+        this.buttonEl = $(this.el).children("button");
+        _textInit.call(this);
         SuperClass.prototype.init.apply(this, arguments);
-
         $(this.el).children("button").attr("data-action", this.settings.action);
         $(this.el).children("button").attr("data-num", this.settings.valueForArray);
-        $(this.el).children("button").html(this.settings.action);
+        var buttonId = $(this.el).children("button").attr("id").replace("{WIDGET_ID}", this.elem.id);
+        $(this.el).children("button").attr("id", buttonId);
+    };
+
+    p.langChangeHandler = function (e) {
+        if (this.settings.textkey) {
+            this.setText(brease.language.getTextByKey(this.settings.textkey), true);
+        }
     };
 
      /**
@@ -58,7 +69,6 @@ define(["brease/core/BaseWidget"], function (SuperClass) {
      p.setValueForArray = function setValueForArray(valueForArray) {
         this.settings.valueForArray = valueForArray;
         $(this.el).children("button").attr("data-num", this.settings.valueForArray);
-        $(this.el).children("button").html(this.settings.action);
     };
 
     /**
@@ -88,5 +98,77 @@ define(["brease/core/BaseWidget"], function (SuperClass) {
         return this.settings.action;
     };
 
-    return WidgetClass;
+    function _textInit() {
+        //console.log('[' + this.elem.id + ']._textInit');
+        if (this.settings.text !== undefined && this.settings.text !== '') {
+            if (brease.language.isKey(this.settings.text) === false) {
+                this.setText(this.settings.text);
+            } else {
+                this.setTextKey(brease.language.parseKey(this.settings.text), false);
+            }
+        }
+        this.langChangeHandler();
+    }
+
+    /**
+    * @method setText
+    * @iatStudioExposed
+    * Sets the visible text. This method can remove an optional textkey.
+    * @param {String} text
+    * @param {Boolean} [keepKey=false] Set true, if textkey should not be removed
+    * @paramMeta text:localizable=true
+    */
+    p.setText = function (text, keepKey) {
+        this.settings.text = text;
+        if (keepKey !== true) {
+            this.removeTextKey();
+        }
+
+        if (brease.config.editMode !== true) {
+            if (brease.language.isKey(this.settings.text) === true) {
+                this.setTextKey(brease.language.parseKey(this.settings.text), false);
+                this.langChangeHandler();
+                return;
+            }
+        }
+        this.buttonEl.text(text);
+    };
+
+    /**
+     * @method setTextKey
+     * set the textkey
+     * @param {String} key The new textkey
+     */
+    p.setTextKey = function (key, invoke) {
+        if (key !== undefined) {
+            this.settings.textkey = key;
+            this.setLangDependency(true);
+            if (invoke !== false) {
+                this.langChangeHandler();
+            }
+        }
+    };
+
+    /**
+     * @method getTextKey
+     * get the textkey
+     */
+    p.getTextKey = function () {
+        return this.settings.textkey;
+    };
+
+    /**
+     * @method removeTextKey
+     * remove the textkey
+     */
+    p.removeTextKey = function () {
+
+        this.settings.textkey = null;
+        if (!this.settings.mouseDownTextkey) {
+            this.setLangDependency(false);
+        }
+    };
+
+
+    return languageDependency.decorate(WidgetClass, false);
 });

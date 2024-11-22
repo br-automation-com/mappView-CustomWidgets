@@ -23,6 +23,13 @@
 				<xs:attribute name="margin" use="optional" type="kt:Margin"></xs:attribute>
 				<xs:attribute name="hoverCellBackColor" use="optional" type="kt:Color"></xs:attribute>
 				<xs:attribute name="headerHeight" use="optional" type="kt:PixelVal"></xs:attribute>
+				<xs:attribute name="headerWidth" use="optional" type="kt:PixelVal"></xs:attribute>
+				<xs:attribute name="headerLeftHeight" use="optional" type="kt:PixelVal"></xs:attribute>				
+				<xs:attribute name="headerLeftWidth" use="optional" type="kt:PixelVal"></xs:attribute>
+				<xs:attribute name="buttonBarHeight" use="optional" type="kt:PixelVal"></xs:attribute>
+				<xs:attribute name="headerBackColor" use="optional" type="kt:Color"></xs:attribute>
+				<xs:attribute name="cellsBackColor" use="optional" type="kt:Color"></xs:attribute>
+				<xs:attribute name="marginDeleteButton" use="optional" type="kt:Margin"></xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

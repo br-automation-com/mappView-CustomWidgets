@@ -53,9 +53,7 @@
 			</Description>
 		</StyleProperty>
 		<StyleProperty name="borderColor" type="ColorCollection" category="Appearance" default="#C8C8C8">
-			<StyleElement attribute="border-color"></StyleElement>
-			<StyleElement selector="&amp;:before" attribute="border-color"></StyleElement>
-			<StyleElement selector="&amp;:after" attribute="border-color"></StyleElement>
+			<StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="border-color"></StyleElement>
 			<Description>
         Sets the border color
 			</Description>
@@ -114,6 +112,20 @@
 			<StyleElement attribute="margin"></StyleElement>
 			<Description>
 				Margin of the Widget
+			</Description>
+		</StyleProperty>
+		<StyleProperty name="checkedBackColor" category="Appearance" type="Color" default="#DBDBDB">
+			<StyleElement selector="&amp; .checked" attribute="background-color"/>
+			<Description>back color when the widget is checked</Description>
+		</StyleProperty>
+		<StyleProperty name="checkedTextColor" category="Appearance" type="Color" default="#000000">
+			<StyleElement selector="&amp; .checked" attribute="color"/>
+			<Description>text color when the widget is checked</Description>
+		</StyleProperty>
+		<StyleProperty name="checkedBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01">
+			<StyleElement selector="&amp; .checked" attribute="border-color"></StyleElement>
+			<Description>
+        border color when the widget is checked
 			</Description>
 		</StyleProperty>
 		<!--<StyleProperty name="textShadow" type="Shadow" category="Appearance" default="none">

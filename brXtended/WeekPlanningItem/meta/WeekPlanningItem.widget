@@ -54,6 +54,15 @@
 				</Arguments>
 			</Method>
 			<Method name="ShowTooltip" read="false"/>
+			<Method name="SetText" read="false">
+				<Description>Sets the visible text. This method can remove an optional textkey.</Description>
+				<Arguments>
+					<Argument name="text" type="String" index="0" required="true" localizable="true"/>
+					<Argument name="keepKey" type="Boolean" index="1" required="false" defaultValue="false">
+						<Description>Set true, if textkey should not be removed</Description>
+					</Argument>
+				</Arguments>
+			</Method>
 		</Methods>
 		<Events>
 			<Event name="Click">
@@ -139,6 +148,9 @@ or if autofocus should be disabled (-1)				</Description>
 			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
 				<Description>change visibility</Description>
 			</Property>
+			<Property name="text" type="String" initOnly="false" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="default">
+				<Description>Text which is displayed in the widget</Description>
+			</Property>
 		</Properties>
 		<StyleProperties>
 			<StyleProperty name="width" type="AutoSize" not_styleable="true" owner="widgets.brXtended.WeekPlanningItem" category="Layout" groupRefId="Size" groupOrder="1" default="80">
@@ -197,10 +209,10 @@ or if autofocus should be disabled (-1)				</Description>
 				<Description>Background as a gradient</Description>
 			</StyleProperty>
 			<StyleProperty name="borderColor" type="ColorCollection" category="Appearance" default="#C8C8C8">
-				<StyleElement attribute="border-color"/>
-				<StyleElement selector="&amp;:before" attribute="border-color"/>
-				<StyleElement selector="&amp;:after" attribute="border-color"/>
-				<Description>Sets the border color</Description>
+				<StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="border-color"></StyleElement>
+				<Description>
+        Sets the border color
+				</Description>
 			</StyleProperty>
 			<StyleProperty name="borderStyle" type="BorderStyle" category="Appearance" default="none">
 				<StyleElement attribute="border-style"/>
@@ -239,6 +251,20 @@ or if autofocus should be disabled (-1)				</Description>
 			<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
 				<StyleElement attribute="margin"/>
 				<Description>Margin of the Widget</Description>
+			</StyleProperty>
+			<StyleProperty name="checkedBackColor" category="Appearance" type="Color" default="#DBDBDB">
+				<StyleElement selector="&amp; .checked" attribute="background-color"/>
+				<Description>back color when the widget is checked</Description>
+			</StyleProperty>
+			<StyleProperty name="checkedTextColor" category="Appearance" type="Color" default="#000000">
+				<StyleElement selector="&amp; .checked" attribute="color"/>
+				<Description>text color when the widget is checked</Description>
+			</StyleProperty>
+			<StyleProperty name="checkedBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01">
+				<StyleElement selector="&amp; .checked" attribute="border-color"></StyleElement>
+				<Description>
+        border color when the widget is checked
+				</Description>
 			</StyleProperty>
 		</StyleProperties>
 		<PropertyGroups>

@@ -3,8 +3,9 @@ define([
   "brease/core/ContainerWidget",
   "brease/events/BreaseEvent",
   "brease/enum/Enum",
-  "widgets/brXtended/WeekPlanning/libs/TableText"
-], function (SuperClass, BreaseEvent, Enum, Texts) {
+  "widgets/brXtended/WeekPlanning/libs/TableText",
+  'brease/decorators/LanguageDependency',
+], function (SuperClass, BreaseEvent, Enum, Texts, languageDependency) {
   /**
    * @class widgets.brXtended.WeekPlanning
    * @extends brease.core.ContainerWidget
@@ -42,10 +43,13 @@ define([
 
   var uiController = brease.uiController;
   var defaultSettings = {
-      cancelButtonChangeEvents: true,
-      width: 500,
-      height: 300,
-    },
+    cancelButtonChangeEvents: true,
+    width: 500,
+    height: 300,
+    alignment: Enum.Direction.horizontal,
+    childPositioning: Enum.ChildPositioning.relative,
+    textDeleteButton: "Delete",
+  },
     WidgetClass = SuperClass.extend(function WeekPlanning() {
       SuperClass.apply(this, arguments);
     }, defaultSettings),
@@ -55,12 +59,19 @@ define([
     if (this.settings.omitClass !== true) {
       this.addInitialClass("brXtendedWeekPlanning container");
     }
+    _textDeleteButtonInit.call(this);
     var self = this;
     SuperClass.prototype.init.apply(this, arguments);
     this.selectedMode = "clear";
     this.elem.classList.add("brXtendedWeekPlanning");
 
     this.el.on(BreaseEvent.WIDGET_READY, this._bind("_widgetReadyHandler"));
+
+    // Set ID for delete button
+    var buttonId = $("#" + this.elem.id + ' button[data-action="clear"]').attr("id").replace("{WIDGET_ID}", this.elem.id);
+    $("#" + this.elem.id + ' button[data-action="clear"]').attr("id", buttonId);
+
+
     this.tableText = Texts;
     this._initText();
 
@@ -87,19 +98,30 @@ define([
     });
   };
 
-  p._initText = function() {
+  p._initText = function () {
     var widget = this;
     widget.actualLang = brease.language.getCurrentLanguage();
     var dayCells = document.querySelectorAll(
       "#" +
       widget.elem.id +
-        " .planning-table th.Day"
+      " .planning-table th.Day"
     );
     Array.prototype.forEach.call(dayCells, function (cell) {
       var day = cell.dataset.day;
       cell.innerHTML = widget.tableText[widget.actualLang][day];
     });
 
+  }
+
+  function _textDeleteButtonInit() {
+    if (this.settings.textDeleteButton !== undefined && this.settings.textDeleteButton !== '') {
+      if (brease.language.isKey(this.settings.textDeleteButton) === false) {
+        this.setTextDeleteButton(this.settings.textDeleteButton);
+      } else {
+        this.setTextKeyDeleteButton(brease.language.parseKey(this.settings.textDeleteButton), false);
+      }
+    }
+    this.langChangeHandler();
   }
 
   p._widgetReadyHandler = function (e) {
@@ -109,6 +131,9 @@ define([
     }
     this.el.off(BreaseEvent.CLICK, this._bind("_buttonClickHandler"));
     this.el.on(BreaseEvent.CLICK, this._bind("_buttonClickHandler"));
+
+    this.widgetAddedHandler(e);
+
   };
 
   p.widgetAddedHandler = function (e) {
@@ -119,9 +144,19 @@ define([
     var addedWidget = document.querySelector(
       "#" + this.elem.id + " div.container>[data-brease-widget]"
     );
-    buttonsDiv.appendChild(addedWidget);
-    this.el.off(BreaseEvent.CLICK, this._bind("_buttonClickHandler"));
-    this.el.on(BreaseEvent.CLICK, this._bind("_buttonClickHandler"));
+    if (addedWidget !== null) {
+      buttonsDiv.appendChild(addedWidget);
+      this.el.off(BreaseEvent.CLICK, this._bind("_buttonClickHandler"));
+      this.el.on(BreaseEvent.CLICK, this._bind("_buttonClickHandler"));
+
+      var widgetState = brease.uiController.getWidgetState(addedWidget.id);
+      if (widgetState < Enum.WidgetState.INITIALIZED) {
+        brease.uiController.addWidgetOption(addedWidget.id, 'position', 'relative');
+      } else {
+        $('#' + addedWidget.id).css('position', 'relative');
+      }
+
+    }
   };
 
   p.initEventsTable = function () {
@@ -130,11 +165,11 @@ define([
     // Add hover effect
     var cells = document.querySelectorAll(
       "#" +
-        this.elem.id +
-        " .planning-table td, " +
-        "#" +
-        this.elem.id +
-        " .planning-table th"
+      this.elem.id +
+      " .planning-table td, " +
+      "#" +
+      this.elem.id +
+      " .planning-table th"
     );
     Array.prototype.forEach.call(cells, function (cell) {
       cell.addEventListener("mouseenter", function () {
@@ -149,13 +184,13 @@ define([
         } else if (cell.classList.contains("Hour")) {
           var hours = document.querySelectorAll(
             "#" +
-              widget.elem.id +
-              ' [data-time="' + cell.dataset.hour + ':00"], [data-time="' + cell.dataset.hour + ':30"]'
+            widget.elem.id +
+            ' [data-time="' + cell.dataset.hour + ':00"], [data-time="' + cell.dataset.hour + ':30"]'
           );
           Array.prototype.forEach.call(hours, function (el) {
             el.classList.add("hovered");
           });
-        } else if (cell.id == widget.elem.id + "_select-all") {
+        } else if (cell.id == "select-all") {
           var cellsInside = document.querySelectorAll(
             "#" + widget.elem.id + " [data-time]"
           );
@@ -178,8 +213,8 @@ define([
     // Add selection for all, hours and day
     var cellsHeaders = document.querySelectorAll(
       "#" +
-        this.elem.id +
-        " .planning-table td:not([data-time]), .planning-table th:not([data-time])"
+      this.elem.id +
+      " .planning-table td:not([data-time]), .planning-table th:not([data-time])"
     );
     Array.prototype.forEach.call(cellsHeaders, function (cell) {
       cell.addEventListener("click", function () {
@@ -244,7 +279,14 @@ define([
     Array.prototype.forEach.call(buttons, function (btn) {
       btn.classList.remove("active");
     });
-
+    var childrenWidget = document.querySelector(
+      "#" + this.elem.id + " div.buttons>[data-brease-widget]"
+    );
+    Array.prototype.forEach.call(childrenWidget, function (child) {
+      child.classList.remove("checked");
+    });
+    var childWidget = document.getElementById(widgetId);
+    childWidget.classList.add("checked");
     var button = document.getElementById(widgetId + "_button");
     button.classList.add("active");
     widget.selectedMode = button.dataset.action;
@@ -304,6 +346,72 @@ define([
    */
   p.getTableDatas = function () {
     return this.settings.tableDatas;
+  };
+
+  /**
+    * @method setTextDeleteButton
+    * @iatStudioExposed
+    * Sets the text of the Delete button. This method can remove an optional textkey.
+    * @param {String} text
+    * @param {Boolean} [keepKey=false] Set true, if textkey should not be removed
+    * @paramMeta text:localizable=true
+    */
+  p.setTextDeleteButton = function (text, keepKey) {
+    this.settings.textDeleteButton = text;
+    if (keepKey !== true) {
+      this.removeTextKeyDeleteButton();
+    }
+
+    if (brease.config.editMode !== true) {
+      if (brease.language.isKey(this.settings.text) === true) {
+        this.setTextKeyDeleteButton(brease.language.parseKey(this.settings.text), false);
+        this.langChangeHandler();
+        return;
+      }
+    }
+
+    // Set text of the Delete button
+    $("#" + this.elem.id + ' button[data-action="clear"]').text(this.settings.textDeleteButton);
+
+  };
+
+  /**
+   * @method getTextKeyDeleteButton
+   * get the textkeyDeleteButton
+   */
+  p.getTextKeyDeleteButton = function () {
+    return this.settings.textkeyDeleteButton;
+  };
+  /**
+   * @method setTextKeyDeleteButton
+   * set the textkeyDeleteButton
+   * @param {String} key The new textkeyDeleteButton
+   */
+  p.setTextKeyDeleteButton = function (key, invoke) {
+    if (key !== undefined) {
+      this.settings.textkeyDeleteButton = key;
+      this.setLangDependency(true);
+      if (invoke !== false) {
+        this.langChangeHandler();
+      }
+    }
+  };
+  /**
+  * @method removeTextKeyDeleteButton
+  * remove the textkeyDeleteButton
+  */
+  p.removeTextKeyDeleteButton = function () {
+
+    this.settings.textkeyDeleteButton = null;
+    if (!this.settings.mouseDownTextkeyDeleteButton) {
+      this.setLangDependency(false);
+    }
+  };
+
+  p.langChangeHandler = function (e) {
+    if (this.settings.textkeyDeleteButton) {
+      this.setTextDeleteButton(brease.language.getTextByKey(this.settings.textkeyDeleteButton), true);
+    }
   };
 
   p.refreshTableFromArray = function () {
@@ -399,5 +507,5 @@ define([
     });
   }
 
-  return WidgetClass;
+  return languageDependency.decorate(WidgetClass, false);
 });

@@ -69,7 +69,7 @@
 			</Description>
 		</StyleProperty>
 		<StyleProperty name="textColor" type="Color" default="#fff" category="Appearance">
-			<StyleElement selector="&amp; span" attribute="color"></StyleElement>
+			<StyleElement selector="&amp; th" attribute="color"></StyleElement>
 			<Description>
         Sets the color of the text displayed by the widget
 			</Description>
@@ -81,13 +81,13 @@
 			</Description>
 		</StyleProperty>
 		<StyleProperty name="fontName" type="FontName" default="Arial" category="Font">
-			<StyleElement selector="span" attribute="font-family"></StyleElement>
+			<StyleElement selector=".planning-table th" attribute="font-family"></StyleElement>
 			<Description>
 				Fontname of the text
 			</Description>
 		</StyleProperty>
 		<StyleProperty name="fontSize" type="PixelVal" default="14px" category="Font">
-			<StyleElement attribute="font-size"></StyleElement>
+			<StyleElement selector=".planning-table th" attribute="font-size"></StyleElement>
 			<Description>
 				Fontsize of the text in pixel
 			</Description>
@@ -116,8 +116,6 @@
 				Margin of the Widget
 			</Description>
 		</StyleProperty>
-
-
 		<StyleProperty name="hoverCellBackColor" type="Color" category="Appearance" default="#777">
 			<StyleElement selector=".planning-table td.hovered" attribute="background-color"></StyleElement>
 			<StyleElement selector=".planning-table th.hovered" attribute="background-color"></StyleElement>
@@ -130,9 +128,37 @@
 			<StyleElement selector=".planning-table th" attribute="color"/>
 			<Description>Defines hover color of cells</Description>
 		</StyleProperty>
-		<StyleProperty name="headerHeight" type="PixelVal" category="Layout" default="30px">
-			<StyleElement selector=".planning-table th" attribute="height"/>
-			<Description>Defines hover color of cells</Description>
+		<StyleProperty name="headerHeight" type="PixelVal" category="Layout" default="30px" groupRefId="HeaderCellSize" groupOrder="1">
+			<StyleElement selector=".planning-table thead th.Hour" attribute="height"/>
+			<Description>Defines height of the header where there is hours</Description>
+		</StyleProperty>
+		<StyleProperty name="headerWidth" type="PixelVal" category="Layout" default="30px" groupRefId="HeaderCellSize" groupOrder="2">
+			<StyleElement selector=".planning-table thead th.Hour" attribute="width"/>
+			<Description>Defines width of the header where there is hours</Description>
+		</StyleProperty>
+		<StyleProperty name="headerLeftHeight" type="PixelVal" category="Layout" default="30px" groupRefId="HeaderLeftCellSize" groupOrder="1">
+			<StyleElement selector=".planning-table tbody th.Day" attribute="height"/>
+			<Description>Defines height of the header where there is days</Description>
+		</StyleProperty>
+		<StyleProperty name="headerLeftWidth" type="PixelVal" category="Layout" default="70px" groupRefId="HeaderLeftCellSize" groupOrder="2">
+			<StyleElement selector=".planning-table thead #select-all" attribute="width"/>
+			<Description>Defines width of the header where there is days</Description>
+		</StyleProperty>
+		<StyleProperty name="buttonBarHeight" type="PixelVal" category="Layout" default="30px">
+			<StyleElement selector=".buttons" attribute="height"/>
+			<Description>Defines height of the button bar</Description>
+		</StyleProperty>
+		<StyleProperty name="headerBackColor" type="Color" default="#333" category="Appearance" owner="widgets.brXtended.WeekPlanning">
+			<StyleElement selector=".planning-table th" attribute="background-color"/>
+			<Description>Defines backcolor of header cells</Description>
+		</StyleProperty>
+		<StyleProperty name="cellsBackColor" type="Color" default="#555" category="Appearance" owner="widgets.brXtended.WeekPlanning">
+			<StyleElement selector=".planning-table td" attribute="background-color"/>
+			<Description>Defines backcolor of cells</Description>
+		</StyleProperty>
+		<StyleProperty name="marginDeleteButton" category="Layout" type="Margin" default="0px">
+			<StyleElement selector=".buttons>button" attribute="margin"/>
+			<Description>Margin of the Delete button</Description>
 		</StyleProperty>
 		<!--<StyleProperty name="textShadow" type="Shadow" category="Appearance" default="none">
       <StyleElement selector="span" attribute="text-Shadow"></StyleElement>

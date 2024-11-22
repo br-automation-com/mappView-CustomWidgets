@@ -57,6 +57,15 @@
 				</Arguments>
 			</Method>
 			<Method name="ShowTooltip" read="false"/>
+			<Method name="SetTextDeleteButton" read="false">
+				<Description>Sets the text of the Delete button. This method can remove an optional textkey.</Description>
+				<Arguments>
+					<Argument name="text" type="String" index="0" required="true"/>
+					<Argument name="keepKey" type="Boolean" index="1" required="false" defaultValue="false">
+						<Description>Set true, if textkey should not be removed</Description>
+					</Argument>
+				</Arguments>
+			</Method>
 		</Methods>
 		<Events>
 			<Event name="Click">
@@ -131,13 +140,16 @@
 or if autofocus should be disabled (-1)				</Description>
 			</Property>
 			<Property name="tableDatas" type="NumberArray1D" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="false" category="Data" defaultValue="[]">
-				<Description>One dimension array [0..334]</Description>
+				<Description>One dimension array [0..335]</Description>
 			</Property>
 			<Property name="tooltip" type="String" initOnly="true" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="">
 				<Description>reference to a tooltip for a widget</Description>
 			</Property>
 			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
 				<Description>change visibility</Description>
+			</Property>
+			<Property name="textDeleteButton" type="String" initOnly="false" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="Delete">
+				<Description>Text which is displayed in the Delete button</Description>
 			</Property>
 		</Properties>
 		<StyleProperties>
@@ -156,14 +168,6 @@ or if autofocus should be disabled (-1)				</Description>
 			<StyleProperty name="cellHeight" type="Integer" not_styleable="true" owner="widgets.brXtended.WeekPlanning" category="Layout" groupRefId="CellSize" groupOrder="2" default="10">
 				<StyleElement selector=".planning-table td" attribute="height"/>
 				<Description>outer height of table cell</Description>
-			</StyleProperty>
-			<StyleProperty name="headerCellWidth" type="Integer" not_styleable="true" owner="widgets.brXtended.WeekPlanning" category="Layout" groupRefId="HeaderCellSize" groupOrder="1" default="40">
-				<StyleElement selector=".planning-table th" attribute="width"/>
-				<Description>outer width of table header cell</Description>
-			</StyleProperty>
-			<StyleProperty name="headerCellHeight" type="Integer" not_styleable="true" owner="widgets.brXtended.WeekPlanning" category="Layout" groupRefId="HeaderCellSize" groupOrder="2" default="10">
-				<StyleElement selector=".planning-table th" attribute="height"/>
-				<Description>outer height of table header cell</Description>
 			</StyleProperty>
 			<StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
 				<StyleElement attribute="@include elemTop($value)"/>
@@ -234,11 +238,11 @@ or if autofocus should be disabled (-1)				</Description>
 				<Description>Opacity of the widget</Description>
 			</StyleProperty>
 			<StyleProperty name="fontName" type="FontName" default="Arial" category="Font">
-				<StyleElement selector="span" attribute="font-family"/>
+				<StyleElement selector=".planning-table th" attribute="font-family"/>
 				<Description>Fontname of the text</Description>
 			</StyleProperty>
 			<StyleProperty name="fontSize" type="PixelVal" default="14px" category="Font">
-				<StyleElement attribute="font-size"/>
+				<StyleElement selector=".planning-table th" attribute="font-size"/>
 				<Description>Fontsize of the text in pixel</Description>
 			</StyleProperty>
 			<StyleProperty name="bold" type="Boolean" default="false" category="Font">
@@ -262,6 +266,38 @@ or if autofocus should be disabled (-1)				</Description>
 				<StyleElement selector=".planning-table th.hovered" attribute="background-color"/>
 				<Description>Defines hover color of cells</Description>
 			</StyleProperty>
+			<StyleProperty name="headerHeight" type="PixelVal" category="Layout" default="30px" groupRefId="HeaderCellSize" groupOrder="1">
+				<StyleElement selector=".planning-table thead th" attribute="height"/>
+				<Description>Defines height of the header where there is hours</Description>
+			</StyleProperty>
+			<StyleProperty name="headerWidth" type="PixelVal" category="Layout" default="30px" groupRefId="HeaderCellSize" groupOrder="2">
+				<StyleElement selector=".planning-table thead th" attribute="width"/>
+				<Description>Defines width of the header where there is hours</Description>
+			</StyleProperty>
+			<StyleProperty name="headerLeftHeight" type="PixelVal" category="Layout" default="30px" groupRefId="HeaderLeftCellSize" groupOrder="1">
+				<StyleElement selector=".planning-table tbody th" attribute="height"/>
+				<Description>Defines height of the header where there is days</Description>
+			</StyleProperty>
+			<StyleProperty name="headerLeftWidth" type="PixelVal" category="Layout" default="70px" groupRefId="HeaderLeftCellSize" groupOrder="2">
+				<StyleElement selector=".planning-table thead #select-all" attribute="width"/>
+				<Description>Defines width of the header where there is days</Description>
+			</StyleProperty>
+			<StyleProperty name="buttonBarHeight" type="PixelVal" category="Layout" default="30px">
+				<StyleElement selector=".buttons" attribute="height"/>
+				<Description>Defines height of the button bar</Description>
+			</StyleProperty>
+			<StyleProperty name="headerBackColor" type="Color" default="#333" category="Appearance" owner="widgets.brXtended.WeekPlanning">
+				<StyleElement selector=".planning-table th" attribute="background-color"/>
+				<Description>Defines backcolor of header cells</Description>
+			</StyleProperty>
+			<StyleProperty name="cellsBackColor" type="Color" default="#555" category="Appearance" owner="widgets.brXtended.WeekPlanning">
+				<StyleElement selector=".planning-table td" attribute="background-color"/>
+				<Description>Defines backcolor of cells</Description>
+			</StyleProperty>
+			<StyleProperty name="marginDeleteButton" category="Layout" type="Margin" default="0px">
+				<StyleElement selector=".buttons>button" attribute="margin"/>
+				<Description>Margin of the Delete button</Description>
+			</StyleProperty>
 		</StyleProperties>
 		<PropertyGroups>
 			<PropertyGroup name="Size" type="String" category="Layout">
@@ -271,10 +307,10 @@ or if autofocus should be disabled (-1)				</Description>
 				<Description>top and left of widget</Description>
 			</PropertyGroup>
 			<PropertyGroup name="HeaderCellSize" type="String" category="Layout">
-				<Description>Header cell size: height and widget of cells in the table</Description>
+				<Description>Header cell size: height and width of cells where there is hours</Description>
 			</PropertyGroup>
-			<PropertyGroup name="CellSize" type="String" category="Layout">
-				<Description>cell size: height and widget of cells in the table</Description>
+			<PropertyGroup name="HeaderLeftCellSize" type="String" category="Layout">
+				<Description>Header Left cell size: height and width of cells where there is days</Description>
 			</PropertyGroup>
 		</PropertyGroups>
 	</Widget>

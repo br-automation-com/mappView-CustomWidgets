@@ -40,6 +40,14 @@
 			<xs:attribute name="margin" use="optional" type="types:Margin" default="0px" />
 			<xs:attribute name="hoverCellBackColor" use="optional" type="types:Color" default="#777" />
 			<xs:attribute name="headerHeight" use="optional" type="types:PixelVal" default="30px" />
+			<xs:attribute name="headerWidth" use="optional" type="types:PixelVal" default="30px" />
+			<xs:attribute name="headerLeftHeight" use="optional" type="types:PixelVal" default="30px" />
+			<xs:attribute name="headerLeftWidth" use="optional" type="types:PixelVal" default="30px" />
+			<xs:attribute name="buttonBarHeight" use="optional" type="types:PixelVal" default="30px" />
+			<xs:attribute name="headerBackColor" use="optional" type="types:Color" default="#333"/>
+			<xs:attribute name="cellsBackColor" use="optional" type="types:Color" default="#555"/>
+			<xs:attribute name="textDeleteButton" use="optional" type="types:String" default="Delete" />
+			<xs:attribute name="marginDeleteButton" use="optional" type="types:Margin" default="0px" />
 		</xs:extension>
 	</xs:complexContent>
 </xs:complexType>

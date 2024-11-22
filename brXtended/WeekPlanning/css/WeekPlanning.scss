@@ -21,20 +21,9 @@
     overflow-x: auto;
   }
 
-  #export-data {
-    background-color: #444;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin-right: 5px;
-    cursor: pointer;
-  }
-
-  #export-data:hover {
-    background-color: #555;
-  }
   .buttons {
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
   }
 
   .buttons button {
@@ -42,18 +31,13 @@
     color: #fff;
     border: none;
     padding: 10px 20px;
-    margin-right: 5px;
     cursor: pointer;
+    height: 30px;
   }
 
   .buttons button:hover {
     background-color: #555;
   }
-
-  .buttons button.active {
-    background-color: #888; /* Button active color */
-  }
-
   .planning-table {
     width: 100%;
     border-collapse: collapse;
@@ -63,7 +47,6 @@
   .planning-table th,
   .planning-table td {
     border: 1px solid #444;
-    width: 4.16%;
     color: #fff;
     text-align: center;
     position: relative;
@@ -71,34 +54,21 @@
   }
   .planning-table th {
     background-color: #333;
-    width: 4.16%;
+  }
+
+  .planning-table thead th#select-all {
+    width: 70px;
   }
 
   .planning-table td {
     background-color: #555;
   }
 
-  .planning-table td.hovered,
-  .planning-table th.hovered {
-    filter: brightness(0.5);
-    box-shadow: inset 0px 0px 0px 5px #f90;
-  }
-
-  .planning-table td.continuous {
-    background-color: #00f;
-  }
-
-  .planning-table td.motion-detection {
-    background-color: #0f0;
-  }
-
-  .planning-table td.custom1 {
-    background-color: #f90;
-  }
-
-  .planning-table td.custom2 {
-    background-color: #0ff;
-  }
+  // .planning-table td.hovered,
+  // .planning-table th.hovered {
+  //   filter: brightness(0.5);
+  //   box-shadow: inset 0px 0px 0px 5px #f90;
+  // }
 
   .planning-table th.hour-header {
     text-align: center;
