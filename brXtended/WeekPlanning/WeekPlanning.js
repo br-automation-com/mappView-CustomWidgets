@@ -1,11 +1,11 @@
 "use strict";
-define([
-  "brease/core/ContainerWidget",
-  "brease/events/BreaseEvent",
-  "brease/enum/Enum",
-  "widgets/brXtended/WeekPlanning/libs/TableText",
-  'brease/decorators/LanguageDependency',
-], function (SuperClass, BreaseEvent, Enum, Texts, languageDependency) {
+define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum/Enum", "widgets/brXtended/WeekPlanning/libs/TableText", "brease/decorators/LanguageDependency"], function (
+  SuperClass,
+  BreaseEvent,
+  Enum,
+  Texts,
+  languageDependency
+) {
   /**
    * @class widgets.brXtended.WeekPlanning
    * @extends brease.core.ContainerWidget
@@ -43,13 +43,13 @@ define([
 
   var uiController = brease.uiController;
   var defaultSettings = {
-    cancelButtonChangeEvents: true,
-    width: 500,
-    height: 300,
-    alignment: Enum.Direction.horizontal,
-    childPositioning: Enum.ChildPositioning.relative,
-    textDeleteButton: "Delete",
-  },
+      cancelButtonChangeEvents: true,
+      width: 500,
+      height: 300,
+      alignment: Enum.Direction.horizontal,
+      childPositioning: Enum.ChildPositioning.relative,
+      textDeleteButton: "Delete",
+    },
     WidgetClass = SuperClass.extend(function WeekPlanning() {
       SuperClass.apply(this, arguments);
     }, defaultSettings),
@@ -68,9 +68,10 @@ define([
     this.el.on(BreaseEvent.WIDGET_READY, this._bind("_widgetReadyHandler"));
 
     // Set ID for delete button
-    var buttonId = $("#" + this.elem.id + ' button[data-action="clear"]').attr("id").replace("{WIDGET_ID}", this.elem.id);
+    var buttonId = $("#" + this.elem.id + ' button[data-action="clear"]')
+      .attr("id")
+      .replace("{WIDGET_ID}", this.elem.id);
     $("#" + this.elem.id + ' button[data-action="clear"]').attr("id", buttonId);
-
 
     this.tableText = Texts;
     this._initText();
@@ -101,20 +102,15 @@ define([
   p._initText = function () {
     var widget = this;
     widget.actualLang = brease.language.getCurrentLanguage();
-    var dayCells = document.querySelectorAll(
-      "#" +
-      widget.elem.id +
-      " .planning-table th.Day"
-    );
+    var dayCells = document.querySelectorAll("#" + widget.elem.id + " .planning-table th.Day");
     Array.prototype.forEach.call(dayCells, function (cell) {
       var day = cell.dataset.day;
       cell.innerHTML = widget.tableText[widget.actualLang][day];
     });
-
-  }
+  };
 
   function _textDeleteButtonInit() {
-    if (this.settings.textDeleteButton !== undefined && this.settings.textDeleteButton !== '') {
+    if (this.settings.textDeleteButton !== undefined && this.settings.textDeleteButton !== "") {
       if (brease.language.isKey(this.settings.textDeleteButton) === false) {
         this.setTextDeleteButton(this.settings.textDeleteButton);
       } else {
@@ -133,17 +129,12 @@ define([
     this.el.on(BreaseEvent.CLICK, this._bind("_buttonClickHandler"));
 
     this.widgetAddedHandler(e);
-
   };
 
   p.widgetAddedHandler = function (e) {
     // Move all widgets added to the container to the buttons div
-    var buttonsDiv = document.querySelector(
-      "#" + this.elem.id + " div.buttons"
-    );
-    var addedWidget = document.querySelector(
-      "#" + this.elem.id + " div.container>[data-brease-widget]"
-    );
+    var buttonsDiv = document.querySelector("#" + this.elem.id + " div.buttons");
+    var addedWidget = document.querySelector("#" + this.elem.id + " div.container>[data-brease-widget]");
     if (addedWidget !== null) {
       buttonsDiv.appendChild(addedWidget);
       this.el.off(BreaseEvent.CLICK, this._bind("_buttonClickHandler"));
@@ -151,11 +142,10 @@ define([
 
       var widgetState = brease.uiController.getWidgetState(addedWidget.id);
       if (widgetState < Enum.WidgetState.INITIALIZED) {
-        brease.uiController.addWidgetOption(addedWidget.id, 'position', 'relative');
+        brease.uiController.addWidgetOption(addedWidget.id, "position", "relative");
       } else {
-        $('#' + addedWidget.id).css('position', 'relative');
+        $("#" + addedWidget.id).css("position", "relative");
       }
-
     }
   };
 
@@ -163,37 +153,22 @@ define([
     var widget = this;
 
     // Add hover effect
-    var cells = document.querySelectorAll(
-      "#" +
-      this.elem.id +
-      " .planning-table td, " +
-      "#" +
-      this.elem.id +
-      " .planning-table th"
-    );
+    var cells = document.querySelectorAll("#" + this.elem.id + " .planning-table td, " + "#" + this.elem.id + " .planning-table th");
     Array.prototype.forEach.call(cells, function (cell) {
       cell.addEventListener("mouseenter", function () {
         cell.classList.add("hovered");
         if (cell.classList.contains("Day")) {
-          var days = document.querySelectorAll(
-            "#" + widget.elem.id + ' [data-day="' + cell.dataset.day + '"]'
-          );
+          var days = document.querySelectorAll("#" + widget.elem.id + ' [data-day="' + cell.dataset.day + '"]');
           Array.prototype.forEach.call(days, function (el) {
             el.classList.add("hovered");
           });
         } else if (cell.classList.contains("Hour")) {
-          var hours = document.querySelectorAll(
-            "#" +
-            widget.elem.id +
-            ' [data-time="' + cell.dataset.hour + ':00"], [data-time="' + cell.dataset.hour + ':30"]'
-          );
+          var hours = document.querySelectorAll("#" + widget.elem.id + ' [data-time="' + cell.dataset.hour + ':00"], [data-time="' + cell.dataset.hour + ':30"]');
           Array.prototype.forEach.call(hours, function (el) {
             el.classList.add("hovered");
           });
         } else if (cell.id == "select-all") {
-          var cellsInside = document.querySelectorAll(
-            "#" + widget.elem.id + " [data-time]"
-          );
+          var cellsInside = document.querySelectorAll("#" + widget.elem.id + " [data-time]");
           Array.prototype.forEach.call(cellsInside, function (el) {
             el.classList.add("hovered");
           });
@@ -201,9 +176,7 @@ define([
       });
 
       cell.addEventListener("mouseleave", function () {
-        var hoveredCells = document.querySelectorAll(
-          "#" + widget.elem.id + " .hovered"
-        );
+        var hoveredCells = document.querySelectorAll("#" + widget.elem.id + " .hovered");
         Array.prototype.forEach.call(hoveredCells, function (el) {
           el.classList.remove("hovered");
         });
@@ -211,16 +184,10 @@ define([
     });
 
     // Add selection for all, hours and day
-    var cellsHeaders = document.querySelectorAll(
-      "#" +
-      this.elem.id +
-      " .planning-table td:not([data-time]), .planning-table th:not([data-time])"
-    );
+    var cellsHeaders = document.querySelectorAll("#" + this.elem.id + " .planning-table td:not([data-time]), .planning-table th:not([data-time])");
     Array.prototype.forEach.call(cellsHeaders, function (cell) {
       cell.addEventListener("click", function () {
-        var hoveredCells = document.querySelectorAll(
-          "#" + widget.elem.id + " .hovered[data-time]"
-        );
+        var hoveredCells = document.querySelectorAll("#" + widget.elem.id + " .hovered[data-time]");
         widget.applySelection(hoveredCells, widget.selectedMode);
       });
     });
@@ -228,9 +195,7 @@ define([
     // Handle cell selection with mouse events
     var isMouseDown = false;
 
-    var cellsInside = document.querySelectorAll(
-      "#" + this.elem.id + " .planning-table td"
-    );
+    var cellsInside = document.querySelectorAll("#" + this.elem.id + " .planning-table td");
     Array.prototype.forEach.call(cellsInside, function (cell) {
       cell.addEventListener("mousedown", function () {
         isMouseDown = true;
@@ -256,16 +221,12 @@ define([
     });
   };
 
-
   p._buttonClickHandler = function (e) {
     this._handleEvent(e);
 
     var widgetTargetId = $(e.target).closest("[data-brease-widget]").attr("id");
     if (
-      (!this.isDisabled &&
-        this.buttonIds.indexOf(widgetTargetId) !== -1 &&
-        widgetTargetId !== this.settings.selectedId &&
-        uiController.callWidget(widgetTargetId, "isEnabled") === true) ||
+      (!this.isDisabled && this.buttonIds.indexOf(widgetTargetId) !== -1 && widgetTargetId !== this.settings.selectedId && uiController.callWidget(widgetTargetId, "isEnabled") === true) ||
       (e.target.dataset.action && e.target.dataset.action === "clear")
     ) {
       this.setSelectedMode(widgetTargetId);
@@ -275,13 +236,11 @@ define([
   p.setSelectedMode = function (widgetId) {
     var widget = this;
     var buttons = document.querySelectorAll("#" + this.elem.id + " button");
-    // Remove all active class on buttons
+    // Remove all checked class on buttons
     Array.prototype.forEach.call(buttons, function (btn) {
       btn.classList.remove("active");
     });
-    var childrenWidget = document.querySelector(
-      "#" + this.elem.id + " div.buttons>[data-brease-widget]"
-    );
+    var childrenWidget = document.querySelectorAll("#" + this.elem.id + " div.buttons [data-brease-widget]");
     Array.prototype.forEach.call(childrenWidget, function (child) {
       child.classList.remove("checked");
     });
@@ -293,9 +252,7 @@ define([
   };
 
   p.applySelection = function (cells, mode) {
-    var buttons = document.querySelectorAll(
-      "#" + this.elem.id + ' button[data-action="' + mode + '"]'
-    );
+    var buttons = document.querySelectorAll("#" + this.elem.id + ' button[data-action="' + mode + '"]');
     if ((buttons.length = 0 || buttons.length > 1)) {
       return;
     }
@@ -304,7 +261,7 @@ define([
       $(cells).css("background-color", "");
       $(cells).attr("data-num", 0);
     } else {
-      $(cells).css("background-color", $(button).css("background-color"));
+      $(cells).css("background-color", this.getBackgroundColorFromButton(button));
       $(cells).attr("data-num", $("#" + button.id).data("num"));
     }
 
@@ -313,9 +270,7 @@ define([
 
   // Get action from button number
   p.getActionOfButtonFromNum = function (num) {
-    var buttons = document.querySelectorAll(
-      "#" + this.elem.id + ' button[data-num="' + num + '"]'
-    );
+    var buttons = document.querySelectorAll("#" + this.elem.id + ' button[data-num="' + num + '"]');
     if ((buttons.length = 0 || buttons.length > 1)) {
       return;
     }
@@ -324,10 +279,10 @@ define([
   };
 
   p.getBackgroundColorFromButton = function (button) {
-    return button.css("background-color");
+    var buttonWidgetId = $(button).closest("[data-brease-widget]").attr("id");
+    var backgroundColor = brease.uiController.widgetsController.getWidget(buttonWidgetId).widget.settings.backColor;
+    return backgroundColor;
   };
-
-
 
   /**
    * @method setTableDatas
@@ -349,13 +304,13 @@ define([
   };
 
   /**
-    * @method setTextDeleteButton
-    * @iatStudioExposed
-    * Sets the text of the Delete button. This method can remove an optional textkey.
-    * @param {String} text
-    * @param {Boolean} [keepKey=false] Set true, if textkey should not be removed
-    * @paramMeta text:localizable=true
-    */
+   * @method setTextDeleteButton
+   * @iatStudioExposed
+   * Sets the text of the Delete button. This method can remove an optional textkey.
+   * @param {String} text
+   * @param {Boolean} [keepKey=false] Set true, if textkey should not be removed
+   * @paramMeta text:localizable=true
+   */
   p.setTextDeleteButton = function (text, keepKey) {
     this.settings.textDeleteButton = text;
     if (keepKey !== true) {
@@ -372,7 +327,6 @@ define([
 
     // Set text of the Delete button
     $("#" + this.elem.id + ' button[data-action="clear"]').text(this.settings.textDeleteButton);
-
   };
 
   /**
@@ -397,11 +351,10 @@ define([
     }
   };
   /**
-  * @method removeTextKeyDeleteButton
-  * remove the textkeyDeleteButton
-  */
+   * @method removeTextKeyDeleteButton
+   * remove the textkeyDeleteButton
+   */
   p.removeTextKeyDeleteButton = function () {
-
     this.settings.textkeyDeleteButton = null;
     if (!this.settings.mouseDownTextkeyDeleteButton) {
       this.setLangDependency(false);
@@ -416,9 +369,7 @@ define([
 
   p.refreshTableFromArray = function () {
     var widget = this;
-    var cells = document.querySelectorAll(
-      "#" + this.elem.id + " .planning-table td"
-    );
+    var cells = document.querySelectorAll("#" + this.elem.id + " .planning-table td");
     var tableDatas = this.getTableDatas();
     var currentIndex = 0;
     Array.prototype.forEach.call(cells, function (cell) {
@@ -443,9 +394,7 @@ define([
 
   p.refreshOutputArray = function () {
     var tableDatas = [];
-    var cells = document.querySelectorAll(
-      "#" + this.elem.id + " .planning-table td"
-    );
+    var cells = document.querySelectorAll("#" + this.elem.id + " .planning-table td");
     Array.prototype.forEach.call(cells, function (cell) {
       var valueOfCell = $(cell).attr("data-num");
       tableDatas.push(parseFloat(valueOfCell));
@@ -499,8 +448,7 @@ define([
         widget.readyState -= 1;
       } else {
         button.addEventListener(BreaseEvent.WIDGET_INITIALIZED, function (e) {
-          widget.buttons[widget.buttonIndex[e.target.id]].state =
-            Enum.WidgetState.INITIALIZED;
+          widget.buttons[widget.buttonIndex[e.target.id]].state = Enum.WidgetState.INITIALIZED;
           widget.readyState -= 1;
         });
       }

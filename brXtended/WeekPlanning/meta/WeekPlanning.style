@@ -123,10 +123,11 @@
 			Defines hover color of cells
 			</Description>
 		</StyleProperty>
-		<StyleProperty name="textColor" type="Color" category="Appearance" default="#fff">
+		<StyleProperty name="textColor" type="Color" default="#fff" category="Appearance" owner="widgets.brXtended.WeekPlanning">
 			<StyleElement selector=".planning-table td" attribute="color"/>
 			<StyleElement selector=".planning-table th" attribute="color"/>
-			<Description>Defines hover color of cells</Description>
+			<StyleElement selector=".buttons>button" attribute="color"/>
+			<Description>Defines text color of cells and of Delete button</Description>
 		</StyleProperty>
 		<StyleProperty name="headerHeight" type="PixelVal" category="Layout" default="30px" groupRefId="HeaderCellSize" groupOrder="1">
 			<StyleElement selector=".planning-table thead th.Hour" attribute="height"/>

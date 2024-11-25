@@ -26,16 +26,15 @@
     align-items: center;
   }
 
-  .buttons button {
+  .buttons > button {
     background-color: #444;
-    color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     height: 30px;
   }
 
-  .buttons button:hover {
+  .buttons > button:hover {
     background-color: #555;
   }
   .planning-table {

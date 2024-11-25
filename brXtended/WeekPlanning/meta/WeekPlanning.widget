@@ -231,7 +231,8 @@ or if autofocus should be disabled (-1)				</Description>
 			<StyleProperty name="textColor" type="Color" default="#fff" category="Appearance" owner="widgets.brXtended.WeekPlanning">
 				<StyleElement selector=".planning-table td" attribute="color"/>
 				<StyleElement selector=".planning-table th" attribute="color"/>
-				<Description>Defines hover color of cells</Description>
+				<StyleElement selector=".buttons>button" attribute="color"/>
+				<Description>Defines text color of cells and of Delete button </Description>
 			</StyleProperty>
 			<StyleProperty name="opacity" type="Opacity" category="Appearance" default="1">
 				<StyleElement attribute="opacity"/>

@@ -200,12 +200,14 @@ or if autofocus should be disabled (-1)				</Description>
 				<Description>Sets the radius of the widget rounded corners. For further information, please check its type</Description>
 			</StyleProperty>
 			<StyleProperty name="backColor" type="Color" default="#2c2c2c" category="Appearance">
-				<StyleElement attribute="background-color"/>
-				<StyleElement selector="&amp; button" attribute="background-color"/>
-				<Description>Sets the background color of the widget</Description>
+				<StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="background-color"></StyleElement>
+				<StyleElement selector="&amp;:not(.disabled):not(.checked) button" attribute="background-color"></StyleElement>
+				<Description>
+        Sets the background color of the widget
+				</Description>
 			</StyleProperty>
 			<StyleProperty name="backGroundGradient" type="Gradient" category="Appearance" default="">
-				<StyleElement attribute="@include backGroundGradient(&apos;$value&apos;)"/>
+				<StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
 				<Description>Background as a gradient</Description>
 			</StyleProperty>
 			<StyleProperty name="borderColor" type="ColorCollection" category="Appearance" default="#C8C8C8">
@@ -221,7 +223,8 @@ or if autofocus should be disabled (-1)				</Description>
 				<Description>Style of the Border of the widget</Description>
 			</StyleProperty>
 			<StyleProperty name="textColor" type="Color" default="#fff" category="Appearance">
-				<StyleElement selector="&amp; button" attribute="color"/>
+				<StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="color"></StyleElement>
+				<StyleElement selector="&amp;:not(.disabled):not(.checked) button" attribute="color"></StyleElement>
 				<Description>Sets the color of the text displayed by the widget</Description>
 			</StyleProperty>
 			<StyleProperty name="opacity" type="Opacity" category="Appearance" default="1">
@@ -253,15 +256,18 @@ or if autofocus should be disabled (-1)				</Description>
 				<Description>Margin of the Widget</Description>
 			</StyleProperty>
 			<StyleProperty name="checkedBackColor" category="Appearance" type="Color" default="#DBDBDB">
-				<StyleElement selector="&amp; .checked" attribute="background-color"/>
+				<StyleElement selector="&amp;.checked" attribute="background-color"/>
+				<StyleElement selector="&amp;.checked button" attribute="background-color"></StyleElement>
 				<Description>back color when the widget is checked</Description>
 			</StyleProperty>
 			<StyleProperty name="checkedTextColor" category="Appearance" type="Color" default="#000000">
-				<StyleElement selector="&amp; .checked" attribute="color"/>
+				<StyleElement selector="&amp;.checked" attribute="color"/>
+				<StyleElement selector="&amp;.checked button" attribute="background-color"></StyleElement>
 				<Description>text color when the widget is checked</Description>
 			</StyleProperty>
 			<StyleProperty name="checkedBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01">
-				<StyleElement selector="&amp; .checked" attribute="border-color"></StyleElement>
+				<StyleElement selector="&amp;.checked" attribute="border-color"></StyleElement>
+				<StyleElement selector="&amp;.checked button" attribute="background-color"></StyleElement>
 				<Description>
         border color when the widget is checked
 				</Description>
