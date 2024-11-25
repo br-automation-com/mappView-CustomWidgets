@@ -11,6 +11,7 @@
   background-color: #2c2c2c;
   & button {
     background-color: #2c2c2c;
+    border: none;
   }
   @include backGroundGradient("");
   border-color: #c8c8c8;

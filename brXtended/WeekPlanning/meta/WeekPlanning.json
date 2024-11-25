@@ -874,7 +874,7 @@
           },
           {
             "$": {
-              "selector": ".buttons>button",
+              "selector": ".buttons > button:not(active)",
               "attribute": "color"
             }
           }
@@ -1136,6 +1136,74 @@
           }
         ],
         "Description": ["Defines backcolor of cells"]
+      },
+      {
+        "$": {
+          "name": "marginDeleteButton",
+          "type": "Margin",
+          "category": "Layout",
+          "default": "0px"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".buttons>button",
+              "attribute": "margin"
+            }
+          }
+        ],
+        "Description": ["Margin of the Delete button"]
+      },
+      {
+        "$": {
+          "name": "backColorDeleteButton",
+          "type": "Color",
+          "category": "Appearance",
+          "default": "#444"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".buttons > button:not(active)",
+              "attribute": "background-color"
+            }
+          }
+        ],
+        "Description": ["Background color of the Delete button"]
+      },
+      {
+        "$": {
+          "name": "checkedBackColorDeleteButton",
+          "type": "Color",
+          "category": "Appearance",
+          "default": "#444"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".buttons > button.active",
+              "attribute": "background-color"
+            }
+          }
+        ],
+        "Description": ["Background color of the Delete button when selected"]
+      },
+      {
+        "$": {
+          "name": "checkedTextColorDeleteButton",
+          "type": "Color",
+          "category": "Appearance",
+          "default": "#fff"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".buttons > button.active",
+              "attribute": "color"
+            }
+          }
+        ],
+        "Description": ["Text color of the Delete button when selected<"]
       }
     ],
     "$": {}

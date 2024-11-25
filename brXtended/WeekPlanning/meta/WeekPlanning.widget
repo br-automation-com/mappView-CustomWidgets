@@ -231,7 +231,7 @@ or if autofocus should be disabled (-1)				</Description>
 			<StyleProperty name="textColor" type="Color" default="#fff" category="Appearance" owner="widgets.brXtended.WeekPlanning">
 				<StyleElement selector=".planning-table td" attribute="color"/>
 				<StyleElement selector=".planning-table th" attribute="color"/>
-				<StyleElement selector=".buttons>button" attribute="color"/>
+				<StyleElement selector=".buttons > button:not(active)" attribute="color"/>
 				<Description>Defines text color of cells and of Delete button </Description>
 			</StyleProperty>
 			<StyleProperty name="opacity" type="Opacity" category="Appearance" default="1">
@@ -299,6 +299,26 @@ or if autofocus should be disabled (-1)				</Description>
 				<StyleElement selector=".buttons>button" attribute="margin"/>
 				<Description>Margin of the Delete button</Description>
 			</StyleProperty>
+			<StyleProperty name="backColorDeleteButton" category="Appearance" type="Color" default="#444">
+				<StyleElement selector=".buttons > button:not(active)" attribute="background-color"/>
+				<Description>Background color of the Delete button</Description>
+			</StyleProperty>
+			<StyleProperty name="checkedBackColorDeleteButton" category="Appearance" type="Color" default="#444">
+				<StyleElement selector=".buttons > button.active" attribute="background-color"/>
+				<Description>Background color of the Delete button when selected</Description>
+			</StyleProperty>
+			<StyleProperty name="checkedTextColorDeleteButton" category="Appearance" type="Color" default="#fff">
+				<StyleElement selector=".buttons > button.active" attribute="color"/>
+				<Description>Text color of the Delete button when selected</Description>
+			</StyleProperty>
+			<StyleProperty name="deleteButtonHeight" type="PixelVal" category="Layout" default="30px" groupRefId="DeleteButtonSize" groupOrder="1">
+				<StyleElement selector=".buttons > button" attribute="height"/>
+				<Description>Defines height of the delete button</Description>
+			</StyleProperty>
+			<StyleProperty name="deleteButtonWidth" type="PixelVal" category="Layout" default="95px" groupRefId="DeleteButtonSize" groupOrder="2">
+				<StyleElement selector=".buttons > button" attribute="width"/>
+				<Description>Defines width of the delete button</Description>
+			</StyleProperty>
 		</StyleProperties>
 		<PropertyGroups>
 			<PropertyGroup name="Size" type="String" category="Layout">
@@ -312,6 +332,9 @@ or if autofocus should be disabled (-1)				</Description>
 			</PropertyGroup>
 			<PropertyGroup name="HeaderLeftCellSize" type="String" category="Layout">
 				<Description>Header Left cell size: height and width of cells where there is days</Description>
+			</PropertyGroup>
+			<PropertyGroup name="DeleteButtonSize" type="String" category="Layout">
+				<Description>Delete button size: height and width of cells where there is days</Description>
 			</PropertyGroup>
 		</PropertyGroups>
 	</Widget>

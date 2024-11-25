@@ -21,6 +21,9 @@
 				<xs:attribute name="italic" use="optional" type="kt:Boolean"></xs:attribute>
 				<xs:attribute name="underline" use="optional" type="kt:Boolean"></xs:attribute>
 				<xs:attribute name="margin" use="optional" type="kt:Margin"></xs:attribute>
+				<xs:attribute name="checkedBackColor" use="optional" type="kt:Color" default="#DBDBDB"></xs:attribute>
+				<xs:attribute name="checkedTextColor" use="optional" type="kt:Color" default="#000000"></xs:attribute>
+				<xs:attribute name="checkedBorderColor" use="optional" type="kt:ColorCollection" default="#FD7B01"></xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

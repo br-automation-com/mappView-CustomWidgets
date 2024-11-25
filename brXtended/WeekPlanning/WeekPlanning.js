@@ -43,13 +43,13 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
 
   var uiController = brease.uiController;
   var defaultSettings = {
-      cancelButtonChangeEvents: true,
-      width: 500,
-      height: 300,
-      alignment: Enum.Direction.horizontal,
-      childPositioning: Enum.ChildPositioning.relative,
-      textDeleteButton: "Delete",
-    },
+    cancelButtonChangeEvents: true,
+    width: 500,
+    height: 300,
+    alignment: Enum.Direction.horizontal,
+    childPositioning: Enum.ChildPositioning.relative,
+    textDeleteButton: "Delete",
+  },
     WidgetClass = SuperClass.extend(function WeekPlanning() {
       SuperClass.apply(this, arguments);
     }, defaultSettings),
@@ -64,7 +64,8 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
     SuperClass.prototype.init.apply(this, arguments);
     this.selectedMode = "clear";
     this.elem.classList.add("brXtendedWeekPlanning");
-
+    this.error = false;
+    this.errorId = 0;
     this.el.on(BreaseEvent.WIDGET_READY, this._bind("_widgetReadyHandler"));
 
     // Set ID for delete button
@@ -121,7 +122,11 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
   }
 
   p._widgetReadyHandler = function (e) {
-    var index = this.settings.buttonIds.indexOf(e.target.id);
+    var index = -1
+    if(this.settings.buttonIds !== undefined){
+      index = this.settings.buttonIds.indexOf(e.target.id);
+    }
+    
     if (index !== -1) {
       this.buttonReady[index].resolve();
     }
@@ -129,6 +134,8 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
     this.el.on(BreaseEvent.CLICK, this._bind("_buttonClickHandler"));
 
     this.widgetAddedHandler(e);
+    _getChildrenInformation(this);
+    _removeButtonClickHandler(this);
   };
 
   p.widgetAddedHandler = function (e) {
@@ -453,7 +460,65 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
         });
       }
     });
+    if (widget.readyState == 0 && !widget.error) {
+      _checkUniqueAction(widget);
+      _checkUniqueArrayNum(widget);
+    }
   }
+
+
+  function _checkUniqueAction(widget) {
+    var actions = [],
+    childrenWidget = []
+    widget.el.find("[data-brease-widget]").each(function () {
+      var childWidget = brease.uiController.widgetsController.getWidget(this.id).widget;
+      var action = childWidget.settings.action;
+      childrenWidget.push(childWidget);
+      actions.push(action);
+    });
+    var uniqueElements = new Set();
+    var duplicates = [];
+
+    actions.forEach(function (item, idx) {
+      if (uniqueElements.has(item)) {
+        duplicates.push(idx);
+      } else {
+        uniqueElements.add(item);
+      }
+    });
+    if(duplicates.length > 0){
+      brease.loggerService.log(999, Enum.EventLoggerCustomer.BUR, Enum.EventLoggerVerboseLevel.OFF, Enum.EventLoggerSeverity.ERROR, [], "Not unique actions, widgetId: " + childrenWidget[duplicates[0]].elem.id);
+      widget.error = true;
+    }
+
+  };
+
+  function _checkUniqueArrayNum(widget) {
+    var valueForArrays = [],
+      childrenWidget = []
+    widget.el.find("[data-brease-widget]").each(function () {
+      var childWidget = brease.uiController.widgetsController.getWidget(this.id).widget;
+      var valueForArray = childWidget.settings.valueForArray;
+      childrenWidget.push(childWidget);
+      valueForArrays.push(valueForArray);
+    });
+
+    var uniqueElements = new Set();
+    var duplicates = [];
+
+    valueForArrays.forEach(function (item, idx) {
+      if (uniqueElements.has(item)) {
+        duplicates.push(idx);
+      } else {
+        uniqueElements.add(item);
+      }
+    });
+    if(duplicates.length > 0){
+      brease.loggerService.log(999, Enum.EventLoggerCustomer.BUR, Enum.EventLoggerVerboseLevel.OFF, Enum.EventLoggerSeverity.ERROR, [], "Not unique valueForArray, widgetId: " + childrenWidget[duplicates[0]].elem.id);
+      widget.error = true;
+    }
+    
+  };
 
   return languageDependency.decorate(WidgetClass, false);
 });
