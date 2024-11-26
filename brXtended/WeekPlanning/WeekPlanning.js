@@ -31,7 +31,7 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
    * @cfg {NumberArray1D} tableDatas
    * @iatCategory Data
    * @iatStudioExposed
-   * One dimension array [0..334]
+   * One dimension array [0..335]
    * @not_projectable
    * @bindable
    */
@@ -170,7 +170,7 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
             el.classList.add("hovered");
           });
         } else if (cell.classList.contains("Hour")) {
-          var hours = document.querySelectorAll("#" + widget.elem.id + ' [data-time="' + cell.dataset.hour + ':00"], [data-time="' + cell.dataset.hour + ':30"]');
+          var hours = document.querySelectorAll("#" + widget.elem.id + ' [data-time="' + cell.dataset.hour + ':00"], #' + widget.elem.id + ' [data-time="' + cell.dataset.hour + ':30"]');
           Array.prototype.forEach.call(hours, function (el) {
             el.classList.add("hovered");
           });
@@ -179,7 +179,7 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
           Array.prototype.forEach.call(cellsInside, function (el) {
             el.classList.add("hovered");
           });
-        }
+        };
       });
 
       cell.addEventListener("mouseleave", function () {
@@ -287,8 +287,12 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
 
   p.getBackgroundColorFromButton = function (button) {
     var buttonWidgetId = $(button).closest("[data-brease-widget]").attr("id");
-    var backgroundColor = brease.uiController.widgetsController.getWidget(buttonWidgetId).widget.settings.backColor;
-    return backgroundColor;
+    if(buttonWidgetId){
+      var backgroundColor = brease.uiController.widgetsController.getWidget(buttonWidgetId).widget.settings.backColor;
+      return backgroundColor;
+    }
+    return "transparent";
+    
   };
 
   /**
@@ -472,9 +476,11 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
     childrenWidget = []
     widget.el.find("[data-brease-widget]").each(function () {
       var childWidget = brease.uiController.widgetsController.getWidget(this.id).widget;
-      var action = childWidget.settings.action;
-      childrenWidget.push(childWidget);
-      actions.push(action);
+      if(childWidget !== undefined){
+        var action = childWidget.settings.action;
+        childrenWidget.push(childWidget);
+        actions.push(action);
+      }
     });
     var uniqueElements = new Set();
     var duplicates = [];
@@ -498,9 +504,11 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
       childrenWidget = []
     widget.el.find("[data-brease-widget]").each(function () {
       var childWidget = brease.uiController.widgetsController.getWidget(this.id).widget;
-      var valueForArray = childWidget.settings.valueForArray;
-      childrenWidget.push(childWidget);
-      valueForArrays.push(valueForArray);
+      if(childWidget !== undefined){
+        var valueForArray = childWidget.settings.valueForArray;
+        childrenWidget.push(childWidget);
+        valueForArrays.push(valueForArray);
+      }
     });
 
     var uniqueElements = new Set();
