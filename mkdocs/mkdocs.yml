@@ -12,6 +12,8 @@ nav:
   - Transfer: widgets_transfer.md
   - ToggleSwitch: widgets_toggle_switch.md
   - ListBox: widgets_list_box.md
+  - WeekPlanning: widgets_week_planning.md
+  - WeekPlanningItem: widgets_week_planning_item.md
   - Revision: revision.md
 
 theme:

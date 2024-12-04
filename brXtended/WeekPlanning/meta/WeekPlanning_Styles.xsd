@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.br-automation.com/iat2015/styles/engineering/v1"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:sd="http://www.br-automation.com/iat2015/styles/engineering/v1"
+	xmlns:kt="http://www.br-automation.com/iat2015/keywordTypes/v1" elementFormDefault="qualified">
+	<xs:complexType name="widgets.brXtended.WeekPlanning">
+		<xs:complexContent>
+			<xs:extension base="sd:stylesBase">
+				<xs:attribute name="borderWidth" use="optional" type="kt:PixelValCollection"></xs:attribute>
+				<xs:attribute name="cornerRadius" use="optional" type="kt:PixelValCollection"></xs:attribute>
+				<xs:attribute name="backColor" use="optional" type="kt:Color"></xs:attribute>
+				<xs:attribute name="backGroundGradient" use="optional" type="kt:Gradient"></xs:attribute>
+				<xs:attribute name="borderColor" use="optional" type="kt:ColorCollection"></xs:attribute>
+				<xs:attribute name="borderStyle" use="optional" type="kt:BorderStyle"></xs:attribute>
+				<xs:attribute name="textColor" use="optional" type="kt:Color"></xs:attribute>
+				<xs:attribute name="opacity" use="optional" type="kt:Opacity"></xs:attribute>
+				<xs:attribute name="fontName" use="optional" type="kt:FontName"></xs:attribute>
+				<xs:attribute name="fontSize" use="optional" type="kt:PixelVal"></xs:attribute>
+				<xs:attribute name="bold" use="optional" type="kt:Boolean"></xs:attribute>
+				<xs:attribute name="italic" use="optional" type="kt:Boolean"></xs:attribute>
+				<xs:attribute name="underline" use="optional" type="kt:Boolean"></xs:attribute>
+				<xs:attribute name="margin" use="optional" type="kt:Margin"></xs:attribute>
+				<xs:attribute name="hoverCellBackColor" use="optional" type="kt:Color"></xs:attribute>
+				<xs:attribute name="headerHeight" use="optional" type="kt:PixelVal"></xs:attribute>
+				<xs:attribute name="headerWidth" use="optional" type="kt:PixelVal"></xs:attribute>
+				<xs:attribute name="headerLeftHeight" use="optional" type="kt:PixelVal"></xs:attribute>
+				<xs:attribute name="headerLeftWidth" use="optional" type="kt:PixelVal"></xs:attribute>
+				<xs:attribute name="buttonBarHeight" use="optional" type="kt:PixelVal"></xs:attribute>
+				<xs:attribute name="headerBackColor" use="optional" type="kt:Color"></xs:attribute>
+				<xs:attribute name="cellsBackColor" use="optional" type="kt:Color"></xs:attribute>
+				<xs:attribute name="marginDeleteButton" use="optional" type="kt:Margin"></xs:attribute>
+				<xs:attribute name="backColorDeleteButton" use="optional" type="kt:Color" default="#444"></xs:attribute>
+				<xs:attribute name="checkedBackColorDeleteButton" use="optional" type="kt:Color" default="#444"></xs:attribute>
+				<xs:attribute name="checkedTextColorDeleteButton" use="optional" type="kt:Color" default="#fff"></xs:attribute>
+				<xs:attribute name="deleteButtonHeight" use="optional" type="kt:PixelVal" default="30px"></xs:attribute>
+				<xs:attribute name="deleteButtonWidth" use="optional" type="kt:PixelVal" default="95px"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

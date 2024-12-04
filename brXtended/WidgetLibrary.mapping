@@ -54,4 +54,10 @@
   <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetValueBool.value" type="BOOL"/>
   <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetValueInteger.value" type="ANY_INT"/>
   <Mapping parameter="widgets.brXtended.ToggleSwitch.Action.SetVisible.value" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.WeekPlanning.Action.SetEnable.value" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.WeekPlanning.Action.SetStyle.value" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.WeekPlanning.Action.SetVisible.value" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.WeekPlanningItem.Action.SetEnable.value" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.WeekPlanningItem.Action.SetStyle.value" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.WeekPlanningItem.Action.SetVisible.value" type="BOOL"/>
 </Mappings>

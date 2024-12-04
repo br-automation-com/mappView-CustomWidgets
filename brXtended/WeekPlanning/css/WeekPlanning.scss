@@ -1,0 +1,86 @@
+.brXtendedWeekPlanning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  overflow: hidden;
+
+  .container {
+    height: 100%;
+    width: 100%;
+  }
+
+  .Invisible {
+    display: none;
+  }
+
+  .planning-container {
+    overflow-x: auto;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  .buttons > button {
+    background-color: #444;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    height: 30px;
+    color: #fff;
+  }
+
+  .buttons > button:hover {
+    background-color: #555;
+  }
+  .planning-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .planning-table th,
+  .planning-table td {
+    border: 1px solid #444;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 15px;
+  }
+  .planning-table th {
+    background-color: #333;
+  }
+
+  .planning-table thead th#select-all {
+    width: 70px;
+  }
+
+  .planning-table td {
+    background-color: #555;
+  }
+
+  // .planning-table td.hovered,
+  // .planning-table th.hovered {
+  //   filter: brightness(0.5);
+  //   box-shadow: inset 0px 0px 0px 5px #f90;
+  // }
+
+  .planning-table th.hour-header {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .planning-table th.hour-header::after {
+    content: attr(data-hour);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

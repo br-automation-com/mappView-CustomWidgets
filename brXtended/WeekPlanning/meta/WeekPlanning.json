@@ -1,0 +1,1247 @@
+{
+  "name": "widgets.brXtended.WeekPlanning",
+  "type": "widget",
+  "meta": {
+    "superClass": "brease.core.ContainerWidget",
+    "requires": [],
+    "mixins": [],
+    "parents": ["*"],
+    "children": ["widgets.brXtended.WeekPlanningItem"],
+    "inheritance": ["widgets.brXtended.WeekPlanning", "brease.core.ContainerWidget", "brease.core.BaseWidget"],
+    "isContainer": "true",
+    "filePath": "widgets/brXtended/WeekPlanning/WeekPlanning.js"
+  },
+  "methods": [
+    {
+      "name": "Focus",
+      "originalName": "focus",
+      "read": false,
+      "description": "Sets focus on the widget element, if it can be focused and keyboardOperation=true",
+      "iatStudioExposed": true
+    },
+    {
+      "name": "setAdditionalStyle",
+      "originalName": "setAdditionalStyle",
+      "read": false,
+      "description": "Add an additional style to the widget element. The initial style will not be removed.\nThe additional style will not be removed, when the style of the widget is changed.\nYou can remove the additional style via removeAdditionalStyle.",
+      "iatStudioExposed": false,
+      "parameter": [
+        {
+          "name": "styleName",
+          "type": "StyleReference",
+          "index": 0,
+          "description": "",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "name": "setEditable",
+      "originalName": "setEditable",
+      "read": false,
+      "description": "Sets the state of property \"editable\"\nUsed for \"editable\" binding; method is called exclusevely by the framework",
+      "iatStudioExposed": false,
+      "parameter": [
+        {
+          "name": "editable",
+          "type": "Boolean",
+          "index": 0,
+          "description": "",
+          "optional": false
+        },
+        {
+          "name": "metaData",
+          "type": "Object",
+          "index": 1,
+          "description": "",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "name": "SetEnable",
+      "originalName": "setEnable",
+      "read": false,
+      "description": "Sets the state of property \"enable\"",
+      "iatStudioExposed": true,
+      "parameter": [
+        {
+          "name": "value",
+          "type": "Boolean",
+          "index": 0,
+          "description": "",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "name": "setParentCoWiId",
+      "originalName": "setParentCoWiId",
+      "read": false,
+      "description": "Used to inherit parentCoWiId inside of compound widgets to inner widgets which are not projected, e.g. inner widgets of Login widget",
+      "iatStudioExposed": false,
+      "parameter": [
+        {
+          "name": "value",
+          "type": "String",
+          "index": 0,
+          "description": "",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "name": "SetStyle",
+      "originalName": "setStyle",
+      "read": false,
+      "description": "",
+      "iatStudioExposed": true,
+      "parameter": [
+        {
+          "name": "value",
+          "type": "StyleReference",
+          "index": 0,
+          "description": "",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "name": "setTabIndex",
+      "originalName": "setTabIndex",
+      "read": false,
+      "description": "Sets the state of property \"tabIndex\"",
+      "iatStudioExposed": false,
+      "parameter": [
+        {
+          "name": "value",
+          "type": "Number",
+          "index": 0,
+          "description": "",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "name": "setTableDatas",
+      "originalName": "setTableDatas",
+      "read": false,
+      "description": "Sets the TableDatas Property",
+      "iatStudioExposed": false,
+      "parameter": [
+        {
+          "name": "value",
+          "type": "NumberArray1D",
+          "index": 0,
+          "description": "",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "name": "SetVisible",
+      "originalName": "setVisible",
+      "read": false,
+      "description": "Sets the state of property \"visible\"",
+      "iatStudioExposed": true,
+      "parameter": [
+        {
+          "name": "value",
+          "type": "Boolean",
+          "index": 0,
+          "description": "",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "name": "ShowTooltip",
+      "originalName": "showTooltip",
+      "read": false,
+      "description": "",
+      "iatStudioExposed": true
+    }
+  ],
+  "events": [
+    {
+      "name": "Click",
+      "description": "Fired when element is clicked on.",
+      "parameter": [
+        {
+          "name": "origin",
+          "type": "String",
+          "index": 0,
+          "description": "id of widget that triggered this event",
+          "optional": false
+        },
+        {
+          "name": "horizontalPos",
+          "type": "String",
+          "index": 1,
+          "description": "horizontal position of click in pixel i.e '10px'",
+          "optional": false
+        },
+        {
+          "name": "verticalPos",
+          "type": "String",
+          "index": 2,
+          "description": "vertical position of click in pixel i.e '10px'",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "name": "DisabledClick",
+      "description": "Fired when disabled element is clicked on.",
+      "parameter": [
+        {
+          "name": "origin",
+          "type": "String",
+          "index": 0,
+          "description": "id of widget that triggered this event",
+          "optional": false
+        },
+        {
+          "name": "hasPermission",
+          "type": "Boolean",
+          "index": 1,
+          "description": "defines if the state is caused due to missing roles of the current user",
+          "optional": false
+        },
+        {
+          "name": "horizontalPos",
+          "type": "String",
+          "index": 2,
+          "description": "horizontal position of click in pixel i.e '10px'",
+          "optional": false
+        },
+        {
+          "name": "verticalPos",
+          "type": "String",
+          "index": 3,
+          "description": "vertical position of click in pixel i.e '10px'",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "name": "EnableChanged",
+      "description": "Fired when operability of the widget changes.",
+      "parameter": [
+        {
+          "name": "value",
+          "type": "Boolean",
+          "index": 0,
+          "description": "operability",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "name": "FocusIn",
+      "description": "Fired when the widgets gets focus"
+    },
+    {
+      "name": "FocusOut",
+      "description": "Fired when the widgets lost focus"
+    },
+    {
+      "name": "VisibleChanged",
+      "description": "Fired when the visibility of the widget changes.",
+      "parameter": [
+        {
+          "name": "value",
+          "type": "Boolean",
+          "index": 0,
+          "description": "visibility",
+          "optional": false
+        }
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "enable",
+      "type": "Boolean",
+      "initOnly": false,
+      "localizable": false,
+      "editableBinding": false,
+      "readOnly": false,
+      "required": false,
+      "owner": "brease.core.BaseWidget",
+      "projectable": true,
+      "description": "Initial option to enable widget.",
+      "category": "Behavior",
+      "defaultValue": "true"
+    },
+    {
+      "name": "permissionOperate",
+      "type": "RoleCollection",
+      "initOnly": true,
+      "localizable": false,
+      "editableBinding": false,
+      "readOnly": false,
+      "required": false,
+      "owner": "brease.core.BaseWidget",
+      "projectable": true,
+      "description": "restricts operability to users, which have given roles",
+      "category": "Accessibility"
+    },
+    {
+      "name": "permissionView",
+      "type": "RoleCollection",
+      "initOnly": true,
+      "localizable": false,
+      "editableBinding": false,
+      "readOnly": false,
+      "required": false,
+      "owner": "brease.core.BaseWidget",
+      "projectable": true,
+      "description": "restricts visibility to users, which have given roles",
+      "category": "Accessibility"
+    },
+    {
+      "name": "style",
+      "type": "StyleReference",
+      "initOnly": false,
+      "localizable": false,
+      "editableBinding": false,
+      "readOnly": false,
+      "required": false,
+      "owner": "brease.core.BaseWidget",
+      "projectable": true,
+      "description": "reference to a style for this widget type",
+      "category": "Appearance",
+      "defaultValue": "default"
+    },
+    {
+      "name": "tabIndex",
+      "type": "Integer",
+      "initOnly": true,
+      "localizable": false,
+      "editableBinding": false,
+      "readOnly": false,
+      "required": false,
+      "owner": "brease.core.BaseWidget",
+      "projectable": true,
+      "description": "sets if a widget should have autofocus enabled (0), the order of the focus (>0),\nor if autofocus should be disabled (-1)",
+      "category": "Behavior",
+      "defaultValue": "-1"
+    },
+    {
+      "name": "tableDatas",
+      "type": "NumberArray1D",
+      "initOnly": false,
+      "localizable": false,
+      "editableBinding": false,
+      "readOnly": false,
+      "required": false,
+      "owner": "widgets.brXtended.WeekPlanning",
+      "projectable": false,
+      "description": "One dimension array [0..334]",
+      "category": "Data",
+      "defaultValue": "[]"
+    },
+    {
+      "name": "tooltip",
+      "type": "String",
+      "initOnly": true,
+      "localizable": true,
+      "editableBinding": false,
+      "readOnly": false,
+      "required": false,
+      "owner": "brease.core.BaseWidget",
+      "projectable": true,
+      "description": "reference to a tooltip for a widget",
+      "category": "Appearance",
+      "defaultValue": ""
+    },
+    {
+      "name": "visible",
+      "type": "Boolean",
+      "initOnly": false,
+      "localizable": false,
+      "editableBinding": false,
+      "readOnly": false,
+      "required": false,
+      "owner": "brease.core.BaseWidget",
+      "projectable": true,
+      "description": "change visibility",
+      "category": "Behavior",
+      "defaultValue": "true"
+    },
+    {
+      "name": "maxHeight",
+      "type": "Size",
+      "defaultValue": "0",
+      "description": "maximum outer height of widget",
+      "initOnly": true,
+      "required": false,
+      "readOnly": false,
+      "projectable": true,
+      "hide": false,
+      "cssProp": true
+    },
+    {
+      "name": "minHeight",
+      "type": "Size",
+      "defaultValue": "0",
+      "description": "minimum outer height of widget",
+      "initOnly": true,
+      "required": false,
+      "readOnly": false,
+      "projectable": true,
+      "hide": false,
+      "cssProp": true
+    },
+    {
+      "name": "maxWidth",
+      "type": "Size",
+      "defaultValue": "0",
+      "description": "maximum outer width of widget",
+      "initOnly": true,
+      "required": false,
+      "readOnly": false,
+      "projectable": true,
+      "hide": false,
+      "cssProp": true
+    },
+    {
+      "name": "minWidth",
+      "type": "Size",
+      "defaultValue": "0",
+      "description": "minimum outer width of widget",
+      "initOnly": true,
+      "required": false,
+      "readOnly": false,
+      "projectable": true,
+      "hide": false,
+      "cssProp": true
+    },
+    {
+      "name": "zIndex",
+      "type": "UInteger",
+      "description": "The zIndex property specifies the z-order of a widget and its childs.<br/>\r\n        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.<br/>\r\n        The zIndex must be unique within a content.<br/>",
+      "initOnly": true,
+      "required": true,
+      "readOnly": false,
+      "projectable": true,
+      "owner": "brease.core.BaseWidget",
+      "hide": false,
+      "cssProp": true
+    },
+    {
+      "name": "left",
+      "type": "Integer",
+      "description": "absolute position measured from left boundary of parent container",
+      "initOnly": true,
+      "required": false,
+      "readOnly": false,
+      "projectable": true,
+      "owner": "brease.core.BaseWidget",
+      "hide": false,
+      "cssProp": true
+    },
+    {
+      "name": "top",
+      "type": "Integer",
+      "description": "absolute position measured from top boundary of parent container",
+      "initOnly": true,
+      "required": false,
+      "readOnly": false,
+      "projectable": true,
+      "owner": "brease.core.BaseWidget",
+      "hide": false,
+      "cssProp": true
+    },
+    {
+      "name": "height",
+      "type": "AutoSize",
+      "defaultValue": "100",
+      "description": "outer height of widget",
+      "initOnly": true,
+      "required": false,
+      "readOnly": false,
+      "projectable": true,
+      "owner": "widgets.brXtended.WeekPlanning",
+      "hide": false,
+      "cssProp": true
+    },
+    {
+      "name": "width",
+      "type": "AutoSize",
+      "defaultValue": "400",
+      "description": "outer width of widget",
+      "initOnly": true,
+      "required": false,
+      "readOnly": false,
+      "projectable": true,
+      "owner": "widgets.brXtended.WeekPlanning",
+      "hide": false,
+      "cssProp": true
+    },
+    {
+      "name": "textDeleteButton",
+      "type": "String",
+      "initOnly": false,
+      "localizable": true,
+      "editableBinding": false,
+      "readOnly": false,
+      "required": false,
+      "owner": "widgets.brXtended.WeekPlanning",
+      "projectable": true,
+      "description": "Text which is displayed in the Delete button\n",
+      "category": "Appearance",
+      "defaultValue": "Delete"
+    }
+  ],
+  "dependencies": {
+    "files": ["brease/core/ContainerWidget.js"],
+    "folders": [],
+    "widgets": ["widgets.brXtended.WeekPlanning"]
+  },
+  "categories": {
+    "Category": ["Data"]
+  },
+  "descriptions": {
+    "short": "Week planning widget",
+    "de": "German",
+    "en": "English"
+  },
+  "superproperties": {
+    "id": {
+      "type": "WidgetId"
+    },
+    "enable": {
+      "type": "Boolean"
+    },
+    "permissionOperate": {
+      "type": "RoleCollection"
+    },
+    "permissionView": {
+      "type": "RoleCollection"
+    },
+    "style": {
+      "type": "StyleReference"
+    },
+    "tabIndex": {
+      "type": "Integer"
+    },
+    "tooltip": {
+      "type": "String"
+    },
+    "visible": {
+      "type": "Boolean"
+    },
+    "zIndex": {
+      "type": "UInteger"
+    },
+    "left": {
+      "type": "Integer"
+    },
+    "top": {
+      "type": "Integer"
+    },
+    "height": {
+      "type": "AutoSize"
+    },
+    "width": {
+      "type": "AutoSize"
+    }
+  },
+  "styleproperties": {
+    "StyleProperty": [
+      {
+        "$": {
+          "name": "width",
+          "type": "AutoSize",
+          "not_styleable": "true",
+          "owner": "widgets.brXtended.WeekPlanning",
+          "category": "Layout",
+          "groupRefId": "Size",
+          "groupOrder": "1",
+          "default": "400"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "@include elemAutoWidth($value)"
+            }
+          }
+        ],
+        "Description": ["outer width of widget"]
+      },
+      {
+        "$": {
+          "name": "height",
+          "type": "AutoSize",
+          "not_styleable": "true",
+          "owner": "widgets.brXtended.WeekPlanning",
+          "category": "Layout",
+          "groupRefId": "Size",
+          "groupOrder": "2",
+          "default": "100"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "@include elemAutoHeight($value)"
+            }
+          }
+        ],
+        "Description": ["outer height of widget"]
+      },
+      {
+        "$": {
+          "name": "top",
+          "type": "Integer",
+          "not_styleable": "true",
+          "owner": "brease.core.BaseWidget",
+          "category": "Layout",
+          "groupRefId": "Position",
+          "groupOrder": "1"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "@include elemTop($value)"
+            }
+          }
+        ],
+        "Description": ["absolute position measured from top boundary of parent container"]
+      },
+      {
+        "$": {
+          "name": "left",
+          "type": "Integer",
+          "not_styleable": "true",
+          "owner": "brease.core.BaseWidget",
+          "category": "Layout",
+          "groupRefId": "Position",
+          "groupOrder": "2"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "@include elemLeft($value)"
+            }
+          }
+        ],
+        "Description": ["absolute position measured from left boundary of parent container"]
+      },
+      {
+        "$": {
+          "name": "zIndex",
+          "type": "UInteger",
+          "not_styleable": "true",
+          "owner": "brease.core.BaseWidget",
+          "category": "Layout",
+          "required": "true"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "z-index"
+            }
+          }
+        ],
+        "Description": [
+          "The zIndex property specifies the z-order of a widget and its childs.<br/>\r\n        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.<br/>\r\n        The zIndex must be unique within a content.<br/>"
+        ]
+      },
+      {
+        "$": {
+          "name": "minWidth",
+          "type": "Size",
+          "not_styleable": "true",
+          "default": "0",
+          "category": "Layout",
+          "groupRefId": "Size",
+          "groupOrder": "3"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "@include elemMinWidth($value)"
+            }
+          }
+        ],
+        "Description": ["minimum outer width of widget"]
+      },
+      {
+        "$": {
+          "name": "maxWidth",
+          "type": "Size",
+          "not_styleable": "true",
+          "default": "0",
+          "category": "Layout",
+          "groupRefId": "Size",
+          "groupOrder": "4"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "@include elemMaxWidth($value)"
+            }
+          }
+        ],
+        "Description": ["maximum outer width of widget"]
+      },
+      {
+        "$": {
+          "name": "minHeight",
+          "type": "Size",
+          "not_styleable": "true",
+          "default": "0",
+          "category": "Layout",
+          "groupRefId": "Size",
+          "groupOrder": "5"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "@include elemMinHeight($value)"
+            }
+          }
+        ],
+        "Description": ["minimum outer height of widget"]
+      },
+      {
+        "$": {
+          "name": "maxHeight",
+          "type": "Size",
+          "not_styleable": "true",
+          "default": "0",
+          "category": "Layout",
+          "groupRefId": "Size",
+          "groupOrder": "6"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "@include elemMaxHeight($value)"
+            }
+          }
+        ],
+        "Description": ["maximum outer height of widget"]
+      },
+      {
+        "$": {
+          "name": "borderWidth",
+          "type": "PixelValCollection",
+          "category": "Appearance",
+          "default": "0px"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "border-width"
+            }
+          }
+        ],
+        "Description": ["Sets the border width of the widget. For further information, please check its type"]
+      },
+      {
+        "$": {
+          "name": "cornerRadius",
+          "type": "PixelValCollection",
+          "category": "Appearance",
+          "default": "0px"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "@include border-radius($value)"
+            }
+          }
+        ],
+        "Description": ["Sets the radius of the widget rounded corners. For further information, please check its type"]
+      },
+      {
+        "$": {
+          "name": "backColor",
+          "type": "Color",
+          "default": "#2c2c2c",
+          "category": "Appearance"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "background-color"
+            }
+          },
+          {
+            "$": {
+              "selector": "& .planning-container",
+              "attribute": "background-color"
+            }
+          }
+        ],
+        "Description": ["Sets the background color of the widget"]
+      },
+      {
+        "$": {
+          "name": "backGroundGradient",
+          "type": "Gradient",
+          "category": "Appearance",
+          "default": ""
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "@include backGroundGradient('$value')"
+            }
+          }
+        ],
+        "Description": ["Background as a gradient"]
+      },
+      {
+        "$": {
+          "name": "borderColor",
+          "type": "ColorCollection",
+          "category": "Appearance",
+          "default": "#C8C8C8"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "border-color"
+            }
+          },
+          {
+            "$": {
+              "selector": "&:before",
+              "attribute": "border-color"
+            }
+          },
+          {
+            "$": {
+              "selector": "&:after",
+              "attribute": "border-color"
+            }
+          }
+        ],
+        "Description": ["Sets the border color"]
+      },
+      {
+        "$": {
+          "name": "borderStyle",
+          "type": "BorderStyle",
+          "category": "Appearance",
+          "default": "none"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "border-style"
+            }
+          },
+          {
+            "$": {
+              "selector": "&:before",
+              "attribute": "border-style"
+            }
+          },
+          {
+            "$": {
+              "selector": "&:after",
+              "attribute": "border-style"
+            }
+          }
+        ],
+        "Description": ["Style of the Border of the widget"]
+      },
+      {
+        "$": {
+          "name": "textColor",
+          "type": "Color",
+          "default": "#fff",
+          "category": "Appearance",
+          "owner": "widgets.brXtended.WeekPlanning"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".planning-table td",
+              "attribute": "color"
+            }
+          },
+          {
+            "$": {
+              "selector": ".planning-table th",
+              "attribute": "color"
+            }
+          },
+          {
+            "$": {
+              "selector": ".buttons > button:not(active)",
+              "attribute": "color"
+            }
+          }
+        ],
+        "Description": ["Defines text color of cells and of Delete button"]
+      },
+      {
+        "$": {
+          "name": "opacity",
+          "type": "Opacity",
+          "category": "Appearance",
+          "default": "1"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "opacity"
+            }
+          }
+        ],
+        "Description": ["Opacity of the widget"]
+      },
+      {
+        "$": {
+          "name": "fontName",
+          "type": "FontName",
+          "default": "Arial",
+          "category": "Font"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": "span",
+              "attribute": "font-family"
+            }
+          }
+        ],
+        "Description": ["Fontname of the text"]
+      },
+      {
+        "$": {
+          "name": "fontSize",
+          "type": "PixelVal",
+          "default": "14px",
+          "category": "Font"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "font-size"
+            }
+          }
+        ],
+        "Description": ["Fontsize of the text in pixel"]
+      },
+      {
+        "$": {
+          "name": "bold",
+          "type": "Boolean",
+          "default": "false",
+          "category": "Font"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "@include font-weight-bold($value)"
+            }
+          }
+        ],
+        "Description": ["If **true** font style is bold"]
+      },
+      {
+        "$": {
+          "name": "italic",
+          "type": "Boolean",
+          "default": "false",
+          "category": "Font"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "@include font-style-italic($value)"
+            }
+          }
+        ],
+        "Description": ["If **true** font style is italic"]
+      },
+      {
+        "$": {
+          "name": "underline",
+          "type": "Boolean",
+          "default": "false",
+          "category": "Font"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": "span",
+              "attribute": "@include text-decoration-underline($value)"
+            }
+          }
+        ],
+        "Description": ["If **true** font style is underline"]
+      },
+      {
+        "$": {
+          "name": "margin",
+          "category": "Layout",
+          "type": "Margin",
+          "default": "0px"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "attribute": "margin"
+            }
+          }
+        ],
+        "Description": ["Margin of the Widget"]
+      },
+      {
+        "$": {
+          "name": "hoverCellBackColor",
+          "type": "Color",
+          "category": "Appearance",
+          "default": "#777"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".planning-table td.hovered",
+              "attribute": "background-color"
+            }
+          },
+          {
+            "$": {
+              "selector": ".planning-table th.hovered",
+              "attribute": "background-color"
+            }
+          }
+        ],
+        "Description": ["Defines hover color of cells"]
+      },
+      {
+        "$": {
+          "name": "headerHeight",
+          "type": "PixelVal",
+          "category": "Layout",
+          "default": "30px"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".planning-table thead th",
+              "attribute": "height"
+            }
+          }
+        ],
+        "Description": ["Defines height of the header where there is hours"]
+      },
+      {
+        "$": {
+          "name": "headerWidth",
+          "type": "PixelVal",
+          "category": "Layout",
+          "default": "30px"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".planning-table thead th",
+              "attribute": "width"
+            }
+          }
+        ],
+        "Description": ["Defines width of the header where there is hours"]
+      },
+      {
+        "$": {
+          "name": "headerLeftHeight",
+          "type": "PixelVal",
+          "category": "Layout",
+          "default": "30px"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".planning-table tbody th",
+              "attribute": "height"
+            }
+          }
+        ],
+        "Description": ["Defines height of the header where there is days"]
+      },
+      {
+        "$": {
+          "name": "headerLeftWidth",
+          "type": "PixelVal",
+          "category": "Layout",
+          "default": "30px"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".planning-table tbody th",
+              "attribute": "width"
+            }
+          }
+        ],
+        "Description": ["Defines width of the header where there is days"]
+      },
+      {
+        "$": {
+          "name": "buttonBarHeight",
+          "type": "PixelVal",
+          "category": "Layout",
+          "default": "30px"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".buttons",
+              "attribute": "height"
+            }
+          }
+        ],
+        "Description": ["Defines height of the button bar"]
+      },
+      {
+        "$": {
+          "name": "headerBackColor",
+          "type": "Color",
+          "category": "Appearance",
+          "default": "#333"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".planning-table th",
+              "attribute": "background-color"
+            }
+          }
+        ],
+        "Description": ["Defines backcolor of header cells"]
+      },
+      {
+        "$": {
+          "name": "cellsBackColor",
+          "type": "Color",
+          "category": "Appearance",
+          "default": "#555"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".planning-table td",
+              "attribute": "background-color"
+            }
+          }
+        ],
+        "Description": ["Defines backcolor of cells"]
+      },
+      {
+        "$": {
+          "name": "marginDeleteButton",
+          "type": "Margin",
+          "category": "Layout",
+          "default": "0px"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".buttons>button",
+              "attribute": "margin"
+            }
+          }
+        ],
+        "Description": ["Margin of the Delete button"]
+      },
+      {
+        "$": {
+          "name": "backColorDeleteButton",
+          "type": "Color",
+          "category": "Appearance",
+          "default": "#444"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".buttons > button:not(active)",
+              "attribute": "background-color"
+            }
+          }
+        ],
+        "Description": ["Background color of the Delete button"]
+      },
+      {
+        "$": {
+          "name": "checkedBackColorDeleteButton",
+          "type": "Color",
+          "category": "Appearance",
+          "default": "#444"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".buttons > button.active",
+              "attribute": "background-color"
+            }
+          }
+        ],
+        "Description": ["Background color of the Delete button when selected"]
+      },
+      {
+        "$": {
+          "name": "checkedTextColorDeleteButton",
+          "type": "Color",
+          "category": "Appearance",
+          "default": "#fff"
+        },
+        "StyleElement": [
+          {
+            "$": {
+              "selector": ".buttons > button.active",
+              "attribute": "color"
+            }
+          }
+        ],
+        "Description": ["Text color of the Delete button when selected<"]
+      }
+    ],
+    "$": {}
+  },
+  "propertygroups": {
+    "PropertyGroup": [
+      {
+        "$": {
+          "name": "Size",
+          "type": "String",
+          "category": "Layout"
+        },
+        "Description": ["outer height and width of widget"]
+      },
+      {
+        "$": {
+          "name": "Position",
+          "type": "String",
+          "category": "Layout"
+        },
+        "Description": ["top and left of widget"]
+      },
+      {
+        "$": {
+          "name": "HeaderCellSize",
+          "type": "String",
+          "category": "Layout"
+        },
+        "Description": ["Header cell size: height and width of cells where there is hours"]
+      },
+      {
+        "$": {
+          "name": "HeaderLeftCellSize",
+          "type": "String",
+          "category": "Layout"
+        },
+        "Description": ["Header Left cell size: height and width of cells where there is days"]
+      }
+    ]
+  }
+}
