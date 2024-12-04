@@ -1,8 +1,9 @@
-"use strict";
 define([
     "brease/core/BaseWidget",
     'brease/decorators/LanguageDependency'
 ], function (SuperClass, languageDependency) {
+    'use strict';
+       
     /**
      * @class widgets.brXtended.WeekPlanningItem
      * @extends brease.core.BaseWidget

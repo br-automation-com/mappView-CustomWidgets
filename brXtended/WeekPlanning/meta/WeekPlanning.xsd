@@ -3,7 +3,6 @@
 <xs:complexType name="widgets.brXtended.WeekPlanningRestrict" abstract="true">
 	<xs:complexContent>
 		<xs:restriction base="iat:brease.core.BaseContentWidget">
-			<xs:attribute name="tabIndex" use="optional" type="types:Integer" default="-1" />
 			<xs:attribute name="height" use="optional" type="types:AutoSize" default="100" />
 			<xs:attribute name="width" use="optional" type="types:AutoSize" default="400" />
 		</xs:restriction>
@@ -18,6 +17,13 @@
 						<xs:selector xpath="./iat:Widget"/>
 						<xs:field xpath="@zIndex"/>
 					</xs:unique>
+				</xs:element>
+				<xs:element name="Properties" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:all>
+							<xs:element name="tableDatas" type="types:NumberArray1D" minOccurs="0" maxOccurs="1"></xs:element>
+						</xs:all>
+					</xs:complexType>
 				</xs:element>
 			</xs:all>
 			<xs:attribute name="maxHeight" use="optional" type="types:Size" default="0" />
@@ -42,15 +48,14 @@
 			<xs:attribute name="headerHeight" use="optional" type="types:PixelVal" default="30px" />
 			<xs:attribute name="headerWidth" use="optional" type="types:PixelVal" default="30px" />
 			<xs:attribute name="headerLeftHeight" use="optional" type="types:PixelVal" default="30px" />
-			<xs:attribute name="headerLeftWidth" use="optional" type="types:PixelVal" default="30px" />
+			<xs:attribute name="headerLeftWidth" use="optional" type="types:PixelVal" default="70px" />
 			<xs:attribute name="buttonBarHeight" use="optional" type="types:PixelVal" default="30px" />
-			<xs:attribute name="headerBackColor" use="optional" type="types:Color" default="#333"/>
-			<xs:attribute name="cellsBackColor" use="optional" type="types:Color" default="#555"/>
-			<xs:attribute name="textDeleteButton" use="optional" type="types:String" default="Delete" />
+			<xs:attribute name="headerBackColor" use="optional" type="types:Color" default="#333" />
+			<xs:attribute name="cellsBackColor" use="optional" type="types:Color" default="#555" />
 			<xs:attribute name="marginDeleteButton" use="optional" type="types:Margin" default="0px" />
-			<xs:attribute name="backColorDeleteButton" use="optional" type="types:Color" default="#444"/>
-			<xs:attribute name="checkedBackColorDeleteButton" use="optional" type="types:Color" default="#444"/>
-			<xs:attribute name="checkedTextColorDeleteButton" use="optional" type="types:Color" default="#fff"/>
+			<xs:attribute name="backColorDeleteButton" use="optional" type="types:Color" default="#444" />
+			<xs:attribute name="checkedBackColorDeleteButton" use="optional" type="types:Color" default="#444" />
+			<xs:attribute name="checkedTextColorDeleteButton" use="optional" type="types:Color" default="#fff" />
 			<xs:attribute name="deleteButtonHeight" use="optional" type="types:PixelVal" default="30px" />
 			<xs:attribute name="deleteButtonWidth" use="optional" type="types:PixelVal" default="95px" />
 		</xs:extension>

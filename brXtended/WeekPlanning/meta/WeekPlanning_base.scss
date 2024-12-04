@@ -9,50 +9,91 @@
 	border-width: 0px;
 	@include border-radius(0px);
 	background-color: #2c2c2c;
-	& .planning-container {
-		background-color: #2c2c2c;
-	}
+& .planning-container {
+	background-color: #2c2c2c;
+}
 	@include backGroundGradient('');
 	border-color: #C8C8C8;
-	&:before {
-		border-color: #C8C8C8;
-	}
-	&:after {
-		border-color: #C8C8C8;
-	}
+&:before {
+	border-color: #C8C8C8;
+}
+&:after {
+	border-color: #C8C8C8;
+}
 	border-style: none;
-	&:before {
-		border-style: none;
-	}
-	&:after {
-		border-style: none;
-	}
-	.planning-table td {
-		color: #fff;
-	}
-	.planning-table th {
-		color: #fff;
-	}
+&:before {
+	border-style: none;
+}
+&:after {
+	border-style: none;
+}
+.planning-table td {
+	color: #fff;
+}
+.planning-table th {
+	color: #fff;
+}
+.buttons > button:not(active) {
+	color: #fff;
+}
 	opacity: 1;
-	span {
-		font-family: Arial;
-	}
+.planning-table th {
+	font-family: Arial;
+}
+.planning-table th {
 	font-size: 14px;
+}
 	@include font-weight-bold(false);
 	@include font-style-italic(false);
-	span {
-		@include text-decoration-underline(false);
-	}
+span {
+	@include text-decoration-underline(false);
+}
 	margin: 0px;
-	.planning-table td.hovered {
-		background-color: #777;
-	}
-	.planning-table th.hovered {
-		background-color: #777;
-	}
-	.planning-table th {
-		height: 30px;
-	}
+.planning-table td.hovered {
+	background-color: #777;
+}
+.planning-table th.hovered {
+	background-color: #777;
+}
+.planning-table thead th.Hour {
+	height: 30px;
+}
+.planning-table thead th.Hour {
+	width: 30px;
+}
+.planning-table tbody th.Day {
+	height: 30px;
+}
+.planning-table thead #select-all {
+	width: 70px;
+}
+.buttons {
+	height: 30px;
+}
+.planning-table th {
+	background-color: #333;
+}
+.planning-table td {
+	background-color: #555;
+}
+.buttons>button {
+	margin: 0px;
+}
+.buttons > button:not(active) {
+	background-color: #444;
+}
+.buttons > button.active {
+	background-color: #444;
+}
+.buttons > button.active {
+	color: #fff;
+}
+.buttons > button {
+	height: 30px;
+}
+.buttons > button {
+	width: 95px;
+}
 
 }
 

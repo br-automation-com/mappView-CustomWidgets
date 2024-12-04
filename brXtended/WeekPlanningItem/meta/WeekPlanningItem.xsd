@@ -3,7 +3,6 @@
 <xs:complexType name="widgets.brXtended.WeekPlanningItemRestrict" abstract="true">
 	<xs:complexContent>
 		<xs:restriction base="iat:brease.core.BaseContentWidget">
-			<xs:attribute name="tabIndex" use="optional" type="types:Integer" default="-1" />
 			<xs:attribute name="height" use="optional" type="types:AutoSize" default="30" />
 			<xs:attribute name="width" use="optional" type="types:AutoSize" default="80" />
 		</xs:restriction>
@@ -32,7 +31,6 @@
 			<xs:attribute name="italic" use="optional" type="types:Boolean" default="false" />
 			<xs:attribute name="underline" use="optional" type="types:Boolean" default="false" />
 			<xs:attribute name="margin" use="optional" type="types:Margin" default="0px" />
-			<xs:attribute name="text" use="optional" type="types:String" default="default" />
 			<xs:attribute name="checkedBackColor" use="optional" type="types:Color" default="#DBDBDB" />
 			<xs:attribute name="checkedTextColor" use="optional" type="types:Color" default="#000000" />
 			<xs:attribute name="checkedBorderColor" use="optional" type="types:ColorCollection" default="#FD7B01" />

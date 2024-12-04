@@ -8,5 +8,4 @@
 	<Schema href="ToggleSwitch/meta/ToggleSwitch.xsd" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" />
 	<Schema href="WeekPlanning/meta/WeekPlanning.xsd" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" />
 	<Schema href="WeekPlanningItem/meta/WeekPlanningItem.xsd" targetNamespace="http://www.br-automation.com/iat2015/contentDefinition/v2" />
-
 </SchemaCatalog>

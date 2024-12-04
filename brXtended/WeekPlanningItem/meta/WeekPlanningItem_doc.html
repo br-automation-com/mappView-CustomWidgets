@@ -1,0 +1,441 @@
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>widgets.brXtended.WeekPlanningItem Documentation</title>
+	<link href="../../../../assets/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+<div class="panel-heading"><h3>widgets.brXtended.WeekPlanningItem</h3></div>
+<div class="panel panel-default">
+ <div class="panel-heading"><h3>Widget Description</h3></div>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td><strong>short: </strong>Week planning widget</td>
+</tr>
+<tr>
+<td><strong>de: </strong>German.</td>
+</tr>
+<tr>
+<td><strong>en: </strong>English</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="panel panel-default">
+ <div class="panel-heading"><h3>Properties</h3></div>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+<th>bindable</th>
+<th>readOnly</th>
+<th>required</th>
+<th>defaultValue</th>
+<th>localizable</th>
+</tr>
+ </thead>
+<tbody>
+<tr>
+<td>action</td>
+<td>String</td>
+<td>Class that will be apply to the cells when this button is selected
+</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>default</td>
+<td>false</td>
+</tr>
+<tr>
+<td>enable</td>
+<td>Boolean</td>
+<td>Initial option to enable widget.
+</td>
+<td style="color:green;font-weight:bold;">true</td>
+<td>false</td>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>permissionOperate</td>
+<td>RoleCollection</td>
+<td>restricts operability to users, which have given roles
+</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>permissionView</td>
+<td>RoleCollection</td>
+<td>restricts visibility to users, which have given roles
+</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>style</td>
+<td>StyleReference</td>
+<td>reference to a style for this widget type
+</td>
+<td style="color:green;font-weight:bold;">true</td>
+<td>false</td>
+<td>false</td>
+<td>default</td>
+<td>false</td>
+</tr>
+<tr>
+<td>tabIndex</td>
+<td>Integer</td>
+<td>sets if a widget should have autofocus enabled (0), the order of the focus (>0),
+or if autofocus should be disabled (-1)
+</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>-1</td>
+<td>false</td>
+</tr>
+<tr>
+<td>tooltip</td>
+<td>String</td>
+<td>reference to a tooltip for a widget
+</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+<td style="color:green;font-weight:bold;">true</td>
+</tr>
+<tr>
+<td>valueForArray</td>
+<td>UInteger</td>
+<td>Internal value of the button, this will be the value in the array of WeekPlanning
+</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>1</td>
+<td>false</td>
+</tr>
+<tr>
+<td>visible</td>
+<td>Boolean</td>
+<td>change visibility
+</td>
+<td style="color:green;font-weight:bold;">true</td>
+<td>false</td>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>maxHeight</td>
+<td>Size</td>
+<td>maximum outer height of widget</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>0</td>
+<td>false</td>
+</tr>
+<tr>
+<td>minHeight</td>
+<td>Size</td>
+<td>minimum outer height of widget</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>0</td>
+<td>false</td>
+</tr>
+<tr>
+<td>maxWidth</td>
+<td>Size</td>
+<td>maximum outer width of widget</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>0</td>
+<td>false</td>
+</tr>
+<tr>
+<td>minWidth</td>
+<td>Size</td>
+<td>minimum outer width of widget</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>0</td>
+<td>false</td>
+</tr>
+<tr>
+<td>zIndex</td>
+<td>UInteger</td>
+<td>The zIndex property specifies the z-order of a widget and its childs.<br/>
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.<br/>
+        The zIndex must be unique within a content.<br/></td>
+<td>false</td>
+<td>false</td>
+<td>true</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>left</td>
+<td>Integer</td>
+<td>absolute position measured from left boundary of parent container</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>top</td>
+<td>Integer</td>
+<td>absolute position measured from top boundary of parent container</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>height</td>
+<td>AutoSize</td>
+<td>outer height of widget</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>30</td>
+<td>false</td>
+</tr>
+<tr>
+<td>width</td>
+<td>AutoSize</td>
+<td>outer width of widget</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>80</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="panel panel-default">
+ <div class="panel-heading"><h3>Styleable Properties</h3></div>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+<th>defaultValue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>AutoSize</td>
+<td><p>outer width of widget</p>
+</td>
+<td>80</td>
+</tr>
+<tr>
+<td>height</td>
+<td>AutoSize</td>
+<td><p>outer height of widget</p>
+</td>
+<td>30</td>
+</tr>
+<tr>
+<td>top</td>
+<td>Integer</td>
+<td><p>absolute position measured from top boundary of parent container</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>left</td>
+<td>Integer</td>
+<td><p>absolute position measured from left boundary of parent container</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>zIndex</td>
+<td>UInteger</td>
+<td><p>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;
+When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;
+The zIndex must be unique within a content.&lt;br/&gt;</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>minWidth</td>
+<td>Size</td>
+<td><p>minimum outer width of widget</p>
+</td>
+<td>0</td>
+</tr>
+<tr>
+<td>maxWidth</td>
+<td>Size</td>
+<td><p>maximum outer width of widget</p>
+</td>
+<td>0</td>
+</tr>
+<tr>
+<td>minHeight</td>
+<td>Size</td>
+<td><p>minimum outer height of widget</p>
+</td>
+<td>0</td>
+</tr>
+<tr>
+<td>maxHeight</td>
+<td>Size</td>
+<td><p>maximum outer height of widget</p>
+</td>
+<td>0</td>
+</tr>
+<tr>
+<td>borderWidth</td>
+<td>PixelValCollection</td>
+<td><p>Sets the border width of the widget. For further information, please check its type</p>
+</td>
+<td>0px</td>
+</tr>
+<tr>
+<td>cornerRadius</td>
+<td>PixelValCollection</td>
+<td><p>Sets the radius of the widget rounded corners. For further information, please check its type</p>
+</td>
+<td>0px</td>
+</tr>
+<tr>
+<td>backColor</td>
+<td>Color</td>
+<td><p>Sets the background color of the widget</p>
+</td>
+<td style="background-color:#2c2c2c;color:white;">#2c2c2c</td>
+</tr>
+<tr>
+<td>backGroundGradient</td>
+<td>Gradient</td>
+<td><p>Background as a gradient</p>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>borderColor</td>
+<td>ColorCollection</td>
+<td><p>Sets the border color</p>
+</td>
+<td>#C8C8C8</td>
+</tr>
+<tr>
+<td>borderStyle</td>
+<td>BorderStyle</td>
+<td><p>Style of the Border of the widget</p>
+</td>
+<td>none</td>
+</tr>
+<tr>
+<td>textColor</td>
+<td>Color</td>
+<td><p>Sets the color of the text displayed by the widget</p>
+</td>
+<td style="background-color:#fff;color:black;">#fff</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>Opacity</td>
+<td><p>Opacity of the widget</p>
+</td>
+<td>1</td>
+</tr>
+<tr>
+<td>fontName</td>
+<td>FontName</td>
+<td><p>Fontname of the text</p>
+</td>
+<td>Arial</td>
+</tr>
+<tr>
+<td>fontSize</td>
+<td>PixelVal</td>
+<td><p>Fontsize of the text in pixel</p>
+</td>
+<td>14px</td>
+</tr>
+<tr>
+<td>bold</td>
+<td>Boolean</td>
+<td><p>If <strong>true</strong> font style is bold</p>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>italic</td>
+<td>Boolean</td>
+<td><p>If <strong>true</strong> font style is italic</p>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>underline</td>
+<td>Boolean</td>
+<td><p>If <strong>true</strong> font style is underline</p>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>margin</td>
+<td>Margin</td>
+<td><p>Margin of the Widget</p>
+</td>
+<td>0px</td>
+</tr>
+<tr>
+<td>checkedBackColor</td>
+<td>Color</td>
+<td><p>back color when the widget is checked</p>
+</td>
+<td style="background-color:#DBDBDB;color:black;">#DBDBDB</td>
+</tr>
+<tr>
+<td>checkedTextColor</td>
+<td>Color</td>
+<td><p>text color when the widget is checked</p>
+</td>
+<td style="background-color:#000000;color:white;">#000000</td>
+</tr>
+<tr>
+<td>checkedBorderColor</td>
+<td>ColorCollection</td>
+<td><p>border color when the widget is checked</p>
+</td>
+<td>#FD7B01</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+ <script src="../../../../jquery.js"></script>
+ <script src="../../../../assets/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -34,6 +34,14 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="widgets.brXtended.WeekPlanningItem.Action.SetText">
+		<xs:complexContent>
+			<xs:extension base="s1:widgets.brXtended.WeekPlanningItem.Action.widgetMethod">
+				<xs:attribute name="text" type="var:String" use="required"></xs:attribute>
+				<xs:attribute name="keepKey" type="var:Boolean" use="optional"></xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="widgets.brXtended.WeekPlanningItem.Action.SetVisible">
 		<xs:complexContent>
 			<xs:extension base="s1:widgets.brXtended.WeekPlanningItem.Action.widgetMethod">

@@ -1,4 +1,3 @@
-"use strict";
 define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum/Enum", "widgets/brXtended/WeekPlanning/libs/TableText", "brease/decorators/LanguageDependency"], function (
   SuperClass,
   BreaseEvent,
@@ -6,6 +5,8 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
   Texts,
   languageDependency
 ) {
+  'use strict';
+
   /**
    * @class widgets.brXtended.WeekPlanning
    * @extends brease.core.ContainerWidget
@@ -122,7 +123,7 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
   }
 
   p._widgetReadyHandler = function (e) {
-    var index = -1
+    var index = -1;
     if(this.settings.buttonIds !== undefined){
       index = this.settings.buttonIds.indexOf(e.target.id);
     }
@@ -179,7 +180,7 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
           Array.prototype.forEach.call(cellsInside, function (el) {
             el.classList.add("hovered");
           });
-        };
+        }
       });
 
       cell.addEventListener("mouseleave", function () {
@@ -473,7 +474,7 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
 
   function _checkUniqueAction(widget) {
     var actions = [],
-    childrenWidget = []
+    childrenWidget = [];
     widget.el.find("[data-brease-widget]").each(function () {
       var childWidget = brease.uiController.widgetsController.getWidget(this.id).widget;
       if(childWidget !== undefined){
@@ -497,11 +498,11 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
       widget.error = true;
     }
 
-  };
+  }
 
   function _checkUniqueArrayNum(widget) {
     var valueForArrays = [],
-      childrenWidget = []
+      childrenWidget = [];
     widget.el.find("[data-brease-widget]").each(function () {
       var childWidget = brease.uiController.widgetsController.getWidget(this.id).widget;
       if(childWidget !== undefined){
@@ -526,7 +527,7 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
       widget.error = true;
     }
     
-  };
+  }
 
   return languageDependency.decorate(WidgetClass, false);
 });

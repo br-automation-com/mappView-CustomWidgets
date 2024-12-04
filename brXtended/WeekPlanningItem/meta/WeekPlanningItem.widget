@@ -7,10 +7,33 @@
 		</ASEngineeringInfo>
 		<Dependencies>
 			<Files>
+				<File>DOMPurify.js</File>
+				<File>brease/config.js</File>
+				<File>brease/controller/FileManager.js</File>
+				<File>brease/controller/PopUpManager.js</File>
+				<File>brease/controller/ZoomManager.js</File>
+				<File>brease/controller/libs/KeyActions.js</File>
+				<File>brease/controller/libs/Utils.js</File>
+				<File>brease/controller/objects/PageType.js</File>
 				<File>brease/core/BaseWidget.js</File>
+				<File>brease/core/Class.js</File>
+				<File>brease/core/Decorator.js</File>
+				<File>brease/core/Types.js</File>
+				<File>brease/core/Utils.js</File>
+				<File>brease/core/libs/AsyncProcess.js</File>
+				<File>brease/core/libs/Deferred.js</File>
+				<File>brease/decorators/LanguageDependency.js</File>
+				<File>brease/decorators/Permissions.js</File>
+				<File>brease/decorators/TooltipDependency.js</File>
+				<File>brease/enum/Enum.js</File>
+				<File>brease/enum/EnumObject.js</File>
+				<File>brease/events/BreaseEvent.js</File>
+				<File>brease/events/ClientSystemEvent.js</File>
+				<File>brease/events/DummyEvent.js</File>
+				<File>brease/events/EventHandler.js</File>
+				<File>brease/events/VirtualEvents.js</File>
+				<File>jquery.js</File>
 			</Files>
-			<Folders>
-			</Folders>
 			<Widgets>
 				<Widget>widgets/brXtended/WeekPlanningItem/WeekPlanningItem.js</Widget>
 			</Widgets>
@@ -20,7 +43,7 @@
 		</Categories>
 		<Descriptions>
 			<Description name="short">Week planning widget</Description>
-			<Description name="de">German</Description>
+			<Description name="de">German.</Description>
 			<Description name="en">English</Description>
 		</Descriptions>
 		<Inheritance>
@@ -37,7 +60,7 @@
 				<Description>Sets focus on the widget element, if it can be focused and keyboardOperation=true</Description>
 			</Method>
 			<Method name="SetEnable" read="false">
-				<Description>Sets the state of property &quot;enable&quot;</Description>
+				<Description>Sets the state of property «enable»</Description>
 				<Arguments>
 					<Argument name="value" type="Boolean" index="0" required="true"/>
 				</Arguments>
@@ -47,22 +70,22 @@
 					<Argument name="value" type="StyleReference" index="0" required="true"/>
 				</Arguments>
 			</Method>
-			<Method name="SetVisible" read="false">
-				<Description>Sets the state of property &quot;visible&quot;</Description>
-				<Arguments>
-					<Argument name="value" type="Boolean" index="0" required="true"/>
-				</Arguments>
-			</Method>
-			<Method name="ShowTooltip" read="false"/>
 			<Method name="SetText" read="false">
 				<Description>Sets the visible text. This method can remove an optional textkey.</Description>
 				<Arguments>
-					<Argument name="text" type="String" index="0" required="true" localizable="true"/>
+					<Argument name="text" type="String" index="0" required="true"/>
 					<Argument name="keepKey" type="Boolean" index="1" required="false" defaultValue="false">
 						<Description>Set true, if textkey should not be removed</Description>
 					</Argument>
 				</Arguments>
 			</Method>
+			<Method name="SetVisible" read="false">
+				<Description>Sets the state of property «visible»</Description>
+				<Arguments>
+					<Argument name="value" type="Boolean" index="0" required="true"/>
+				</Arguments>
+			</Method>
+			<Method name="ShowTooltip" read="false"/>
 		</Methods>
 		<Events>
 			<Event name="Click">
@@ -121,7 +144,7 @@
 		</Events>
 		<Properties>
 			<Property name="action" type="String" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Data" defaultValue="default">
-				<Description>Action name that need to be unique string</Description>
+				<Description>Class that will be apply to the cells when this button is selected</Description>
 			</Property>
 			<Property name="enable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
 				<Description>Initial option to enable widget.</Description>
@@ -148,138 +171,132 @@ or if autofocus should be disabled (-1)				</Description>
 			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
 				<Description>change visibility</Description>
 			</Property>
-			<Property name="text" type="String" initOnly="false" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="default">
-				<Description>Text which is displayed in the widget</Description>
-			</Property>
 		</Properties>
-		<StyleProperties>
-			<StyleProperty name="width" type="AutoSize" not_styleable="true" owner="widgets.brXtended.WeekPlanningItem" category="Layout" groupRefId="Size" groupOrder="1" default="80">
-				<StyleElement attribute="@include elemAutoWidth($value)"/>
-				<Description>outer width of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="height" type="AutoSize" not_styleable="true" owner="widgets.brXtended.WeekPlanningItem" category="Layout" groupRefId="Size" groupOrder="2" default="30">
-				<StyleElement attribute="@include elemAutoHeight($value)"/>
-				<Description>outer height of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
-				<StyleElement attribute="@include elemTop($value)"/>
-				<Description>absolute position measured from top boundary of parent container</Description>
-			</StyleProperty>
-			<StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
-				<StyleElement attribute="@include elemLeft($value)"/>
-				<Description>absolute position measured from left boundary of parent container</Description>
-			</StyleProperty>
-			<StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
-				<StyleElement attribute="z-index"/>
-				<Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;
-        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;
-        The zIndex must be unique within a content.&lt;br/&gt;				</Description>
-			</StyleProperty>
-			<StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3">
-				<StyleElement attribute="@include elemMinWidth($value)"/>
-				<Description>minimum outer width of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4">
-				<StyleElement attribute="@include elemMaxWidth($value)"/>
-				<Description>maximum outer width of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5">
-				<StyleElement attribute="@include elemMinHeight($value)"/>
-				<Description>minimum outer height of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6">
-				<StyleElement attribute="@include elemMaxHeight($value)"/>
-				<Description>maximum outer height of widget</Description>
-			</StyleProperty>
-			<StyleProperty name="borderWidth" type="PixelValCollection" category="Appearance" default="0px">
-				<StyleElement attribute="border-width"/>
-				<Description>Sets the border width of the widget. For further information, please check its type</Description>
-			</StyleProperty>
-			<StyleProperty name="cornerRadius" type="PixelValCollection" category="Appearance" default="0px">
-				<StyleElement attribute="@include border-radius($value)"/>
-				<Description>Sets the radius of the widget rounded corners. For further information, please check its type</Description>
-			</StyleProperty>
-			<StyleProperty name="backColor" type="Color" default="#2c2c2c" category="Appearance">
-				<StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="background-color"></StyleElement>
-				<StyleElement selector="&amp;:not(.disabled):not(.checked) button" attribute="background-color"></StyleElement>
-				<Description>
-        Sets the background color of the widget
-				</Description>
-			</StyleProperty>
-			<StyleProperty name="backGroundGradient" type="Gradient" category="Appearance" default="">
-				<StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="@include backGroundGradient(&apos;$value&apos;)"/>
-				<Description>Background as a gradient</Description>
-			</StyleProperty>
-			<StyleProperty name="borderColor" type="ColorCollection" category="Appearance" default="#C8C8C8">
-				<StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="border-color"></StyleElement>
-				<Description>
-        Sets the border color
-				</Description>
-			</StyleProperty>
-			<StyleProperty name="borderStyle" type="BorderStyle" category="Appearance" default="none">
-				<StyleElement attribute="border-style"/>
-				<StyleElement selector="&amp;:before" attribute="border-style"/>
-				<StyleElement selector="&amp;:after" attribute="border-style"/>
-				<Description>Style of the Border of the widget</Description>
-			</StyleProperty>
-			<StyleProperty name="textColor" type="Color" default="#fff" category="Appearance">
-				<StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="color"></StyleElement>
-				<StyleElement selector="&amp;:not(.disabled):not(.checked) button" attribute="color"></StyleElement>
-				<Description>Sets the color of the text displayed by the widget</Description>
-			</StyleProperty>
-			<StyleProperty name="opacity" type="Opacity" category="Appearance" default="1">
-				<StyleElement attribute="opacity"/>
-				<Description>Opacity of the widget</Description>
-			</StyleProperty>
-			<StyleProperty name="fontName" type="FontName" default="Arial" category="Font">
-				<StyleElement selector="span" attribute="font-family"/>
-				<Description>Fontname of the text</Description>
-			</StyleProperty>
-			<StyleProperty name="fontSize" type="PixelVal" default="14px" category="Font">
-				<StyleElement attribute="font-size"/>
-				<Description>Fontsize of the text in pixel</Description>
-			</StyleProperty>
-			<StyleProperty name="bold" type="Boolean" default="false" category="Font">
-				<StyleElement attribute="@include font-weight-bold($value)"/>
-				<Description>If **true** font style is bold</Description>
-			</StyleProperty>
-			<StyleProperty name="italic" type="Boolean" default="false" category="Font">
-				<StyleElement attribute="@include font-style-italic($value)"/>
-				<Description>If **true** font style is italic</Description>
-			</StyleProperty>
-			<StyleProperty name="underline" type="Boolean" default="false" category="Font">
-				<StyleElement selector="span" attribute="@include text-decoration-underline($value)"/>
-				<Description>If **true** font style is underline</Description>
-			</StyleProperty>
-			<StyleProperty name="margin" category="Layout" type="Margin" default="0px">
-				<StyleElement attribute="margin"/>
-				<Description>Margin of the Widget</Description>
-			</StyleProperty>
-			<StyleProperty name="checkedBackColor" category="Appearance" type="Color" default="#DBDBDB">
-				<StyleElement selector="&amp;.checked" attribute="background-color"/>
-				<StyleElement selector="&amp;.checked button" attribute="background-color"></StyleElement>
-				<Description>back color when the widget is checked</Description>
-			</StyleProperty>
-			<StyleProperty name="checkedTextColor" category="Appearance" type="Color" default="#000000">
-				<StyleElement selector="&amp;.checked" attribute="color"/>
-				<StyleElement selector="&amp;.checked button" attribute="background-color"></StyleElement>
-				<Description>text color when the widget is checked</Description>
-			</StyleProperty>
-			<StyleProperty name="checkedBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01">
-				<StyleElement selector="&amp;.checked" attribute="border-color"></StyleElement>
-				<StyleElement selector="&amp;.checked button" attribute="background-color"></StyleElement>
-				<Description>
-        border color when the widget is checked
-				</Description>
-			</StyleProperty>
-		</StyleProperties>
-		<PropertyGroups>
-			<PropertyGroup name="Size" type="String" category="Layout">
-				<Description>outer height and width of widget</Description>
-			</PropertyGroup>
-			<PropertyGroup name="Position" type="String" category="Layout">
-				<Description>top and left of widget</Description>
-			</PropertyGroup>
-		</PropertyGroups>
-	</Widget>
+	<BindingTemplates>
+  
+</BindingTemplates>
+<PropertyGroups>
+  <PropertyGroup name="Size" type="String" category="Layout">
+    <Description>outer height and width of widget</Description>
+  </PropertyGroup>
+  <PropertyGroup name="Position" type="String" category="Layout">
+    <Description>top and left of widget</Description>
+  </PropertyGroup>
+</PropertyGroups>
+<StyleProperties defaultStyle="default">
+  <StyleProperty name="width" type="AutoSize" not_styleable="true" owner="widgets.brXtended.WeekPlanningItem" category="Layout" groupRefId="Size" groupOrder="1" default="80">
+    <StyleElement attribute="@include elemAutoWidth($value)"/>
+    <Description>outer width of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="height" type="AutoSize" not_styleable="true" owner="widgets.brXtended.WeekPlanningItem" category="Layout" groupRefId="Size" groupOrder="2" default="30">
+    <StyleElement attribute="@include elemAutoHeight($value)"/>
+    <Description>outer height of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="top" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="1">
+    <StyleElement attribute="@include elemTop($value)"/>
+    <Description>absolute position measured from top boundary of parent container</Description>
+  </StyleProperty>
+  <StyleProperty name="left" type="Integer" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" groupRefId="Position" groupOrder="2">
+    <StyleElement attribute="@include elemLeft($value)"/>
+    <Description>absolute position measured from left boundary of parent container</Description>
+  </StyleProperty>
+  <StyleProperty name="zIndex" type="UInteger" not_styleable="true" owner="brease.core.BaseWidget" category="Layout" required="true">
+    <StyleElement attribute="z-index"/>
+    <Description>The zIndex property specifies the z-order of a widget and its childs.&lt;br/&gt;&#xD;
+        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.&lt;br/&gt;&#xD;
+        The zIndex must be unique within a content.&lt;br/&gt;</Description>
+  </StyleProperty>
+  <StyleProperty name="minWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="3">
+    <StyleElement attribute="@include elemMinWidth($value)"/>
+    <Description>minimum outer width of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="maxWidth" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="4">
+    <StyleElement attribute="@include elemMaxWidth($value)"/>
+    <Description>maximum outer width of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="minHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="5">
+    <StyleElement attribute="@include elemMinHeight($value)"/>
+    <Description>minimum outer height of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="maxHeight" type="Size" not_styleable="true" default="0" category="Layout" groupRefId="Size" groupOrder="6">
+    <StyleElement attribute="@include elemMaxHeight($value)"/>
+    <Description>maximum outer height of widget</Description>
+  </StyleProperty>
+  <StyleProperty name="borderWidth" type="PixelValCollection" category="Appearance" default="0px">
+    <StyleElement attribute="border-width"/>
+    <Description>Sets the border width of the widget. For further information, please check its type</Description>
+  </StyleProperty>
+  <StyleProperty name="cornerRadius" type="PixelValCollection" category="Appearance" default="0px">
+    <StyleElement attribute="@include border-radius($value)"/>
+    <Description>Sets the radius of the widget rounded corners. For further information, please check its type</Description>
+  </StyleProperty>
+  <StyleProperty name="backColor" type="Color" default="#2c2c2c" category="Appearance">
+    <StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="background-color"/>
+    <StyleElement selector="&amp;:not(.disabled):not(.checked) button" attribute="background-color"/>
+    <Description>Sets the background color of the widget</Description>
+  </StyleProperty>
+  <StyleProperty name="backGroundGradient" type="Gradient" category="Appearance" default="">
+    <StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="@include backGroundGradient('$value')"/>
+    <Description>Background as a gradient</Description>
+  </StyleProperty>
+  <StyleProperty name="borderColor" type="ColorCollection" category="Appearance" default="#C8C8C8">
+    <StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="border-color"/>
+    <Description>Sets the border color</Description>
+  </StyleProperty>
+  <StyleProperty name="borderStyle" type="BorderStyle" category="Appearance" default="none">
+    <StyleElement attribute="border-style"/>
+    <StyleElement selector="&amp;:before" attribute="border-style"/>
+    <StyleElement selector="&amp;:after" attribute="border-style"/>
+    <Description>Style of the Border of the widget</Description>
+  </StyleProperty>
+  <StyleProperty name="textColor" type="Color" default="#fff" category="Appearance">
+    <StyleElement selector="&amp;:not(.disabled):not(.checked)" attribute="color"/>
+    <StyleElement selector="&amp;:not(.disabled):not(.checked) button" attribute="color"/>
+    <Description>Sets the color of the text displayed by the widget</Description>
+  </StyleProperty>
+  <StyleProperty name="opacity" type="Opacity" category="Appearance" default="1">
+    <StyleElement attribute="opacity"/>
+    <Description>Opacity of the widget</Description>
+  </StyleProperty>
+  <StyleProperty name="fontName" type="FontName" default="Arial" category="Font">
+    <StyleElement selector="span" attribute="font-family"/>
+    <Description>Fontname of the text</Description>
+  </StyleProperty>
+  <StyleProperty name="fontSize" type="PixelVal" default="14px" category="Font">
+    <StyleElement attribute="font-size"/>
+    <Description>Fontsize of the text in pixel</Description>
+  </StyleProperty>
+  <StyleProperty name="bold" type="Boolean" default="false" category="Font">
+    <StyleElement attribute="@include font-weight-bold($value)"/>
+    <Description>If **true** font style is bold</Description>
+  </StyleProperty>
+  <StyleProperty name="italic" type="Boolean" default="false" category="Font">
+    <StyleElement attribute="@include font-style-italic($value)"/>
+    <Description>If **true** font style is italic</Description>
+  </StyleProperty>
+  <StyleProperty name="underline" type="Boolean" default="false" category="Font">
+    <StyleElement selector="span" attribute="@include text-decoration-underline($value)"/>
+    <Description>If **true** font style is underline</Description>
+  </StyleProperty>
+  <StyleProperty name="margin" category="Layout" type="Margin" default="0px">
+    <StyleElement attribute="margin"/>
+    <Description>Margin of the Widget</Description>
+  </StyleProperty>
+  <StyleProperty name="checkedBackColor" category="Appearance" type="Color" default="#DBDBDB">
+    <StyleElement selector="&amp;.checked" attribute="background-color"/>
+    <StyleElement selector="&amp;.checked button" attribute="background-color"/>
+    <Description>back color when the widget is checked</Description>
+  </StyleProperty>
+  <StyleProperty name="checkedTextColor" category="Appearance" type="Color" default="#000000">
+    <StyleElement selector="&amp;.checked" attribute="color"/>
+    <StyleElement selector="&amp;.checked button" attribute="color"/>
+    <Description>text color when the widget is checked</Description>
+  </StyleProperty>
+  <StyleProperty name="checkedBorderColor" category="Appearance" type="ColorCollection" default="#FD7B01">
+    <StyleElement selector="&amp;.checked" attribute="border-color"/>
+    <StyleElement selector="&amp;.checked button" attribute="border-color"/>
+    <Description>border color when the widget is checked</Description>
+  </StyleProperty>
+</StyleProperties>
+</Widget>
 </WidgetLibrary>

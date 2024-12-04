@@ -1,3 +1,7 @@
+#### 03.12.2024
+- Added weekly planer widget. Thx to @fboissadier
+- Compiled widgets against mapp 5.24.2
+
 #### 03.06.2024
 - Added ListBox widget. Thx to @fboissadier
 - Compiled widgets against mapp 5.24.2
