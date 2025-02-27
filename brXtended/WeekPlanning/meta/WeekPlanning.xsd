@@ -58,6 +58,7 @@
 			<xs:attribute name="checkedTextColorDeleteButton" use="optional" type="types:Color" default="#fff" />
 			<xs:attribute name="deleteButtonHeight" use="optional" type="types:PixelVal" default="30px" />
 			<xs:attribute name="deleteButtonWidth" use="optional" type="types:PixelVal" default="95px" />
+			<xs:attribute name="textDeleteButton" use="optional" type="types:String" default="Delete" />
 		</xs:extension>
 	</xs:complexContent>
 </xs:complexType>
