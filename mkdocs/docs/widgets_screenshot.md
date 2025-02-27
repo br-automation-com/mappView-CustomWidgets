@@ -17,7 +17,7 @@ When the screenshot is called it will open a window that will ask the user what 
 Select the tab or region for the screenshot and hit the Share button.
 
 ## Suppress pop-up
-To avoid the additional pop you can use the browser switch "--auto-select-desktop-capture-source". In my test this only worked for Window Tab. The switch needs the window name as parameter. For the screenshot below the complete switch would be "--auto-select-desktop-capture-source="Visualization visu"
+To avoid the additional pop you can use the browser switch "--auto-select-desktop-capture-source". In my test this only worked for Window Tab. Make sure you start the browser with URL and that only one tab is open. The switch needs the window name as parameter. For the screenshot below the complete switch would be "--auto-select-desktop-capture-source="Visualization visu"
 
 Note that you might see the pop flash for a second before the screenshot is taken.
 
