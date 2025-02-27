@@ -42,6 +42,15 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
    * If true, change events of inner widgets will not bubble through.
    */
 
+  /**
+     * @cfg {String} textDeleteButton='Delete'
+     * @localizable
+     * @iatStudioExposed
+     * @iatCategory Appearance
+     * @bindable
+     * Text which is displayed in the delete button
+  */
+
   var uiController = brease.uiController;
   var defaultSettings = {
     cancelButtonChangeEvents: true,
@@ -261,7 +270,7 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
 
   p.applySelection = function (cells, mode) {
     var buttons = document.querySelectorAll("#" + this.elem.id + ' button[data-action="' + mode + '"]');
-    if ((buttons.length = 0 || buttons.length > 1)) {
+    if (!(buttons.length == 1)) {
       return;
     }
     var button = buttons[0];
@@ -279,7 +288,7 @@ define(["brease/core/ContainerWidget", "brease/events/BreaseEvent", "brease/enum
   // Get action from button number
   p.getActionOfButtonFromNum = function (num) {
     var buttons = document.querySelectorAll("#" + this.elem.id + ' button[data-num="' + num + '"]');
-    if ((buttons.length = 0 || buttons.length > 1)) {
+    if (!(buttons.length == 1)) {
       return;
     }
     var button = buttons[0];

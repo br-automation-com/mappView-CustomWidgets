@@ -11,11 +11,11 @@ define([
      * @iatMeta category:Category
      * Data
      * @iatMeta description:short
-     * Week planning widget
+     * Week planning item widget
      * @iatMeta description:de
-     * German.
+     * Item used in the Week planning widget
      * @iatMeta description:en
-     * English
+     * Item used in the Week planning widget
      */
 
     /**
@@ -32,14 +32,24 @@ define([
 
     /**
     * @cfg {String} action=default
-    * Class that will be apply to the cells when this button is selected
+    * Action name that need to be unique string
     * @iatCategory Data
     * @iatStudioExposed
     */
 
+    /**
+     * @cfg {String} text='default'
+     * @localizable
+     * @iatStudioExposed
+     * @iatCategory Appearance
+     * @bindable
+     * Text which is displayed in the widget  
+     */
+
     var defaultSettings = {
             valueForArray: 1,
-            action: "default"
+            action: "default",
+            text: "default"
         },
         WidgetClass = SuperClass.extend(function WeekPlanningItem() {
             SuperClass.apply(this, arguments);
