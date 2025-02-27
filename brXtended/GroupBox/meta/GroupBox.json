@@ -1,0 +1,1464 @@
+{
+    "name": "widgets.brXtended.GroupBox",
+    "type": "widget",
+    "meta": {
+        "superClass": "brease.core.ContainerWidget",
+        "requires": [],
+        "mixins": [
+            "widgets.brease.common.DragDropProperties.libs.DroppablePropertiesEvents"
+        ],
+        "parents": [
+            "*"
+        ],
+        "children": [
+            "*"
+        ],
+        "inheritance": [
+            "widgets.brXtended.GroupBox",
+            "brease.core.ContainerWidget",
+            "brease.core.BaseWidget"
+        ],
+        "isContainer": "true",
+        "filePath": "widgets/brXtended/GroupBox/GroupBox.js"
+    },
+    "methods": [
+        {
+            "name": "Focus",
+            "originalName": "focus",
+            "read": false,
+            "description": "Sets focus on the widget element, if it can be focused and keyboardOperation=true\n",
+            "iatStudioExposed": true
+        },
+        {
+            "name": "setAdditionalStyle",
+            "originalName": "setAdditionalStyle",
+            "read": false,
+            "description": "Add an additional style to the widget element. The initial style will not be removed.\nThe additional style will not be removed, when the style of the widget is changed.\nYou can remove the additional style via removeAdditionalStyle.\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "styleName",
+                    "type": "StyleReference",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setAlignment",
+            "originalName": "setAlignment",
+            "read": false,
+            "description": "Sets alignment\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "alignment",
+                    "type": "brease.enum.Direction",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setChildPositioning",
+            "originalName": "setChildPositioning",
+            "read": false,
+            "description": "Sets childPositioning\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "childPositioning",
+                    "type": "brease.enum.ChildPositioning",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setEditable",
+            "originalName": "setEditable",
+            "read": false,
+            "description": "Sets the state of property «editable»\nUsed for «editable» binding; method is called exclusevely by the framework\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "editable",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                },
+                {
+                    "name": "metaData",
+                    "type": "Object",
+                    "index": 1,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setEllipsis",
+            "originalName": "setEllipsis",
+            "read": false,
+            "description": "Sets ellipsis\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "ellipsis",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "SetEnable",
+            "originalName": "setEnable",
+            "read": false,
+            "description": "Sets the state of property «enable»\n",
+            "iatStudioExposed": true,
+            "parameter": [
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setFloat",
+            "originalName": "setFloat",
+            "read": false,
+            "description": "Sets float\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "float",
+                    "type": "brease.enum.Floating",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setImage",
+            "originalName": "setImage",
+            "read": false,
+            "description": "Sets image\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "image",
+                    "type": "ImagePath",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setImageAlign",
+            "originalName": "setImageAlign",
+            "read": false,
+            "description": "Sets imageAlign\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "imageAlign",
+                    "type": "brease.enum.ImagePosition",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setMaxHeight",
+            "originalName": "setMaxHeight",
+            "read": false,
+            "description": "Sets maxHeight\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "maxHeight",
+                    "type": "Integer",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setParentCoWiId",
+            "originalName": "setParentCoWiId",
+            "read": false,
+            "description": "Used to inherit parentCoWiId inside of compound widgets to inner widgets which are not projected, e.g. inner widgets of Login widget\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "value",
+                    "type": "String",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "SetStyle",
+            "originalName": "setStyle",
+            "read": false,
+            "description": "\n",
+            "iatStudioExposed": true,
+            "parameter": [
+                {
+                    "name": "value",
+                    "type": "StyleReference",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setTabIndex",
+            "originalName": "setTabIndex",
+            "read": false,
+            "description": "Sets the state of property «tabIndex»\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "value",
+                    "type": "Number",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setText",
+            "originalName": "setText",
+            "read": false,
+            "description": "Sets the text\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "text",
+                    "type": "String",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "setUseSVGStyling",
+            "originalName": "setUseSVGStyling",
+            "read": false,
+            "description": "Sets useSVGStyling\n",
+            "iatStudioExposed": false,
+            "parameter": [
+                {
+                    "name": "useSVGStyling",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "SetVisible",
+            "originalName": "setVisible",
+            "read": false,
+            "description": "Sets the state of property «visible»\n",
+            "iatStudioExposed": true,
+            "parameter": [
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "ShowTooltip",
+            "originalName": "showTooltip",
+            "read": false,
+            "description": "\n",
+            "iatStudioExposed": true
+        }
+    ],
+    "events": [
+        {
+            "name": "Click",
+            "description": "Fired when element is clicked on.\n",
+            "parameter": [
+                {
+                    "name": "origin",
+                    "type": "String",
+                    "index": 0,
+                    "description": "id of widget that triggered this event\n\n\n\n",
+                    "optional": false
+                },
+                {
+                    "name": "horizontalPos",
+                    "type": "String",
+                    "index": 1,
+                    "description": "horizontal position of click in pixel i.e '10px'\n\n\n\n",
+                    "optional": false
+                },
+                {
+                    "name": "verticalPos",
+                    "type": "String",
+                    "index": 2,
+                    "description": "vertical position of click in pixel i.e '10px'\n\n\n\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "DisabledClick",
+            "description": "Fired when disabled element is clicked on.\n",
+            "parameter": [
+                {
+                    "name": "origin",
+                    "type": "String",
+                    "index": 0,
+                    "description": "id of widget that triggered this event\n\n",
+                    "optional": false
+                },
+                {
+                    "name": "hasPermission",
+                    "type": "Boolean",
+                    "index": 1,
+                    "description": "defines if the state is caused due to missing roles of the current user\n\n",
+                    "optional": false
+                },
+                {
+                    "name": "horizontalPos",
+                    "type": "String",
+                    "index": 2,
+                    "description": "horizontal position of click in pixel i.e '10px'\n\n",
+                    "optional": false
+                },
+                {
+                    "name": "verticalPos",
+                    "type": "String",
+                    "index": 3,
+                    "description": "vertical position of click in pixel i.e '10px'\n\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "EnableChanged",
+            "description": "Fired when operability of the widget changes.\n",
+            "parameter": [
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "operability\n\n\n\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "FocusIn",
+            "description": "Fired when the widgets gets focus\n"
+        },
+        {
+            "name": "FocusOut",
+            "description": "Fired when the widgets lost focus\n"
+        },
+        {
+            "name": "MouseDown",
+            "description": "Fired when widget enters mouseDown state\n",
+            "parameter": [
+                {
+                    "name": "horizontalPos",
+                    "type": "String",
+                    "index": 0,
+                    "description": "horizontal position of mouse in pixel i.e '10px'\n",
+                    "optional": false
+                },
+                {
+                    "name": "verticalPos",
+                    "type": "String",
+                    "index": 1,
+                    "description": "vertical position of mouse in pixel i.e '10px'\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "MouseUp",
+            "description": "Fired when widget enters mouseUp state\n",
+            "parameter": [
+                {
+                    "name": "horizontalPos",
+                    "type": "String",
+                    "index": 0,
+                    "description": "horizontal position of mouse in pixel i.e '10px'\n",
+                    "optional": false
+                },
+                {
+                    "name": "verticalPos",
+                    "type": "String",
+                    "index": 1,
+                    "description": "vertical position of mouse in pixel i.e '10px'\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "OnDragEnter",
+            "description": "Fired when element has onDragEnter.\n",
+            "parameter": [
+                {
+                    "name": "contentId",
+                    "type": "String",
+                    "index": 0,
+                    "description": "content id of the widget that has been entering the droppable widget\n",
+                    "optional": false
+                },
+                {
+                    "name": "widgetId",
+                    "type": "String",
+                    "index": 1,
+                    "description": "id of the widget that has been entering the droppable widget\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "OnDragLeave",
+            "description": "Fired when element has OnDragLeave.\n",
+            "parameter": [
+                {
+                    "name": "contentId",
+                    "type": "String",
+                    "index": 0,
+                    "description": "content id of the widget that has been leaving the droppable widget\n",
+                    "optional": false
+                },
+                {
+                    "name": "widgetId",
+                    "type": "String",
+                    "index": 1,
+                    "description": "id of the widget that has been leaving the droppable widget\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "OnDrop",
+            "description": "Fired when element has OnDrop.\n",
+            "parameter": [
+                {
+                    "name": "contentId",
+                    "type": "String",
+                    "index": 0,
+                    "description": "content id of the widget that has been dropped on the droppable widget\n",
+                    "optional": false
+                },
+                {
+                    "name": "widgetId",
+                    "type": "String",
+                    "index": 1,
+                    "description": "id of the widget that has been dropped on the droppable widget\n",
+                    "optional": false
+                }
+            ]
+        },
+        {
+            "name": "VisibleChanged",
+            "description": "Fired when the visibility of the widget changes.\n",
+            "parameter": [
+                {
+                    "name": "value",
+                    "type": "Boolean",
+                    "index": 0,
+                    "description": "visibility\n\n\n\n",
+                    "optional": false
+                }
+            ]
+        }
+    ],
+    "properties": [
+        {
+            "name": "alignment",
+            "type": "brease.enum.Direction",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.GroupBox",
+            "projectable": true,
+            "description": "Alignment of the Bar. Possible Values:\nhorizontal: elements aligned from left to right. no line break\nvertical: elements aligned from left to right. with line break\n",
+            "category": "Appearance",
+            "defaultValue": "vertical"
+        },
+        {
+            "name": "childPositioning",
+            "type": "brease.enum.ChildPositioning",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.GroupBox",
+            "projectable": true,
+            "description": "positioning of child elements (widgets)\n",
+            "category": "Behavior",
+            "defaultValue": "absolute"
+        },
+        {
+            "name": "ellipsis",
+            "type": "Boolean",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.GroupBox",
+            "projectable": true,
+            "description": "ellipsis for the Label\n",
+            "category": "Behavior",
+            "defaultValue": "false"
+        },
+        {
+            "name": "enable",
+            "type": "Boolean",
+            "initOnly": false,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "brease.core.BaseWidget",
+            "projectable": true,
+            "description": "Initial option to enable widget.\n",
+            "category": "Behavior",
+            "defaultValue": "true"
+        },
+        {
+            "name": "float",
+            "type": "brease.enum.Floating",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.GroupBox",
+            "projectable": true,
+            "description": "Floating of the childelements if childPositioning=relative\n",
+            "category": "Appearance",
+            "defaultValue": "left"
+        },
+        {
+            "name": "image",
+            "type": "ImagePath",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.GroupBox",
+            "projectable": true,
+            "description": "Image path for the Label\nWhen svg - graphics are used, be sure that in your *.svg-file height and width attributes are specified on the svg-element.\nFor more detailed information see https://www.w3.org/TR/SVG/struct.html (chapter 5.1.2)\n",
+            "category": "Appearance",
+            "defaultValue": ""
+        },
+        {
+            "name": "imageAlign",
+            "type": "brease.enum.ImagePosition",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.GroupBox",
+            "projectable": true,
+            "description": "imageAlign for the Label\ndefines the Position of the image relative to the text\npossible values: left(left of text)/right(right of text)\n",
+            "category": "Appearance",
+            "defaultValue": "left"
+        },
+        {
+            "name": "maxHeight",
+            "type": "Integer",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.GroupBox",
+            "projectable": true,
+            "description": "Maximum height the GroupBox can grow, when childPositioning='relative'\n",
+            "category": "Appearance",
+            "defaultValue": "0"
+        },
+        {
+            "name": "permissionOperate",
+            "type": "RoleCollection",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "brease.core.BaseWidget",
+            "projectable": true,
+            "description": "restricts operability to users, which have given roles\n",
+            "category": "Accessibility"
+        },
+        {
+            "name": "permissionView",
+            "type": "RoleCollection",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "brease.core.BaseWidget",
+            "projectable": true,
+            "description": "restricts visibility to users, which have given roles\n",
+            "category": "Accessibility"
+        },
+        {
+            "name": "style",
+            "type": "StyleReference",
+            "initOnly": false,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "brease.core.BaseWidget",
+            "projectable": true,
+            "description": "reference to a style for this widget type\n",
+            "category": "Appearance",
+            "defaultValue": "default"
+        },
+        {
+            "name": "tabIndex",
+            "type": "Integer",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "brease.core.BaseWidget",
+            "projectable": true,
+            "description": "sets if a widget should have autofocus enabled (0), the order of the focus (>0),\nor if autofocus should be disabled (-1)\n",
+            "category": "Behavior",
+            "defaultValue": "-1"
+        },
+        {
+            "name": "text",
+            "type": "String",
+            "initOnly": true,
+            "localizable": true,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.GroupBox",
+            "projectable": true,
+            "description": "text for the Label\n",
+            "category": "Appearance",
+            "defaultValue": ""
+        },
+        {
+            "name": "tooltip",
+            "type": "String",
+            "initOnly": true,
+            "localizable": true,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "brease.core.BaseWidget",
+            "projectable": true,
+            "description": "reference to a tooltip for a widget\n",
+            "category": "Appearance",
+            "defaultValue": ""
+        },
+        {
+            "name": "useSVGStyling",
+            "type": "Boolean",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.GroupBox",
+            "projectable": true,
+            "description": "Define if the image stylings (i.e imageColor) are applied - only valid when SVG Images are used.\n",
+            "category": "Appearance",
+            "defaultValue": "true"
+        },
+        {
+            "name": "visible",
+            "type": "Boolean",
+            "initOnly": false,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "brease.core.BaseWidget",
+            "projectable": true,
+            "description": "change visibility\n",
+            "category": "Behavior",
+            "defaultValue": "true"
+        },
+        {
+            "name": "imageHeight",
+            "type": "ImageSize",
+            "defaultValue": "0",
+            "description": "height of the image",
+            "initOnly": true,
+            "required": false,
+            "readOnly": false,
+            "projectable": true,
+            "hide": false,
+            "cssProp": true
+        },
+        {
+            "name": "imageWidth",
+            "type": "ImageSize",
+            "defaultValue": "0",
+            "description": "width of the image",
+            "initOnly": true,
+            "required": false,
+            "readOnly": false,
+            "projectable": true,
+            "hide": false,
+            "cssProp": true
+        },
+        {
+            "name": "zIndex",
+            "type": "UInteger",
+            "description": "The zIndex property specifies the z-order of a widget and its childs.<br/>\r\n        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.<br/>\r\n        The zIndex must be unique within a content.<br/>",
+            "initOnly": true,
+            "required": true,
+            "readOnly": false,
+            "projectable": true,
+            "owner": "brease.core.BaseWidget",
+            "hide": false,
+            "cssProp": true
+        },
+        {
+            "name": "left",
+            "type": "Integer",
+            "description": "absolute position measured from left boundary of parent container",
+            "initOnly": true,
+            "required": false,
+            "readOnly": false,
+            "projectable": true,
+            "owner": "brease.core.BaseWidget",
+            "hide": false,
+            "cssProp": true
+        },
+        {
+            "name": "top",
+            "type": "Integer",
+            "description": "absolute position measured from top boundary of parent container",
+            "initOnly": true,
+            "required": false,
+            "readOnly": false,
+            "projectable": true,
+            "owner": "brease.core.BaseWidget",
+            "hide": false,
+            "cssProp": true
+        },
+        {
+            "name": "height",
+            "type": "Size",
+            "defaultValue": "150",
+            "description": "outer height of widget",
+            "initOnly": true,
+            "required": false,
+            "readOnly": false,
+            "projectable": true,
+            "owner": "widgets.brXtended.GroupBox",
+            "hide": false,
+            "cssProp": true
+        },
+        {
+            "name": "width",
+            "type": "Size",
+            "defaultValue": "200",
+            "description": "outer width of widget",
+            "initOnly": true,
+            "required": false,
+            "readOnly": false,
+            "projectable": true,
+            "owner": "widgets.brXtended.GroupBox",
+            "hide": false,
+            "cssProp": true
+        },
+        {
+            "name": "verticalAnchorTop",
+            "type": "Boolean",
+            "initOnly": true,
+            "localizable": false,
+            "editableBinding": false,
+            "readOnly": false,
+            "required": false,
+            "owner": "widgets.brXtended.GroupBox",
+            "projectable": true,
+            "description": "If alignement='vertical' you can choose anchor of your items, Top='true' Bottom='false'\n",
+            "category": "Extended",
+            "defaultValue": "true"
+        }
+    ],
+    "dependencies": {
+        "files": [
+            "brease/core/ContainerWidget.js",
+            "brease/events/BreaseEvent.js",
+            "brease/decorators/LanguageDependency.js",
+            "brease/enum/Enum.js",
+            "brease/core/Types.js",
+            "brease/core/Utils.js",
+            "brease/helper/Scroller.js",
+            "widgets/brease/common/libs/wfUtils/UtilsImage.js",
+            "brease/decorators/DragAndDropCapability.js",
+            "widgets/brease/common/DragDropProperties/libs/DroppablePropertiesEvents.js"
+        ],
+        "widgets": [
+            "widgets/brease/GroupBox/GroupBox.js"
+        ]
+    },
+    "categories": {
+        "Category": [
+            "Container"
+        ]
+    },
+    "descriptions": {
+        "short": "Rahmen mit Label",
+        "de": "Zeigt einen Rahmen um eine Gruppe von Widgets; optional mit einem Beschriftungstext",
+        "en": "Displays a frame around a group of widgets with an optional caption"
+    },
+    "superproperties": {
+        "id": {
+            "type": "WidgetId"
+        },
+        "enable": {
+            "type": "Boolean"
+        },
+        "permissionOperate": {
+            "type": "RoleCollection"
+        },
+        "permissionView": {
+            "type": "RoleCollection"
+        },
+        "style": {
+            "type": "StyleReference"
+        },
+        "tabIndex": {
+            "type": "Integer"
+        },
+        "tooltip": {
+            "type": "String"
+        },
+        "visible": {
+            "type": "Boolean"
+        },
+        "zIndex": {
+            "type": "UInteger"
+        },
+        "left": {
+            "type": "Integer"
+        },
+        "top": {
+            "type": "Integer"
+        },
+        "height": {
+            "type": "AutoSize"
+        },
+        "width": {
+            "type": "AutoSize"
+        }
+    },
+    "styleproperties": {
+        "StyleProperty": [
+            {
+                "$": {
+                    "name": "width",
+                    "type": "Size",
+                    "not_styleable": "true",
+                    "owner": "widgets.brXtended.GroupBox",
+                    "category": "Layout",
+                    "groupRefId": "Size",
+                    "groupOrder": "1",
+                    "default": "200"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "attribute": "@include elemWidth($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "outer width of widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "height",
+                    "type": "Size",
+                    "not_styleable": "true",
+                    "owner": "widgets.brXtended.GroupBox",
+                    "category": "Layout",
+                    "groupRefId": "Size",
+                    "groupOrder": "2",
+                    "default": "150"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "attribute": "@include elemHeight($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "outer height of widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "top",
+                    "type": "Integer",
+                    "not_styleable": "true",
+                    "owner": "brease.core.BaseWidget",
+                    "category": "Layout",
+                    "groupRefId": "Position",
+                    "groupOrder": "1"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "attribute": "@include elemTop($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "absolute position measured from top boundary of parent container"
+                ]
+            },
+            {
+                "$": {
+                    "name": "left",
+                    "type": "Integer",
+                    "not_styleable": "true",
+                    "owner": "brease.core.BaseWidget",
+                    "category": "Layout",
+                    "groupRefId": "Position",
+                    "groupOrder": "2"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "attribute": "@include elemLeft($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "absolute position measured from left boundary of parent container"
+                ]
+            },
+            {
+                "$": {
+                    "name": "zIndex",
+                    "type": "UInteger",
+                    "not_styleable": "true",
+                    "owner": "brease.core.BaseWidget",
+                    "category": "Layout",
+                    "required": "true"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "attribute": "z-index"
+                        }
+                    }
+                ],
+                "Description": [
+                    "The zIndex property specifies the z-order of a widget and its childs.<br/>\r\n        When widgets overlap, z-order determines which one covers the other. A widget with a larger zIndex generally covers a widget with a lower one.<br/>\r\n        The zIndex must be unique within a content.<br/>"
+                ]
+            },
+            {
+                "$": {
+                    "name": "borderWidth",
+                    "type": "PixelValCollection",
+                    "default": "1px",
+                    "category": "Appearance"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "",
+                            "attribute": "border-width"
+                        }
+                    },
+                    {
+                        "$": {
+                            "selector": "> .header",
+                            "attribute": "border-width"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the width of the border of the widget. For further information, please check its type"
+                ]
+            },
+            {
+                "$": {
+                    "name": "cornerRadius",
+                    "category": "Appearance",
+                    "type": "PixelValCollection",
+                    "default": "0px"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "attribute": "@include border-radius($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the radius of the widget rounded corners. For further information, please check its type"
+                ]
+            },
+            {
+                "$": {
+                    "name": "backColor",
+                    "category": "Appearance",
+                    "type": "Color",
+                    "default": "transparent"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "attribute": "background-color"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the background color of the group-box"
+                ]
+            },
+            {
+                "$": {
+                    "name": "headerBackColor",
+                    "category": "Appearance",
+                    "type": "Color",
+                    "default": "transparent"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "> .header",
+                            "attribute": "background-color"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the background color of the group-box header"
+                ]
+            },
+            {
+                "$": {
+                    "name": "headerGradient",
+                    "category": "Appearance",
+                    "type": "Gradient",
+                    "default": ""
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "> .header",
+                            "attribute": "@include backGroundGradient('$value')"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Background as a gradient"
+                ]
+            },
+            {
+                "$": {
+                    "name": "contentGradient",
+                    "category": "Appearance",
+                    "type": "Gradient",
+                    "default": ""
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "> .container",
+                            "attribute": "@include backGroundGradient('$value')"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Background as a gradient"
+                ]
+            },
+            {
+                "$": {
+                    "name": "borderColor",
+                    "category": "Appearance",
+                    "type": "ColorCollection",
+                    "default": "#DFDFDF"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "attribute": "border-color"
+                        }
+                    },
+                    {
+                        "$": {
+                            "selector": "> .header",
+                            "attribute": "border-color"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the border color of the group-box. For further information, please check its type"
+                ]
+            },
+            {
+                "$": {
+                    "name": "borderStyle",
+                    "category": "Appearance",
+                    "type": "BorderStyle",
+                    "default": "solid"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "",
+                            "attribute": "border-style"
+                        }
+                    },
+                    {
+                        "$": {
+                            "selector": "> .header",
+                            "attribute": "border-bottom-style"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Style of the Border of the widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "textColor",
+                    "category": "Appearance",
+                    "type": "Color",
+                    "default": "#000000"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "> .header span",
+                            "attribute": "color"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Sets the color of the header text"
+                ]
+            },
+            {
+                "$": {
+                    "name": "imageColor",
+                    "category": "Appearance",
+                    "type": "Color",
+                    "default": "#000000"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "> .header > svg",
+                            "attribute": "fill"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Color of the image - only apply if a SVG image is used"
+                ]
+            },
+            {
+                "$": {
+                    "name": "imageWidth",
+                    "type": "ImageSize",
+                    "not_styleable": "true",
+                    "category": "Appearance",
+                    "default": "0"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "> .header > img",
+                            "attribute": "@include imageWidth($value)"
+                        }
+                    },
+                    {
+                        "$": {
+                            "selector": "> .header > svg",
+                            "attribute": "@include imageWidth($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "width of the image"
+                ]
+            },
+            {
+                "$": {
+                    "name": "imageHeight",
+                    "type": "ImageSize",
+                    "not_styleable": "true",
+                    "category": "Appearance",
+                    "default": "0"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "> .header > img",
+                            "attribute": "@include imageHeight($value)"
+                        }
+                    },
+                    {
+                        "$": {
+                            "selector": "> .header > svg",
+                            "attribute": "@include imageHeight($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "height of the image"
+                ]
+            },
+            {
+                "$": {
+                    "name": "fontName",
+                    "category": "Font",
+                    "type": "FontName",
+                    "default": "Arial"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "> .header span",
+                            "attribute": "font-family"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Fontname of the text"
+                ]
+            },
+            {
+                "$": {
+                    "name": "fontSize",
+                    "category": "Font",
+                    "type": "PixelVal",
+                    "default": "12px"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "> .header span",
+                            "attribute": "font-size"
+                        }
+                    },
+                    {
+                        "$": {
+                            "selector": "> .header",
+                            "attribute": "height: $value + 20px"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Fontsize of the text in pixel"
+                ]
+            },
+            {
+                "$": {
+                    "name": "bold",
+                    "category": "Font",
+                    "type": "Boolean",
+                    "default": "true"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "> .header span",
+                            "attribute": "@include font-weight-bold($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "If **true** font style is bold"
+                ]
+            },
+            {
+                "$": {
+                    "name": "italic",
+                    "category": "Font",
+                    "type": "Boolean",
+                    "default": "false"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "> .header span",
+                            "attribute": "@include font-style-italic($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "If **true** font style is italic"
+                ]
+            },
+            {
+                "$": {
+                    "name": "textAlign",
+                    "category": "Appearance",
+                    "type": "brease.enum.TextAlign",
+                    "default": "center"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "> .header",
+                            "attribute": "@include text-alignment($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Alignment of the text"
+                ]
+            },
+            {
+                "$": {
+                    "name": "opacity",
+                    "category": "Appearance",
+                    "type": "Opacity",
+                    "default": "1"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "attribute": "opacity"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Opacity of the widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "shadow",
+                    "category": "Appearance",
+                    "type": "Shadow",
+                    "default": "none"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "attribute": "@include box-shadow($value)"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Shadow of the Widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "padding",
+                    "category": "Layout",
+                    "type": "Padding",
+                    "default": "0px"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "selector": "> .container > .widgetContainer",
+                            "attribute": "padding"
+                        }
+                    },
+                    {
+                        "$": {
+                            "selector": "> .widgetContainer",
+                            "attribute": "padding"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Padding of the Widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "margin",
+                    "category": "Layout",
+                    "type": "Margin",
+                    "default": "0px 0px 12px 0px"
+                },
+                "StyleElement": [
+                    {
+                        "$": {
+                            "attribute": "margin"
+                        }
+                    }
+                ],
+                "Description": [
+                    "Margin of the Widget"
+                ]
+            }
+        ],
+        "$": {}
+    },
+    "propertygroups": {
+        "PropertyGroup": [
+            {
+                "$": {
+                    "name": "Size",
+                    "type": "String",
+                    "category": "Layout"
+                },
+                "Description": [
+                    "outer height and width of widget"
+                ]
+            },
+            {
+                "$": {
+                    "name": "Position",
+                    "type": "String",
+                    "category": "Layout"
+                },
+                "Description": [
+                    "top and left of widget"
+                ]
+            }
+        ]
+    }
+}

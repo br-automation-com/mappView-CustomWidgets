@@ -1,0 +1,78 @@
+@import "mixins.scss";
+@mixin widgets_brXtended_GroupBox_base {
+	@include elemWidth(200);
+	@include elemHeight(150);
+	border-width: 1px;
+	> .header {
+		border-width: 1px;
+	}
+	@include border-radius(0px);
+	background-color: transparent;
+	> .header {
+		background-color: transparent;
+	}
+	> .header {
+		@include backGroundGradient('');
+	}
+	> .container {
+		@include backGroundGradient('');
+	}
+	border-color: #DFDFDF;
+	> .header {
+		border-color: #DFDFDF;
+	}
+	border-style: solid;
+	> .header {
+		border-bottom-style: solid;
+	}
+	> .header span {
+		color: #000000;
+	}
+	> .header > svg {
+		fill: #000000;
+	}
+	> .header > img {
+		@include imageWidth(0);
+	}
+	> .header > svg {
+		@include imageWidth(0);
+	}
+	> .header > img {
+		@include imageHeight(0);
+	}
+	> .header > svg {
+		@include imageHeight(0);
+	}
+	> .header span {
+		font-family: Arial;
+	}
+	> .header span {
+		font-size: 12px;
+	}
+	> .header {
+		height: 12px + 20px;
+	}
+	> .header span {
+		@include font-weight-bold(true);
+	}
+	> .header span {
+		@include font-style-italic(false);
+	}
+	> .header {
+		@include text-alignment(center);
+	}
+	opacity: 1;
+	@include box-shadow(none);
+	> .container > .widgetContainer {
+		padding: 0px;
+	}
+	> .widgetContainer {
+		padding: 0px;
+	}
+	margin: 0px 0px 12px 0px;
+
+}
+
+.widgets_brXtended_GroupBox_style_default {
+@include widgets_brXtended_GroupBox_base
+}

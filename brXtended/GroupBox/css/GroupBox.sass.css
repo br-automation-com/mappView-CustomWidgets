@@ -1,0 +1,120 @@
+.brXtendedGroupBox {
+  position: absolute;
+  margin: 0 0 12px 0;
+  background-color: #ffffff;
+  border: 1px solid #dfdfdf;
+  box-sizing: border-box;
+}
+.brXtendedGroupBox.initialized {
+  display: block;
+  overflow: hidden;
+}
+.brXtendedGroupBox > .container {
+  box-sizing: border-box;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+.brXtendedGroupBox.horizontal > .container {
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: absolute;
+}
+.brXtendedGroupBox.horizontal > .container > div {
+  flex-shrink: 0;
+}
+.brXtendedGroupBox.vertical {
+  display: -ms-flexbox;
+  display: flex;
+}
+.brXtendedGroupBox.vertical > .container {
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+}
+.brXtendedGroupBox.vertical > .container > .scrollWrapper {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.brXtendedGroupBox.editMode > .container > .scrollWrapper {
+  width: inherit;
+}
+.brXtendedGroupBox > .header {
+  width: 100%;
+  height: 35px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 10px;
+  border-bottom: 1px solid #dfdfdf;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  text-align: left;
+  border-radius: 0;
+}
+.brXtendedGroupBox > .header > span {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+.brXtendedGroupBox > .header > img,
+.brXtendedGroupBox > .header svg {
+  display: inline-block;
+  vertical-align: middle;
+  pointer-events: none;
+  padding: 0;
+  margin: 0;
+  -ms-flex: none;
+  flex: none;
+}
+.brXtendedGroupBox > .header.image-left .no-text > img,
+.brXtendedGroupBox > .header.image-left .no-text svg {
+  margin: 0px;
+}
+.brXtendedGroupBox > .header.image-left:not(.no-text) > img,
+.brXtendedGroupBox > .header.image-left svg {
+  margin: 0 10px 0 0;
+}
+.brXtendedGroupBox > .header.image-right > img,
+.brXtendedGroupBox > .header.image-right svg {
+  margin: 0px;
+}
+.brXtendedGroupBox > .header.image-right:not(.no-text) > img,
+.brXtendedGroupBox > .header.image-right svg {
+  margin: 0 0 0 10px;
+}
+.brXtendedGroupBox > .header.ellipsis > span {
+  text-overflow: ellipsis;
+}
