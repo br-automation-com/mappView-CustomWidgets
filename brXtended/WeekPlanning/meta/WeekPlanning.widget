@@ -173,6 +173,9 @@ or if autofocus should be disabled (-1)				</Description>
 			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
 				<Description>change visibility</Description>
 			</Property>
+			<Property name="textDeleteButton" type="String" initOnly="false" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="Delete">
+				<Description>Text which is displayed in the Delete button</Description>
+			</Property>
 		</Properties>
 	<BindingTemplates>
   

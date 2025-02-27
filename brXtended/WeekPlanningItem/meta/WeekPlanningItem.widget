@@ -42,9 +42,9 @@
 			<Category name="Category">Data</Category>
 		</Categories>
 		<Descriptions>
-			<Description name="short">Week planning widget</Description>
-			<Description name="de">German.</Description>
-			<Description name="en">English</Description>
+			<Description name="short">Week planning item widget</Description>
+			<Description name="de">Item used in the Week planning widget</Description>
+			<Description name="en">Item used in the Week planning widget</Description>
 		</Descriptions>
 		<Inheritance>
 			<Class level="0">widgets.brXtended.WeekPlanningItem</Class>
@@ -144,7 +144,7 @@
 		</Events>
 		<Properties>
 			<Property name="action" type="String" initOnly="true" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Data" defaultValue="default">
-				<Description>Class that will be apply to the cells when this button is selected</Description>
+				<Description>Action name that need to be unique string</Description>
 			</Property>
 			<Property name="enable" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
 				<Description>Initial option to enable widget.</Description>
@@ -170,6 +170,9 @@ or if autofocus should be disabled (-1)				</Description>
 			</Property>
 			<Property name="visible" type="Boolean" initOnly="false" localizable="false" editableBinding="false" readOnly="false" required="false" projectable="true" category="Behavior" defaultValue="true">
 				<Description>change visibility</Description>
+			</Property>
+			<Property name="text" type="String" initOnly="false" localizable="true" editableBinding="false" readOnly="false" required="false" projectable="true" category="Appearance" defaultValue="default">
+				<Description>Text which is displayed in the widget</Description>
 			</Property>
 		</Properties>
 	<BindingTemplates>
