@@ -1,0 +1,130 @@
+@import '../../../../css/libs/mixins.scss';
+
+$text-color: #333;
+
+.brXtendedGroupBox {
+    position: absolute;
+    &.initialized {
+        display: block;
+        overflow: hidden;
+    }
+
+    margin: 0 0 12px 0;
+    background-color: #ffffff;
+    border: 1px solid #dfdfdf;
+    @include box-sizing(border-box);
+
+    > .container {
+        @include box-sizing(border-box);
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+
+    }
+
+    &.horizontal {
+        > .container {
+            @include flex-wrap(nowrap);
+            @include displayFlexBox(true);
+            @include align-items(start);
+            @include flex-direction(row);
+            position: absolute;
+
+            > div {
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    &.vertical {
+        @include displayFlexBox(false);
+
+        > .container {
+            display: block;
+            position: absolute;
+            @include box-sizing(border-box);
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            overflow: hidden;
+            > .scrollWrapper {
+                position: absolute;
+                min-height: 100%;
+                min-width: 100%;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+    &.editMode {
+        > .container {
+            > .scrollWrapper {
+                width:inherit;
+            }
+        }
+    }
+
+    > .header {
+        width: 100%;
+        height: 35px;
+        overflow: hidden;
+        @include box-sizing(border-box);
+        padding: 0 10px;
+        border-bottom: 1px solid #dfdfdf;
+        @include displayFlexBox(true);
+        @include flex-direction(row);
+        @include align-items(center);
+        @include flex-wrap(nowrap);
+        @include justify-content(left);
+        text-align: left;
+        border-radius: 0;
+
+        > span {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            pointer-events: none;
+            margin: 0;
+            padding: 0;
+            @include flex(0 1 auto);
+        }
+
+        > img, svg {
+            display: inline-block;
+            vertical-align: middle;
+            pointer-events: none;
+            padding: 0;
+            margin: 0;
+            @include flex(none);
+        }
+
+        &.image-left {
+            .no-text {
+                > img,svg {
+                    margin: 0px;
+                }
+            }
+            &:not(.no-text)> img,svg {
+                margin: 0 10px 0 0;
+            }
+        }
+
+        &.image-right {
+            > img,svg {
+                margin: 0px;
+            }
+            &:not(.no-text) > img,svg {
+                margin: 0 0 0 10px;
+            }
+        }
+
+
+        &.ellipsis > span {
+            @include text-overflow(ellipsis);
+        }
+    }
+}

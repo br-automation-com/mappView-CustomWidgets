@@ -14,6 +14,7 @@ nav:
   - ListBox: widgets_list_box.md
   - WeekPlanning: widgets_week_planning.md
   - WeekPlanningItem: widgets_week_planning_item.md
+  - GroupBox: widgets_group_box.md
   - Revision: revision.md
 
 theme:

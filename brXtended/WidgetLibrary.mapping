@@ -21,6 +21,9 @@
   <Mapping parameter="widgets.brXtended.DropDownBox.Action.SetSelectedValue.omitPrompt" type="BOOL"/>
   <Mapping parameter="widgets.brXtended.DropDownBox.Action.SetStyle.value" type="ANY_STRING"/>
   <Mapping parameter="widgets.brXtended.DropDownBox.Action.SetVisible.value" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.GroupBox.Action.SetEnable.value" type="BOOL"/>
+  <Mapping parameter="widgets.brXtended.GroupBox.Action.SetStyle.value" type="ANY_STRING"/>
+  <Mapping parameter="widgets.brXtended.GroupBox.Action.SetVisible.value" type="BOOL"/>
   <Mapping parameter="widgets.brXtended.ListBox.Action.SetDataProvider.provider" type="ANY_STRING"/>
   <Mapping parameter="widgets.brXtended.ListBox.Action.SetEnable.value" type="BOOL"/>
   <Mapping parameter="widgets.brXtended.ListBox.Action.SetSelectedIndex.index" type="ANY_INT"/>
