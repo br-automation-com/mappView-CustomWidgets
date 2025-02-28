@@ -1,0 +1,55 @@
+.widgets_brXtended_GroupBox_style_default {
+  width: 200px;
+  height: 150px;
+  border-width: 1px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-color: #dfdfdf;
+  border-style: solid;
+  opacity: 1;
+  box-shadow: none;
+  margin: 0px 0px 12px 0px;
+}
+.widgets_brXtended_GroupBox_style_default > .header {
+  border-width: 1px;
+}
+.widgets_brXtended_GroupBox_style_default > .header {
+  background-color: transparent;
+}
+.widgets_brXtended_GroupBox_style_default > .header {
+  border-color: #dfdfdf;
+}
+.widgets_brXtended_GroupBox_style_default > .header {
+  border-bottom-style: solid;
+}
+.widgets_brXtended_GroupBox_style_default > .header span {
+  color: #000000;
+}
+.widgets_brXtended_GroupBox_style_default > .header > svg {
+  fill: #000000;
+}
+.widgets_brXtended_GroupBox_style_default > .header span {
+  font-family: Arial;
+}
+.widgets_brXtended_GroupBox_style_default > .header span {
+  font-size: 12px;
+}
+.widgets_brXtended_GroupBox_style_default > .header {
+  height: 32px;
+}
+.widgets_brXtended_GroupBox_style_default > .header span {
+  font-weight: bold;
+}
+.widgets_brXtended_GroupBox_style_default > .header span {
+  font-style: normal;
+}
+.widgets_brXtended_GroupBox_style_default > .header {
+  justify-content: center;
+  text-align: center;
+}
+.widgets_brXtended_GroupBox_style_default > .container > .widgetContainer {
+  padding: 0px;
+}
+.widgets_brXtended_GroupBox_style_default > .widgetContainer {
+  padding: 0px;
+}
