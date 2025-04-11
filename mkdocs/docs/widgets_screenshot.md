@@ -30,7 +30,9 @@ Due to browser security restrictions the screen access is blocked for standard H
 
 
 ## Usage
-This widget requires mapp File (see Automation Studio help GUID f5ac430b-e0ca-4320-bcd0-b7e28a087f77). Make sure that there is a valid mpfilemanager configuration. Only the configuration is required, no additional task or function block must be added to the project. The libraries **MpFile** and **MpServer** are also required.
+The libraries **MpFile** and **MpServer** must be added to the project under libraries. This widget requires mapp File (see Automation Studio help GUID f5ac430b-e0ca-4320-bcd0-b7e28a087f77). Make sure that there is a valid mpfilemanager configuration. Only the configuration is required, no additional task or function block must be added to the project. The mpfilemanager configuration should look like this:
+
+![](./images/screenshot5.png)
 
 #### Additional Actions
 The widget derives all actions from the button widget.
@@ -80,6 +82,13 @@ This event is called when a screenshot was not successful. Returns the error num
     Typical reasons for this error are
     - The file device does not exist in the PLC configuration
     - The path is not correct, folders do not exist
+    - The device is not configured in the mpfilemanager
+    - The permissions in the mpfilemanager configuration are not sufficient
+
+- Error -1064236540: 
+
+    Typical reasons for this error are
+    - The mpfilemanager configuration is missing
     - The device is not configured in the mpfilemanager
     - The permissions in the mpfilemanager configuration are not sufficient
 

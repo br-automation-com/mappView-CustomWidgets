@@ -1,3 +1,6 @@
+#### 11.04.2025
+- Fixed an issue where repeated screenshots on T-Panels will drive CPU load up to 100%
+
 #### 28.02.2025
 - Added group box widget. Thx to @fboissadier
 
