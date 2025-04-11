@@ -95,28 +95,33 @@ define([
                             // Create screenshot download
                             canvas.toBlob(
                                 function(blob) {
-                                // Create the blob URL and attach it to object
-                                const blobURL = URL.createObjectURL(blob);
-                                widget.a.href = blobURL;
-                                widget.a.download = 'screenshot.png';
+                                try {                                
+                                    // Create the blob URL and attach it to object
+                                    const blobURL = URL.createObjectURL(blob);
+                                    widget.a.href = blobURL;
+                                    widget.a.download = 'screenshot.png';
 
-                                // Stop video recording
-                                var tracks = video.srcObject.getTracks();
-                                tracks.forEach(function(track) { track.stop();});
+                                    // Stop video recording
+                                    var tracks = video.srcObject.getTracks();
+                                    tracks.forEach(function(track) { track.stop();});
 
-                                // Programmatically click the element.
-                                widget.a.click();
+                                    // Programmatically click the element.
+                                    widget.a.click();
 
-                                /**
-                                * @event FileDownloaded
-                                * Fired when a file was downloaded.
-                                * @iatStudioExposed
-                                */
-                                var ev = widget.createEvent('FileDownloaded', { });
-                                if (ev !== undefined) {
-                                    ev.dispatch();
-                                }
-                                });
+                                    /**
+                                    * @event FileDownloaded
+                                    * Fired when a file was downloaded.
+                                    * @iatStudioExposed
+                                    */
+                                    var ev = widget.createEvent('FileDownloaded', { });
+                                    if (ev !== undefined) {
+                                        ev.dispatch();
+                                    }
+                                } finally {
+                                    // Clean up canvas
+                                    canvas.remove();
+                                }                                  
+                            });
                         }).catch(function (telegram) {
                             if(telegram.error === undefined || telegram.error.code === undefined){
                                 widget._errorHandling(err_unkown, telegram.message);
@@ -169,18 +174,27 @@ define([
                     video.srcObject = stream;                                
                     video.play().then(
                         function(result){
-                            // Get image from video
-                            canvas.width = video.videoWidth;
-                            canvas.height = video.videoHeight;
-                            canvas.getContext("2d").drawImage(video, 0, 0);
+                            try {
+                                // Get image from video
+                                canvas.width = video.videoWidth;
+                                canvas.height = video.videoHeight;
+                                canvas.getContext("2d").drawImage(video, 0, 0);
 
-                            // Stop video recording
-                            var tracks = video.srcObject.getTracks();
-                            tracks.forEach(function(track) { track.stop();});
-                            
-                            // Convert image to PNG format
-                            const image_base64 = canvas.toDataURL('image/png').replace(/^data:image\/png;base64,/, "");
-                            widget._saveFile(filePath, 'OVERWRITE', "BINARY", image_base64);       
+                                // Stop video recording
+                                var tracks = video.srcObject.getTracks();
+                                tracks.forEach(function(track) { track.stop();});
+
+                                // Clean up video element
+                                video.srcObject = null;
+                                video.remove();
+                                
+                                // Convert image to PNG format
+                                const image_base64 = canvas.toDataURL('image/png').replace(/^data:image\/png;base64,/, "");
+                                widget._saveFile(filePath, 'OVERWRITE', "BINARY", image_base64);
+                            } finally {
+                                // Clean up canvas
+                                canvas.remove();
+                            } 
                         }).catch(function (telegram) {
                             if(telegram.error === undefined || telegram.error.code === undefined){
                                 widget._errorHandling(err_unkown, telegram.message);
@@ -204,6 +218,7 @@ define([
     p._saveFile = function _saveFile(path, flags, encoding, data) {
         if (brease.config.preLoadingState) return;
         var widget = this;
+        
 
         // FileExplorer handling
         if (widget.fileExplorer === undefined){
@@ -257,8 +272,24 @@ define([
     };
     
     p.dispose = function () {
-        var that = this;
-        SuperClass.prototype.dispose.apply(that, arguments);
+        // Clean up download element
+        if (this.a) {
+            this.a.remove();
+            this.a = null;
+        }
+        
+        // Clean up file manager and explorer
+        if (this.fileManager) {
+            this.fileManager.dispose();
+            this.fileManager = null;
+        }
+        
+        if (this.fileExplorer) {
+            this.fileExplorer.dispose();
+            this.fileExplorer = null;
+        }
+        
+        SuperClass.prototype.dispose.apply(this, arguments);
     };
 
     return WidgetClass;
