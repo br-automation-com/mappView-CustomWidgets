@@ -699,7 +699,8 @@
 <p>Due to browser security restrictions the screen access is blocked for standard HTTP connections which is the default for mappView. mappView must be changed to HTTPS access or the HTTP URL must be added to the browser as an exception. On B&amp;R panels the screen capture must be enabled in the panel settings. This option is available starting with firmware 1.6.x. In the web settings enable screen capture and optional suppress the security warning for the screen capture and server certificate.</p>
 <p><img alt="" src="images/screenshot3.png" /></p>
 <h2 id="usage">Usage</h2>
-<p>This widget requires mapp File (see Automation Studio help GUID f5ac430b-e0ca-4320-bcd0-b7e28a087f77). Make sure that there is a valid mpfilemanager configuration. Only the configuration is required, no additional task or function block must be added to the project. The libraries <strong>MpFile</strong> and <strong>MpServer</strong> are also required.</p>
+<p>The libraries <strong>MpFile</strong> and <strong>MpServer</strong> must be added to the project under libraries. This widget requires mapp File (see Automation Studio help GUID f5ac430b-e0ca-4320-bcd0-b7e28a087f77). Make sure that there is a valid mpfilemanager configuration. Only the configuration is required, no additional task or function block must be added to the project. The mpfilemanager configuration should look like this:</p>
+<p><img alt="" src="images/screenshot5.png" /></p>
 <h4 id="additional-actions">Additional Actions</h4>
 <p>The widget derives all actions from the button widget.</p>
 <p><strong>Screenshot2Client</strong>
@@ -749,6 +750,13 @@ USER is the storage medium specified in the target system configuration.</p>
 <p>Typical reasons for this error are
 - The file device does not exist in the PLC configuration
 - The path is not correct, folders do not exist
+- The device is not configured in the mpfilemanager
+- The permissions in the mpfilemanager configuration are not sufficient</p>
+</li>
+<li>
+<p>Error -1064236540: </p>
+<p>Typical reasons for this error are
+- The mpfilemanager configuration is missing
 - The device is not configured in the mpfilemanager
 - The permissions in the mpfilemanager configuration are not sufficient</p>
 </li>
