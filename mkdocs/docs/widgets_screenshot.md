@@ -105,7 +105,10 @@ May also work with lower version: **YES**
 
 ## Revision History
 
-#### Version 6
+##### Version 7
+- Fixed an issue where repeated screenshots on T-Panels will drive CPU load up to 100%
+
+##### Version 6
 - Error 10000 now generates some additional details in the logger message
 
 ##### Version 5
